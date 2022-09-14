@@ -1,0 +1,953 @@
+/* BASE ----------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Open+Sans:wght@300;400;700&family=Prompt:wght@100;300;600&display=swap');
+
+:root {
+    --cor-base: #12a3cb;
+    --cor-invert: #FFFFFF;
+
+    --splash-fundo: #12a3cb;
+    --splash-fore: #FFFFFF;
+    --splash-secondcolor: #12a3cb;
+
+    --cor-menu-off: #FFFFFF;
+    --cor-menu-off-bg: #12a3cb;
+    --cor-hv0: cyan;
+    --cor-hv1: #12a3cb;
+    --cor-hv2: #1f8dac;
+    --cor-hv3: #176b82;
+    --fg-color: #176b82;
+    --cor-shadow: #176b82;
+    --cor-leve: #89a1a8;
+    --cor-hvg: #6eacbd;
+    --cor-texto: #444444;
+
+
+}
+
+*:focus {
+    outline-color: var(--cor-hv0, cyan);
+    outline-style: none;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    text-decoration: none;
+    transition: all .2s ease-in;
+
+}
+
+.secao {
+    max-width: 1400px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#wrap {
+    background-color: white;
+    width: 100%;
+    border: 0;
+}
+
+
+#blococompensacao {
+    display: inline-block;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+#grafismo {
+    display: block;
+    position: relative;
+    top: 0;
+    height: 340px;
+}
+
+#midsection {
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 60px;
+    font-family: 'Nuosu SIL',
+        serif;
+    color: var(--cor-texto, #444444);
+
+}
+
+#midsection .secao {
+    margin-top: 60px;
+}
+
+
+#rodape {
+    padding-top: 30px;
+    height: 280px;
+    width: 100%;
+    background-color: var(--cor-hvg, #4f7e8b);
+    color: white;
+    font-family: 'Open Sans',
+        sans-serif;
+}
+
+
+
+/* NAVEGAÇÃO ------------------------------------------------------ */
+
+nav {
+    display: block;
+    position: sticky;
+    top: 0;
+    height: 90px;
+    font-family: 'Prompt',
+        sans-serif;
+    font-size: 16px;
+    line-height: 17px;
+    padding-top: 20px;
+    background-color: white;
+    z-index: 1000;
+}
+
+#logovisse {
+    display: inline-block;
+    width: 210px;
+    margin-right: 4px;
+    margin-left: -5px;
+}
+
+#logovissesintese {
+    width: 67px;
+    margin-right: 4px;
+    margin-left: -5px;
+    display: none;
+}
+
+#lettering {
+    display: inline-block;
+    position: relative;
+    position: relative;
+    top: -20px
+}
+
+#letteringsintese {
+    line-height: 67px;
+    font-size: 38px;
+    font-weight: 700;
+    position: relative;
+    top: -21px;
+    margin-left: -6px;
+    display: none;
+}
+
+#menu {
+    float: right;
+    width: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    height: 24px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+#menu div {
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+}
+
+#menu a {
+    background-color: var(--cor-menu-off-bg, grey);
+    color: var(--cor-menu-off, white);
+    padding: 5px 18px;
+    margin: 1px;
+    border: 2px solid white;
+}
+
+#menu a:hover {
+    background-color: var(--cor-hv3, grey);
+    color: var(--cor-hv0, cyan);
+    border: 4px solid var(--cor-hv3, grey);
+}
+
+
+/* ELEMENTOS TIPOGRÁFICOS ------------------------------ */
+
+h1 {
+
+    font-size: 38px;
+    line-height: 48px;
+    margin-top: 26px;
+    padding-bottom: 6px;
+    font-family: 'Prompt';
+    font-weight: 300;
+    color: var(--cor-invert, white);
+    background-color: var(--cor-hv1);
+    padding-top: 6px;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: inline-block;
+    margin-bottom: 15px;
+    opacity: 0.6;
+
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 23px;
+    margin-top: 26px;
+    padding-bottom: 6px;
+    font-family: 'Prompt';
+    color: var(--cor-hv3, #176b82);
+}
+
+.obra {
+
+    display: inline-block;
+    padding-left: 10px;
+    margin-left: -10px;
+    padding-right: 10px;
+    margin-right: -10px;
+    padding-top: 6px;
+    margin-top: -6px;
+    padding-bottom: 8px;
+    color: var(--cor-hv1, #12a3cb);
+    margin-bottom: 6px;
+
+}
+
+.dadosorientador {
+    display: block;
+    margin-top: -12px;
+    color: var(--cor-hv2);
+}
+
+.obra:hover {
+    background-color: var(--cor-hv1, #12a3cb);
+    color: var(--cor-invert, #FFFFFF);
+}
+
+#midsection .secao p {
+    margin-bottom: 12px;
+    max-width: 1000px;
+}
+
+#midsection .secao p a {
+    display: inline-block;
+    padding-left: 10px;
+    margin-left: -10px;
+    padding-right: 10px;
+    margin-right: -10px;
+    padding-top: 6px;
+    margin-top: -6px;
+    padding-bottom: 8px;
+    margin-bottom: -8px;
+    color: var(--cor-hv1, #12a3cb);
+}
+
+#midsection .secao p a:hover {
+    background-color: var(--cor-hv1, #12a3cb);
+    color: var(--cor-invert, #FFFFFF);
+}
+
+
+
+
+
+/* CONTEUDOS ------------------------------------------- */
+
+.tabelabibliografica {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 0 30px;
+}
+
+.sumario {
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--cor-hv1, #12a3cb);
+}
+
+.indicagrafico {
+    font-family: 'Prompt';
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 12px;
+    display: block;
+    color: var(--cor-texto, #444444);
+    margin-top: 20px;
+}
+
+.listagemgrande {
+    width: 100%;
+    display: grid;
+    gap: 65px 25px;
+}
+
+.duascolunas-pessoas {
+    grid-template-columns: [init] 200px 1fr 240px [fim];
+}
+
+.quatrocolunas-projetos {
+    grid-template-columns: [init] 200px 1fr 200px 1fr[fim];
+}
+
+.listaancora {
+    grid-column: init / fim;
+}
+
+.fotograndepessoa {
+    width: 200px;
+    height: 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tagskeywords {
+    text-align: right;
+}
+
+.tagskeywords b {
+    display: block;
+    width: 100%;
+    text-align: right;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 40px;
+    border-bottom: 1px solid #bbbbbb;
+    margin-top: 80px;
+    margin-bottom: 16px;
+    font-family: 'Open Sans';
+}
+
+.pessoa_interesses {
+    display: inline-block;
+    font-family: 'Open Sans';
+    font-size: 11px !important;
+    line-height: 14px !important;
+    padding: 4px 8px 4px 8px;
+    margin-bottom: 1px !important;
+    margin-top: 0;
+    color: var(--cor-invert, white);
+    background-color: var(--cor-hvg, 6eacbd);
+    border-radius: 2px;
+    margin-right: 4px;
+
+}
+
+.tagskeywords p {
+    margin-bottom: 0 !important;
+}
+
+
+.screenshot {
+    width: 200px;
+    height: 200px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bordaminima {
+    border: thin solid var(--cor-hv3, #96413d);
+    box-shadow: 0px 5px 20px #bbbbbb;
+}
+
+.nome_pessoa {
+    font-size: 26px;
+    line-height: 27px;
+    color: var(--cor-hv1, #12a3cb);
+}
+
+.titulo_post {
+    font-size: 26px;
+    line-height: 27px;
+    color: var(--cor-hv1, #12a3cb);
+}
+
+.postagem {
+    padding: 10px;
+    margin: -10px;
+    color: var(--cor-texto);
+}
+
+.postagem:hover .titulo_post {
+
+    color: var(--cor-invert, #FFFFFF);
+
+}
+
+.postagem:hover {
+    background-color: var(--cor-hv1, #12a3cb);
+    color: var(--cor-invert, #FFFFFF);
+
+}
+
+#introducao b {
+    color: var(--cor-texto, #444444);
+}
+
+#introducao a {
+    color: var(--cor-hv1, #12a3cb);
+    padding: 4px 8px 8px 8px;
+    margin: -8px -8px -8px -4px;
+}
+
+#introducao a:hover {
+    color: var(--cor-invert, #FFFFFF);
+    background-color: var(--cor-hv1, #12a3cb);
+}
+
+.imagem {
+    width: 100%;
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#artefatos .blocoposts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 45px 45px;
+    margin-left: 13px;
+    width: calc(100% - 26px);
+}
+
+.singlepost {
+    padding: 12px 12px 12px 12px;
+    margin: -12px -12px -12px -12px;
+    color: var(--cor-hv1, #12a3cb);
+    box-shadow: 0px 5px 20px #bbbbbb;
+}
+
+.singlepost:hover {
+
+    background-color: var(--cor-hv1, #12a3cb);
+    color: var(--cor-invert, white);
+}
+
+#estatisticas p {
+    font-size: 16px !important;
+    line-height: 46px !important;
+}
+
+#estatisticas p strong {
+
+    color: var(--cor-hv1, #12a3cb);
+}
+
+#materiais .blocoposts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 45px 45px;
+    margin-left: 13px;
+    width: calc(100% - 26px);
+}
+
+#materiais .blocointeiro {
+    padding: 12px 12px 12px 12px;
+    margin: -12px -12px -12px -12px;
+    color: var(--cor-hv1, #12a3cb);
+    box-shadow: 0px 5px 20px #bbbbbb;
+}
+
+#materiais .singlepost {
+    box-shadow: none;
+    width: 100%;
+    display: block;
+}
+
+#materiais .blocointeiro iframe {
+    width: 100%;
+    height: 25vw;
+
+}
+
+.biofull p a,
+#contexto p a {
+
+    display: inline-block;
+    padding-left: 10px;
+    margin-left: -10px;
+    padding-right: 10px;
+    margin-right: -10px;
+    padding-top: 6px;
+    margin-top: -6px;
+    padding-bottom: 8px;
+    margin-bottom: -8px;
+    color: var(--cor-hv1, #12a3cb);
+
+    text-decoration: none;
+
+}
+
+.biofull p a:hover,
+#contexto p a:hover {
+    background-color: var(--cor-hv1, #12a3cb);
+    color: var(--cor-invert, #FFFFFF);
+}
+
+.biofull b,
+#contexto b {
+    color: var(--cor-hv2, #1f8dac);
+
+}
+
+.custombutton {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 26px;
+    height: 26px;
+    border: 3px solid var(--cor-invert, #FFFFFF);
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--cor-hvg, #6eacbd);
+    cursor: pointer;
+    margin-right: 6px;
+    color: var(--cor-invert, #FFFFFF);
+    font-weight: lighter;
+    margin-top: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: 'Open Sans';
+}
+
+.custombutton:hover {
+    background-color: var(--cor-hv1, #12a3cb);
+    border: 3px solid var(--cor-hv1, #12a3cb);
+}
+
+#filtros input {
+    border-bottom: 1px dashed var(--cor-hvg, #6eacbd);
+    width: 500px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 32px;
+}
+
+#filtros input:focus {
+    border-bottom: 1px dotted var(--cor-hvg, #6eacbd);
+}
+
+.lupa {
+    width: 18px;
+    float: left;
+    margin-right: 8px;
+    margin-top: 12px;
+}
+
+.lupa path {
+    fill: var(--cor-hv1, #12a3cb);
+}
+
+.todasaspessoas {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.blocopessoa {
+    display: inline-block;
+    width: 80px;
+    margin-left: 20px;
+    vertical-align: top;
+    margin-bottom: 25px;
+}
+
+
+
+.avatarfoto {
+    width: 60px;
+    height: 60px;
+    background-color: #c6c6c6;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    border-radius: 30px;
+    float: left;
+    margin-bottom: 15px;
+    vertical-align: top;
+}
+
+.avatarnumerodeartigos {
+    background-color: var(--cor-hv3, #176b82);
+    color: white;
+    font-weight: bolder;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 35px;
+    margin-left: 35px;
+}
+
+.avatardetalhes {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.avatardetalhes a {
+    margin: -8px -4px -8px -4px;
+    padding: 4px 8px 4px 8px;
+    background-color: var(--cor-invert, #FFFFFF);
+    display: inline-block;
+    color: var(--cor-hv1, #12a3cb);
+
+}
+
+.avatardetalhes a:hover {
+    display: inline-block;
+    color: var(--cor-invert, #FFFFFF);
+    background-color: var(--cor-hv3, #176b82);
+}
+
+
+.avatarinstituicao {
+    clear: both;
+    font-size: 14px;
+    margin-left: 6px;
+}
+
+#painelcomplementar svg {
+
+    max-height: 350px;
+
+}
+
+
+/* COMPONENTE TIMELINER -------------------------------- */
+
+.timeliner_hoje {
+    fill: var(--cor-hv1, #12a3cb);
+    opacity: 0.2;
+}
+
+.timeliner-lista {
+    display: grid;
+    grid-template-columns: [init] 50px [startmarks] 50px [endmarks] 1fr [fim];
+    gap: 0 0;
+
+}
+
+.timeliner {
+    padding-bottom: 50px;
+}
+
+.timeliner a {
+    fill: var(--cor-hv3, #176b82);
+
+}
+
+.timeliner a:hover {
+
+    fill: var(--cor-hv1, #12a3cb);
+
+}
+
+.timelinerlinhasano {
+    stroke-width: thinline;
+    stroke: var(--cor-hv1, #12a3cb);
+    opacity: 0.1;
+
+}
+
+.timelinelabels {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 800;
+
+}
+
+.timelinemarks {
+    font-size: 9px;
+    line-height: 20px;
+    font-weight: lighter;
+    font-family: 'Open Sans'
+}
+
+.timelinebox {
+    stroke: none;
+    stroke-width: 1;
+    fill: var(--cor-hv1, #12a3cb);
+}
+
+
+.timelinerfundoA {
+    fill: #f5f5f5;
+}
+
+.timelinerfundoB {
+    fill: #e5e5e5;
+}
+
+.timelinercategoria {
+    fill: #00ffff44;
+    font-size: 28px !important;
+    font-weight: bolder;
+    line-height: 28px;
+}
+
+
+.grid_prioridadesvis {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+  }
+
+  .prioridadesvis_grupo {
+    font-weight: bolder;
+    color: var(--cor-hv3, #176b82);
+  }
+
+
+
+
+
+/* RODAPÉ ---------------------------------------------- */
+
+#logosinstitucionais {
+    float: right;
+    width: 400px;
+}
+
+#logoppgdesign {
+    width: 200px;
+    float: right;
+    margin-right: -70px;
+    margin-top: 30px;
+}
+
+
+
+
+
+/* RESPONSIVIDADE -------------------------------------- */
+
+@media screen and (min-width: 1000px) {
+    #midsection .secao p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .obra {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .nome_pessoa {
+        font-size: 32px !important;
+        line-height: 34px !important;
+    }
+}
+
+@media screen and (max-width: 995px) {
+
+    #materiais .blocoposts {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #artefatos .blocoposts {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .duascolunas-pessoas {
+        grid-template-columns: [init] 200px 1fr 100px [fim];
+
+    }
+
+    .quatrocolunas-projetos {
+        grid-template-columns: [init] 200px 1fr [fim];
+    }
+
+
+    #logovisse {
+        /* display: none; */
+    }
+
+    #logovissesintese {
+        /* display: inline-block; */
+    }
+
+    #letteringsintese {
+        /* display: inline-block; */
+    }
+
+    #lettering {
+        display: none;
+    }
+
+    #logosinstitucionais {
+
+        width: 200px;
+    }
+
+    #logoppgdesign {
+        width: 100px;
+        margin-right: 50px;
+        margin-top: 16px;
+        clear: rigth;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    #materiais .blocoposts {
+        grid-template-columns: 1fr;
+    }
+
+    #artefatos .blocoposts {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #painelcomplementar {
+        display: none;
+    }
+
+    #pessoasvisse {
+        display: none;
+    }
+
+    .tabelabibliografica {
+        grid-template-columns: 1fr 1px;
+        gap: 0 0;
+    }
+
+    .tagskeywords {
+        overflow: hidden;
+    }
+
+    .duascolunas-pessoas {
+        grid-template-columns: [init] 200px 1fr 0 [fim];
+
+    }
+
+    #menu {
+        grid-template-columns: 130px 130px;
+        grid-template-rows: 32px 32px;
+        margin-top: 0;
+    }
+
+    #menu a {
+        width: calc(100% - 40px);
+        display: inline-block;
+    }
+
+    #rodape {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+
+}
+
+@media screen and (max-width: 550px) {
+
+    #navbar {
+        height: 140px;
+    }
+
+    #menu {
+        grid-template-columns: 130px;
+        grid-template-rows: 32px 32px 32px 32px;
+        margin-top: -5px;
+    }
+
+    #menu a {
+        width: calc(100% - 40px);
+        display: inline-block;
+    }
+
+}
+
+@media screen and (max-width: 421px) {
+
+    #logovisse {
+        display: none;
+    }
+
+    #logovissesintese {
+        width: 67px;
+        margin-right: 4px;
+        margin-left: -5px;
+        display: inline-block;
+    }
+
+    #letteringsintese {
+        display: inline-block;
+    }
+
+    #lettering {
+        display: none;
+    }
+
+    .duascolunas-pessoas {
+        grid-template-columns: [init] 0 1fr 0 [fim];
+        gap: 10px 0;
+    }
+
+    .duascolunas-pessoas {
+        grid-template-columns: [init] 200px 1fr 0 [fim];
+    }
+
+    .fotograndepessoa {
+        grid-column: init / fim;
+        width: 100%;
+    }
+
+    .biofull {
+        grid-column: init / fim;
+    }
+
+    .tagskeywords {
+        display: none;
+    }
+
+    .quatrocolunas-projetos {
+        grid-template-columns: [init] 1fr [fim];
+        gap: 30px 0;
+    }
+
+    .screenshot {
+        width: 100%;
+        grid-column: init / fim;
+    }
+
+    #rodape svg {
+        margin-bottom: 80px;
+    }
+
+    #midsection .secao p {
+
+        width: calc(100% - 73px);
+    }
+
+    .obra {
+        width: calc(100% - 73px);
+    }
+
+    h2 {
+        width: calc(100% - 73px) !important;
+    }
+
+    .postagem {
+        grid-column: init / fim;
+    }
+
+    .blocoposts {
+        grid-template-columns: 1fr !important;
+    }
+
+    #materiais .blocointeiro iframe {
+        height: 280px;
+    }
+
+}
