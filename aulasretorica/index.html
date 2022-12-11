@@ -57,6 +57,12 @@
     <link rel="stylesheet" type="text/css" href="../form.css" />
     <script src="https://www.ranoya.com/Assets/JSLibs/visse/logovisse2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+
+    <style>
+      #aulas_private {
+        display: none;
+      }
+    </style>
   </head>
 
   <body>
@@ -93,42 +99,13 @@
 
           <div id="observablehq-descricaometodo-2c7e88ef"></div>
           <div id="observablehq-descricaoavaliacao-2c7e88ef"></div>
-          <div id="observablehq-listaaulas_publico-2c7e88ef"></div>
+          <div id="aulas_publico"></div>
+          <div id="aulas_private"></div>
         </div>
       </div>
     </div>
 
     <div id="observablehq-descricaoobjetivos-d875aeac"></div>
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
-    />
-    <script type="module">
-      import {
-        Runtime,
-        Inspector,
-      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/ppgdesign-rvdi@122.js?v=3";
-      new Runtime().module(define, (name) => {
-        if (name === "descricaoobjetivos")
-          return new Inspector(
-            document.querySelector("#observablehq-descricaoobjetivos-2c7e88ef")
-          );
-        if (name === "descricaometodo")
-          return new Inspector(
-            document.querySelector("#observablehq-descricaometodo-2c7e88ef")
-          );
-        if (name === "descricaoavaliacao")
-          return new Inspector(
-            document.querySelector("#observablehq-descricaoavaliacao-2c7e88ef")
-          );
-        if (name === "listaaulas_publico")
-          return new Inspector(
-            document.querySelector("#observablehq-listaaulas_publico-2c7e88ef")
-          );
-      });
-    </script>
 
     <div id="rodape">
       <div class="secao">
@@ -205,12 +182,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@3/dist/inspector.css"
     />
+
     <script type="module">
       import {
         Runtime,
         Inspector,
-      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/ppgdesign-rvdi.js?v=3";
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/ppgdesign-rvdi@122.js?v=3";
       new Runtime().module(define, (name) => {
         if (name === "descricaoobjetivos")
           return new Inspector(
@@ -225,9 +203,9 @@
             document.querySelector("#observablehq-descricaoavaliacao-2c7e88ef")
           );
         if (name === "listaaulas_publico")
-          return new Inspector(
-            document.querySelector("#observablehq-listaaulas_publico-2c7e88ef")
-          );
+          return new Inspector(document.querySelector("#aulas_publico"));
+        if (name === "listaaulas")
+          return new Inspector(document.querySelector("#aulas_private"));
       });
     </script>
 
@@ -265,6 +243,15 @@
           }
         }
       })();
+
+      if (
+        typeof $_GET["p"] != "undefined" &&
+        $_GET["p"] != "" &&
+        $_GET["p"] != null
+      ) {
+        document.getElementById("aulas_publico").style.display = "none";
+        document.getElementById("aulas_private").style.display = "block";
+      }
 
       if (typeof $_GET["theme"] != "undefined") {
         localStorage.setItem("tema", $_GET["theme"]);
