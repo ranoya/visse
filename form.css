@@ -295,6 +295,14 @@ h3 {
   background-size: cover;
 }
 
+.fotomediapessoa {
+  width: 200px;
+  height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .tagskeywords {
   text-align: right;
 }
