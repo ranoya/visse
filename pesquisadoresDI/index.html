@@ -83,10 +83,6 @@
                 <div id="observablehq-estatisticas"></div>
                 <br>
                 <div id="observablehq-quadropesquisadores"></div>
-
-                <br><br>
-                <a name="pesquisas"></a>
-                <h2>PESQUISAS</h2>
                 <div id="observablehq-tabela2"></div>
 
                 <br><br><br><br>
@@ -118,6 +114,10 @@
 
 
                 <style>
+
+                    #observablehq-quadropesquisadores {
+                        display: none;
+                    }
 
                     .painelprodutividade h2 {
                         margin-top: 0;
@@ -441,6 +441,18 @@
 
 
         }
+
+        seleciona = function(quem) {
+            document.getElementsByTagName("input")[0].value = quem;
+            document.getElementsByTagName("input")[0].dispatchEvent(
+                                    new Event("input", {
+                                        bubbles: true,
+                                    })
+                                );
+        
+
+        window.location.href = "#contentmark";
+    }
     </script>
 
 
