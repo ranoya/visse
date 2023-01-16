@@ -69,14 +69,18 @@
                 <h1>PESQUISADORES DE DESIGN DA INFORMAÇÃO / PPGDESIGN</h1>
 
                 
-                
+                <svg class="lupa" viewBox="0 0 609 561" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M609 248C609 384.967 497.967 496 361 496C304.807 496 252.978 477.311 211.392 445.809L70.6797 560.279L0 473.397L139.59 359.84C122.582 326.236 113 288.237 113 248C113 111.033 224.033 0 361 0C497.967 0 609 111.033 609 248ZM521 248C521 336.366 449.365 408 361 408C272.635 408 201 336.366 201 248C201 159.634 272.635 88 361 88C449.365 88 521 159.634 521 248Z"></path>
+                </svg>
                 <div id="observablehq-viewof-filtros"></div>
                 <div id="observablehq-navega"></div>
-                <div id="observablehq-estatisticas"></div>
+                
 
                 <br><br>
                 <a name="pessoas"></a>
                 <h2>PESQUISADORES</h2>
+                <div id="observablehq-estatisticas"></div>
+                <br>
                 <div id="observablehq-quadropesquisadores"></div>
 
                 <br><br>
@@ -114,44 +118,52 @@
 
                 <style>
 
+                    .lupa {
+    width: 18px;
+    float: left;
+    margin-right: 8px;
+    margin-top: 12px;
+}
+
+                    #observablehq-viewof-filtros input {
+    border-bottom: 1px dashed var(--cor-hvg, #6eacbd);
+    width: 500px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 32px;
+}
+
           .custombutton {
-    display: inline-block;
+        display: inline-block;
     font-size: 16px;
     line-height: 26px;
     height: 26px;
-    
-    /* border: 1px solid white;
+    border: 3px solid var(--cor-invert, #ffffff);
     padding-left: 10px;
     padding-right: 10px;
-    background-color: grey; 
-    margin-right: 6px;
-    color: white;
-    border-radius: 6px;
-    */
-
+    background-color: var(--cor-hvg, #6eacbd);
     cursor: pointer;
-    background-color: var(--cor-menu-off-bg, grey);
-    color: var(--cor-menu-off, white);
-    padding: 5px 18px;
-    margin: 1px;
-    border: 2px solid white;
+    margin-right: 6px;
+    color: var(--cor-invert, #ffffff);
+    font-weight: lighter;
+    margin-top: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: "Open Sans";
   }
 
   .custombutton:hover {
-    /* background-color: black;
-    border: 1px solid black; */
-
-    background-color: var(--cor-hv3, grey);
-    color: var(--cor-hv0, cyan);
+    background-color: var(--cor-hv1, #12a3cb);
+    border: 3px solid var(--cor-hv1, #12a3cb);
     
   }
 
-  .midsection a {
+  .midsection a, .autoreorientador a, .painelprodutividade a {
     color: var(--cor-hv1, #12a3cb) !important;
     display: inline-block;
   }
 
-  .midsection a:hover {
+  .midsection a:hover, .autoreorientador a:hover, .painelprodutividade a:hover {
     background-color: var(--cor-hv1, #12a3cb) !important;
     color: var(--cor-invert, #FFFFFF) !important;
   }
