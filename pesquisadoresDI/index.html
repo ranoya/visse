@@ -120,7 +120,11 @@
                     }
 
                     .painelprodutividade h2 {
-                        margin-top: 0;
+                        margin-top: 8px;
+                    }
+
+                    .statisdireito {
+                        text-align: right;
                     }
 
                     .painelprodutividade div {
@@ -452,6 +456,13 @@
         
 
         window.location.href = "#contentmark";
+    }
+
+    trocadisplay = function(quem) {
+        document.getElementById("observablehq-tabela2").style.display = "none";
+        document.getElementById("observablehq-quadropesquisadores").style.display = "none";
+        document.getElementById(quem).style.display = "block";
+
     }
     </script>
 
