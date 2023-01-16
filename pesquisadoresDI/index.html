@@ -79,6 +79,34 @@
 
                 <br><br>
                 <a name="pessoas"></a>
+                <div class="mudainterface">
+
+                    <svg class='iconinterface' onclick='trocadisplay("observablehq-quadropesquisadores");' viewBox="0 0 848 848" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="848" height="848" class="iconfundo"/>
+                    <rect x="94" y="98" width="188" height="188" class="iconfore"/>
+                    <rect x="330" y="98" width="188" height="188" class="iconfore"/>
+                    <rect x="94" y="330" width="188" height="188" class="iconfore"/>
+                    <rect x="330" y="330" width="188" height="188" class="iconfore"/>
+                    <rect x="566" y="98" width="188" height="188" class="iconfore"/>
+                    <rect x="566" y="330" width="188" height="188" class="iconfore"/>
+                    <rect x="94" y="562" width="188" height="188" class="iconfore"/>
+                    <rect x="330" y="562" width="188" height="188" class="iconfore"/>
+                    <rect x="566" y="562" width="188" height="188" class="iconfore"/>
+                    </svg>
+
+                    <svg class='iconinterface' onclick='trocadisplay("observablehq-tabela2");' viewBox="0 0 848 848" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="848" height="848" class="iconfundo"/>
+<rect x="94" y="98" width="188" height="188" class="iconfore"/>
+<rect x="94" y="330" width="188" height="188" class="iconfore"/>
+<rect x="94" y="562" width="188" height="188" class="iconfore"/>
+<rect x="348" y="156" width="404" height="72" class="iconfore"/>
+<rect x="348" y="388" width="404" height="72" class="iconfore"/>
+<rect x="348" y="620" width="404" height="72" class="iconfore"/>
+</svg>
+
+
+
+                </div>
                 <h2>PESQUISADORES</h2>
                 <div id="observablehq-estatisticas"></div>
                 <br>
@@ -114,6 +142,32 @@
 
 
                 <style>
+
+                    .iconinterface {
+                        width: 23px;
+                        height: 23px;
+                        cursor: pointer;
+                    }
+
+                    .iconfore {
+                        fill: var(--cor-hv3, #176b82);
+                    }
+
+                    .iconfundo {
+                        fill: var(--cor-leve, #89a1a8);
+                    }
+
+                    .iconinterface:hover iconfundo {
+                        fill: var(--cor-hv0, cyan);
+                    }
+
+                    .mudainterface {
+                        float: left;
+                        margin-right: 16px;
+                        height: 23px;
+                        display: grid;
+                        gap: 0 2px;
+                    }
 
                     #observablehq-quadropesquisadores {
                         display: none;
