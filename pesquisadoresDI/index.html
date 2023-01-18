@@ -541,9 +541,8 @@
 
     nomeia = function(quem) {
         document.getElementById("labeling").style.display="block";
-        let event = event || window.event; // IE-ism
-        document.getElementById("labeling").style.left = event.pageX;
-        document.getElementById("labeling").style.top = event.pageY;
+        document.getElementById("labeling").style.left = event.clientX + "px";
+        document.getElementById("labeling").style.top = event.clientY + "px";
         document.getElementById("labeling").innerHTML = quem;
     }
 
