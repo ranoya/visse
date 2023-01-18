@@ -104,10 +104,11 @@
 <rect x="348" y="620" width="404" height="72" class="iconfore"/>
 </svg>
 
+                </div>
+
+
                 <div id="labeling"></div>
 
-
-                </div>
                 <h2 style="margin-top: 0;">PESQUISADORES</h2>
                 <div id="observablehq-estatisticas"></div>
                 <br>
@@ -148,7 +149,7 @@
                         position: fixed;
                         display: none;
                         width: auto;
-                        heigh: auto;
+                        height: auto;
                         padding: 8px;
                         background-color: var(--cor-hv3, #176b82);
                         color: var(--cor-invert, #FFFFFF);
@@ -386,18 +387,6 @@
 
         </div>
     </div>
-
-
-
-    <script type="module">
-        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                import define from "https://api.observablehq.com/@ranoya/pessoas-do-visse.js?v=3";
-                new Runtime().module(define, name => {
-                if (name === "contexto") return new Inspector(document.querySelector("#contexto"));
-                if (name === "grupocompleto") return new Inspector(document.querySelector("#grupodepessoas"));
-                });
-    </script>
-
 
 
     <script type="module">
