@@ -505,7 +505,7 @@
 
         }
 
-        seleciona = function(quem) {
+        let seleciona = function(quem) {
             document.getElementById("labeling").style.display="none";
             document.getElementsByTagName("input")[0].value = quem;
             document.getElementsByTagName("input")[0].dispatchEvent(
@@ -518,7 +518,7 @@
         window.location.href = "#contentmark";
     }
 
-        selecionaB = function(quem) {
+        let selecionaB = function(quem) {
             document.getElementById("labeling").style.display="none";
             document.getElementsByTagName("input")[0].value = quem;
             document.getElementsByTagName("input")[0].dispatchEvent(
@@ -527,11 +527,11 @@
                                     })
                                 );
         
-        trocadisplay('observablehq-tabela2');
+        let trocadisplay('observablehq-tabela2');
         window.location.href = "#contentmark";
     }
 
-    trocadisplay = function(quem) {
+    let trocadisplay = function(quem) {
         document.getElementById("labeling").style.display="none";
         document.getElementById("observablehq-tabela2").style.display = "none";
         document.getElementById("observablehq-quadropesquisadores").style.display = "none";
@@ -539,7 +539,7 @@
 
     }
 
-    nomeia = function(quem) {
+    let nomeia = function(event,quem) {
         document.getElementById("labeling").style.display="block";
         document.getElementById("labeling").style.left = event.clientX + "px";
         document.getElementById("labeling").style.top = event.clientY + "px";
