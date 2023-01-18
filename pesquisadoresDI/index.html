@@ -104,6 +104,7 @@
 <rect x="348" y="620" width="404" height="72" class="iconfore"/>
 </svg>
 
+                <div id="labeling"></div>
 
 
                 </div>
@@ -142,6 +143,18 @@
 
 
                 <style>
+
+                    #labeling {
+                        position: fixed;
+                        display: none;
+                        width: auto;
+                        heigh: auto;
+                        padding: 8px;
+                        background-color: var(--cor-hv3, #176b82);
+                        color: var(--cor-invert, #FFFFFF);
+                        box-shadow: 0px 3px 12px #bbbbbb;
+                        z-index: 5000;
+                    }
 
                     .iconinterface {
                         width: 23px;
@@ -469,6 +482,8 @@
 
         document.onscroll = function () {
 
+            document.getElementById("labeling").style.display="none";
+
             if (document.documentElement.scrollTop > 20) {
                 document.getElementById("wrap").style.width = "calc(100% - 40px)";
                 document.getElementById("wrap").style.border = "20px solid var(--cor-hvg, grey)";
@@ -502,6 +517,7 @@
         }
 
         seleciona = function(quem) {
+            document.getElementById("labeling").style.display="none";
             document.getElementsByTagName("input")[0].value = quem;
             document.getElementsByTagName("input")[0].dispatchEvent(
                                     new Event("input", {
@@ -513,12 +529,36 @@
         window.location.href = "#contentmark";
     }
 
+        selecionaB = function(quem) {
+            document.getElementById("labeling").style.display="none";
+            document.getElementsByTagName("input")[0].value = quem;
+            document.getElementsByTagName("input")[0].dispatchEvent(
+                                    new Event("input", {
+                                        bubbles: true,
+                                    })
+                                );
+        
+        trocadisplay('observablehq-tabela2');
+        window.location.href = "#contentmark";
+    }
+
     trocadisplay = function(quem) {
+        document.getElementById("labeling").style.display="none";
         document.getElementById("observablehq-tabela2").style.display = "none";
         document.getElementById("observablehq-quadropesquisadores").style.display = "none";
         document.getElementById(quem).style.display = "block";
 
     }
+
+    nomeia = function(quem) {
+        document.getElementById("labeling").style.display="block";
+        let event = event || window.event; // IE-ism
+        document.getElementById("labeling").style.left = event.pageX;
+        document.getElementById("labeling").style.top = event.pageY;
+        document.getElementById("labeling").innerHTML = quem;
+    }
+
+
     </script>
 
 
