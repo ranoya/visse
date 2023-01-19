@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8" />
+
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        color: #ffffff;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .formulariowrap {
+        color: #ff666c;
+        width: 100vw;
+        margin-top: 20vh;
+        text-align: center;
+      }
+
+      input {
+        width: 200px;
+        height: 18px;
+        border: #ff666c 1px solid;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: Helvetica, Arial, sans-serif;
+        margin-right: 10px;
+        color: #ff666c;
+        padding: 7px;
+      }
+
+      .formulariowrap a {
+        width: 70px;
+        height: 18px;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: Helvetica, Arial, sans-serif;
+        background-color: #ff666c;
+        color: white;
+        padding: 7px;
+        text-decoration: none;
+      }
+
+      .logoform {
+        width: 200px;
+        background-color: #ff666c;
+        padding: 20px;
+      }
+
+      .formulariowrap a:hover {
+        background-color: grey;
+      }
+
+      .certificadowrap {
+        width: 80vw;
+        height: 45vw;
+        padding: 5vw;
+        padding-top: 0;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+
+      .tudo {
+        padding: 5vw;
+        width: 90vw;
+        display: inline-block;
+        height: 40vw;
+        margin-bottom: 30px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      .textonormal {
+        clear: both;
+        font-size: 2.5vw;
+        line-height: 3vw;
+        padding-top: 16.7vw;
+      }
+
+      .numerocpf,
+      .periodo {
+        font-size: 2vw;
+      }
+
+      .tipodeatividade {
+        font-weight: bolder;
+        text-decoration: underline;
+      }
+
+      .nome,
+      .projeto {
+        font-weight: bolder;
+      }
+
+      .grafismo {
+        float: left;
+        width: 30vw;
+        height: 7.5vw;
+        overflow: hidden;
+        margin-left: 0;
+        margin-top: 0;
+      }
+
+      .assinatura {
+        font-size: 1.5vw;
+        text-align: center;
+        width: 40%;
+        margin-left: 23vw;
+        margin-top: 1.5vw;
+        display: inline-block;
+      }
+
+      .qrs {
+        float: left;
+        height: 8vw;
+        margin-left: -3vw;
+        display: none;
+      }
+
+      .qrs svg {
+        width: 8vw;
+        height: 8vw;
+      }
+
+      .linha {
+        width: 32vw;
+        height: 2px;
+        background-color: white;
+        display: inline-block;
+      }
+
+      .logoufpe {
+        margin-top: 3vw;
+        width: 8vw;
+        float: left;
+        clear: left;
+      }
+
+      .guilherme {
+        width: 15vw;
+        position: relative;
+        top: -7.3vw;
+        margin-bottom: -10vw;
+      }
+
+      .logoprojetao {
+        float: right;
+        margin-top: 2vw;
+        width: 15vw;
+      }
+
+      .logopath {
+        fill: #ffffff;
+      }
+
+      .fundo {
+        fill: transparent;
+      }
+
+      .vermelhoufpe {
+        fill: #e9a5b8;
+      }
+
+      .comprova {
+        text-align: right;
+        width: 40vw;
+        float: right;
+        margin-top: 2.5vw;
+        font-size: 1vw;
+        line-height: 1.2vw;
+      }
+
+      .inverte {
+        stroke: white;
+      }
+
+      .guilherme .inverte {
+        stroke: transparent;
+        fill: white;
+      }
+
+      .invertehalf {
+        fill: white;
+        fill-opacity: 0.5;
+      }
+    </style>
+
+    <script src="https://www.ranoya.com/Assets/JSLibs/QRCodeSVG/qrcode.min.js"></script>
+    <script src="https://www.ranoya.com/Assets/JSLibs/DataT/basics.js"></script>
+  </head>
+
+  <body>
+    <script>
+      $_GET = [];
+      (function () {
+        let corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          let argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let timestamp = "";
+      let docs = "";
+      let lista = [];
+      let contalista = 0;
+      const geracertificados = function (dados) {
+        for (let i = 0; i < dados.length; i++) {
+          if ($_GET["cpf"] == dados[i].CPF || $_GET["reg"] == dados[i].CPF) {
+            lista[contalista] = dados[i];
+            if (typeof lista[contalista].tipodeatividade == "undefined") {
+              lista[contalista].tipodeatividade = "";
+            }
+            if (typeof lista[contalista].NomeEvento == "undefined") {
+              lista[contalista].NomeEvento = "";
+            }
+            contalista++;
+          }
+        }
+
+        for (let k = 0; k < lista.length; k++) {
+          timestamp = new Date().getTime();
+          docs += `<div class='tudo'><div class='certificadowrap' style='background-image: url("https://visse.vercel.app/certificados/${lista[k].Modelo}.svg");'>`;
+          docs += `<p class='textonormal'>Certificamos que <span class='nome'>${lista[k].Nome}</span>, portador(a) do CPF número <span class='numerocpf'>${lista[k].CPF}</span> <span class='numerocpf'>${lista[k].Tipo}</span> <span class='tipodeatividade'>${lista[k]["Título"]}</span>, <span class='periodo'>${lista[k]["Período"]}</span>, com duração de <span class='duracao'>${lista[k]["Duração"]}</span> <span class='projeto'>${lista[k].NomeEvento}</span>.</p>`;
+
+          docs += `<p class='comprova'>Este documento foi gerado digitalmente direto do website do Laboratório de Visualização e Sentidos (VISSE), no timestamp ${timestamp}, e pode ser verificado/validado em qualquer momento na url: <a href='https://visse.vercel.app/certificados/?reg=${lista[k].CPF}'>https://visse.vercel.app/certificados/?reg=${lista[k].CPF}</a></p>`;
+
+          docs += `</div></div>`;
+        }
+
+        console.table(lista);
+        document.getElementById("full").innerHTML = docs;
+      };
+
+      getdata(
+        googlesheet(
+          "https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1919038367",
+          "CERTIFICADOS"
+        ),
+        geracertificados
+      );
+    </script>
+  </body>
+  <div id="full"></div>
+</html>
