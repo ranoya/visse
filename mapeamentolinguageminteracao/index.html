@@ -109,6 +109,7 @@
           <div id="filtros"></div>
           <div id="criterios"></div>
           <div id="subcriterios"></div>
+          <div id="subenquadra"></div>
 
           <div id="estatisticas"></div>
           <br />
@@ -211,6 +212,8 @@
           return new Inspector(document.querySelector("#criterios"));
         if (name === "subnavexemplos")
           return new Inspector(document.querySelector("#subcriterios"));
+        if (name === "navenquadramentos")
+          return new Inspector(document.querySelector("subenquadra"));
         if (name === "curadoria")
           return new Inspector(document.querySelector("#artefatos"));
         if (name === "stats")
