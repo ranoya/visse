@@ -107,10 +107,17 @@
           </svg>
 
           <div id="filtros"></div>
-          <div id="criterios"></div>
-          <div id="subcriterios"></div>
-          <div id="subenquadra"></div>
-          <div id="subrefs"></div>
+
+          <div id="botoes">
+            <div id="criterios"></div>
+            <div id="subcriterios"></div>
+            <div id="subenquadra"></div>
+            <div id="subrefs"></div>
+            <div>
+              Artefatos selecionados<br /><br />
+              <div id="navselected"></div>
+            </div>
+          </div>
 
           <div id="estatisticas"></div>
           <br />
@@ -221,10 +228,18 @@
           return new Inspector(document.querySelector("#artefatos"));
         if (name === "stats")
           return new Inspector(document.querySelector("#estatisticas"));
+        if (name === "navseries")
+          return new Inspector(document.querySelector("#navselected"));
       });
     </script>
 
     <style>
+      #botoes {
+        display: grid;
+        grid-template-columns: 1fr 120px;
+        gap: 0 8px;
+      }
+
       .buttonspecial {
         background-color: var(--fg-color, #176b82);
       }
