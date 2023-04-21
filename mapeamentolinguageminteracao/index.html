@@ -115,8 +115,11 @@
               <div id="subrefs"></div>
             </div>
             <div>
-              Artefatos selecionados<br /><br />
+              <span class="selecionados">Artefatos selecionados</span
+              ><br /><br />
               <div id="navselected"></div>
+              <span class="selecionados">Referências</span><br /><br />
+              <div id="subrefs"></div>
             </div>
           </div>
 
@@ -235,7 +238,7 @@
     <style>
       #botoes {
         display: grid;
-        grid-template-columns: 1fr 180px;
+        grid-template-columns: 1fr 40%;
         gap: 0 8px;
       }
 
@@ -294,6 +297,14 @@
       .singlepost:hover .singlepostlink {
         color: var(--cor-invert, white);
         background-color: var(--cor-hv1, #12a3cb);
+      }
+
+      .selecionados {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 26px;
+        height: 26px;
+        border: 3px solid transparent;
       }
 
       #artefatos .blocoposts {
