@@ -111,7 +111,6 @@
           <div id="botoes">
             <div>
               <div id="criterios"></div>
-              <div id="subcriterios"></div>
               <div id="subenquadra"></div>
               <div id="subrefs"></div>
             </div>
@@ -220,8 +219,6 @@
           return new Inspector(document.querySelector("#filtros"));
         if (name === "navexemplos")
           return new Inspector(document.querySelector("#criterios"));
-        if (name === "subnavexemplos")
-          return new Inspector(document.querySelector("#subcriterios"));
         if (name === "navenquadramentos")
           return new Inspector(document.querySelector("#subenquadra"));
         if (name === "navreferencias")
