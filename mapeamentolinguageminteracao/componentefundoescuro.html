@@ -94,11 +94,62 @@
     </script>
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Open+Sans:wght@300;400;700&family=Prompt:wght@100;300;600&display=swap");
+
       body {
         margin: 40px;
         margin-right: 60px;
         margin-bottom: 80px;
         background-color: #a59b04;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      #artefatos .blocoposts {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 45px 45px;
+        margin-left: 13px;
+        width: calc(100% - 26px);
+      }
+      .blocoposts {
+        grid-column: 3 / Span 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px 40px;
+        margin-bottom: 20px;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        text-decoration: none;
+        transition: all 0.2s ease-in;
+      }
+
+      .custombutton {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 26px;
+        height: 26px;
+        border: 3px solid #ffffff44;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #ffffff44;
+        cursor: pointer;
+        margin-right: 6px;
+        color: #555555;
+        font-weight: lighter;
+        margin-top: 4px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-family: "Open Sans";
+      }
+
+      .singlepost {
+        padding: 12px 12px 12px 12px;
+        margin: -12px -12px -12px -12px;
+        color: #555555;
+        box-shadow: 0px 5px 20px #bbbbbb;
       }
 
       #botoes {
