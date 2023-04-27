@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>VISSE</title>
+    <meta property="og:title" content="VISSE" />
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="description"
+      content="Mapeamento de artefatos de visualização, organizado pelo Laboratório de Visualização e Sentidos do Nordeste"
+    />
+    <meta
+      property="og:description"
+      content="Mapeamento de artefatos de visualização, organizado pelo Laboratório de Visualização e Sentidos do Nordeste"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta property="og:url" content="https://visse.cin.ufpe.br" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta
+      property="og:site_name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta
+      name="application-name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://drive.google.com/uc?export=view&id=11Gf-Q3wqLBVlrYQ3h1sBqNJkA33URY4L"
+    />
+  </head>
+
+  <body>
+    <div id="filtros"></div>
+
+    <div id="criterios"></div>
+
+    <div id="estatisticas"></div>
+
+    <br />
+    <br />
+
+    <div id="artefatos">
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+
+    <br />
+
+    <br /><br />
+
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/linguagem-jogos.js?v=3";
+      new Runtime().module(define, (name) => {
+        if (name === "viewof filtros")
+          return new Inspector(document.querySelector("#filtros"));
+        if (name === "navindustriasprincipal")
+          return new Inspector(document.querySelector("#criterios"));
+
+        if (name === "curadoria")
+          return new Inspector(document.querySelector("#artefatos"));
+        if (name === "stats")
+          return new Inspector(document.querySelector("#estatisticas"));
+      });
+    </script>
+
+    <style>
+      body {
+        margin: 40px;
+        margin-right: 60px;
+        margin-bottom: 80px;
+        background-color: #a59b04;
+      }
+
+      #botoes {
+        display: grid;
+        grid-template-columns: 1fr 40%;
+        gap: 0 8px;
+      }
+
+      .buttonspecial {
+        background-color: #ffffff88;
+      }
+
+      .buttonspecial:hover {
+        background-color: #ffffffff;
+        border: 3px solid #ffffffff;
+      }
+
+      .subcustombutton {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 26px;
+        height: 26px;
+        border: 3px solid #ffffff44;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #ffffff44;
+        cursor: pointer;
+        margin-right: 6px;
+        color: #555555;
+        font-weight: lighter;
+        margin-top: 4px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-family: "Open Sans";
+      }
+
+      .subcustombutton:hover {
+        background-color: #ffffffff;
+        border: 3px solid #ffffffff;
+      }
+
+      .singlepostlink {
+        padding: 42px 12px 12px 12px;
+        margin: -42px -12px -12px -12px;
+        color: #555555;
+      }
+
+      .singlepostlink:hover {
+        background-color: #ffffffdd;
+        color: #555555;
+      }
+
+      .matframe {
+        width: 100%;
+        padding-top: 56%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .singlepost:hover .singlepostlink {
+        color: #555555;
+        background-color: #ffffffdd;
+      }
+
+      .selecionados {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 26px;
+        height: 26px;
+        border: 3px solid transparent;
+        margin-top: 4px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
+      #artefatos .blocoposts {
+        width: 100% !important;
+      }
+
+      @media screen and (max-width: 1000px) {
+        #artefatos .blocoposts {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        #artefatos .blocoposts {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        #artefatos .blocoposts {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </body>
+</html>
