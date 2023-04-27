@@ -61,6 +61,8 @@
 
     <div id="criterios"></div>
 
+    <br />
+
     <div id="estatisticas"></div>
 
     <br />
@@ -104,6 +106,18 @@
         font-family: "Open Sans", sans-serif;
       }
 
+      #filtros input {
+        border-bottom: 1px dashed #ffffffff;
+        width: 500px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 32px;
+      }
+
+      #filtros input:focus {
+        border-bottom: 1px dotted #ffffffff;
+      }
+
       #artefatos .blocoposts {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -124,6 +138,7 @@
         border: 0;
         text-decoration: none;
         transition: all 0.2s ease-in;
+        color: #555555;
       }
 
       .custombutton {
@@ -131,7 +146,7 @@
         font-size: 16px;
         line-height: 26px;
         height: 26px;
-        border: 3px solid #ffffff44;
+        border: 3px solid #ffffff00;
         padding-left: 10px;
         padding-right: 10px;
         background-color: #ffffff44;
@@ -145,11 +160,21 @@
         font-family: "Open Sans";
       }
 
+      .custombutton:hover {
+        background-color: #ffffffff;
+        border: 3px solid #ffffffff;
+      }
+
       .singlepost {
         padding: 12px 12px 12px 12px;
         margin: -12px -12px -12px -12px;
         color: #555555;
         box-shadow: 0px 5px 20px #bbbbbb;
+      }
+
+      .singlepost:hover {
+        background-color: #ffffffff;
+        color: #555555;
       }
 
       #botoes {
@@ -160,6 +185,7 @@
 
       .buttonspecial {
         background-color: #ffffff88;
+        border: 3px solid #ffffff00;
       }
 
       .buttonspecial:hover {
