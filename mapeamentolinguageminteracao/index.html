@@ -174,7 +174,10 @@
       </div>
     </div>
 
-    <div id="filtroescondido"></div>
+    <div
+      id="filtroescondido"
+      style="overflow: hidden; width: 0; height: 0"
+    ></div>
 
     <div id="rodape">
       <div class="secao">
@@ -591,7 +594,7 @@
         temporiza = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[1] != "undefined") {
             document.getElementsByTagName("input")[1].value = decodeURI(
-              $_GET["filtra"]
+              $_GET["filtra"] + " "
             );
             document.getElementsByTagName("input")[1].dispatchEvent(
               new Event("input", {

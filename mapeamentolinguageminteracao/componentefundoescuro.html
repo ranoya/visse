@@ -76,6 +76,11 @@
 
     <br /><br />
 
+    <div
+      id="filtroescondido"
+      style="overflow: hidden; width: 0; height: 0"
+    ></div>
+
     <script type="module">
       import {
         Runtime,
@@ -92,6 +97,8 @@
           return new Inspector(document.querySelector("#artefatos"));
         if (name === "stats")
           return new Inspector(document.querySelector("#estatisticas"));
+        if (name === "viewof shadowfiltro")
+          return new Inspector(document.querySelector("#filtroescondido"));
       });
     </script>
 
@@ -307,11 +314,11 @@
         $_GET["filtra"] != null
       ) {
         temporiza = setInterval(function () {
-          if (typeof document.getElementsByTagName("input")[0] != "undefined") {
-            document.getElementsByTagName("input")[0].value = decodeURI(
-              $_GET["filtra"]
+          if (typeof document.getElementsByTagName("input")[1] != "undefined") {
+            document.getElementsByTagName("input")[1].value = decodeURI(
+              $_GET["filtra"] + " "
             );
-            document.getElementsByTagName("input")[0].dispatchEvent(
+            document.getElementsByTagName("input")[1].dispatchEvent(
               new Event("input", {
                 bubbles: true,
               })
