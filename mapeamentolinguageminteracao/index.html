@@ -125,10 +125,21 @@
           </div>
           <br />
 
+          <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
+
           <div id="blocosseletores">
-            <div id="botslide-0" onclick="trocaslide(0);">Artefatos</div>
-            <div id="botslide-1" onclick="trocaslide(1);">Aspectos</div>
+            <div id="botslide-0" onclick="trocaslide(0);" class="abaaberta">
+              Artefatos
+            </div>
+            <div id="botslide-1" onclick="trocaslide(1);">
+              Aspectos Pictóricos
+            </div>
+            <div id="botslide-2" onclick="trocaslide(2);">
+              Aspectos de Leitura
+            </div>
           </div>
+
+          <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
 
           <div id="blocoslide">
             <div id="paineis">
@@ -145,7 +156,9 @@
                 <div id="painelpictorico">
                   <br />
                 </div>
+              </div>
 
+              <div id="slide-3">
                 <div id="painelleitura">
                   <br />
                 </div>
@@ -233,8 +246,16 @@
     </div>
 
     <script>
+      botexistem = [];
       trocaslide = function (n) {
+        botexistem[n] = true;
         document.getElementById("paineis").style.marginLeft = n * -100 + "%";
+        for (let i = 0; i < botexistem.length; i++) {
+          document
+            .getElementById("botslide-" + i)
+            .classList.remove("abaaberta");
+        }
+        document.getElementById("botslide-" + n).classList.add("abaaberta");
       };
     </script>
 
@@ -271,6 +292,10 @@
     <style>
       .slidehor {
         width: calc(100% - 40px);
+      }
+
+      .abaaberta {
+        background-color: var(--cor-hvg, #6eacbd);
       }
 
       #blocosseletores div {
