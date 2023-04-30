@@ -124,11 +124,33 @@
             </div>
           </div>
           <br />
-          <div id="estatisticas"></div>
-          <br />
 
-          <div id="artefatos">
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <div id="blocosseletores">
+            <div id="botslide-0" onclick="trocaslide(0);">Artefatos</div>
+            <div id="botslide-1" onclick="trocaslide(1);">Aspectos</div>
+          </div>
+
+          <div id="blocoslide">
+            <div id="paineis">
+              <div id="slide-1">
+                <div id="estatisticas"></div>
+                <br />
+
+                <div id="artefatos">
+                  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                </div>
+              </div>
+
+              <div id="slide-2">
+                <div id="painelpictorico">
+                  <br />
+                </div>
+
+                <div id="painelleitura">
+                  <br />
+                </div>
+              </div>
+            </div>
           </div>
 
           <br />
@@ -210,6 +232,12 @@
       </div>
     </div>
 
+    <script>
+      trocaslide = function (n) {
+        document.getElementById("paineis").style.marginLeft = n * -100 + "%";
+      };
+    </script>
+
     <script type="module">
       import {
         Runtime,
@@ -233,10 +261,30 @@
           return new Inspector(document.querySelector("#estatisticas"));
         if (name === "navseries")
           return new Inspector(document.querySelector("#navselected"));
+        if (name === "descrevelinguages")
+          return new Inspector(document.querySelector("#painelpictorico"));
+        if (name === "descreveleituras")
+          return new Inspector(document.querySelector("#painelleitura"));
       });
     </script>
 
     <style>
+      #blocoslide {
+        height: auto;
+        width: 100%;
+        overflow-x: hidden;
+        border: 1px solid red;
+      }
+
+      #paineis {
+        display: grid;
+        width: 200%;
+        grid-template-columns: 100% 100%;
+        grid-template-rows: auto;
+        gap: 0 0;
+        transition: all 0.4s ease-in;
+      }
+
       #botoes {
         display: grid;
         grid-template-columns: 1fr 40%;
