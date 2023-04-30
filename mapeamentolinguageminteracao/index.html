@@ -246,6 +246,17 @@
     </div>
 
     <script>
+      subactionsearch = function (str) {
+        document.getElementsByTagName("input")[0].value = str;
+        document.getElementsByTagName("input")[0].dispatchEvent(
+          new Event("input", {
+            bubbles: true,
+          })
+        );
+
+        trocaslide(0);
+      };
+
       botexistem = [];
       trocaslide = function (n) {
         botexistem[n] = true;
@@ -296,6 +307,10 @@
 
       .abaaberta {
         background-color: var(--cor-leve, #89a1a8);
+      }
+
+      #blocosseletores {
+        text-align: center;
       }
 
       #blocosseletores div {
@@ -433,6 +448,18 @@
         grid-template-columns: [init] 320px 320px 1fr [fim];
         gap: 8px 32px;
         align-items: center;
+      }
+
+      .tabelapicto .singlepostlink:hover {
+        padding: 12px 12px 12px 12px;
+        margin: -42px -12px -12px -12px;
+        color: var(--cor-hv1, #12a3cb);
+      }
+
+      .tabelaleitura .singlepostlink:hover {
+        padding: 12px 12px 12px 12px;
+        margin: -42px -12px -12px -12px;
+        color: var(--cor-hv1, #12a3cb);
       }
 
       .tabelahead {
