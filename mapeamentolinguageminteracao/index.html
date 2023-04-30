@@ -132,7 +132,7 @@
 
           <div id="blocoslide">
             <div id="paineis">
-              <div id="slide-1">
+              <div id="slide-1" class="slidehor">
                 <div id="estatisticas"></div>
                 <br />
 
@@ -269,16 +269,39 @@
     </script>
 
     <style>
+      .slidehor {
+        width: calc(100% - 40px);
+      }
+
+      #blocosseletores div {
+        width: auto;
+        display: block;
+        text-transform: uppercase;
+        font-size: 10px;
+        line-height: 18px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin-bottom: 8px;
+        background-color: var(--cor-leve, #89a1a8);
+        cursor: pointer;
+        float: right;
+      }
+
+      #blocosseletores div:hover {
+        background-color: var(--cor-hv0, cyan);
+      }
+
       #blocoslide {
         height: auto;
         width: 100%;
         overflow-x: hidden;
-        border: 1px solid red;
       }
 
       #paineis {
         display: grid;
-        width: 200%;
+        width: calc(100% - 40px);
         grid-template-columns: 100% 100%;
         grid-template-rows: auto;
         gap: 0 0;
@@ -361,6 +384,54 @@
 
       #artefatos .blocoposts {
         width: 100% !important;
+      }
+
+      .linhaforte {
+        height: 1px;
+        background-color: #999999;
+      }
+
+      .linhafraca {
+        height: 1px;
+        background-color: #eeeeee;
+      }
+
+      .tabelaleitura {
+        display: grid;
+        grid-template-columns: [init] 320px 320px 240px 1fr [fim];
+        gap: 8px 32px;
+        align-items: center;
+      }
+
+      .tabelapicto {
+        display: grid;
+        grid-template-columns: [init] 320px 320px 1fr [fim];
+        gap: 8px 32px;
+        align-items: center;
+      }
+
+      .tabelahead {
+        text-transform: uppercase;
+        font-size: 10px;
+        line-height: 12px;
+      }
+
+      .tabelasepara {
+        grid-column: init/fim;
+        height: 1px;
+      }
+
+      .esquemaframe {
+        width: 100%;
+        padding-top: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .espacador {
+        display: block;
+        height: 60px;
       }
 
       @media screen and (max-width: 1000px) {
