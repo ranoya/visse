@@ -280,5 +280,47 @@
         }
       }
     </style>
+
+    <script>
+      // FUNÇÃO URL GET
+      // urlGet('xpto'); www.site.com/?xpto=teste
+      // let data = $_GET['xpto']; www.site.com/?xpto=teste
+
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      if (
+        $_GET["filtra"] != "" &&
+        typeof $_GET["filtra"] != "undefined" &&
+        $_GET["filtra"] != null
+      ) {
+        temporiza = setInterval(function () {
+          if (typeof document.getElementsByTagName("input")[0] != "undefined") {
+            document.getElementsByTagName("input")[0].value = decodeURI(
+              $_GET["filtra"]
+            );
+            document.getElementsByTagName("input")[0].dispatchEvent(
+              new Event("input", {
+                bubbles: true,
+              })
+            );
+
+            clearInterval(temporiza);
+          }
+        }, 100);
+      }
+    </script>
   </body>
 </html>
