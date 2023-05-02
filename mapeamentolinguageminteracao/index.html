@@ -137,13 +137,14 @@
             <div id="botslide-2" onclick="trocaslide(2);">
               Aspectos de Leitura
             </div>
+            <div id="botslide-3" onclick="trocaslide(3);">Glossário</div>
           </div>
 
           <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
 
           <div id="blocoslide">
             <div id="paineis">
-              <div id="slide-1" class="slidehor">
+              <div id="slide-0" class="slidehor">
                 <div id="estatisticas"></div>
                 <br />
 
@@ -152,14 +153,20 @@
                 </div>
               </div>
 
-              <div id="slide-2">
+              <div id="slide-1">
                 <div id="painelpictorico">
                   <br />
                 </div>
               </div>
 
-              <div id="slide-3">
+              <div id="slide-2">
                 <div id="painelleitura">
+                  <br />
+                </div>
+              </div>
+
+              <div id="slide-3">
+                <div id="painelglossario">
                   <br />
                 </div>
               </div>
@@ -304,6 +311,8 @@
           return new Inspector(document.querySelector("#painelleitura"));
         if (name === "viewof shadowfiltro")
           return new Inspector(document.querySelector("#filtroescondido"));
+        if (name === "extras")
+          return new Inspector(document.querySelector("#painelglossario"));
       });
     </script>
 
@@ -349,7 +358,7 @@
       #paineis {
         display: grid;
         width: calc(100% - 40px);
-        grid-template-columns: 100% 100% 100%;
+        grid-template-columns: 100% 100% 100% 100%;
         grid-template-rows: auto;
         gap: 0 40px;
         transition: all 0.4s ease-in;
