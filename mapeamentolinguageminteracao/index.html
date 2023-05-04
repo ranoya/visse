@@ -127,17 +127,45 @@
 
           <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
 
-          <div id="blocosseletores">
-            <div id="botslide-0" onclick="trocaslide(0);" class="abaaberta">
-              Artefatos
+          <div id="grandeblocoseletores">
+            <div id="blocosseletores">
+              <div id="botslide-0" onclick="trocaslide(0);" class="abaaberta">
+                Artefatos
+              </div>
+              <div id="botslide-1" onclick="trocaslide(1);">
+                Aspectos Pictóricos
+              </div>
+              <div id="botslide-2" onclick="trocaslide(2);">
+                Aspectos de Leitura
+              </div>
+              <div id="botslide-3" onclick="trocaslide(3);">Glossário</div>
             </div>
-            <div id="botslide-1" onclick="trocaslide(1);">
-              Aspectos Pictóricos
-            </div>
-            <div id="botslide-2" onclick="trocaslide(2);">
-              Aspectos de Leitura
-            </div>
-            <div id="botslide-3" onclick="trocaslide(3);">Glossário</div>
+
+            <svg
+              onclick="trocaforma(true)"
+              class="boticone"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="7" y="7" width="16" height="16" fill="#383838" />
+              <rect x="27" y="7" width="16" height="16" fill="#383838" />
+              <rect x="7" y="27" width="16" height="16" fill="#383838" />
+              <rect x="27" y="27" width="16" height="16" fill="#383838" />
+            </svg>
+
+            <svg
+              onclick="trocaforma(false)"
+              class="boticone"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="6" y="37" width="37" height="6" fill="#383838" />
+              <rect x="6" y="27" width="32" height="6" fill="#383838" />
+              <rect x="6" y="7" width="37" height="6" fill="#383838" />
+              <rect x="6" y="17" width="27" height="6" fill="#383838" />
+            </svg>
           </div>
 
           <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
@@ -425,6 +453,13 @@
 
       .abaaberta {
         background-color: var(--cor-leve, #89a1a8);
+      }
+
+      #grandeblocoseletores {
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 32px 32px;
+        gap: 0 4px;
       }
 
       #blocosseletores {
