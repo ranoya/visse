@@ -106,8 +106,6 @@
             />
           </svg>
 
-          <div id="chaveformato"></div>
-
           <div id="filtros"></div>
 
           <div id="botoes">
@@ -342,6 +340,24 @@
     </script>
 
     <style>
+      .tabelaartefatos {
+        display: grid;
+        grid-template-columns: [init] 80px 440px 1fr [fim];
+        gap: 8px 16px;
+        align-items: center;
+      }
+
+      .listaleitura {
+        display: grid;
+        grid-template-columns: [init] 360px 160px 1fr [fim];
+        gap: 8px 16px;
+        align-items: center;
+      }
+      .smalltext {
+        font-size: 11px;
+        line-height: 13px;
+      }
+
       #painelglossario strong {
         color: black;
         font-weight: bolder;
