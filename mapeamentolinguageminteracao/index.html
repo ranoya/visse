@@ -106,6 +106,8 @@
             />
           </svg>
 
+          <div id="chaveformato"></div>
+
           <div id="filtros"></div>
 
           <div id="botoes">
@@ -186,6 +188,8 @@
       style="overflow: hidden; width: 0; height: 0"
     ></div>
 
+    <div id="chaveformato"></div>
+
     <div id="rodape">
       <div class="secao">
         <img
@@ -258,7 +262,26 @@
     </div>
 
     <script>
-      subactionsearch = function (str) {
+      let formato = false;
+      const trocaforma = function (bol) {
+        if (bol) {
+          document.getElementsByTagName("input")[3].value = "";
+          document.getElementsByTagName("input")[3].dispatchEvent(
+            new Event("input", {
+              bubbles: true,
+            })
+          );
+        } else {
+          document.getElementsByTagName("input")[3].value = "X";
+          document.getElementsByTagName("input")[3].dispatchEvent(
+            new Event("input", {
+              bubbles: true,
+            })
+          );
+        }
+      };
+
+      const subactionsearch = function (str) {
         document.getElementsByTagName("input")[0].value = str;
         document.getElementsByTagName("input")[0].dispatchEvent(
           new Event("input", {
@@ -270,7 +293,7 @@
       };
 
       botexistem = [];
-      trocaslide = function (n) {
+      const trocaslide = function (n) {
         botexistem[n] = true;
         document.getElementById("paineis").style.marginLeft = n * -100 + "%";
         for (let i = 0; i < botexistem.length; i++) {
@@ -313,6 +336,8 @@
           return new Inspector(document.querySelector("#filtroescondido"));
         if (name === "extras")
           return new Inspector(document.querySelector("#painelglossario"));
+        if (name === "viewof formpicto")
+          return new Inspector(document.querySelector("#chaveformato"));
       });
     </script>
 
