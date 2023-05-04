@@ -142,7 +142,8 @@
             </div>
 
             <svg
-              onclick="trocaforma(true)"
+              id="bot1"
+              onclick="trocaforma(true, 'bot1')"
               class="boticone"
               viewBox="0 0 50 50"
               fill="none"
@@ -155,8 +156,9 @@
             </svg>
 
             <svg
-              onclick="trocaforma(false)"
-              class="boticone"
+              id="bot2"
+              onclick="trocaforma(false, 'bot2')"
+              class="boticone boticoneligado"
               viewBox="0 0 50 50"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -289,17 +291,21 @@
 
     <script>
       let formato = false;
-      const trocaforma = function (bol) {
+      const trocaforma = function (bol, bot) {
+        document.getElementById("bot1").classList.remove("boticoneligado");
+        document.getElementById("bot2").classList.remove("boticoneligado");
+        document.getElementById(bot).classList.add("boticoneligado");
+
         if (bol) {
-          document.getElementsByTagName("input")[3].value = "";
-          document.getElementsByTagName("input")[3].dispatchEvent(
+          document.getElementsByTagName("input")[2].value = "";
+          document.getElementsByTagName("input")[2].dispatchEvent(
             new Event("input", {
               bubbles: true,
             })
           );
         } else {
-          document.getElementsByTagName("input")[3].value = "X";
-          document.getElementsByTagName("input")[3].dispatchEvent(
+          document.getElementsByTagName("input")[2].value = "X";
+          document.getElementsByTagName("input")[2].dispatchEvent(
             new Event("input", {
               bubbles: true,
             })
@@ -368,6 +374,20 @@
     </script>
 
     <style>
+      .boticone {
+        width: 25px;
+        background-color: var(--cor-leve, #89a1a8);
+      }
+
+      .boticone:hover {
+        width: 25px;
+        background-color: var(--cor-hv0, cyan);
+      }
+
+      .boticoneligado {
+        background-color: var(--cor-hvg, #6eacbd);
+      }
+
       .tabelaartefatos {
         display: grid;
         grid-template-columns: [init] 80px 440px 1fr [fim];
