@@ -85,6 +85,7 @@
           <h1>ESTÚDIO DE DESIGN DA INFORMAÇÃO E DA COMUNICAÇÃO VISUAL</h1>
 
           <div id="conteudo"></div>
+          <div id="exalunos"></div>
         </div>
       </div>
     </div>
@@ -189,6 +190,26 @@
         font-weight: bolder;
         color: var(--cor-hv2, #1f8dac);
       }
+
+      .tabelaexalunos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 4px 16px;
+      }
+
+      .fotoexaluno {
+        width: 100%;
+        padding-top: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+
+      .nomeexaluno {
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 8px;
+      }
     </style>
 
     <link
@@ -204,6 +225,8 @@
       new Runtime().module(define, (name) => {
         if (name === "conteudo")
           return new Inspector(document.querySelector("#conteudo"));
+        if (name === "listas")
+          return new Inspector(document.querySelector("#exalunos"));
       });
     </script>
 
