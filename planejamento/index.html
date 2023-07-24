@@ -300,10 +300,17 @@
       .botcalendario a {
         font-size: 10px !important;
         line-height: 12px !important;
-        border: 1px solid var(--ranoyav2-detalhes, #9f2440);
+        background-color: var(--cor-menu-off-bg, grey);
+        color: var(--cor-menu-off, white);
         font-weight: 300 !important;
         padding: 6px !important;
         margin: 2px !important;
+        display: flex;
+        text-align: center;
+      }
+
+      .botcalendario a:hover {
+        background-color: var(--cor-hv3, grey);
       }
 
       .listas .botcalendario a {
