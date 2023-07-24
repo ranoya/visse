@@ -544,6 +544,16 @@
       let signo = sintesevisse_border();
       document.getElementById("logovissesintese").innerHTML = signo.svg;
 
+      setTimeout(function () {
+        let posicaoL_hoje = document
+          .getElementsByClassName("timeliner_hoje")[0]
+          .getBoundingClientRect().left;
+        let pjanela = window.innerWidth / 2 - 10;
+        movimenta = posicaoL_hoje - pjanela;
+        document.getElementById("fulltimeliner_timeline").scrollLeft =
+          movimenta;
+      }, 3000);
+
       document.onscroll = function () {
         if (document.documentElement.scrollTop > 20) {
           document.getElementById("wrap").style.width = "calc(100% - 40px)";
