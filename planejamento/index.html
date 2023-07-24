@@ -94,7 +94,9 @@
 
           <br /><br />
 
-          <h2>Documentos e recursos para todos os pesquisadores</h2>
+          <h2 style="border-bottom: 1px solid #bbbbbb">
+            Documentos e recursos para todos os pesquisadores
+          </h2>
 
           <div id="normasppgdesign" class="listas"></div>
           <div id="listamateriaisconsulta" class="listas"></div>
@@ -102,7 +104,7 @@
 
           <br />
           <br />
-          <h2>Pós-graduação</h2>
+          <h2 style="border-bottom: 1px solid #bbbbbb">Pós-graduação</h2>
 
           <div id="observablehq-marcabancas-a515f1a1"></div>
           <br />
@@ -113,12 +115,18 @@
 
           <br />
           <br />
-          <h2>Graduação</h2>
+          <h2 style="border-bottom: 1px solid #bbbbbb">Graduação</h2>
 
           <div id="observablehq-tcc-d494ef88"></div>
 
           <br />
           <br />
+
+          <h2 style="border-bottom: 1px solid #bbbbbb">Orientadores</h2>
+
+          <div id="piadacozinha"></div>
+
+          <br /><br />
         </div>
       </div>
     </div>
@@ -253,7 +261,24 @@
       });
     </script>
 
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/cozinha.js?v=3";
+      new Runtime().module(define, (name) => {
+        if (name === "relacaodeprojetos")
+          return new Inspector(document.querySelector("#piadacozinha"));
+      });
+    </script>
+
     <style>
+      .complistacalendario {
+        display: flex;
+        align-items: center;
+      }
+
       span a {
         display: inline-block;
         padding-left: 10px;
