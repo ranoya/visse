@@ -90,7 +90,9 @@
         <div class="secao">
           <h1>PLANEJAMENTO</h1>
 
-          <!-- não está atualizando -->
+          <div id="linhadotempoatividades"></div>
+
+          <br /><br />
 
           <h2>Documentos e recursos para todos os pesquisadores</h2>
 
@@ -233,6 +235,20 @@
         if (name === "materiaisparaorientandos")
           return new Inspector(
             document.querySelector("#listamateriaisconsulta")
+          );
+      });
+    </script>
+
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/projetos-do-visse.js?v=3";
+      new Runtime().module(define, (name) => {
+        if (name === "linhadotempo")
+          return new Inspector(
+            document.querySelector("#linhadotempoatividades")
           );
       });
     </script>
