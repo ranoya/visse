@@ -118,6 +118,7 @@
           <div id="filtros"></div>
           <div id="criterios"></div>
 
+          <div id="bibliografiap"></div>
           <div id="bibliografia">
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
           </div>
@@ -211,6 +212,8 @@
           return new Inspector(document.querySelector("#filtros"));
         if (name === "navega")
           return new Inspector(document.querySelector("#criterios"));
+        if (name === "listabibliografiapub")
+          return new Inspector(document.querySelector("#bibliografiap"));
         if (name === "listabibliografia")
           return new Inspector(document.querySelector("#bibliografia"));
       });
@@ -352,6 +355,18 @@
           document.getElementById("midsection").style.boxShadow = "none";
         }
       };
+
+      if (
+        typeof $_GET["p"] != "undefined" &&
+        $_GET["p"] != "" &&
+        $_GET["p"] != null
+      ) {
+        document.getElementById("bibliografiap").style.display = "block";
+        document.getElementById("bibliografia").style.display = "none";
+      } else {
+        document.getElementById("bibliografia").style.display = "block";
+        document.getElementById("bibliografiap").style.display = "none";
+      }
     </script>
   </body>
 </html>
