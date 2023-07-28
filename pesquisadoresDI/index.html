@@ -581,6 +581,27 @@
       document.getElementsByTagName("head")[0].appendChild(colortagWin);
       document.getElementsByTagName("head")[0].appendChild(colortagios);
 
+      if (
+        $_GET["filtra"] != "" &&
+        typeof $_GET["filtra"] != "undefined" &&
+        $_GET["filtra"] != null
+      ) {
+        temporiza = setInterval(function () {
+          if (typeof document.getElementsByTagName("input")[0] != "undefined") {
+            document.getElementsByTagName("input")[0].value = decodeURI(
+              $_GET["filtra"]
+            );
+            document.getElementsByTagName("input")[0].dispatchEvent(
+              new Event("input", {
+                bubbles: true,
+              })
+            );
+
+            clearInterval(temporiza);
+          }
+        }, 100);
+      }
+
       let lovovisse = logovisse_border();
       document.getElementById("logovisse").innerHTML = lovovisse.svg;
 
