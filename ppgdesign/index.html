@@ -185,7 +185,12 @@
           <br />
           <br />
 
-          <h2>Processo seletivo do PPGDesign/UFPE</h2>
+          <h2>
+            Processo seletivo do PPGDesign/UFPE (<span
+              id="anoproxselecao"
+            ></span
+            >)
+          </h2>
           <br />
 
           <p>
@@ -509,6 +514,8 @@
           return new Inspector(document.querySelector("#cronogramaposgrad"));
         if (name === "docsprocessoseletivopos")
           return new Inspector(document.querySelector("#docsposgrad"));
+        if (name === "anoprocessoseletivo")
+          return new Inspector(document.querySelector("#anoproxselecao"));
       });
     </script>
 
