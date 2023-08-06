@@ -782,6 +782,20 @@ h3 {
   color: var(--cor-hv3, #176b82);
 }
 
+/* TABELAS  ---------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr,
+th {
+  padding-right: 30px;
+  text-align: left;
+  border-bottom: 1px solid #eeeeee;
+}
+
 /* RODAPÉ ---------------------------------------------- */
 
 #logosinstitucionais {
