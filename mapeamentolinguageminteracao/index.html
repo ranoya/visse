@@ -93,6 +93,51 @@
 
           <br />
 
+          <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
+
+          <div id="seletoresconceitos">
+            <div id="blocosmenuconceitos">
+              <div id="botexp-0" onclick="trocaexp(0);">Visualização</div>
+              <div id="botexp-1" onclick="trocaexp(1);">Alta Interação</div>
+              <div id="botexp-2" onclick="trocaexp(2);">Linguagem Gráfica</div>
+            </div>
+
+            <div id="fechaexp">
+              <div id="botX" style='display: none' class="boticone" onclick="fechapainelexp()">
+                <svg
+                  style="width: 100%; height: 100%;""
+                  viewBox="0 0 50 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect x="11.5416" y="7.20844" width="44.371" height="6.12802" transform="rotate(45 11.5416 7.20844)" fill="#444444"/>
+                  <rect x="42.9166" y="11.5416" width="44.371" height="6.12802" transform="rotate(135 42.9166 11.5416)" fill="#444444"/>
+                </svg>
+
+              </div>
+            </div>
+          </div>
+
+          <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
+
+          <div id="blocoslideexp">
+            <div id="paineisexp">
+              <div id="epx-0">
+                <div id="expvis"></div>
+              </div>
+
+              <div id="epx-1">
+                <div id="expintera"></div>
+              </div>
+
+              <div id="epx-1">
+                <div id="explinguagem"></div>
+              </div>
+            </div>
+          </div>
+
+          <hr style="border: 0; margin-bottom: 30px" />
+
           <svg
             class="lupa"
             viewBox="0 0 609 561"
@@ -324,7 +369,7 @@
         trocaslide(0);
       };
 
-      botexistem = [];
+      let botexistem = [];
       const trocaslide = function (n) {
         botexistem[n] = true;
         document.getElementById("paineis").style.marginLeft = n * -100 + "%";
@@ -334,6 +379,33 @@
             .classList.remove("abaaberta");
         }
         document.getElementById("botslide-" + n).classList.add("abaaberta");
+      };
+
+      let expaberto = false;
+      let botexpexistem = [];
+      const trocaexp = function (n) {
+        botexpexistem[n] = true;
+        document.getElementById("paineisexp").style.marginLeft = n * -100 + "%";
+        for (let i = 0; i < botexpexistem.length; i++) {
+          document.getElementById("botexp-" + i).classList.remove("abaaberta");
+        }
+        document.getElementById("botexp-" + n).classList.add("abaaberta");
+        if (!expaberto) {
+          expaberto = true;
+          document.getElementById("blocoslideexp").style.height = "auto";
+          document.getElementById("blocoslideexp").style.overflowY = "auto";
+          document.getElementById("botX").style.display = "block";
+        }
+      };
+
+      let fechapainelexp = function () {
+        expaberto = false;
+        document.getElementById("blocoslideexp").style.height = "1px";
+        document.getElementById("blocoslideexp").style.overflowY = "hidden";
+        for (let i = 0; i < botexpexistem.length; i++) {
+          document.getElementById("botexp-" + i).classList.remove("abaaberta");
+        }
+        document.getElementById("botX").style.display = "none";
       };
     </script>
 
@@ -370,12 +442,19 @@
           return new Inspector(document.querySelector("#painelglossario"));
         if (name === "viewof formpicto")
           return new Inspector(document.querySelector("#chaveformato"));
+        if (name === "resumointera")
+          return new Inspector(document.querySelector("#expintera"));
+        if (name === "resumolinguagem")
+          return new Inspector(document.querySelector("#explinguagem"));
+        if (name === "resumovis")
+          return new Inspector(document.querySelector("#expvis"));
       });
     </script>
 
     <style>
       .boticone {
         width: 25px;
+        height: 25px;
         background-color: transparent;
       }
 
@@ -504,6 +583,74 @@
 
       #blocosseletores div:hover {
         background-color: var(--cor-hv0, cyan);
+      }
+
+      #seletoresconceitos {
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 25px;
+        gap: 0 4px;
+      }
+
+      #blocosmenuconceitos {
+        text-align: center;
+      }
+
+      #blocosmenuconceitos div {
+        width: auto;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 10px;
+        line-height: 18px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin-bottom: 8px;
+
+        cursor: pointer;
+        margin-right: 4px;
+      }
+
+      #blocosmenuconceitos div:hover {
+        background-color: var(--cor-hv0, cyan);
+      }
+
+      #fechaexp {
+        width: 25px;
+        height: 25px;
+        float: right;
+      }
+
+      #botX {
+        cursor: pointer;
+      }
+
+      #botX svg {
+        width: 25px;
+        height: 25px;
+      }
+
+      #fechaexp svg {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+      }
+
+      #blocoslideexp {
+        height: 1px;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+
+      #paineisexp {
+        display: grid;
+        width: calc(100% - 40px);
+        grid-template-columns: 100% 100% 100% 100%;
+        grid-template-rows: auto;
+        gap: 0 40px;
+        transition: all 0.4s ease-in;
       }
 
       #blocoslide {
