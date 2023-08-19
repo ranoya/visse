@@ -159,10 +159,18 @@
 
           <div id="labeling"></div>
 
-          <h2 style="margin-top: 0"><br /></h2>
+          <h2 style="margin-top: 0"></h2>
+          <div id="observablehq-estatisticas" style="display: none"></div>
           <br />
-          <div id="observablehq-quadropesquisadores"></div>
-          <div id="observablehq-tabela2"></div>
+          <div
+            id="observablehq-quadropesquisadores"
+            style="display: none"
+          ></div>
+          <div id="observablehq-tabela2" style="display: none"></div>
+
+          <div id="observablehq-quadropesquisadoresOrient"></div>
+          <div id="observablehq-tabela2Orient"></div>
+
           <br />
           <div id="individuos"></div>
 
@@ -192,14 +200,31 @@
               if (name === "orientacoes")
                 return new Inspector(document.querySelector("#descrit-orient"));
 
-              if (name === "quadropesquisadoresorient")
+              if (name === "estatisticas")
+                return new Inspector(
+                  document.querySelector("#observablehq-estatisticas")
+                );
+
+              if (name === "quadropesquisadores")
                 return new Inspector(
                   document.querySelector("#observablehq-quadropesquisadores")
                 );
 
-              if (name === "tabela2orient")
+              if (name === "tabela2")
                 return new Inspector(
                   document.querySelector("#observablehq-tabela2")
+                );
+
+              if (name === "quadropesquisadoresorient")
+                return new Inspector(
+                  document.querySelector(
+                    "#observablehq-quadropesquisadoresOrient"
+                  )
+                );
+
+              if (name === "tabela2orient")
+                return new Inspector(
+                  document.querySelector("#observablehq-tabela2Orient")
                 );
 
               return [
