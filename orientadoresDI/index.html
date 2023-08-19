@@ -123,7 +123,7 @@
           <div class="mudainterface">
             <svg
               class="iconinterface"
-              onclick='trocadisplay("observablehq-quadropesquisadores");'
+              onclick='trocadisplay("observablehq-quadropesquisadoresOrient");'
               viewBox="0 0 848 848"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +142,7 @@
 
             <svg
               class="iconinterface"
-              onclick='trocadisplay("observablehq-tabela2");'
+              onclick='trocadisplay("observablehq-tabela2Orient");'
               viewBox="0 0 848 848"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +159,7 @@
 
           <div id="labeling"></div>
 
-          <h2 style="margin-top: 0"></h2>
+          <h2 style="margin-top: 0"><br /></h2>
           <div id="observablehq-estatisticas" style="display: none"></div>
           <br />
           <div
@@ -721,7 +721,7 @@
           })
         );
 
-        trocadisplay("observablehq-tabela2");
+        trocadisplay("observablehq-tabela2Orient");
         window.location.href = "#contentmark";
       };
 
@@ -729,7 +729,7 @@
         document.getElementById("labeling").style.display = "none";
         document.getElementById("observablehq-tabela2").style.display = "none";
         document.getElementById(
-          "observablehq-quadropesquisadores"
+          "observablehq-quadropesquisadoresOrient"
         ).style.display = "none";
         document.getElementById(quem).style.display = "block";
       };
