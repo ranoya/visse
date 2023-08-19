@@ -114,7 +114,9 @@
           </svg>
 
           -->
-          <div id="observablehq-viewof-filtros" class="display: none;"></div>
+          <div id="observablehq-viewof-filtros" style="display: none"></div>
+
+          <div id="descrit-orient"></div>
 
           <br /><br />
           <a name="pessoas"></a>
@@ -187,6 +189,9 @@
                 return new Inspector(
                   document.querySelector("#observablehq-viewof-filtros")
                 );
+
+              if (name === "orientacoes")
+                return new Inspector(document.querySelector("#descrit-orient"));
 
               if (name === "estatisticas")
                 return new Inspector(
