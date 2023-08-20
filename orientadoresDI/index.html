@@ -703,8 +703,6 @@
         $_GET["filtra"] != null
       ) {
         temporiza = setInterval(function () {
-          document.getElementById("navegafiltro").style.display = "block";
-
           if (typeof document.getElementsByTagName("input")[1] != "undefined") {
             document.getElementsByTagName("input")[1].value = decodeURI(
               $_GET["filtra"]
@@ -718,6 +716,18 @@
             clearInterval(temporiza);
           }
         }, 100);
+      }
+
+      if (
+        $_GET["perfil"] != "" &&
+        typeof $_GET["perfil"] != "undefined" &&
+        $_GET["perfil"] != null
+      ) {
+        temporiza = setTimeout(function () {
+          document.getElementById("navegafiltro").style.display = "block";
+
+          window.location.url = "#continua";
+        }, 400);
       }
 
       let lovovisse = logovisse_border();
