@@ -723,11 +723,12 @@
         typeof $_GET["perfil"] != "undefined" &&
         $_GET["perfil"] != null
       ) {
+        console.log("ativa perfil");
         temporiza = setTimeout(function () {
           document.getElementById("navegafiltro").style.display = "block";
 
           window.location.url = "#continua";
-        }, 800);
+        }, 1200);
       }
 
       let lovovisse = logovisse_border();
