@@ -97,6 +97,7 @@
           <div id="introduz"></div>
 
           <div style="width: 100%; height: 1px; clear: both">&nbsp;</div>
+          <a name="tabela"></a>
           <br />
 
           <svg
@@ -123,6 +124,13 @@
 
           <a name="continua"></a>
           <br />
+
+          <div id="navegafiltro" style='text-align: right; display: none;'>
+            <br>
+            <a class='botaoancora' href='#contentmark'>SOBRE O PPGDESIGN</a> | <a class='botaoancora' href='#tabela'>ORIENTADORES</a>
+          </div>
+
+          </div>
 
           <div id="observablehq-viewof-filtros" style="display: none"></div>
 
@@ -515,6 +523,23 @@
               background-color: var(--cor-hv1, #12a3cb) !important;
               color: var(--cor-invert, #ffffff) !important;
             }
+
+            .botaoancora {
+                display: inline-block;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-right: 4px;
+                margin-bottom: 4px;
+                margin-top: 4px;
+                padding-top: 6px;
+                padding-bottom: 8px;
+                background-color: var(--cor-hv1, #12a3cb);
+                color: var(--cor-invert, #ffffff);
+            }
+
+            .botaoancora:hover {
+                background-color: var(--cor-hv3, #176b82);
+            }
           </style>
         </div>
       </div>
@@ -678,6 +703,9 @@
         $_GET["filtra"] != null
       ) {
         temporiza = setInterval(function () {
+
+          document.getElementById("navegafiltro").style.display = "block";
+
           if (typeof document.getElementsByTagName("input")[1] != "undefined") {
             document.getElementsByTagName("input")[1].value = decodeURI(
               $_GET["filtra"]
