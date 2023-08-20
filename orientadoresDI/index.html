@@ -94,41 +94,7 @@
           <div style="width: 100%; height: 1px; clear: both">&nbsp;</div>
           <br />
 
-          <p>
-            A pesquisa em <b>Design da Informação</b> estuda, no âmbito teórico
-            e experimental, as práticas de negociação de sentidos dados aos
-            artefatos cuja finalidade (ou função) é comunicar algo. O
-            <b>Design da Informação</b> é o projetar artefatos que atuam como
-            mediação entre pessoas e sistemas simbólicos, de maneira que a
-            construção da significação seja facilitada e ocorra da melhor forma
-            possível.
-          </p>
-
-          <p>
-            Em síntese, é um campo que lida com aspectos comunicacionais e
-            simbólicos nos artefatos predominantemente gráficos, mas que
-            eventualmente possam ser táteis, concretos, ou sonoros, quando há
-            possibilidade da informação que comunicam ser projetada.
-          </p>
-
-          <p>
-            A linha de pesquisa tem sua origem em 2000 junto com a própria
-            formação do Programa de Pesquisa em Design da UFPE (PPGDesign/UFPE),
-            o primeiro dentre as Universidades Federais, e um dos que mais
-            produziu teses e dissertações de design no país. No campo do
-            <b>Design da Informação</b>, a linha de pesquisa é responsável por
-            <b id="numerodoutores"></b> teses de doutorado, e
-            <b id="numeromestres"></b> dissertações de mestrado.
-          </p>
-
-          <p>
-            Para os interessados em desenvolver pesquisas neste campo do design,
-            apresentamos abaixo os professores orientadores da linha. Pela
-            ferramenta de pesquisa é possível localizar aqueles que possuem
-            maior aderência com certos aspectos ou frentes do
-            <b>Design da Informação</b>, e acessar informações mais detalhadas
-            sobre suas atuações e trabalhos orientados no programa:
-          </p>
+          <div id="introduz"></div>
 
           <div style="width: 100%; height: 1px; clear: both">&nbsp;</div>
           <br />
@@ -246,6 +212,9 @@
             } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
             import define from "https://api.observablehq.com/@ranoya/pesquisadoresdi.js?v=3";
             new Runtime().module(define, (name) => {
+              if (name === "textointroducao")
+                return new Inspector(document.querySelector("#introduz"));
+
               if (name === "quantitativos")
                 return new Inspector(
                   document.querySelector("#observablehq-quantitativos")
