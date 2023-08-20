@@ -135,7 +135,7 @@
           <div id="descrit-orient"></div>
 
           <a name="pessoas"></a>
-          <div class="mudainterface" style="display: none;"">
+          <div id="modalidades" class="mudainterface" style="display: none;"">
             <svg
               class="iconinterface"
               onclick='trocadisplay("observablehq-quadropesquisadoresOrient");'
@@ -767,7 +767,7 @@
 
       let seleciona = function (quem) {
         document.getElementById("labeling").style.display = "none";
-        document.getElementById("mudainterface").style.display = "block";
+        document.getElementById("modalidades").style.display = "block";
         document.getElementsByTagName("input")[1].value = quem;
         document.getElementsByTagName("input")[1].dispatchEvent(
           new Event("input", {
@@ -780,7 +780,7 @@
 
       let selecionaB = function (quem) {
         document.getElementById("labeling").style.display = "none";
-        document.getElementById("mudainterface").style.display = "block";
+        document.getElementById("modalidades").style.display = "block";
         document.getElementsByTagName("input")[1].value = quem;
         document.getElementsByTagName("input")[1].dispatchEvent(
           new Event("input", {
@@ -794,7 +794,7 @@
 
       let trocadisplay = function (quem) {
         document.getElementById("labeling").style.display = "none";
-        document.getElementById("mudainterface").style.display = "block";
+        document.getElementById("modalidades").style.display = "block";
         document.getElementById("observablehq-tabela2Orient").style.display =
           "none";
         document.getElementById(
