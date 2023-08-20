@@ -115,7 +115,7 @@
               </div>
 
               <div id="epx-1">
-                <div id="expintera"></div>
+                <div id="introseletivo"></div>
               </div>
 
             </div>
@@ -234,6 +234,9 @@
             new Runtime().module(define, (name) => {
               if (name === "textointroducao")
                 return new Inspector(document.querySelector("#introduz"));
+
+              if (name === "processoseletivo")
+                return new Inspector(document.querySelector("#introseletivo"));
 
               if (name === "quantitativos")
                 return new Inspector(
@@ -565,6 +568,10 @@
 
             .botaoancora:hover {
               background-color: var(--cor-hv3, #176b82);
+            }
+
+            .abaaberta {
+                background-color: var(--cor-leve, #89a1a8);
             }
 
             #blocoslideexp {
