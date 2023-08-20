@@ -683,11 +683,11 @@
         $_GET["filtra"] != null
       ) {
         temporiza = setInterval(function () {
-          if (typeof document.getElementsByTagName("input")[0] != "undefined") {
-            document.getElementsByTagName("input")[0].value = decodeURI(
+          if (typeof document.getElementsByTagName("input")[1] != "undefined") {
+            document.getElementsByTagName("input")[1].value = decodeURI(
               $_GET["filtra"]
             );
-            document.getElementsByTagName("input")[0].dispatchEvent(
+            document.getElementsByTagName("input")[1].dispatchEvent(
               new Event("input", {
                 bubbles: true,
               })
@@ -737,8 +737,8 @@
 
       let seleciona = function (quem) {
         document.getElementById("labeling").style.display = "none";
-        document.getElementsByTagName("input")[0].value = quem;
-        document.getElementsByTagName("input")[0].dispatchEvent(
+        document.getElementsByTagName("input")[1].value = quem;
+        document.getElementsByTagName("input")[1].dispatchEvent(
           new Event("input", {
             bubbles: true,
           })
@@ -749,8 +749,8 @@
 
       let selecionaB = function (quem) {
         document.getElementById("labeling").style.display = "none";
-        document.getElementsByTagName("input")[0].value = quem;
-        document.getElementsByTagName("input")[0].dispatchEvent(
+        document.getElementsByTagName("input")[1].value = quem;
+        document.getElementsByTagName("input")[1].dispatchEvent(
           new Event("input", {
             bubbles: true,
           })
