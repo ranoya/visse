@@ -97,6 +97,9 @@
 
           <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
 
+
+          <div id="abertura"></div>
+
           <div id="seletoresconceitos">
             <div id="blocosmenuconceitos">
               <div id="botexp-0" onclick="trocaexp(0);" class="abaaberta">A LINHA DE PESQUISA</div>
@@ -234,6 +237,9 @@
             new Runtime().module(define, (name) => {
               if (name === "textointroducao")
                 return new Inspector(document.querySelector("#introduz"));
+
+                if (name === "abertura")
+                return new Inspector(document.querySelector("#abertura"));
 
               if (name === "processoseletivo")
                 return new Inspector(document.querySelector("#introseletivo"));
