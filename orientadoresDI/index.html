@@ -723,10 +723,8 @@
         typeof $_GET["perfil"] != "undefined" &&
         $_GET["perfil"] != null
       ) {
-        console.log("ativa perfil");
-        temporiza = setTimeout(function () {
+        mandaproperfil = setTimeout(function () {
           document.getElementById("navegafiltro").style.display = "block";
-
           window.location.url = "#continua";
         }, 1200);
       }
