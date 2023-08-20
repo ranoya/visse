@@ -767,7 +767,7 @@
 
       let seleciona = function (quem) {
         document.getElementById("labeling").style.display = "none";
-        document.getElementById("modalidades").style.display = "block";
+        document.getElementById("modalidades").style.display = "grid";
         document.getElementsByTagName("input")[1].value = quem;
         document.getElementsByTagName("input")[1].dispatchEvent(
           new Event("input", {
@@ -780,7 +780,7 @@
 
       let selecionaB = function (quem) {
         document.getElementById("labeling").style.display = "none";
-        document.getElementById("modalidades").style.display = "block";
+        document.getElementById("modalidades").style.display = "grid";
         document.getElementsByTagName("input")[1].value = quem;
         document.getElementsByTagName("input")[1].dispatchEvent(
           new Event("input", {
@@ -794,7 +794,7 @@
 
       let trocadisplay = function (quem) {
         document.getElementById("labeling").style.display = "none";
-        document.getElementById("modalidades").style.display = "block";
+        document.getElementById("modalidades").style.display = "grid";
         document.getElementById("observablehq-tabela2Orient").style.display =
           "none";
         document.getElementById(
