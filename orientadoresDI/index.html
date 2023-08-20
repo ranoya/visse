@@ -94,7 +94,34 @@
           <div style="width: 100%; height: 1px; clear: both">&nbsp;</div>
           <br />
 
-          <div id="introduz"></div>
+
+          <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
+
+          <div id="seletoresconceitos">
+            <div id="blocosmenuconceitos">
+              <div id="botexp-0" onclick="trocaexp(0);" class="abaaberta">A LINHA DE PESQUISA</div>
+              <div id="botexp-1" onclick="trocaexp(1);">O PROCESSO SELETIVO</div>
+              
+            </div>
+
+          </div>
+
+          <hr style="border-top: 1px solid #dddddd; margin-bottom: 10px" />
+
+          <div id="blocoslideexp">
+            <div id="paineisexp">
+              <div id="epx-0">
+                <div id="introduz"></div>
+              </div>
+
+              <div id="epx-1">
+                <div id="expintera"></div>
+              </div>
+
+            </div>
+          </div>
+
+          
 
           <div style="width: 100%; height: 1px; clear: both">&nbsp;</div>
           <a name="tabela"></a>
@@ -540,6 +567,110 @@
               background-color: var(--cor-hv3, #176b82);
             }
           </style>
+
+
+          <style>
+                            #docsposgrad,
+                            #cronogramaposgrad {
+                                font-size: 12px;
+                                text-align: left;
+                            }
+
+                            .complistacalendario {
+                                display: grid;
+                                grid-template-columns: 120px 180px 1fr 150px;
+                                /* font-size: 12px;
+                            line-height: 14px; */
+                            }
+
+                            .atividadeferiado b,
+                            .atividadefacultativo b,
+                            .atividadematricula b,
+                            .atividadeletiva b,
+                            .atividadedocumentacao b,
+                            .atividaderecesso b {
+                                color: var(--ranoyav2-texto) !important;
+                                font-size: 13px !important;
+                                ;
+                            }
+
+                            .botcalendario a {
+                                font-size: 10px !important;
+                                line-height: 12px !important;
+                                border: 1px solid var(--ranoyav2-detalhes, #9f2440);
+                                font-weight: 300 !important;
+                                padding: 6px !important;
+                                margin: 2px !important;
+                                background-color: #00000044;
+                                color: var(--ranoyav2-detalhes, #9f2440);
+                            }
+
+                            .botcalendario a:hover {
+                                background-color: var(--cor-hover, #63baa9);
+                            }
+
+                            .dataletivas {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                                gap: 5px 5px;
+                            }
+
+                            @media screen and (max-width: 650px) {
+                                .complistacalendario {
+                                    grid-template-columns: 65px 1fr 90px;
+                                }
+
+                                .botcalendario {
+                                    display: none;
+                                }
+
+                                .dataletivas {
+                                    grid-template-columns: 45px 1fr 1fr 1fr 1fr !important;
+                                }
+
+                                .calendariocontabilizado,
+                                .sextacorta {
+                                    display: none !important;
+                                }
+                            }
+
+                            .atividadeferiado {
+                                background-color: blue;
+                                padding: 5px;
+                                margin-bottom: 2px;
+                                background-color: #e1e1e1;
+                            }
+
+                            .atividadefacultativo {
+                                padding: 5px;
+                                margin-bottom: 2px;
+                                background-color: #e1e1e1;
+                            }
+
+                            .atividadematricula {
+                                padding: 5px;
+                                margin-bottom: 2px;
+                                background-color: #c3ddd4;
+                            }
+
+                            .atividadeletiva {
+                                padding: 5px;
+                                margin-bottom: 2px;
+                                background-color: #fae8e8;
+                            }
+
+                            .atividadedocumentacao {
+                                padding: 5px;
+                                margin-bottom: 2px;
+                                background-color: #e7c0cb;
+                            }
+
+                            .atividaderecesso {
+                                padding: 5px;
+                                margin-bottom: 2px;
+                                background-color: #e1e1e1;
+                            }
+            </style>
         </div>
       </div>
     </div>
@@ -808,6 +939,18 @@
         document.getElementById("labeling").style.left = event.clientX + "px";
         document.getElementById("labeling").style.top = event.clientY + "px";
         document.getElementById("labeling").innerHTML = quem;
+      };
+
+
+      let botexpexistem = [];
+      const trocaexp = function (n) {
+        botexpexistem[n] = true;
+        document.getElementById("paineisexp").style.marginLeft = n * -100 + "%";
+        for (let i = 0; i < botexpexistem.length; i++) {
+          document.getElementById("botexp-" + i).classList.remove("abaaberta");
+        }
+        document.getElementById("botexp-" + n).classList.add("abaaberta");
+        
       };
     </script>
   </body>
