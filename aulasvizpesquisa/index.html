@@ -96,6 +96,7 @@
           <div id="observablehq-descricaometodo-2c7e88ef"></div>
           <div id="observablehq-descricaoavaliacao-2c7e88ef"></div>
           <div id="observablehq-listaaulas_publico-2c7e88ef"></div>
+          <div id="observablehq-listaaulas_naopublico"></div>
           <div id="bibliografiap"></div>
           <div id="bibliografia"></div>
         </div>
@@ -201,6 +202,12 @@
           return new Inspector(
             document.querySelector("#observablehq-listaaulas_publico-2c7e88ef")
           );
+
+        if (name === "listaaulas")
+          return new Inspector(
+            document.querySelector("#observablehq-listaaulas_naopublico")
+          );
+
         if (name === "bibliografia")
           return new Inspector(document.querySelector("#bibliografia"));
         if (name === "bibliografiaopen")
@@ -302,9 +309,21 @@
       ) {
         document.getElementById("bibliografiap").style.display = "block";
         document.getElementById("bibliografia").style.display = "none";
+        document.getElementById(
+          "observablehq-listaaulas_publico-2c7e88ef"
+        ).style.display = "none";
+        document.getElementById(
+          "observablehq-listaaulas_naopublico"
+        ).style.display = "block";
       } else {
         document.getElementById("bibliografia").style.display = "block";
         document.getElementById("bibliografiap").style.display = "none";
+        document.getElementById(
+          "observablehq-listaaulas_publico-2c7e88ef"
+        ).style.display = "block";
+        document.getElementById(
+          "observablehq-listaaulas_naopublico"
+        ).style.display = "none";
       }
 
       document.onscroll = function () {
