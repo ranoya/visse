@@ -129,6 +129,9 @@
           <br />
 
           <div id="blocoindices">
+
+          <div id="instrucao"></div>
+
           <svg
             class="lupa"
             viewBox="0 0 609 561"
@@ -252,6 +255,9 @@
                 return new Inspector(
                   document.querySelector("#observablehq-quantitativos")
                 );
+
+              if (name === "instrucaoOrient")
+                return new Inspector(document.querySelector("#instrucao"));
 
               if (name === "viewof filtraorient")
                 return new Inspector(document.querySelector("#superfiltro"));
