@@ -15,14 +15,14 @@
     <meta name="generator" content="artesanal" />
     <meta
       name="description"
-      content="Materiais audiovisuais de ensino de visualização, organizados pelo Laboratório de Visualização e Sentidos do Nordeste"
+      content="Pitchs de projeto da disciplina de Narrativas inovadoras com dados na comunicação digital"
     />
     <meta
       property="og:description"
-      content="Materiais audiovisuais de ensino de visualização, organizados pelo Laboratório de Visualização e Sentidos do Nordeste"
+      content="Pitchs de projeto da disciplina de Narrativas inovadoras com dados na comunicação digital"
     />
     <meta name="author" content="Guilherme Ranoya" />
-    <meta property="og:url" content="https://visse.cin.ufpe.br" />
+    <meta property="og:url" content="https://visse.vercel.app" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:image:width" content="600" />
@@ -85,52 +85,15 @@
         </div>
       </nav>
 
+      <a name="contentmark"></a>
       <div id="midsection">
         <div class="secao">
-          <h1>MATERIAIS DE ENSINO</h1>
+          <h1>NARRATIVAS INOVADORAS COM DADOS NA COMUNICAÇÃO DIGITAL</h1>
 
-          <p>
-            Este acervo de materiais audiovisuais, incluindo vídeos, episódios
-            de podcasts, e apresentações em forma de slides, é um dos produtos
-            da pesquisa em
-            <a
-              href="https://www.ranoya.com/public/pesquisa/visualizacao/"
-              target="_blank"
-              >formação do designer de informação para a elaboração de artefatos
-              de visualização</a
-            >, desenvolvida pelo Prof. Guilherme Ranoya. Ele inclui materiais
-            diversos sobre visualização e todas as questões correlatas que estão
-            ao redor desta questão, utilizadas em sala de aula.
-          </p>
-
-          <br />
-
-          <svg
-            class="lupa"
-            viewBox="0 0 609 561"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M609 248C609 384.967 497.967 496 361 496C304.807 496 252.978 477.311 211.392 445.809L70.6797 560.279L0 473.397L139.59 359.84C122.582 326.236 113 288.237 113 248C113 111.033 224.033 0 361 0C497.967 0 609 111.033 609 248ZM521 248C521 336.366 449.365 408 361 408C272.635 408 201 336.366 201 248C201 159.634 272.635 88 361 88C449.365 88 521 159.634 521 248Z"
-            />
-          </svg>
-
-          <div id="filtros"></div>
-
+          <div id="apresentacao"></div>
+          <div id="entrada"></div>
           <div id="estatisticas"></div>
-          <br />
-
-          <div id="materiais">
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-          </div>
-
-          <br />
-
-          <br /><br />
-          <p><br /><br /></p>
+          <div id="videos"></div>
         </div>
       </div>
     </div>
@@ -206,19 +169,44 @@
       </div>
     </div>
 
+    <style>
+      .instrucoes {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        gap: 15px 15px;
+        width: 100%;
+      }
+
+      .myQR {
+        width: 160px;
+      }
+
+      .myQR path {
+        stroke-width: 1px;
+        stroke: var(--cor-hv3, grey);
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+    />
     <script type="module">
       import {
         Runtime,
         Inspector,
-      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/curadoria-materiaisvisse.js?v=3";
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/votacao-and.js?v=3";
       new Runtime().module(define, (name) => {
+        if (name === "instruc")
+          return new Inspector(document.querySelector("#apresentacao"));
         if (name === "viewof filtros")
-          return new Inspector(document.querySelector("#filtros"));
-        if (name === "curadoria")
-          return new Inspector(document.querySelector("#materiais"));
+          return new Inspector(document.querySelector("#entrada"));
         if (name === "stats")
           return new Inspector(document.querySelector("#estatisticas"));
+        if (name === "curadoria")
+          return new Inspector(document.querySelector("#videos"));
+        return ["viewof matselect"].includes(name);
       });
     </script>
 
@@ -303,27 +291,6 @@
       document.getElementsByTagName("head")[0].appendChild(colortagWin);
       document.getElementsByTagName("head")[0].appendChild(colortagios);
 
-      if (
-        $_GET["filtra"] != "" &&
-        typeof $_GET["filtra"] != "undefined" &&
-        $_GET["filtra"] != null
-      ) {
-        temporiza = setInterval(function () {
-          if (typeof document.getElementsByTagName("input")[0] != "undefined") {
-            document.getElementsByTagName("input")[0].value = decodeURI(
-              $_GET["filtra"]
-            );
-            document.getElementsByTagName("input")[0].dispatchEvent(
-              new Event("input", {
-                bubbles: true,
-              })
-            );
-
-            clearInterval(temporiza);
-          }
-        }, 100);
-      }
-
       let lovovisse = logovisse_border();
       document.getElementById("logovisse").innerHTML = lovovisse.svg;
 
@@ -340,6 +307,14 @@
           document.getElementById("blococompensacao").style.height = "60px";
           document.getElementById("grafismo").style.top = "-300px";
           document.getElementById("grafismo").style.left = "-15px";
+
+          document.getElementById("midsection").style.paddingLeft = "0";
+          document.getElementById("midsection").style.paddingRight = "0";
+          document.getElementById("midsection").style.width = "100%";
+
+          document.getElementById("navbar").style.paddingLeft = "0";
+          document.getElementById("navbar").style.paddingRight = "0";
+          document.getElementById("navbar").style.width = "100%";
         } else {
           document.getElementById("wrap").style.width = "calc(100% - 2px)";
           document.getElementById("wrap").style.border =
@@ -347,6 +322,15 @@
           document.getElementById("blococompensacao").style.height = "400px";
           document.getElementById("grafismo").style.top = "0";
           document.getElementById("grafismo").style.left = "0";
+
+          document.getElementById("midsection").style.paddingLeft = "20px";
+          document.getElementById("midsection").style.paddingRight = "20px";
+          document.getElementById("midsection").style.width =
+            "calc(100% - 40px)";
+
+          document.getElementById("navbar").style.paddingLeft = "20px";
+          document.getElementById("navbar").style.paddingRight = "20px";
+          document.getElementById("navbar").style.width = "calc(100% - 40px)";
         }
 
         if (document.documentElement.scrollTop > 800) {
