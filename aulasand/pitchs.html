@@ -91,9 +91,9 @@
           <h1>NARRATIVAS INOVADORAS COM DADOS NA COMUNICAÇÃO DIGITAL</h1>
 
           <div id="apresentacao"></div>
-          <div id="entrada"></div>
+          <div id="filtros"></div>
           <div id="estatisticas"></div>
-          <div id="videos"></div>
+          <div id="materiais"></div>
         </div>
       </div>
     </div>
@@ -201,11 +201,11 @@
         if (name === "instruc")
           return new Inspector(document.querySelector("#apresentacao"));
         if (name === "viewof filtros")
-          return new Inspector(document.querySelector("#entrada"));
+          return new Inspector(document.querySelector("#filtros"));
         if (name === "stats")
           return new Inspector(document.querySelector("#estatisticas"));
         if (name === "curadoria")
-          return new Inspector(document.querySelector("#videos"));
+          return new Inspector(document.querySelector("#materiais"));
         return ["viewof matselect"].includes(name);
       });
     </script>
