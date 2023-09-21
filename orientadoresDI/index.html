@@ -111,6 +111,7 @@
             <div id="blocosmenuconceitos">
               <div id="botexp-0" onclick="trocaexp(0);" class="abaaberta">A LINHA DE PESQUISA</div>
               <div id="botexp-1" onclick="trocaexp(1);">O PROCESSO SELETIVO</div>
+              <div id="botexp-2" onclick="trocaexp(2);">DISCIPLINAS ISOLADAS</div>
               
             </div>
 
@@ -126,6 +127,10 @@
 
               <div id="epx-1">
                 <div id="introseletivo"></div>
+              </div>
+
+              <div id="epx-2">
+                <div id="introespeciais"></div>
               </div>
 
             </div>
@@ -259,6 +264,9 @@
 
               if (name === "processoseletivo")
                 return new Inspector(document.querySelector("#introseletivo"));
+
+                if (name === "alunoespec")
+                return new Inspector(document.querySelector("#introespeciais"));
 
               if (name === "quantitativos")
                 return new Inspector(
