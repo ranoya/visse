@@ -90,6 +90,8 @@
         <div class="secao">
           <h1>NARRATIVAS INOVADORAS COM DADOS NA COMUNICAÇÃO DIGITAL</h1>
 
+          <div id="local"></div>
+
           <h3>Objetivos</h3>
           <div id="observablehq-descricaoobjetivos-6e5ddc56"></div>
 
@@ -197,6 +199,9 @@
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
       import define from "https://api.observablehq.com/@ranoya/and-rv2.js?v=3";
       new Runtime().module(define, (name) => {
+        if (name === "local")
+          return new Inspector(document.querySelector("#local"));
+
         if (name === "descricaoobjetivos")
           return new Inspector(
             document.querySelector("#observablehq-descricaoobjetivos-6e5ddc56")
