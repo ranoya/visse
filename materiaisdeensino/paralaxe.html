@@ -102,7 +102,8 @@
         :root {
             --ranoyav2-text: #888888;
             --ranoyav2-bg: #FFFFFF;
-            --ranoya-cover: #FFFFFFe5;
+            --ranoyav2-cover: #FFFFFFe5;
+            --ranoyav2-line: #888888;
         }
 
         #conteudo {
@@ -126,7 +127,7 @@
             padding: 8px 16px 8px 16px;
             margin: -8px -16px -8px -16px;
             background-color: transparent;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             text-decoration: none;
             color: var(--ranoyav2-text, #888888);
         }
@@ -161,6 +162,20 @@
             height: 40vh;
             display: block;
         }
+
+        .autor {
+            font-size: 11px;
+            line-height: 15px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--ranoyav2-line, #888888);
+            height: 10px;
+            margin-left: -8px;
+            width: calc(100% + 16px);
+
+        }
     </style>
 </head>
 
@@ -193,7 +208,7 @@
 
             for (let i = 0; i < data.length; i++) {
 
-                code += `<a target='_blank' href='${data[i].link}'>${data[i].titulo}</a>`;
+                code += `<hr></hr><a target='_blank' href='${data[i].link}'>${data[i].titulo}<br><span class='autor'>${data[i].autoria}</span></a>`;
                 bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].imagemurl)});'></div>`;
             }
 
@@ -212,6 +227,9 @@
 
         if (typeof $_GET['fg'] != "undefined" && $_GET['fg'] != "" && $_GET['fg'] != null) {
             document.documentElement.style.setProperty('--ranoyav2-text', "#" + $_GET['fg']);
+            document.documentElement.style.setProperty('--ranoyav2-line', "#" + $_GET['fg'] + "33");
+        } else {
+            document.documentElement.style.setProperty('--ranoyav2-line', "#88888833");
         }
         if (typeof $_GET['bg'] != "undefined" && $_GET['bg'] != "" && $_GET['bg'] != null) {
             document.documentElement.style.setProperty('--ranoyav2-bg', "#" + $_GET['bg']);
