@@ -191,8 +191,8 @@
 
             for (let i = 0; i < data.length; i++) {
 
-                code += `<a target='_blank' href='${data[i].link}'>${data[i].descricao}</a>`;
-                bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].screenshot)});'></div>`;
+                code += `<a target='_blank' href='${data[i].link}'>${data[i].titulo}</a>`;
+                bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].imagemurl)});'></div>`;
             }
 
             document.getElementById("conteudo").innerHTML = code;
