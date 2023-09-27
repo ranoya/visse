@@ -79,6 +79,7 @@
 
   fg=bbbbbb -> cor foreground
   bg=000000 -> cor background
+  cv=00000022 -> cor da coverplate
 
   ?filtro= -> filtra na planilha
   ?noimage=true -> remove o paralaxe
@@ -101,6 +102,7 @@
         :root {
             --ranoyav2-text: #888888;
             --ranoyav2-bg: #FFFFFF;
+            --ranoya-cover: #FFFFFFe5;
         }
 
         #conteudo {
@@ -148,7 +150,7 @@
             height: 100vh;
             top: 0;
             z-index: 9;
-            background-color: #FFFFFFe5;
+            background-color: var(--ranoya-cover, #FFFFFFe5);
         }
 
         .bgs {
@@ -213,6 +215,9 @@
         }
         if (typeof $_GET['bg'] != "undefined" && $_GET['bg'] != "" && $_GET['bg'] != null) {
             document.documentElement.style.setProperty('--ranoyav2-bg', "#" + $_GET['bg']);
+        }
+        if (typeof $_GET['cv'] != "undefined" && $_GET['cv'] != "" && $_GET['cv'] != null) {
+            document.documentElement.style.setProperty('--ranoyav2-cover', "#" + $_GET['cv']);
         }
     </script>
 
