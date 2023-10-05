@@ -181,7 +181,7 @@
         .blocoentrada {
             display: grid;
             grid-template-columns: 180px 1fr;
-            gap: 0 10px;
+            gap: 0 15px;
         }
 
         .listas {
@@ -254,7 +254,7 @@
                 for (let i = 0; i < data.length; i++) {
                 if (data[i].Group.match(grupos[g])) {
                     c++;
-                    code += `<hr></hr><a class="listas" target='_blank' href='${data[i].Link}'><div class="blocoentrada">                   <div class='thumbnail' style='background-color: white; background-repeat: no-repeat; background-position: center center; background-size: contain;                       background-image: url(${imagefromallsources(data[i].thumb)});'></div><div class="textos">${data[i].Name}<br><span                  class='autor'>${data[i].descrit}</span></div></div></a>`;
+                    code += `<hr></hr><a class="listas" target='_blank' href='${data[i].Link}'><div class="blocoentrada">                   <div class='thumbnail' style='outline: 5px solid white; background-color: white; background-repeat: no-repeat; background-position: center center; background-size: contain;                       background-image: url(${imagefromallsources(data[i].thumb)});'></div><div class="textos">${data[i].Name}<br><span                  class='autor'>${data[i].descrit}</span></div></div></a>`;
 
                     bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].thumb)});'></div>`;
                 }
