@@ -15,11 +15,11 @@
     <meta name="generator" content="artesanal" />
     <meta
       name="description"
-      content="Mapeamento de artefatos de visualização, organizado pelo Laboratório de Visualização e Sentidos do Nordeste"
+      content="Mapeamento de ferramentas de dados e visualização, organizado pelo Laboratório de Visualização e Sentidos do Nordeste"
     />
     <meta
       property="og:description"
-      content="Mapeamento de artefatos de visualização, organizado pelo Laboratório de Visualização e Sentidos do Nordeste"
+      content="Mapeamento de ferramentas de dados de visualização, organizado pelo Laboratório de Visualização e Sentidos do Nordeste"
     />
     <meta name="author" content="Guilherme Ranoya" />
     <meta property="og:url" content="https://visse.vercel.app" />
@@ -102,8 +102,9 @@
         :root {
             --ranoyav2-text: #888888;
             --ranoyav2-bg: #FFFFFF;
-            --ranoyav2-cover: #FFFFFFe5;
+            --ranoyav2-cover: #FFFFFFf5;
             --ranoyav2-line: #888888;
+            --ranoyav2-grupos: #12a3cb;
         }
 
         #conteudo {
@@ -132,7 +133,7 @@
             color: var(--ranoyav2-text, #888888);
         }
 
-        #conteudo a:hover {
+        #conteudo a:hover .textos{
             background-color: var(--ranoyav2-text, #888888);
             color: var(--ranoyav2-bg, #FFFFFF);
         }
@@ -176,6 +177,37 @@
             width: calc(100% + 32px);
 
         }
+
+        .blocoentrada {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 0 10px;
+        }
+
+        .listas {
+            margin-top: 5px !important;
+        }
+
+        .grupo {
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                font-weight: bolder;
+                margin-bottom: 30px;
+                margin-top: 60px;
+                text-transform: uppercase;
+                color: var(--ranoyav2-grupos, #12a3cb);
+        }
+
+        .textos {
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 
@@ -195,30 +227,56 @@
         }
         processa = function(dados) {
 
+
+            
+
             let data = [];
+            let bgcodes = "";
+            let rebgcodes = "";
+            let code = "";
+            let c = 0;
+            let recode = "";
 
             if (typeof $_GET['filtro'] != "undefined" && $_GET['filtro'] != "" && $_GET['filtro'] != null) {
-                data = select(dados, multipatterncheck_exclude, "Artigo " + decodeURI($_GET['filtro']));
+                data = select(dados, multipatterncheck_exclude,  decodeURI($_GET['filtro']));
             } else {
-                data = select(dados, multipatterncheck_exclude, "Artigo");
+                data = select(dados, multipatterncheck_exclude, "");
             }
 
-            let code = "";
-            let bgcodes = "";
+            let grupos = tags(data, "Group", ",");
+            
+            console.table(data);
 
-            for (let i = 0; i < data.length; i++) {
+            for (let g in grupos) {
+                code += `<div class="grupo">${grupos[g]}</div>`;
+                c = 0;
 
-                code += `<hr></hr><a target='_blank' href='${data[i].link}'>${data[i].titulo}<br><span class='autor'>${data[i].autoria}</span></a>`;
-                bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].imagemurl)});'></div>`;
+                for (let i = 0; i < data.length; i++) {
+                if (data[i].Group.match(grupos[g])) {
+                    c++;
+                    code += `<hr></hr><a class="listas" target='_blank' href='${data[i].Link}'><div class="blocoentrada">                   <div class='thumbnail' style='background-repeat: no-repeat; background-position: center center; background-size: contain;                       background-image: url(${imagefromallsources(data[i].thumb)});'></div><div class="textos">${data[i].Name}<br><span                  class='autor'>${data[i].descrit}</span></div></div></a>`;
+
+                    bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].thumb)});'></div>`;
+                }
+                }
+                code += `<hr></hr>`;
+
+                if (c > 0) {
+                recode = recode + code;
+                }
+                code = "";
             }
 
-            document.getElementById("conteudo").innerHTML = code;
+
+            document.getElementById("conteudo").innerHTML = recode;
             document.getElementById("paralaxe").innerHTML = bgcodes;
+            
 
         }
 
-        getdata("https://opensheet.elk.sh/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/POSTS_VISSE", processa);
+        getdata("https://opensheet.elk.sh/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/FERRAMENTAS_POE_VISSE", processa);
 
+        
 
         document.addEventListener("scroll", function() {
             document.getElementById("paralaxe").style.top = (document.getElementById("conteudo").getBoundingClientRect().top / 2) + "px";
@@ -233,6 +291,7 @@
         }
         if (typeof $_GET['bg'] != "undefined" && $_GET['bg'] != "" && $_GET['bg'] != null) {
             document.documentElement.style.setProperty('--ranoyav2-bg', "#" + $_GET['bg']);
+            document.documentElement.style.setProperty('--ranoyav2-grupos', "#" + $_GET['bg']);
         }
         if (typeof $_GET['cv'] != "undefined" && $_GET['cv'] != "" && $_GET['cv'] != null) {
             document.documentElement.style.setProperty('--ranoyav2-cover', "#" + $_GET['cv']);
