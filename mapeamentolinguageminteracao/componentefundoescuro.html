@@ -327,6 +327,14 @@
           }
         }, 100);
       }
+
+      if (
+        typeof $_GET["bg"] != "undefined" &&
+        $_GET["bg"] != null &&
+        $_GET["bg"] != ""
+      ) {
+        document.body.style.setProperty("--cor-bg", "#" + $_GET["bg"]);
+      }
     </script>
   </body>
 </html>
