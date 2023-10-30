@@ -197,8 +197,8 @@
 
             let data = [];
 
-            if (typeof $_GET['filtro'] != "undefined" && $_GET['filtro'] != "" && $_GET['filtro'] != null) {
-                data = select(dados, multipatterncheck_exclude, "Artigo " + decodeURI($_GET['filtro']));
+            if (typeof $_GET['filtra'] != "undefined" && $_GET['filtra'] != "" && $_GET['filtra'] != null) {
+                data = select(dados, multipatterncheck_exclude, "Artigo " + decodeURI($_GET['filtra']));
             } else {
                 data = select(dados, multipatterncheck_exclude, "Artigo");
             }
