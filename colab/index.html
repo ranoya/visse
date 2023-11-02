@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 
 <script>
+  $_GET = [];
+  (function () {
+    corte = window.location.href.toString().indexOf("?");
+    if (corte > 0) {
+      argumento = window.location.href.toString().substring(corte + 1);
+      argumentos = argumento.split("&");
+      for (arg in argumentos) {
+        let argCorte = argumentos[arg].indexOf("=");
+        $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+          arg
+        ].substring(argCorte + 1);
+      }
+    }
+  })();
+
+  let startcommand = "";
+
+  if (
+    typeof $_GET["cmd"] != "undefined" &&
+    $_GET["cmd"] != null &&
+    $_GET["cmd"] != ""
+  ) {
+    startcommand = $_GET["cmd"];
+  }
+
   window.location.href =
-    "https://poepesquisa.vercel.app/?title=COLAB&json=https://opensheet.elk.sh/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/Notas&custommenu=https://opensheet.elk.sh/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/Menu&textos=https://opensheet.elk.sh/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/BIBLIOGRAFIA_POE&plugins=https://opensheet.elk.sh/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/PLugins&files=https://opensheet.elk.sh/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/Arquivos";
+    "https://poepesquisa.vercel.app/?title=COLAB&json=https://opensheet.elk.sh/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/Notas&custommenu=https://opensheet.elk.sh/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/Menu&textos=https://opensheet.elk.sh/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/BIBLIOGRAFIA_POE&plugins=https://opensheet.elk.sh/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/PLugins&files=https://opensheet.elk.sh/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/Arquivos&startcommand=" +
+    startcommand;
 </script>
