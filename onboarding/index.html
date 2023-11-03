@@ -100,6 +100,10 @@
 
           <br /><br />
           <div id="orientacao"></div>
+
+          <div id="observablehq-viewof-listacoordenacao-16033090"></div>
+          <div id="observablehq-viewof-listapesquisadores-16033090"></div>
+          <div id="observablehq-viewof-listgrad-16033090"></div>
         </div>
       </div>
     </div>
@@ -174,6 +178,23 @@
           return new Inspector(document.querySelector("#documentos"));
         if (name === "orientacao")
           return new Inspector(document.querySelector("#orientacao"));
+
+        if (name === "viewof listacoordenacao")
+          return new Inspector(
+            document.querySelector(
+              "#observablehq-viewof-listacoordenacao-16033090"
+            )
+          );
+        if (name === "viewof listapesquisadores")
+          return new Inspector(
+            document.querySelector(
+              "#observablehq-viewof-listapesquisadores-16033090"
+            )
+          );
+        if (name === "viewof listgrad")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-listgrad-16033090")
+          );
       });
     </script>
 
