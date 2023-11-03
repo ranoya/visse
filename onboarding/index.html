@@ -139,6 +139,20 @@
         line-height: 16px;
         margin-top: 8px;
       }
+
+      .listaorientacao {
+        display: grid;
+        grid-template-columns: [init] 180px 1fr [fim];
+        gap: 8px 10px;
+      }
+
+      .separa {
+        border-bottom: 1px solid #bbbbbb;
+        height: 11px;
+        width: 100%;
+        margin-bottom: 20px;
+        grid-column: init / fim;
+      }
     </style>
 
     <script type="module">
