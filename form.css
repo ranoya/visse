@@ -38,6 +38,8 @@
   border: 0;
   text-decoration: none;
   transition: all 0.2s ease-in;
+  transition: backgroundColor 0 none;
+  transition: color 0 none;
 }
 
 .secao {
