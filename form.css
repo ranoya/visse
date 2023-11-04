@@ -1,6 +1,10 @@
 /* BASE ----------------------------------------------------------- */
 
+/*
 @import url("https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Open+Sans:wght@300;400;700&family=Prompt:wght@100;300;600&display=swap");
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@200;200i;400;400i;700&family=Open+Sans:wght@300;400;700&family=Prompt:wght@100;300;600&display=swap");
 
 :root {
   --cor-base: #12a3cb;
@@ -63,11 +67,20 @@
   height: 340px;
 }
 
+/*
 #midsection {
   width: 100%;
   display: inline-block;
   padding-bottom: 60px;
   font-family: "Nuosu SIL", serif;
+  color: var(--cor-texto, #444444);
+}*/
+
+#midsection {
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 60px;
+  font-family: "Libre Baskerville", serif;
   color: var(--cor-texto, #444444);
 }
 
