@@ -156,6 +156,25 @@
       }
     </style>
 
+    <script>
+      let jafoi = [];
+      let objetos = document.getElementsByClassName("atfl");
+
+      let carregacoisas = function () {
+        for (let i = 0; i < objetos.length; i++) {
+          if (
+            jafoi[i] != true &&
+            objetos[i].getBoundingClientRect().top <= window.innerHeight
+          ) {
+            objetos[i].style.backgroundImage = `url(${objetos[i].getAttribute(
+              "fundo"
+            )})`;
+            jafoi[i] = true;
+          }
+        }
+      };
+    </script>
+
     <script type="module">
       import {
         Runtime,
@@ -169,8 +188,13 @@
           return new Inspector(document.querySelector("#filtros"));
         if (name === "navexemplos")
           return new Inspector(document.querySelector("#criterios"));
-        if (name === "curadoria")
+
+        /*  if (name === "curadoria")
+          return new Inspector(document.querySelector("#artefatos")); */
+
+        if (name === "artefatos")
           return new Inspector(document.querySelector("#artefatos"));
+
         if (name === "stats")
           return new Inspector(document.querySelector("#estatisticas"));
 
@@ -315,6 +339,13 @@
           document.getElementById("midsection").style.boxShadow = "none";
         }
       };
+    </script>
+
+    <script>
+      document.getElementById("superbody").onscroll = function (e) {
+        carregacoisas();
+      };
+      window.addEventListener("resize", carregacoisas);
     </script>
   </body>
 </html>
