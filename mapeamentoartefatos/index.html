@@ -160,7 +160,7 @@
       let jafoi = [];
       let objetos = document.getElementsByClassName("atfl");
 
-      let carregacoisas = function () {
+      const carregacoisas = function () {
         for (let i = 0; i < objetos.length; i++) {
           if (
             jafoi[i] != true &&
@@ -172,6 +172,10 @@
             jafoi[i] = true;
           }
         }
+      };
+
+      const resetajafoi = function () {
+        jafoi = [];
       };
     </script>
 
