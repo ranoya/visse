@@ -340,6 +340,23 @@
       ) {
         document.body.style.setProperty("--cor-bg", "#" + $_GET["bg"]);
       }
+
+      const goto = function (el) {
+        setTimeout(function () {
+          window.scrollTo({
+            top: document.getElementById(el).offsetTop - 25,
+            behavior: "smooth",
+          });
+        }, 400);
+      };
+
+      if (
+        typeof $_GET["goto"] != "undefined" &&
+        $_GET["goto"] != null &&
+        $_GET["goto"] != ""
+      ) {
+        goto($_GET["goto"]);
+      }
     </script>
   </body>
 </html>
