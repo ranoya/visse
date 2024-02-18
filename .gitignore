@@ -1,4 +1,7 @@
+# ignore ALL .log files
+*.gitignore
+
+# ignore ALL files in ANY directory named temp
+.vscode/
 .DS_Store
-.vscode
-.gitignore
 
