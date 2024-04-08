@@ -245,10 +245,9 @@
         document.getElementById("full").innerHTML = docs;
       };
 
-      getdata(
-        googlesheet(
-          "https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1919038367",
-          "CERTIFICADOS"
+      getcsvdata(
+        GoogleSheetCsvURL(
+          "https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1919038367"
         ),
         geracertificados
       );
