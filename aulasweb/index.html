@@ -112,7 +112,8 @@
           <div id="observablehq-listaaulas-6e5ddc56"></div>
 
           <h3>Bibliografia</h3>
-          <div id="observablehq-bibliografia-6e5ddc56"></div>
+          <div id="bibliografia"></div>
+          <div id="bibliografiap"></div>
         </div>
       </div>
     </div>
@@ -172,9 +173,10 @@
             document.querySelector("#observablehq-listaaulas-6e5ddc56")
           );
         if (name === "bibliografia")
-          return new Inspector(
-            document.querySelector("#observablehq-bibliografia-6e5ddc56")
-          );
+          return new Inspector(document.querySelector("#bibliografia"));
+
+        if (name === "bibliografiaopen")
+          return new Inspector(document.querySelector("#bibliografiap"));
       });
     </script>
 
@@ -264,6 +266,18 @@
 
       let signo = sintesevisse_border();
       document.getElementById("logovissesintese").innerHTML = signo.svg;
+
+      if (
+        typeof $_GET["p"] != "undefined" &&
+        $_GET["p"] != "" &&
+        $_GET["p"] != null
+      ) {
+        document.getElementById("bibliografiap").style.display = "block";
+        document.getElementById("bibliografia").style.display = "none";
+      } else {
+        document.getElementById("bibliografia").style.display = "block";
+        document.getElementById("bibliografiap").style.display = "none";
+      }
 
       document.onscroll = function () {
         if (document.documentElement.scrollTop > 20) {
