@@ -13,6 +13,9 @@ export default ({
         p.trilhas = {};
         p.primeira = true;
 
+        p.width = 0;
+        p.height = 0;
+
         p.drawitself = function (arr) {
 
             arr.p1x = (arr.rx) + (Math.cos(arr.a) * arr.r);
@@ -47,6 +50,9 @@ export default ({
             p.createCanvas(document.getElementById(el).clientWidth, document.getElementById(el).clientHeight);
             p.strokeWeight(1);
 
+            p.width = document.getElementById(el).clientWidth;
+            p.height = document.getElementById(el).clientHeight;
+
             for (let k = 0; k < 16; k++) {
 
                 p.trilhas[k] = {
@@ -66,8 +72,8 @@ export default ({
                     p2y: 0
                 }
 
-                p.trilhas[k].rx = Math.random() * p.windowWidth;
-                p.trilhas[k].ry = Math.random() * p.windowHeight;
+                p.trilhas[k].rx = Math.random() * p.width
+                p.trilhas[k].ry = Math.random() * p.height;
 
             }
 
@@ -138,6 +144,9 @@ export default ({
             p.trilhas = {};
             p.primeira = true;
 
+            p.width = document.getElementById(el).clientWidth;
+            p.height = document.getElementById(el).clientHeight;
+
             for (let k = 0; k < 16; k++) {
 
                 p.trilhas[k] = {
@@ -157,8 +166,8 @@ export default ({
                     p2y: 0
                 }
 
-                p.trilhas[k].rx = Math.random() * p.windowWidth;
-                p.trilhas[k].ry = Math.random() * p.windowHeight;
+                p.trilhas[k].rx = Math.random() * p.width;
+                p.trilhas[k].ry = Math.random() * p.height;
 
             }
 
