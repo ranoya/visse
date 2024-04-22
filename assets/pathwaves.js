@@ -11,6 +11,7 @@ export default ({
         p.count = 0;
         p.cor = fcolor;
         p.trilhas = {};
+        p.primeira = true;
 
         p.drawitself = function (arr) {
 
@@ -74,6 +75,37 @@ export default ({
 
 
         p.draw = function () {
+
+            // Acelera o desenho para ter algo no começo
+            if (p.primeira) {
+                
+                for (let n = 0; n < 600; n++) {
+
+                    p.count++;
+                    if (p.count > 2000) {
+
+                        if (p.cor == fcolor) {
+                            p.cor = bgcolor;
+                        } else {
+                            p.cor = fcolor;
+                        }
+
+                        p.count = 0;
+
+                    }
+
+
+                    for (let z = 0; z < 16; z++) {
+                        p.stroke(p.cor);
+                        p.drawitself(p.trilhas[z]);
+
+                    }
+
+                }
+
+
+                p.primeira = false;
+            }
 
             p.count++;
             if (p.count > 2000) {
