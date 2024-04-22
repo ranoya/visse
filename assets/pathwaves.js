@@ -132,6 +132,44 @@ export default ({
 
         p.windowResized = function () {
             p.resizeCanvas(document.getElementById(el).clientWidth, document.getElementById(el).clientHeight);
+
+            p.count = 0;
+            p.cor = fcolor;
+            p.trilhas = {};
+            p.primeira = true;
+
+            // Acelera o desenho para ter algo no começo
+            if (p.primeira) {
+                
+                for (let n = 0; n < 1200; n++) {
+
+                    p.count++;
+                    if (p.count > 2000) {
+
+                        if (p.cor == fcolor) {
+                            p.cor = bgcolor;
+                        } else {
+                            p.cor = fcolor;
+                        }
+
+                        p.count = 0;
+
+                    }
+
+
+                    for (let z = 0; z < 16; z++) {
+                        p.stroke(p.cor);
+                        p.drawitself(p.trilhas[z]);
+
+                    }
+
+                }
+
+
+                p.primeira = false;
+            }
+
+
         };
     }
 
