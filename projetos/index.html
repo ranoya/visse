@@ -137,6 +137,7 @@
     </script>
 
     <script type="module">
+      /*
       import pathw from "../assets/pathwavessvg.js";
 
       let waves = pathw({
@@ -147,7 +148,21 @@
           "--cor-base"
         ),
         el: "grafismo",
-        iter: 600,
+        iter: 1200,
+      });
+      */
+
+      import pathw from "../assets/pathwaves.js";
+
+      let waves = pathw({
+        p5,
+        bgcolor: getComputedStyle(document.documentElement).getPropertyValue(
+          "--cor-invert"
+        ),
+        fcolor: getComputedStyle(document.documentElement).getPropertyValue(
+          "--cor-base"
+        ),
+        el: "grafismo",
       });
     </script>
 
