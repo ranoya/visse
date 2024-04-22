@@ -3,11 +3,12 @@ export default ({
     el = 'iddoelemento',
     fcolor = '#000000',
     bgcolor = '#FFFFFF',
+    iter = 600,
 
 }) => {
 
     let precision = 0.03;
-    let itera = 600;
+    let itera = iter;
     let windowWidth = 2000;
     let windowHeight = 400;
     let corA = fcolor;
