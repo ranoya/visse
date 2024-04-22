@@ -138,35 +138,28 @@ export default ({
             p.trilhas = {};
             p.primeira = true;
 
-            // Acelera o desenho para ter algo no começo
-            if (p.primeira) {
-                
-                for (let n = 0; n < 1200; n++) {
+            for (let k = 0; k < 16; k++) {
 
-                    p.count++;
-                    if (p.count > 2000) {
-
-                        if (p.cor == fcolor) {
-                            p.cor = bgcolor;
-                        } else {
-                            p.cor = fcolor;
-                        }
-
-                        p.count = 0;
-
-                    }
-
-
-                    for (let z = 0; z < 16; z++) {
-                        p.stroke(p.cor);
-                        p.drawitself(p.trilhas[z]);
-
-                    }
-
+                p.trilhas[k] = {
+                    detax: 0,
+                    deltay: 0,
+                    newr: 0,
+                    a: Math.random() * (2 * Math.PI),
+                    r: (80 + Math.random() * (180)),
+                    esp: Math.random() * (150),
+                    step: Math.random() * (0.1),
+                    rx: 100,
+                    ry: 100,
+                    dir: 1,
+                    p1x: 0,
+                    p1y: 0,
+                    p2x: 0,
+                    p2y: 0
                 }
 
+                p.trilhas[k].rx = Math.random() * p.windowWidth;
+                p.trilhas[k].ry = Math.random() * p.windowHeight;
 
-                p.primeira = false;
             }
 
 
