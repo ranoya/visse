@@ -137,8 +137,7 @@ export default ({
         }
 
         p.windowResized = function () {
-            p.resizeCanvas(document.getElementById(el).clientWidth, document.getElementById(el).clientHeight);
-
+            
             p.count = 0;
             p.cor = fcolor;
             p.trilhas = {};
@@ -171,6 +170,8 @@ export default ({
 
             }
 
+
+            p.resizeCanvas(document.getElementById(el).clientWidth, document.getElementById(el).clientHeight);
 
         };
     }
