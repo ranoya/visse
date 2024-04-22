@@ -155,10 +155,9 @@
     </script>
 
     <script type="module">
-      import pathw from "../assets/pathwaves.js";
+      import pathw from "../assets/pathwavessvg.js";
 
       let waves = pathw({
-        p5,
         bgcolor: getComputedStyle(document.documentElement).getPropertyValue(
           "--cor-invert"
         ),
@@ -166,6 +165,7 @@
           "--cor-base"
         ),
         el: "grafismo",
+        itera: 2400,
       });
     </script>
 
