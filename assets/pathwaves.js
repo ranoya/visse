@@ -79,7 +79,7 @@ export default ({
             // Acelera o desenho para ter algo no começo
             if (p.primeira) {
                 
-                for (let n = 0; n < 600; n++) {
+                for (let n = 0; n < 1200; n++) {
 
                     p.count++;
                     if (p.count > 2000) {
