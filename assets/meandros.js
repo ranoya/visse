@@ -121,13 +121,16 @@ export default ({
         p.windowResized = function () {
 
             p.background(bgcolor);
-            p.resizeCanvas(document.getElementById(el).clientWidth, document.getElementById(el).clientHeight);
             p.r1 = document.getElementById(el).clientWidth / 1.7;
             p.r2 = p.r1 + 80;
             p.centroY = 0;
             p.direction = 1;
             p.count = 0;
             p.step = 0.004;
+
+            p.primeira = true;
+
+            p.resizeCanvas(document.getElementById(el).clientWidth, document.getElementById(el).clientHeight);
 
 
         };
