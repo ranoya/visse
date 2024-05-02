@@ -134,6 +134,18 @@
         line-height: 16px;
         margin-top: 8px;
       }
+
+      @media screen and (max-width: 550px) {
+        .tabelaexalunos {
+          grid-template-columns: 1fr 1fr !important;
+        }
+      }
+
+      @media screen and (max-width: 421px) {
+        .duascolunas-pessoas {
+          grid-template-columns: [init] 0 1fr 0 [fim] !important;
+        }
+      }
     </style>
 
     <script type="module">
