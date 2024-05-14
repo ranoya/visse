@@ -51,6 +51,7 @@
     <link rel="stylesheet" type="text/css" href="../form.css" />
     <script src="https://www.ranoya.com/Assets/JSLibs/visse/logovisse2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script src="https://datat.vercel.app/screenmin.js"></script>
   </head>
 
   <body>
@@ -108,6 +109,8 @@
           <br /><br />
           <div id="observablehq-tabelea"></div>
           <div id="observablehq-estilo"></div>
+
+          <div id="painel"></div>
         </div>
       </div>
     </div>
@@ -275,6 +278,175 @@
         ),
         el: "grafismo",
       });
+    </script>
+
+    <script>
+      let todosdados = [];
+
+      gsdata(
+        "https://docs.google.com/spreadsheets/d/1tjmcRwo4mLUYKrlitWA1c41T8iWebQcpBjEw77Y5LpU/edit#gid=308662190",
+        function (dados) {
+          todosdados = dados;
+        }
+      );
+
+      const extraimes = function (valor) {
+        let patt = /\d{1,2}/gi;
+        let arr = valor.match(patt);
+        return arr[1];
+      };
+
+      const extraiano = function (valor) {
+        let patt = /\d\d\d\d/gi;
+        let arr = valor.match(patt);
+        return arr[0];
+      };
+
+      const edia = function (valor) {
+        let patt = /\d{1,2}/gi;
+        let arr = valor.match(patt);
+        return parseInt(arr[0]);
+      };
+
+      emes = function (valor) {
+        let patt = /\d{1,2}/gi;
+        let arr = valor.match(patt);
+        return parseInt(arr[1]);
+      };
+
+      eano = function (valor) {
+        let patt = /\d\d\d\d/gi;
+        let arr = valor.match(patt);
+        return parseInt(arr[0]);
+      };
+
+      const entredatas = function (dataA, dataB, dataC) {
+        let restult = false;
+
+        if (eano(dataA) < eano(dataB) && eano(dataB) < eano(dataC)) {
+          restult = true;
+        } else if (eano(dataA) < eano(dataB) && eano(dataB) == eano(dataC)) {
+          if (emes(dataB) < emes(dataC)) {
+            restult = true;
+          }
+
+          if (emes(dataB) == emes(dataC) && edia(dataB) <= edia(dataC)) {
+            restult = true;
+          }
+        } else if (eano(dataA) == eano(dataB) && emes(dataA) < emes(dataB)) {
+          if (eano(dataB) < eano(dataC)) {
+            restult = true;
+          }
+
+          if (eano(dataB) == eano(dataC) && emes(dataB) < emes(dataC)) {
+            restult = true;
+          }
+
+          if (
+            eano(dataB) == eano(dataC) &&
+            emes(dataB) == emes(dataC) &&
+            edia(dataB) <= edia(dataC)
+          ) {
+            restult = true;
+          }
+        } else if (
+          eano(dataA) == eano(dataB) &&
+          emes(dataA) == emes(dataB) &&
+          edia(dataA) <= edia(dataB)
+        ) {
+          if (eano(dataB) < eano(dataC)) {
+            restult = true;
+          }
+
+          if (eano(dataB) == eano(dataC) && emes(dataB) < emes(dataC)) {
+            restult = true;
+          }
+
+          if (
+            eano(dataB) == eano(dataC) &&
+            emes(dataB) == emes(dataC) &&
+            edia(dataB) <= edia(dataC)
+          ) {
+            restult = true;
+          }
+        }
+
+        return restult;
+      };
+
+      const compiladados = function (arr, data) {
+        let contab = [];
+        contab["M"] = 0;
+        contab["D"] = 0;
+        contab["DI"] = 0;
+        contab["MDI"] = 0;
+        contab["DDI"] = 0;
+        contab["DAD"] = 0;
+        contab["MDAD"] = 0;
+        contab["DDAD"] = 0;
+        contab["DET"] = 0;
+        contab["MDET"] = 0;
+        contab["DDET"] = 0;
+        contab["DCA"] = 0;
+        contab["MDCA"] = 0;
+        contab["DDCA"] = 0;
+
+        for (let c = 0; c < arr.length; c++) {
+          if (
+            entredatas(
+              arr[c].Inicio,
+              "15/" + extraimes(data) + "/" + extraiano(data),
+              arr[c].Fim
+            )
+          ) {
+            if (arr[c]["Nível"] == "Mestrado") {
+              contab["M"]++;
+              contab["M" + arr[c].Linha]++;
+            } else {
+              contab["D"]++;
+              contab["D" + arr[c].Linha]++;
+            }
+          }
+        }
+
+        return contab;
+      };
+
+      const apresentapainel = function (data) {
+        let dia = "10/04/2023";
+
+        if (typeof data != "undefined" && data != "" && data != null) {
+          dia = data;
+        }
+
+        let arr = compiladados(todosdados, dia);
+
+        let code = `<div style="font-size: 12px; font-weight: lighter; width: 100%; display: grid; grid-template-columns: 1fr 40px 40px; gap: 8px 8px;">
+
+                    <div>Linha</div><b class="centra">M</b><b class="centra">D</b>
+                    <b>DI</b><div class="centra">${arr["MDI"]}</div><div class="centra">${arr["DDI"]}</div>
+                    <b>DAD</b><div class="centra">${arr["MDAD"]}</div><div class="centra">${arr["DDAD"]}</div>
+                    <b>DET</b><div class="centra">${arr["MDET"]}</div><div class="centra">${arr["DDET"]}</div>
+                    <b>DCA</b><div class="centra">${arr["MDCA"]}</div><div class="centra">${arr["DDCA"]}</div>
+                    <div>Totais</div><b class="centra">${arr["M"]}</b><b class="centra">${arr["D"]}</b>
+
+          </div>
+        `;
+
+        if (mouseX > screenWidth - 350) {
+          screen("#painel").left = mouseX - 170 + "px";
+        } else {
+          screen("#painel").left = mouseX + 50 + "px";
+        }
+        screen("#painel").top = mouseY - 80 + "px";
+        screen("#painel").display = "block";
+
+        screen("#painel").innerHTML = code;
+      };
+
+      resetapainel = function () {
+        screen("#painel").display = "none";
+      };
     </script>
 
     <script>
