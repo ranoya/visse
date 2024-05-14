@@ -232,6 +232,33 @@
         fill: var(--cor-hv0, #cc97ef);
         opacity: 0.4;
       }
+
+      #painel {
+        position: absolute;
+        z-index: 1000;
+        width: 120px;
+        height: 120px;
+        background-color: white;
+        color: #999999;
+        display: none;
+        padding: 18px;
+        box-shadow: #00000040 0 0 8px 2px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: lighter;
+      }
+
+      #painel .centra {
+        text-align: center;
+      }
+
+      .timelinerinvisivel {
+        fill: #00000001;
+      }
+
+      .timelinerinvisivel:hover {
+        fill: #00000030;
+      }
     </style>
 
     <script type="module">
