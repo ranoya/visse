@@ -399,25 +399,42 @@
 
       .blocotimeline {
         display: grid;
-        grid-template-columns: 80px 200px 1fr 1fr 130px;
+        grid-template-columns: 100px 100px 1fr 1fr 120px;
         gap: 15px 15px;
         width: 100%;
       }
 
       .timelineobject {
         width: 100%;
-        max-width: 400px;
+        max-width: 500px;
         aspect-ratio: 16/9;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
       }
 
+      .timelineobjectvideo {
+        padding: 12px 12px 12px 12px;
+        margin: -12px -12px -12px -12px;
+        color: var(--cor-hv1, #12a3cb);
+        box-shadow: 0px 5px 20px #bbbbbb;
+      }
+
+      a .timelineobjectvideo {
+        background-color: var(--cor-hv1, #12a3cb);
+        color: var(--cor-invert, white);
+      }
+      
+
       .timeline_ano {
         background: rgb(255, 255, 255);
-        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, var(--cor-hv3) 31%, rgba(255, 255, 255, 1) 32%, rgba(255, 255, 255, 1) 100%);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 25%, var(--cor-hv3) 26%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 100%);
         font-size: 26px;
         font-weight: bolder;
+      }
+
+      timeline_titulo strong {
+        font-size: 20px;
       }
 
       .numeroano {
