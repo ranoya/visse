@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let startcommand = "";
+
+      if (
+        typeof $_GET["startcommand"] != "undefined" &&
+        $_GET["startcommand"] != null &&
+        $_GET["startcommand"] != ""
+      ) {
+        startcommand = $_GET["startcommand"];
+      }
+    </script>
+
+    <style>
+      html,
+      body {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+      }
+
+      #word {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100dvh;
+        width: calc(100% - 470px);
+      }
+
+      #notes {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100dvh;
+        width: 450px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <iframe frameborder="0" id="word"></iframe>
+    <iframe frameborder="0" id="notes"></iframe>
+
+    <script>
+      document.getElementById("notes").src =
+        "https://poepesquisa.vercel.app/csv/?title=COLAB&json=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=88153848&custommenu=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=1204780574&textos=https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1493544759&plugins=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=2135951357&files=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=0&run=true&nofocus=true&startcommand=" +
+        startcommand;
+
+      document.getElementById("word").src = $_GET["link"];
+    </script>
+  </body>
+</html>
