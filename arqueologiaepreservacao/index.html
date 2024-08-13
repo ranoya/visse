@@ -240,16 +240,16 @@
           return new Inspector(document.querySelector("#titulo"));
 
         if (name === "descricao")
-          return new Inspector(document.querySelector("descricao"));
+          return new Inspector(document.querySelector("#descricao"));
 
         if (name === "pessoas")
-          return new Inspector(document.querySelector("pessoas"));
+          return new Inspector(document.querySelector("#pessoas"));
 
         if (name === "pessoas")
-          return new Inspector(document.querySelector("pessoas"));
+          return new Inspector(document.querySelector("#pessoas"));
 
         if (name === "estilos")
-          return new Inspector(document.querySelector("estilos"));
+          return new Inspector(document.querySelector("#estilos"));
       });
 
       const dadosproducao = await fromObservable.value("producao");
