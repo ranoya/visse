@@ -91,6 +91,8 @@
 
           <div id="pessoas"></div>
 
+          <h2 id="tituloprodutos"></h2>
+
           <div id="producao"></div>
 
           <div id="estilos"></div>
@@ -240,6 +242,9 @@
       const fromObservable = new Runtime().module(define, (name) => {
         if (name === "titulo")
           return new Inspector(document.querySelector("#titulo"));
+
+        if (name === "tituloprodutos")
+          return new Inspector(document.querySelector("#tituloprodutos"));
 
         if (name === "descricao")
           return new Inspector(document.querySelector("#descricao"));
