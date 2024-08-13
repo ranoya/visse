@@ -93,6 +93,10 @@
 
           <div id="pessoas"></div>
 
+          <h2 id="tituloensino" style="border-bottom: 1px solid #bbbbbb"></h2>
+
+          <div id="ensino"></div>
+
           <h2 id="tituloprodutos" style="border-bottom: 1px solid #bbbbbb"></h2>
 
           <div id="producao"></div>
@@ -257,8 +261,11 @@
         if (name === "pessoas")
           return new Inspector(document.querySelector("#pessoas"));
 
-        if (name === "pessoas")
-          return new Inspector(document.querySelector("#pessoas"));
+        if (name === "tituloensino")
+          return new Inspector(document.querySelector("#tituloensino"));
+
+        if (name === "ensino")
+          return new Inspector(document.querySelector("#ensino"));
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
