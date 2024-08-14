@@ -371,6 +371,42 @@
       document.getElementsByTagName("head")[0].appendChild(colortagWin);
       document.getElementsByTagName("head")[0].appendChild(colortagios);
 
+      if (
+        window.navigator.platform.toString().indexOf("Win") >= 0 ||
+        window.navigator.platform.toString().indexOf("Linux") >= 0
+      ) {
+        let scrl = document.createElement("style");
+        scrl.setAttribute(
+          "content",
+          `
+        ::-webkit-scrollbar {
+        width: 20px;
+          background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        ::-webkit-scrollbar:hover {
+          background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: transparent;
+          border-right: 10px solid var(--cor-shadow, #176b82);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: transparent;
+          border-right: 10px solid var(--cor-hv0, cyan);
+        }
+        `
+        );
+
+        document.getElementsByTagName("head")[0].appendChild(scrl);
+      }
+
       let lovovisse = logovisse_border();
       document.getElementById("logovisse").innerHTML = lovovisse.svg;
 
