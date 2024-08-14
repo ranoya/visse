@@ -376,10 +376,8 @@
         window.navigator.platform.toString().indexOf("Linux") >= 0
       ) {
         let scrl = document.createElement("style");
-        scrl.setAttribute(
-          "content",
-          `
-         ::-webkit-scrollbar {
+        let scrlcontent = document.createTextNode(`
+        ::-webkit-scrollbar {
         width: 10px;
           background-color: transparent;
         }
@@ -399,9 +397,9 @@
         ::-webkit-scrollbar-thumb:hover {
           background: var(--cor-hv0, cyan);
         }
-        `
-        );
+        `);
 
+        scrl.appendChild(scrlcontent);
         document.getElementsByTagName("head")[0].appendChild(scrl);
       }
 
