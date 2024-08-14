@@ -95,6 +95,16 @@
 
           <div id="pessoas" style="width: calc(100% - 20vw - 16px)"></div>
 
+          <h2 id="tituloensino" style="border-bottom: 1px solid #bbbbbb"></h2>
+          <br />
+
+          <div id="ensino"></div>
+
+          <h2 id="titulomais" style="border-bottom: 1px solid #bbbbbb"></h2>
+          <br />
+
+          <div id="mais"></div>
+
           <h2 id="tituloprodutos" style="border-bottom: 1px solid #bbbbbb"></h2>
           <br />
 
@@ -259,6 +269,18 @@
 
         if (name === "pessoas")
           return new Inspector(document.querySelector("#pessoas"));
+
+        if (name === "tituloensino")
+          return new Inspector(document.querySelector("#tituloensino"));
+
+        if (name === "ensino")
+          return new Inspector(document.querySelector("#ensino"));
+
+        if (name === "titulomais")
+          return new Inspector(document.querySelector("#titulomais"));
+
+        if (name === "ensino")
+          return new Inspector(document.querySelector("#ensino"));
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
