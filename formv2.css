@@ -380,6 +380,7 @@ h3 {
   padding: 10px;
   margin: -10px;
   color: var(--cor-texto);
+  padding-right: 25px;
 }
 
 .postagem:hover .titulo_post {
