@@ -68,7 +68,7 @@
   display: inline-block;
   padding-bottom: 60px;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 20px;
   font-family: "Source Serif 4", serif;
   font-optical-sizing: auto;
   color: var(--cor-texto, #444444);
@@ -828,12 +828,12 @@ th {
 @media screen and (min-width: 1000px) {
   #midsection .secao p {
     font-size: 14px;
-    line-height: 22px;
+    line-height: 20px;
   }
 
   .obra {
     font-size: 14px;
-    line-height: 22px;
+    line-height: 20px;
   }
 
   .nome_pessoa {
