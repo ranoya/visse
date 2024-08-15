@@ -124,6 +124,11 @@
           <div id="producao"></div>
             -->
 
+          <div id="observablehq-orientadores-9dcac26c"></div>
+          <div id="observablehq-colaboradores-9dcac26c"></div>
+          <div id="observablehq-pesquisadores-9dcac26c"></div>
+          <div id="observablehq-extensionistas-9dcac26c"></div>
+
           <div id="estilos"></div>
         </div>
       </div>
@@ -283,6 +288,23 @@
 
         if (name === "pessoas")
           return new Inspector(document.querySelector("#pessoas"));
+
+        if (name === "orientadores")
+          return new Inspector(
+            document.querySelector("#observablehq-orientadores-9dcac26c")
+          );
+        if (name === "colaboradores")
+          return new Inspector(
+            document.querySelector("#observablehq-colaboradores-9dcac26c")
+          );
+        if (name === "pesquisadores")
+          return new Inspector(
+            document.querySelector("#observablehq-pesquisadores-9dcac26c")
+          );
+        if (name === "extensionistas")
+          return new Inspector(
+            document.querySelector("#observablehq-extensionistas-9dcac26c")
+          );
 
         /*
         if (name === "tituloensino")
