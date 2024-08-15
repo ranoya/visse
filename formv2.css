@@ -67,6 +67,8 @@
   width: 100%;
   display: inline-block;
   padding-bottom: 60px;
+  font-size: 14px;
+  line-height: 22px;
   font-family: "Source Serif 4", serif;
   font-optical-sizing: auto;
   color: var(--cor-texto, #444444);
