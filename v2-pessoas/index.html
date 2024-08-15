@@ -101,6 +101,8 @@
 
           <div id="filtros"></div>
 
+          <div id="botoes"></div>
+
           <h2
             id="titulopessoas"
             style="width: 100%; border-bottom: 1px solid #bbbbbb"
@@ -177,6 +179,8 @@
           return new Inspector(document.querySelector("#descricao"));
         if (name === "viewof filtros")
           return new Inspector(document.querySelector("#filtros"));
+        if (name === "botoes")
+          return new Inspector(document.querySelector("#botoes"));
         if (name === "titulopessoas")
           return new Inspector(document.querySelector("#titulopessoas"));
         if (name === "pessoas")
