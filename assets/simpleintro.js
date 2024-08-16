@@ -10,6 +10,14 @@ praonde[8] = "../v2-humanismodedados";
 praonde[9] = "";
 praonde[10] = "../v2-observatorio";
 
+const rescale = function ([a, b], [c, d]) {
+  return function (e) {
+    return ((e - a) / (b - a)) * (d - c) + c;
+  };
+};
+
+let rx;
+
 curva = function (x, y, r1, r2, s, c) {
   for (let a = 0; a < 2 * Math.PI; a = a + s) {
     if (c) {
@@ -100,10 +108,14 @@ function setup() {
   );
 
   prop = windowWidth / 1650;
+  rx = rescale([0, 1350], [0, windowWidth]);
+  ry = rescale([0, 700], [0, windowHeight]);
 }
 
 windowResized = function () {
   prop = windowWidth / 1650;
+  rx = rescale([0, 1350], [0, windowWidth]);
+  ry = rescale([0, 700], [0, windowHeight]);
 
   canv = resizeCanvas(windowWidth, windowHeight);
   canv.parent("interage");
@@ -121,6 +133,10 @@ act[8] = false;
 act[9] = false;
 act[10] = false;
 
+let sn_x = -200;
+let lm_x = -10;
+let crescendo = 1;
+
 function mouseClicked() {
   for (let i = 0; i < act.length; i++) {
     if (act[i] == true) {
@@ -132,72 +148,105 @@ function mouseClicked() {
 function draw() {
   background(255);
 
+  stroke("#00000010");
+  sn_x = -500;
+  for (let ln_x = 0; ln_x < lm_x; ln_x = ln_x + 0.5) {
+    line(
+      Math.cos(sn_x) * (130 + crescendo) + ln_x,
+      Math.sin(sn_x) * (130 + crescendo) + windowHeight / 2,
+      Math.cos(sn_x) * (470 + crescendo) + ln_x,
+      Math.sin(sn_x) * (470 + crescendo) + windowHeight / 2
+    );
+
+    sn_x = sn_x + 0.01;
+  }
+
+  crescendo++;
+  lm_x = lm_x + 5;
+
+  if (lm_x > 1800) {
+    lm_x = 1800;
+  }
+
+  if (crescendo > 1800) {
+    crescendo = 1;
+    lm_x = -10;
+  }
+
   mx = (mouseX - windowWidth / 2) / 10;
   my = (mouseY - windowHeight / 2) / 10;
 
   push();
   scale(prop);
 
-  if (mouseX < 420 && mouseY > 400 && mouseY < 600) {
+  if (mouseX < rx(420) && mouseY > ry(400) && mouseY < ry(600)) {
     act[6] = true;
   } else {
     act[6] = false;
   }
 
-  if (mouseX < 420 && mouseY >= 600) {
+  if (mouseX < rx(420) && mouseY >= ry(600)) {
     act[9] = true;
   } else {
     act[9] = false;
   }
 
-  if (mouseX < 420 && mouseY <= 400 && mouseY > 200) {
+  if (mouseX < rx(420) && mouseY <= ry(400) && mouseY > ry(200)) {
     act[1] = true;
   } else {
     act[1] = false;
   }
 
-  if (mouseX < 300 && mouseY <= 200) {
+  if (mouseX < rx(300) && mouseY <= ry(200)) {
     act[10] = true;
   } else {
     act[10] = false;
   }
 
   if (
-    (mouseX >= 420 && mouseX < 610 && mouseY < 420) ||
-    (mouseX > 750 && mouseX < 950 && mouseY >= 200 && mouseY < 400)
+    (mouseX >= rx(420) && mouseX < rx(610) && mouseY < ry(420)) ||
+    (mouseX > rx(750) &&
+      mouseX < rx(950) &&
+      mouseY >= ry(200) &&
+      mouseY < ry(400))
   ) {
     act[2] = true;
   } else {
     act[2] = false;
   }
 
-  if (mouseX >= 770 && mouseX < 1200 && mouseY < 200) {
+  if (mouseX >= rx(770) && mouseX < rx(1200) && mouseY < ry(200)) {
     act[4] = true;
   } else {
     act[4] = false;
   }
 
-  if (mouseX >= 610 && mouseX < 750 && mouseY >= 200 && mouseY < 400) {
+  if (
+    mouseX >= rx(610) &&
+    mouseX < rx(750) &&
+    mouseY >= ry(200) &&
+    mouseY < ry(400)
+  ) {
     act[5] = true;
   } else {
     act[5] = false;
   }
 
-  if (mouseX >= 420 && mouseX < 1000 && mouseY >= 400) {
+  if (mouseX >= rx(420) && mouseX < rx(1000) && mouseY >= ry(400)) {
     act[3] = true;
   } else {
     act[3] = false;
   }
 
-  if (mouseX >= 1000 && mouseY >= 400) {
+  if (mouseX >= rx(1000) && mouseY >= ry(400)) {
     act[8] = true;
   } else {
     act[8] = false;
   }
 
   if (
-    (mouseX >= 1200 && mouseY > 200 && mouseY < 400) ||
-    (mouseX > 1200 && mouseY < 200)
+    (mouseX >= rx(1200) && mouseY > ry(200) && mouseY < ry(400)) ||
+    (mouseX > rx(1200) && mouseY < ry(200))
   ) {
     act[7] = true;
   } else {
