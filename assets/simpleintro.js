@@ -63,6 +63,13 @@ function setup() {
   prop = windowWidth / 1350;
 }
 
+windowResized = function () {
+  prop = windowWidth / 1350;
+
+  canv = resizeCanvas(windowWidth, windowHeight);
+  canv.parent("interage");
+};
+
 let act = [];
 act[1] = false;
 act[2] = false;
