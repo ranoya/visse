@@ -1,3 +1,15 @@
+let praonde = [];
+praonde[1] = "";
+praonde[2] = "../v2-linguagemgrafica";
+praonde[3] = "../v2-genero";
+praonde[4] = "../v2-memoriagrafica";
+praonde[5] = "../v2-critica";
+praonde[6] = "../v2-retorica";
+praonde[7] = "../v2-arqueologia";
+praonde[8] = "../v2-humanismodedados";
+praonde[9] = "";
+praonde[10] = "../v2-observatorio";
+
 curva = function (x, y, r1, r2, s, c) {
   for (let a = 0; a < 2 * Math.PI; a = a + s) {
     if (c) {
@@ -105,6 +117,14 @@ act[7] = false;
 act[8] = false;
 act[9] = false;
 act[10] = false;
+
+function mouseClicked() {
+  for (let i = 0; i < act.length; i++) {
+    if (act[i] == true) {
+      window.location = praonde[i];
+    }
+  }
+}
 
 function draw() {
   background(255);
