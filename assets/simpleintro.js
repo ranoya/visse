@@ -3,14 +3,16 @@ curva = function (x, y, r1, r2, s, c) {
     if (c) {
       noFill();
       stroke(
-        getComputedStyle(document.documentElement).getPropertyValue("--cor-hv0")
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--cor-menu-off-bg"
+        )
       );
     } else {
       noFill();
       stroke(
         getComputedStyle(document.documentElement).getPropertyValue(
           "--cor-leve"
-        )
+        ) + "55"
       );
     }
     line(
@@ -37,7 +39,9 @@ function rotateText(x, y, radius, initdeg, txt, sp, c) {
   if (c) {
     noStroke();
     fill(
-      getComputedStyle(document.documentElement).getPropertyValue("--cor-hv0")
+      getComputedStyle(document.documentElement).getPropertyValue(
+        "--cor-menu-off-bg"
+      )
     );
   } else {
     noStroke();
