@@ -144,6 +144,9 @@
       new Runtime().module(define, (name) => {
         if (name === "contato")
           return new Inspector(document.querySelector("#contexto"));
+
+        if (name === "estilos")
+          return new Inspector(document.querySelector("#estilos"));
       });
     </script>
 
