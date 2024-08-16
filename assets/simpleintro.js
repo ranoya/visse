@@ -150,7 +150,7 @@ function draw() {
 
   stroke(
     getComputedStyle(document.documentElement).getPropertyValue(
-      "--cor - hv1" + 12
+      "--cor-hv1" + 12
     )
   );
   sn_x = -500;
