@@ -140,7 +140,7 @@
         Runtime,
         Inspector,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/pessoas-do-visse.js?v=4";
+      import define from "https://api.observablehq.com/@ranoya/v2-pessoas.js?v=4";
       new Runtime().module(define, (name) => {
         if (name === "contato")
           return new Inspector(document.querySelector("#contexto"));
