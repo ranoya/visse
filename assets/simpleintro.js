@@ -52,11 +52,11 @@ function rotateText(x, y, radius, initdeg, txt, sp, c, r) {
   }
 
   textAlign(CENTER, BASELINE);
-  textSize(10);
+  textSize(12);
 
   if (c) {
     noStroke();
-    textSize(12);
+    textSize(14);
     fill(
       getComputedStyle(document.documentElement).getPropertyValue(
         "--cor-shadow"
@@ -80,7 +80,7 @@ function rotateText(x, y, radius, initdeg, txt, sp, c, r) {
 
   for (let i = 0; i < chars.length; i++) {
     if (r) {
-      text(chars[i], 0, 10 + radius);
+      text(chars[i], 0, 12 + radius);
     } else {
       text(chars[i], 0, -radius);
     }
