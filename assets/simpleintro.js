@@ -149,7 +149,8 @@ function draw() {
   background(255);
 
   stroke(
-    getComputedStyle(document.documentElement).getPropertyValue("--cor-hv1")
+    getComputedStyle(document.documentElement).getPropertyValue("--cor-hv1") +
+      20
   );
   sn_x = -500;
   for (let ln_x = 0; ln_x < lm_x; ln_x = ln_x + 0.5) {
