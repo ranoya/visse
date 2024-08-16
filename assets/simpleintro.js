@@ -60,11 +60,11 @@ function setup() {
   stroke(1);
   color(0);
 
-  prop = windowWidth / 1450;
+  prop = windowWidth / 1650;
 }
 
 windowResized = function () {
-  prop = windowWidth / 1450;
+  prop = windowWidth / 1650;
 
   canv = resizeCanvas(windowWidth, windowHeight);
   canv.parent("interage");
