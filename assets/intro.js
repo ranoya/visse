@@ -53,7 +53,7 @@ export default ({
 
       for (let i = 0; i < chars.length; i++) {
         p.text(chars[i], 0, -radius);
-        p.rotate(radians(charSpacingAngleDeg));
+        p.rotate(p.radians(charSpacingAngleDeg));
       }
 
       p.pop();
