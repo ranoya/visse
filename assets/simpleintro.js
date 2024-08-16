@@ -56,11 +56,9 @@ function rotateText(x, y, radius, initdeg, txt, sp, c, r) {
 
   if (c) {
     noStroke();
-    /* fill(
-      getComputedStyle(document.documentElement).getPropertyValue(
-        "--cor-shadow"
-      );*/
-    fill(0);
+    fill(
+      getComputedStyle(document.documentElement).getPropertyValue("--cor-hv0")
+    );
   } else {
     noStroke();
     fill(
