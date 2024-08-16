@@ -33,7 +33,7 @@ export default ({
         charSpacingAngleDeg = sp;
       }
 
-      p.textAlign(CENTER, BASELINE);
+      p.textAlign(p.CENTER, p.BASELINE);
       p.textSize(10);
 
       if (c) {
