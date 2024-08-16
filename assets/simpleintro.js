@@ -24,8 +24,14 @@ curva = function (x, y, r1, r2, s, c) {
   }
 };
 
-function rotateText(x, y, radius, initdeg, txt, sp, c) {
-  chars = txt.split("");
+function rotateText(x, y, radius, initdeg, txt, sp, c, r) {
+  charsi = txt.split("");
+
+  chars = charsi;
+
+  if (r) {
+    chars = charsi.reverse();
+  }
 
   charSpacingAngleDeg = 4;
 
@@ -58,7 +64,11 @@ function rotateText(x, y, radius, initdeg, txt, sp, c) {
   rotate(radians(initdeg));
 
   for (let i = 0; i < chars.length; i++) {
-    text(chars[i], 0, -radius);
+    if (r) {
+      text(chars[i], 0, 10 + radius);
+    } else {
+      text(chars[i], 0, -radius);
+    }
     rotate(radians(charSpacingAngleDeg));
   }
 
@@ -202,7 +212,16 @@ function draw() {
   curva(-60 + mx * 1.4, -120, 200, 300, 0.01, act[10]);
 
   // 1
-  rotateText(20 + mx / 4, 20, 445, 125, "POLÍTICAS DA VISUALIDADE", 2, act[1]);
+  rotateText(
+    20 + mx / 4,
+    20,
+    445,
+    295,
+    "POLÍTICAS DA VISUALIDADE",
+    2,
+    act[1],
+    true
+  );
 
   // 2
   rotateText(400 + mx / 2, 450, 390, 55, "LINGUAGEM GRÁFICA", 3, act[2]);
@@ -211,7 +230,16 @@ function draw() {
   rotateText(700 + mx / 8, 1200, 670, 325, "ESTUDOS DE GÊNERO", 1.4, act[3]);
 
   // 4
-  rotateText(1200 + mx / 1.5, -800, 1080, 195, "MEMÓRIA GRÁFICA", 1, act[4]);
+  rotateText(
+    1200 + mx / 1.5,
+    -800,
+    1080,
+    20,
+    "MEMÓRIA GRÁFICA",
+    1,
+    act[4],
+    true
+  );
 
   // 5
   rotateText(2000 + mx / 6, 350, 1480, 265, "PENSAMENTO CRÍTICO", 0.6, act[5]);
@@ -249,10 +277,11 @@ function draw() {
     -60 + mx * 1.4,
     -120,
     310,
-    120,
+    300,
     "OBSERVATÓRIO DE DI",
     1.3,
-    act[10]
+    act[10],
+    true
   );
 
   pop();
