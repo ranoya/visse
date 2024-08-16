@@ -46,7 +46,7 @@ function rotateText(x, y, radius, initdeg, txt, sp, c, r) {
     noStroke();
     fill(
       getComputedStyle(document.documentElement).getPropertyValue(
-        "--cor-menu-off-bg"
+        "--cor-shadow"
       )
     );
   } else {
