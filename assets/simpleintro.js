@@ -2,10 +2,16 @@ curva = function (x, y, r1, r2, s, c) {
   for (let a = 0; a < 2 * Math.PI; a = a + s) {
     if (c) {
       noFill();
-      stroke("#FF0000");
+      stroke(
+        getComputedStyle(document.documentElement).getPropertyValue("--cor-hv0")
+      );
     } else {
       noFill();
-      stroke("#cccccc");
+      stroke(
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--cor-leve"
+        )
+      );
     }
     line(
       Math.cos(a) * r1 + x,
@@ -30,10 +36,14 @@ function rotateText(x, y, radius, initdeg, txt, sp, c) {
 
   if (c) {
     noStroke();
-    fill("red");
+    fill(
+      getComputedStyle(document.documentElement).getPropertyValue("--cor-hv0")
+    );
   } else {
     noStroke();
-    fill("black");
+    fill(
+      getComputedStyle(document.documentElement).getPropertyValue("--cor-hv3")
+    );
   }
 
   push();
@@ -56,9 +66,9 @@ let prop = 0;
 function setup() {
   let canv = createCanvas(windowWidth, windowHeight);
   canv.parent("interage");
-  background(255);
-  stroke(1);
-  color(0);
+  background(
+    getComputedStyle(document.documentElement).getPropertyValue("--cor-invert")
+  );
 
   prop = windowWidth / 1650;
 }
