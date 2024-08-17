@@ -82,7 +82,7 @@
       <a name="contentmark"></a>
       <div id="midsection">
         <div class="secao">
-          <div id="entrada"></div>
+          <div id="entrada" style="display: none"></div>
 
           <div id="projetos"><span class="loader"></span></div>
 
@@ -315,6 +315,12 @@
           document.getElementById("midsection").style.boxShadow = "none";
         }
       };
+
+      let preenche = setTimeout(function () {
+        let inpt = document.getElementsByTagName("input")[0];
+        inpt.value = $_GET["nome"];
+        inpt.dispatchEvent(new Event("input", { bubbles: true }));
+      }, 1200);
     </script>
   </body>
 </html>
