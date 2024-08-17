@@ -318,7 +318,7 @@
 
       let preenche = setTimeout(function () {
         let inpt = document.getElementsByTagName("input")[0];
-        inpt.value = $_GET["nome"];
+        inpt.value = decodeURI($_GET["nome"]);
         inpt.dispatchEvent(new Event("input", { bubbles: true }));
       }, 4000);
     </script>
