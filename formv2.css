@@ -845,13 +845,15 @@ th {
   }
 }
 
+@media screen and (max-width: 999px) {
+  .quatrocolunas {
+    grid-template-columns: [init] 200px 1fr [fim] !important;
+  }
+}
+
 @media screen and (max-width: 995px) {
   #materiais .blocoposts {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .quatrocolunas {
-    grid-template-columns: [init] 200px 1fr [fim] !important;
   }
 
   #artefatos .blocoposts {
