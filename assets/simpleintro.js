@@ -109,13 +109,13 @@ function setup() {
     getComputedStyle(document.documentElement).getPropertyValue("--cor-invert")
   );
 
-  prop = windowWidth / 1650;
+  prop = windowWidth / 1350;
   rx = rescale([0, 1350], [0, windowWidth]);
   ry = rescale([0, 700], [0, windowHeight]);
 }
 
 windowResized = function () {
-  prop = windowWidth / 1650;
+  prop = windowWidth / 1350;
   rx = rescale([0, 1350], [0, windowWidth]);
   ry = rescale([0, 700], [0, windowHeight]);
 
