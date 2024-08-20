@@ -850,6 +850,10 @@ th {
     grid-template-columns: 1fr 1fr;
   }
 
+  .quatrocolunas {
+    grid-template-columns: [init] 200px 1fr [fim] !important;
+  }
+
   #artefatos .blocoposts {
     grid-template-columns: 1fr 1fr 1fr;
   }
