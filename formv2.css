@@ -829,14 +829,14 @@ th {
 
 @media screen and (min-width: 1000px) {
   #midsection .secao p {
-    font-size: 14.5px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 23px;
     max-width: 700px;
   }
 
   .obra {
-    font-size: 14.5px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 23px;
   }
 
   .nome_pessoa {
