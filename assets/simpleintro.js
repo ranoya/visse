@@ -9,6 +9,8 @@ praonde[7] = "../v2-arqueologia";
 praonde[8] = "../v2-humanismodedados";
 praonde[9] = "";
 praonde[10] = "../v2-observatorio";
+praonde[11] = "../v2-educacao";
+praonde[12] = "../v2-inovacao";
 
 const rescale = function ([a, b], [c, d]) {
   return function (e) {
@@ -132,6 +134,8 @@ act[7] = false;
 act[8] = false;
 act[9] = false;
 act[10] = false;
+act[11] = false;
+act[12] = false;
 
 let sn_x = -200;
 let lm_x = -10;
@@ -206,33 +210,33 @@ function draw() {
     act[10] = false;
   }
 
-  if (
-    (mouseX >= rx(420) && mouseX < rx(610) && mouseY < ry(420)) ||
-    (mouseX > rx(750) &&
-      mouseX < rx(950) &&
-      mouseY >= ry(200) &&
-      mouseY < ry(400))
-  ) {
-    act[2] = true;
+  if (mouseX >= rx(420) && mouseX < rx(610) && mouseY < ry(420)) {
+    act[5] = true;
   } else {
-    act[2] = false;
+    act[5] = false;
   }
 
-  if (mouseX >= rx(770) && mouseX < rx(1200) && mouseY < ry(200)) {
+  if (mouseX >= rx(670) && mouseX < rx(1050) && mouseY < ry(200)) {
     act[4] = true;
   } else {
     act[4] = false;
   }
 
+  if (mouseX >= rx(1050) && mouseY < ry(200)) {
+    act[11] = true;
+  } else {
+    act[11] = false;
+  }
+
   if (
     mouseX >= rx(610) &&
-    mouseX < rx(750) &&
+    mouseX < rx(800) &&
     mouseY >= ry(200) &&
     mouseY < ry(400)
   ) {
-    act[5] = true;
+    act[2] = true;
   } else {
-    act[5] = false;
+    act[2] = false;
   }
 
   if (mouseX >= rx(420) && mouseX < rx(1000) && mouseY >= ry(400)) {
@@ -247,13 +251,21 @@ function draw() {
     act[8] = false;
   }
 
-  if (
-    (mouseX >= rx(1200) && mouseY > ry(200) && mouseY < ry(400)) ||
-    (mouseX > rx(1200) && mouseY < ry(200))
-  ) {
+  if (mouseX >= rx(1000) && mouseY > ry(200) && mouseY < ry(400)) {
     act[7] = true;
   } else {
     act[7] = false;
+  }
+
+  if (
+    mouseX < rx(1000) &&
+    mouseX >= rx(800) &&
+    mouseY > ry(200) &&
+    mouseY < ry(400)
+  ) {
+    act[12] = true;
+  } else {
+    act[12] = false;
   }
 
   // 1
@@ -285,6 +297,12 @@ function draw() {
 
   // 10
   curva(-60 + mx * 1.4, -120, 200, 300, 0.01, act[10]);
+
+  // 11
+  curva(2300 + mx / 10, -450, 1200, 1350, 0.003, act[11]);
+
+  // 12
+  curva(850 + mx / 4, 320, 100, 140, 0.03, act[12]);
 
   // 1
   rotateText(
@@ -358,6 +376,21 @@ function draw() {
     act[10],
     true
   );
+
+  // 11
+  rotateText(
+    2300 + mx / 10,
+    -450,
+    1370,
+    61,
+    "DESIGN+EDUCAÇÃO",
+    0.6,
+    act[11],
+    true
+  );
+
+  // 12
+  rotateText(850 + mx / 4, 320, 80, 20, "INOVAÇÃO", 8);
 
   pop();
 }
