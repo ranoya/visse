@@ -981,7 +981,7 @@ th {
 
 @media screen and (max-width: 500px) {
   #midsection {
-    width: calc(100% - 1px) !important;
+    width: calc(100% - 5px) !important;
   }
 }
 
