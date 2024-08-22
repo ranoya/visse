@@ -1035,6 +1035,11 @@ th {
     display: none;
   }
 
+  .quatrocolunas {
+    grid-template-columns: [init] 1fr 20vw [fim];
+    gap: 16px 16px;
+  }
+
   .quatrocolunas-projetos {
     grid-template-columns: [init] 1fr 20vw [fim];
     gap: 30px 0;
