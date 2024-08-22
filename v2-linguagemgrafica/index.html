@@ -431,7 +431,10 @@
       document.getElementById("logovissesintese").innerHTML = signo.svg;
 
       document.onscroll = function () {
-        if (document.documentElement.scrollTop > 20) {
+        if (
+          document.documentElement.scrollTop > 20 &&
+          window.innerWidth > 900
+        ) {
           document.getElementById("wrap").style.width = "calc(100% - 40px)";
           document.getElementById("wrap").style.border =
             "20px solid var(--cor-hvg, grey)";
