@@ -858,8 +858,8 @@ th {
   }
 
   .screenshot {
-    width: 140px;
-    height: 140px;
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
   }
 }
 
@@ -1023,11 +1023,6 @@ th {
   .quatrocolunas-projetos {
     grid-template-columns: [init] 1fr [fim];
     gap: 30px 0;
-  }
-
-  .screenshot {
-    width: 100%;
-    grid-column: init / fim;
   }
 
   #rodape svg {
