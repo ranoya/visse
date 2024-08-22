@@ -19,6 +19,8 @@ const rescale = function ([a, b], [c, d]) {
 };
 
 let rx;
+let mmX;
+let mmY;
 
 curva = function (x, y, r1, r2, s, c) {
   for (let a = 0; a < 2 * Math.PI; a = a + s) {
@@ -109,15 +111,31 @@ function setup() {
     getComputedStyle(document.documentElement).getPropertyValue("--cor-invert")
   );
 
-  prop = windowWidth / 1350;
-  rx = rescale([0, 1350], [0, windowWidth]);
-  ry = rescale([0, 700], [0, windowHeight]);
+  if (window.innerWidth >= window.innerHeight) {
+    prop = windowWidth / 1350;
+
+    rx = rescale([0, 1350], [0, windowWidth]);
+    ry = rescale([0, 700], [0, windowHeight]);
+  } else {
+    prop = windowWidth / 700;
+
+    ry = rescale([0, 700], [0, windowWidth]);
+    rx = rescale([0, 1350], [0, windowHeight]);
+  }
 }
 
 windowResized = function () {
-  prop = windowWidth / 1350;
-  rx = rescale([0, 1350], [0, windowWidth]);
-  ry = rescale([0, 700], [0, windowHeight]);
+  if (window.innerWidth >= window.innerHeight) {
+    prop = windowWidth / 1350;
+
+    rx = rescale([0, 1350], [0, windowWidth]);
+    ry = rescale([0, 700], [0, windowHeight]);
+  } else {
+    prop = windowWidth / 700;
+
+    ry = rescale([0, 700], [0, windowWidth]);
+    rx = rescale([0, 1350], [0, windowHeight]);
+  }
 
   canv = resizeCanvas(windowWidth, windowHeight);
   canv.parent("interage");
@@ -152,32 +170,34 @@ function mouseClicked() {
 function draw() {
   background(255);
 
-  stroke(
-    getComputedStyle(document.documentElement).getPropertyValue("--cor-hv1") +
-      12
-  );
-  sn_x = -500;
-  for (let ln_x = 0; ln_x < lm_x; ln_x = ln_x + 0.5) {
-    line(
-      Math.cos(sn_x) * (130 + crescendo) + ln_x,
-      Math.sin(sn_x) * (130 + crescendo) + windowHeight / 2,
-      Math.cos(sn_x) * (470 + crescendo) + ln_x,
-      Math.sin(sn_x) * (470 + crescendo) + windowHeight / 2
+  if (window.innerWidth >= window.innerHeight) {
+    stroke(
+      getComputedStyle(document.documentElement).getPropertyValue("--cor-hv1") +
+        12
     );
+    sn_x = -500;
+    for (let ln_x = 0; ln_x < lm_x; ln_x = ln_x + 0.5) {
+      line(
+        Math.cos(sn_x) * (130 + crescendo) + ln_x,
+        Math.sin(sn_x) * (130 + crescendo) + windowHeight / 2,
+        Math.cos(sn_x) * (470 + crescendo) + ln_x,
+        Math.sin(sn_x) * (470 + crescendo) + windowHeight / 2
+      );
 
-    sn_x = sn_x + 0.01;
-  }
+      sn_x = sn_x + 0.01;
+    }
 
-  crescendo++;
-  lm_x = lm_x + 5;
+    crescendo++;
+    lm_x = lm_x + 5;
 
-  if (lm_x > 1800) {
-    lm_x = 1800;
-  }
+    if (lm_x > 1800) {
+      lm_x = 1800;
+    }
 
-  if (crescendo > 1800) {
-    crescendo = 1;
-    lm_x = -10;
+    if (crescendo > 1800) {
+      crescendo = 1;
+      lm_x = -10;
+    }
   }
 
   mx = (mouseX - windowWidth / 2) / 10;
@@ -186,83 +206,84 @@ function draw() {
   push();
   scale(prop);
 
-  if (mouseX < rx(420) && mouseY > ry(400) && mouseY < ry(600)) {
+  if (window.innerWidth < window.innerHeight) {
+    translate(windowWidth, 0);
+    rotate(Math.PI / 2);
+
+    mmX = mouseY;
+    mmY = windowWidth - mouseX;
+  } else {
+    mmX = mouseX;
+    mmY = mouseY;
+  }
+
+  if (mmX < rx(420) && mmY > ry(400) && mmY < ry(600)) {
     act[6] = true;
   } else {
     act[6] = false;
   }
 
-  if (mouseX < rx(420) && mouseY >= ry(600)) {
+  if (mmX < rx(420) && mmY >= ry(600)) {
     act[9] = true;
   } else {
     act[9] = false;
   }
 
-  if (mouseX < rx(420) && mouseY <= ry(400) && mouseY > ry(200)) {
+  if (mmX < rx(420) && mmY <= ry(400) && mmY > ry(200)) {
     act[1] = true;
   } else {
     act[1] = false;
   }
 
-  if (mouseX < rx(300) && mouseY <= ry(200)) {
+  if (mmX < rx(300) && mmY <= ry(200)) {
     act[10] = true;
   } else {
     act[10] = false;
   }
 
-  if (mouseX >= rx(420) && mouseX < rx(610) && mouseY < ry(420)) {
+  if (mmX >= rx(420) && mmX < rx(610) && mmY < ry(420)) {
     act[5] = true;
   } else {
     act[5] = false;
   }
 
-  if (mouseX >= rx(670) && mouseX < rx(1050) && mouseY < ry(200)) {
+  if (mmX >= rx(670) && mmX < rx(1050) && mmY < ry(200)) {
     act[4] = true;
   } else {
     act[4] = false;
   }
 
-  if (mouseX >= rx(1050) && mouseY < ry(200)) {
+  if (mmX >= rx(1050) && mmY < ry(200)) {
     act[11] = true;
   } else {
     act[11] = false;
   }
 
-  if (
-    mouseX >= rx(610) &&
-    mouseX < rx(800) &&
-    mouseY >= ry(200) &&
-    mouseY < ry(400)
-  ) {
+  if (mmX >= rx(610) && mmX < rx(800) && mmY >= ry(200) && mmY < ry(400)) {
     act[2] = true;
   } else {
     act[2] = false;
   }
 
-  if (mouseX >= rx(420) && mouseX < rx(1000) && mouseY >= ry(400)) {
+  if (mmX >= rx(420) && mmX < rx(1000) && mmY >= ry(400)) {
     act[3] = true;
   } else {
     act[3] = false;
   }
 
-  if (mouseX >= rx(1000) && mouseY >= ry(400)) {
+  if (mmX >= rx(1000) && mmY >= ry(400)) {
     act[8] = true;
   } else {
     act[8] = false;
   }
 
-  if (mouseX >= rx(1000) && mouseY > ry(200) && mouseY < ry(400)) {
+  if (mmX >= rx(1000) && mmY > ry(200) && mmY < ry(400)) {
     act[7] = true;
   } else {
     act[7] = false;
   }
 
-  if (
-    mouseX < rx(1000) &&
-    mouseX >= rx(800) &&
-    mouseY > ry(200) &&
-    mouseY < ry(400)
-  ) {
+  if (mmX < rx(1000) && mmX >= rx(800) && mmY > ry(200) && mmY < ry(400)) {
     act[12] = true;
   } else {
     act[12] = false;
@@ -304,93 +325,215 @@ function draw() {
   // 12
   curva(850 + mx / 4, 320, 100, 140, 0.03, act[12]);
 
-  // 1
-  rotateText(
-    20 + mx / 4,
-    20,
-    445,
-    295,
-    "POLÍTICAS DA VISUALIDADE",
-    2,
-    act[1],
-    true
-  );
+  if (window.innerWidth >= window.innerHeight) {
+    // 1
+    rotateText(
+      20 + mx / 4,
+      20,
+      445,
+      295,
+      "POLÍTICAS DA VISUALIDADE",
+      2,
+      act[1],
+      true
+    );
 
-  // 2
-  rotateText(400 + mx / 2, 450, 390, 55, "LINGUAGEM GRÁFICA", 3, act[2]);
+    // 2
+    rotateText(400 + mx / 2, 450, 390, 55, "LINGUAGEM GRÁFICA", 3, act[2]);
 
-  // 3
-  rotateText(700 + mx / 8, 1200, 670, 325, "ESTUDOS DE GÊNERO", 1.4, act[3]);
+    // 3
+    rotateText(700 + mx / 8, 1200, 670, 325, "ESTUDOS DE GÊNERO", 1.4, act[3]);
 
-  // 4
-  rotateText(
-    1200 + mx / 1.5,
-    -800,
-    1080,
-    20,
-    "MEMÓRIA GRÁFICA",
-    1,
-    act[4],
-    true
-  );
+    // 4
+    rotateText(
+      1200 + mx / 1.5,
+      -800,
+      1080,
+      20,
+      "MEMÓRIA GRÁFICA",
+      1,
+      act[4],
+      true
+    );
 
-  // 5
-  rotateText(2000 + mx / 6, 350, 1480, 265, "PENSAMENTO CRÍTICO", 0.6, act[5]);
+    // 5
+    rotateText(
+      2000 + mx / 6,
+      350,
+      1480,
+      265,
+      "PENSAMENTO CRÍTICO",
+      0.6,
+      act[5]
+    );
 
-  // 6
-  rotateText(-10 + mx / 3, 820, 600, 4, "RETÓRICA DA VISUALIDADE", 1, act[6]);
+    // 6
+    rotateText(-10 + mx / 3, 820, 600, 4, "RETÓRICA DA VISUALIDADE", 1, act[6]);
 
-  // 8
-  rotateText(
-    1200 + mx / 8,
-    650,
-    250,
-    250,
-    "ARQUEOLOGIA E PRESERVAÇÃO DIGITAL",
-    1.7,
-    act[8]
-  );
+    // 8
+    rotateText(
+      1200 + mx / 8,
+      650,
+      250,
+      250,
+      "ARQUEOLOGIA E PRESERVAÇÃO DIGITAL",
+      1.7,
+      act[8]
+    );
 
-  // 7
-  rotateText(2850 + mx * 2, 1250, 2080, 293, "HUMANISMO DE DADOS", 0.3, act[7]);
+    // 7
+    rotateText(
+      2850 + mx * 2,
+      1250,
+      2080,
+      293,
+      "HUMANISMO DE DADOS",
+      0.3,
+      act[7]
+    );
 
-  // 9
-  rotateText(
-    -480 + mx / 15,
-    1220,
-    860,
-    40,
-    "DIVULGAÇÃO CIENTÍFICA",
-    0.6,
-    act[9]
-  );
+    // 9
+    rotateText(
+      -480 + mx / 15,
+      1220,
+      860,
+      40,
+      "DIVULGAÇÃO CIENTÍFICA",
+      0.6,
+      act[9]
+    );
 
-  // 10
-  rotateText(
-    -60 + mx * 1.4,
-    -120,
-    310,
-    300,
-    "OBSERVATÓRIO DE DI",
-    1.3,
-    act[10],
-    true
-  );
+    // 10
+    rotateText(
+      -60 + mx * 1.4,
+      -120,
+      310,
+      300,
+      "OBSERVATÓRIO DE DI",
+      1.3,
+      act[10],
+      true
+    );
 
-  // 11
-  rotateText(
-    2300 + mx / 10,
-    -450,
-    1370,
-    61,
-    "DESIGN+EDUCAÇÃO",
-    0.6,
-    act[11],
-    true
-  );
+    // 11
+    rotateText(
+      2300 + mx / 10,
+      -450,
+      1370,
+      61,
+      "DESIGN+EDUCAÇÃO",
+      0.6,
+      act[11],
+      true
+    );
 
-  // 12
-  rotateText(850 + mx / 4, 320, 80, 20, "INOVAÇÃO", 8);
+    // 12
+    rotateText(850 + mx / 4, 320, 80, 20, "INOVAÇÃO", 8);
+  } else {
+    // 1
+    rotateText(
+      20 + mx / 4,
+      20,
+      445,
+      295,
+      "POLÍTICAS DA VISUALIDADE",
+      2,
+      act[1],
+      true
+    );
+
+    // 2
+    rotateText(400 + mx / 2, 450, 390, 338, "LINGUAGEM GRÁFICA", 3, act[2]);
+
+    // 3
+    rotateText(700 + mx / 8, 1200, 670, 325, "ESTUDOS DE GÊNERO", 1.4, act[3]);
+
+    // 4
+    rotateText(1200 + mx / 1.5, -800, 980, 203, "MEMÓRIA GRÁFICA", 1, act[4]);
+
+    // 5
+    rotateText(
+      2000 + mx / 6,
+      350,
+      1480,
+      265,
+      "PENSAMENTO CRÍTICO",
+      0.6,
+      act[5]
+    );
+
+    // 6
+    rotateText(
+      -10 + mx / 3,
+      820,
+      600,
+      184,
+      "RETÓRICA DA VISUALIDADE",
+      1,
+      act[6],
+      true
+    );
+
+    // 8
+    rotateText(
+      1200 + mx / 8,
+      650,
+      250,
+      250,
+      "ARQUEOLOGIA E PRESERVAÇÃO DIGITAL",
+      1.7,
+      act[8]
+    );
+
+    // 7
+    rotateText(
+      2850 + mx * 2,
+      1250,
+      2080,
+      293,
+      "HUMANISMO DE DADOS",
+      0.3,
+      act[7]
+    );
+
+    // 9
+    rotateText(
+      -480 + mx / 15,
+      1220,
+      920,
+      218,
+      "DIVULGAÇÃO CIENTÍFICA",
+      0.6,
+      act[9],
+      true
+    );
+
+    // 10
+    rotateText(
+      -60 + mx * 1.4,
+      -120,
+      310,
+      300,
+      "OBSERVATÓRIO DE DI",
+      1.3,
+      act[10],
+      true
+    );
+
+    // 11
+    rotateText(
+      2300 + mx / 10,
+      -450,
+      1370,
+      238,
+      "DESIGN+EDUCAÇÃO",
+      0.6,
+      act[11]
+    );
+
+    // 12
+    rotateText(850 + mx / 4, 320, 80, 313, "INOVAÇÃO", 8, true);
+  }
 
   pop();
 }
