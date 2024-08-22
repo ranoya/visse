@@ -959,7 +959,7 @@ th {
 @media screen and (max-width: 550px) {
   #navbar {
     height: 140px;
-    top: 16px !important;
+    top: 0 !important;
   }
 
   #menu {
@@ -1052,7 +1052,8 @@ th {
   }
 
   #midsection .secao p {
-    width: calc(100% - 73px);
+    /* width: calc(100% - 73px); */
+    /* aind não entendi por que destes 73px? */
   }
 
   .obra {
