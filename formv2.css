@@ -987,11 +987,11 @@ th {
 
 @media screen and (max-width: 421px) {
   .invertcoluna {
-    display: block;
+    display: block !important;
   }
 
   .colunanormal {
-    display: none;
+    display: none !important;
   }
 
   #logovisse {
@@ -1036,7 +1036,7 @@ th {
   }
 
   .quatrocolunas {
-    grid-template-columns: [init] 1fr 20vw [fim];
+    grid-template-columns: [init] 1fr 20vw [fim] !important;
     gap: 16px 16px;
   }
 
