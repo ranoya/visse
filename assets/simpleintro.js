@@ -207,7 +207,7 @@ function draw() {
   scale(prop);
 
   if (window.innerWidth < window.innerHeight) {
-    translate(windowWidth * 1.3, 0);
+    translate(windowWidth * 1.5, 0);
     rotate(Math.PI / 2);
 
     mmX = mouseY;
