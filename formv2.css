@@ -979,6 +979,12 @@ th {
   }
 }
 
+@media screen and (max-width: 500px) {
+  #midsection {
+    width: calc(100% - 1px) !important;
+  }
+}
+
 @media screen and (max-width: 421px) {
   #logovisse {
     display: none;
