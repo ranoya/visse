@@ -860,6 +860,7 @@ th {
   .screenshot {
     width: 100% !important;
     aspect-ratio: 1/1 !important;
+    height: auto !important;
   }
 }
 
