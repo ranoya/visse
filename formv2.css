@@ -376,6 +376,13 @@ h3 {
   color: var(--cor-hv1, #12a3cb);
 }
 
+@media screen and (max-width: 550px) {
+  .titulo_post {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
 .postagem {
   padding: 10px;
   margin: -10px;
@@ -847,7 +854,12 @@ th {
 
 @media screen and (max-width: 999px) {
   .quatrocolunas {
-    grid-template-columns: [init] 200px 1fr [fim] !important;
+    grid-template-columns: [init] 140px 1fr [fim] !important;
+  }
+
+  .screenshot {
+    width: 140px;
+    height: 140px;
   }
 }
 
@@ -957,6 +969,12 @@ th {
   #menu a {
     width: calc(100% - 40px);
     display: inline-block;
+  }
+
+  #menu a:hover {
+    border: 2px solid var(--cor-hv3, grey);
+    border-right: 4px solid var(--cor-hv3, grey);
+    border-left: 4px solid var(--cor-hv3, grey);
   }
 }
 
