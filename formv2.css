@@ -896,7 +896,7 @@ th {
   }
 }
 
-@media screen and (max-width: 755px) {
+@media screen and (max-width: 760px) {
   #materiais .blocoposts {
     grid-template-columns: 1fr;
   }
