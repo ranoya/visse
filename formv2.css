@@ -986,6 +986,14 @@ th {
 }
 
 @media screen and (max-width: 421px) {
+  .invertcoluna {
+    display: block;
+  }
+
+  .colunanormal {
+    display: none;
+  }
+
   #logovisse {
     display: none;
   }
@@ -1028,7 +1036,7 @@ th {
   }
 
   .quatrocolunas-projetos {
-    grid-template-columns: [init] 1fr [fim];
+    grid-template-columns: [init] 1fr 20vw [fim];
     gap: 30px 0;
   }
 
@@ -1049,7 +1057,7 @@ th {
   }
 
   .postagem {
-    grid-column: init / fim;
+    /* grid-column: init / fim; */
   }
 
   .blocoposts {
