@@ -270,51 +270,50 @@
       document.getElementById("logovissesintese").innerHTML = signo.svg;
 
       document.onscroll = function () {
-        if (
-          document.documentElement.scrollTop > 20 &&
-          window.innerWidth > 900
-        ) {
-          document.getElementById("wrap").style.width = "calc(100% - 40px)";
-          document.getElementById("wrap").style.border =
-            "20px solid var(--cor-hvg, grey)";
-          document.getElementById("wrap").style.borderTop =
-            "180px solid var(--cor-hvg, grey)";
-          document.getElementById("blococompensacao").style.height = "60px";
-          document.getElementById("grafismo").style.top = "-300px";
-          document.getElementById("grafismo").style.left = "-15px";
+        if (window.innerWidth > 900) {
+          if (document.documentElement.scrollTop > 20) {
+            document.getElementById("wrap").style.width = "calc(100% - 40px)";
+            document.getElementById("wrap").style.border =
+              "20px solid var(--cor-hvg, grey)";
+            document.getElementById("wrap").style.borderTop =
+              "180px solid var(--cor-hvg, grey)";
+            document.getElementById("blococompensacao").style.height = "60px";
+            document.getElementById("grafismo").style.top = "-300px";
+            document.getElementById("grafismo").style.left = "-15px";
 
-          document.getElementById("midsection").style.paddingLeft = "0";
-          document.getElementById("midsection").style.paddingRight = "0";
-          document.getElementById("midsection").style.width = "100%";
+            document.getElementById("midsection").style.paddingLeft = "0";
+            document.getElementById("midsection").style.paddingRight = "0";
+            document.getElementById("midsection").style.width = "100%";
 
-          document.getElementById("navbar").style.paddingLeft = "0";
-          document.getElementById("navbar").style.paddingRight = "0";
-          document.getElementById("navbar").style.width = "100%";
-        } else {
-          document.getElementById("wrap").style.width = "calc(100% - 2px)";
-          document.getElementById("wrap").style.border =
-            "0 solid var(--cor-hvg, grey)";
-          document.getElementById("blococompensacao").style.height = "400px";
-          document.getElementById("grafismo").style.top = "0";
-          document.getElementById("grafismo").style.left = "0";
+            document.getElementById("navbar").style.paddingLeft = "0";
+            document.getElementById("navbar").style.paddingRight = "0";
+            document.getElementById("navbar").style.width = "100%";
+          } else {
+            document.getElementById("wrap").style.width = "calc(100% - 2px)";
+            document.getElementById("wrap").style.border =
+              "0 solid var(--cor-hvg, grey)";
+            document.getElementById("blococompensacao").style.height = "400px";
+            document.getElementById("grafismo").style.top = "0";
+            document.getElementById("grafismo").style.left = "0";
 
-          document.getElementById("midsection").style.paddingLeft = "20px";
-          document.getElementById("midsection").style.paddingRight = "20px";
-          document.getElementById("midsection").style.width =
-            "calc(100% - 40px)";
+            document.getElementById("midsection").style.paddingLeft = "20px";
+            document.getElementById("midsection").style.paddingRight = "20px";
+            document.getElementById("midsection").style.width =
+              "calc(100% - 40px)";
 
-          document.getElementById("navbar").style.paddingLeft = "20px";
-          document.getElementById("navbar").style.paddingRight = "20px";
-          document.getElementById("navbar").style.width = "calc(100% - 40px)";
-        }
+            document.getElementById("navbar").style.paddingLeft = "20px";
+            document.getElementById("navbar").style.paddingRight = "20px";
+            document.getElementById("navbar").style.width = "calc(100% - 40px)";
+          }
 
-        if (document.documentElement.scrollTop > 800) {
-          document.getElementById("navbar").style.top = "-300px";
-          document.getElementById("midsection").style.boxShadow =
-            "0px 20px 20px var(--cor-shadow, #616161)";
-        } else {
-          document.getElementById("navbar").style.top = "0";
-          document.getElementById("midsection").style.boxShadow = "none";
+          if (document.documentElement.scrollTop > 800) {
+            document.getElementById("navbar").style.top = "-300px";
+            document.getElementById("midsection").style.boxShadow =
+              "0px 20px 20px var(--cor-shadow, #616161)";
+          } else {
+            document.getElementById("navbar").style.top = "0";
+            document.getElementById("midsection").style.boxShadow = "none";
+          }
         }
       };
     </script>
