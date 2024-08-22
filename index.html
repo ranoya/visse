@@ -46,104 +46,9 @@
     />
     <link rel="stylesheet" type="text/css" href="./form.css" />
     <link rel="stylesheet" type="text/css" href="./ppgcolor.css" />
-    <script src="https://www.ranoya.com/Assets/JSLibs/visse/logovisse2.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
   </head>
 
   <body>
-    <div id="wrap">
-      <div
-        id="grafismo"
-        style="
-          width: 100vw;
-          height: 110vh;
-          background-color: var(--splash-fundo, #12a3cb);
-        "
-      ></div>
-      <nav id="navbar" class="navpos">
-        <div class="secao">
-          <div id="logovisse"></div>
-          <div id="logovissesintese"></div>
-          <div id="lettering">
-            LABORATÓRIO DE VISUALIZAÇÃO<br />E SENTIDOS DO NORDESTE
-          </div>
-          <div id="letteringsintese">VISSE</div>
-          <div id="menu">
-            <div><a href="./pessoas">PESSOAS</a></div>
-            <div><a href="./projetos">PROJETOS</a></div>
-            <div><a href="./publicacoes">PUBLICAÇÕES</a></div>
-            <div><a href="./contato">CONTATO</a></div>
-          </div>
-        </div>
-      </nav>
-
-      <div class="info">
-        <div class="secao">
-          <p>
-            Laboratório de pesquisa e desenvolvimento de artefatos, vinculado ao
-            Departamento de Design (dDesign) e ao Programa de Pós-Graduação em
-            Design (PPGDesign) do Centro de Artes e Comunicação da Universidade
-            Federal de Pernambuco (CAC/UFPE).
-          </p>
-          <br />
-
-          <p>
-            Tem como propósito o estudo e a experimentação com o design de
-            visualização de dados/informações, e com o design elaborado para a
-            comunicação.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <style>
-      .navpos {
-        top: 35%;
-        width: 100%;
-        position: fixed;
-      }
-
-      .info {
-        position: fixed;
-        z-index: 5;
-        background-color: white;
-        border: 20px;
-        width: 50%;
-        top: 48vh;
-        left: 42vw;
-        padding: 20px;
-        padding-top: 40px;
-        padding-bottom: 40px;
-      }
-
-      @media screen and (max-width: 550px) {
-        .navpos {
-          top: 25%;
-        }
-
-        .info {
-          width: calc(100% - 40px);
-          top: 44vh;
-          left: 0vw;
-        }
-      }
-    </style>
-
-    <script type="module">
-      import pathw from "./assets/pathwaves.js";
-
-      let waves = pathw({
-        p5,
-        bgcolor: getComputedStyle(document.documentElement).getPropertyValue(
-          "--splash-secondcolor"
-        ),
-        fcolor: getComputedStyle(document.documentElement).getPropertyValue(
-          "--splash-fore"
-        ),
-        el: "grafismo",
-      });
-    </script>
-
     <script>
       // FUNÇÃO URL GET
       // urlGet('xpto'); www.site.com/?xpto=teste
@@ -176,45 +81,7 @@
         }
       }
 
-      if (
-        localStorage.getItem("tema") != "" &&
-        typeof localStorage.getItem("tema") != "undefined"
-      ) {
-        let tag = document.createElement("link");
-        tag.setAttribute("rel", "stylesheet");
-        tag.setAttribute("type", "text/css");
-        tag.setAttribute(
-          "href",
-          "./" + localStorage.getItem("tema") + "color.css"
-        );
-        document.getElementsByTagName("head")[0].appendChild(tag);
-      }
-
-      let corbodybg = getComputedStyle(
-        document.documentElement
-      ).getPropertyValue("--cor-hvg");
-
-      let colortagAll = document.createElement("meta");
-      colortagAll.setAttribute("name", "theme-color");
-      colortagAll.setAttribute("content", corbodybg);
-
-      let colortagWin = document.createElement("meta");
-      colortagWin.setAttribute("name", "msapplication-navbutton-color");
-      colortagWin.setAttribute("content", corbodybg);
-
-      let colortagios = document.createElement("meta");
-      colortagios.setAttribute("name", "msapplication-navbutton-color");
-      colortagios.setAttribute("content", corbodybg);
-
-      document.getElementsByTagName("head")[0].appendChild(colortagAll);
-      document.getElementsByTagName("head")[0].appendChild(colortagWin);
-      document.getElementsByTagName("head")[0].appendChild(colortagios);
-
-      let lovovisse = logovisse_border();
-      document.getElementById("logovisse").innerHTML = lovovisse.svg;
-
-      let signo = sintesevisse_border();
-      document.getElementById("logovissesintese").innerHTML = signo.svg;
+      window.location = "https://visse.vercel.app/v2-intro";
     </script>
   </body>
 </html>
