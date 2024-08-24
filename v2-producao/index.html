@@ -101,6 +101,7 @@
             >
             | <a id="bottipo" href="javascript:trocaformato(1)">Tipologia</a>
           </div>
+          <br />
 
           <div id="projetos" class="apaga"></div>
 
@@ -138,6 +139,26 @@
         height: 70vh;
         margin-top: 10px;
         margin-bottom: 10px;
+      }
+
+      #bottipo,
+      #botcrono {
+        display: inline-block;
+        padding-left: 10px;
+        margin-left: -10px;
+        padding-right: 10px;
+        margin-right: -10px;
+        padding-top: 10px;
+        margin-top: -10px;
+        padding-bottom: 10px;
+        margin-bottom: -10px;
+        color: var(--cor-hv1, #12a3cb);
+      }
+
+      #bottipo:hover,
+      #botcrono:hover {
+        background-color: var(--cor-hv1, #12a3cb);
+        color: var(--cor-invert, #ffffff);
       }
 
       .apaga {
@@ -235,7 +256,7 @@
           document.getElementById("botcrono").classList.add("ativa");
         }
 
-        if (q == 0) {
+        if (q == 1) {
           document.getElementById("intro").classList.remove("apaga");
           document.getElementById("projetos").classList.remove("apaga");
           document.getElementById("bottipo").classList.add("ativa");
