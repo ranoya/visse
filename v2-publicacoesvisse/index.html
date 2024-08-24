@@ -129,7 +129,7 @@
       import define from "https://api.observablehq.com/@ranoya/vissev2-producaocompleta.js?v=4";
 
       const fromObservable = new Runtime().module(define, (name) => {
-        if (name === "titulo")
+        if (name === "titulopub")
           return new Inspector(document.querySelector("#titulo"));
 
         if (name === "viewof filtros")
@@ -144,7 +144,7 @@
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
 
-        if (name === "timelineproducao");
+        if (name === "timelinepublicacoes");
         return new Inspector(document.querySelector("#producao"));
       });
     </script>
