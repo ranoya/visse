@@ -97,7 +97,7 @@
 
           <br /><br />
 
-          <div id="publicacoes"></div>
+          <div id="pubs"></div>
 
           <div id="estilos"></div>
         </div>
@@ -142,6 +142,9 @@
 
         if (name === "publicacoes")
           return new Inspector(document.querySelector("#descricao"));
+
+        if (name === "pubs")
+          return new Inspector(document.querySelector("#pubs"));
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
