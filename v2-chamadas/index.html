@@ -21,14 +21,8 @@
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="600" />
-    <meta
-      property="og:site_name"
-      content="Laboratório de Visualização e Sentidos"
-    />
-    <meta
-      name="application-name"
-      content="Laboratório de Visualização e Sentidos"
-    />
+    <meta property="og:site_name" content="Chamadas" />
+    <meta name="application-name" content="Chamadas" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta
       property="og:image"
@@ -107,23 +101,6 @@
 
           <div id="pessoas" style="width: 100%"></div>
 
-          <!--
-          <h2 id="tituloensino" style="border-bottom: 1px solid #bbbbbb"></h2>
-          <br />
-
-          <div id="ensino"></div>
-
-          <h2 id="titulomais" style="border-bottom: 1px solid #bbbbbb"></h2>
-          <br />
-
-          <div id="mais"></div>
-
-          <h2 id="tituloprodutos" style="border-bottom: 1px solid #bbbbbb"></h2>
-          <br />
-
-          <div id="producao"></div>
-            -->
-
           <div id="estilos"></div>
         </div>
       </div>
@@ -173,8 +150,8 @@
         if (name === "botoes")
           return new Inspector(document.querySelector("#botoes"));
 
-        if (name === "pessoas")
-          return new Inspector(document.querySelector("#pessoas"));
+        if (name === "chamadas")
+          return new Inspector(document.querySelector("#chamadas"));
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
       });
