@@ -95,6 +95,8 @@
 
           <div id="filtro"></div>
 
+          <br /><br />
+
           <div id="publicacoes"></div>
 
           <div id="estilos"></div>
@@ -165,28 +167,6 @@
     </script>
 
     <script>
-      let trocaformato = function (q) {
-        document.getElementById("intro").classList.add("apaga");
-        document.getElementById("descricao").classList.add("apaga");
-        document.getElementById("projetos").classList.add("apaga");
-        document.getElementById("producao").classList.add("apaga");
-
-        document.getElementById("bottipo").classList.remove("ativa");
-        document.getElementById("botcrono").classList.remove("ativa");
-
-        if (q == 0) {
-          document.getElementById("descricao").classList.remove("apaga");
-          document.getElementById("producao").classList.remove("apaga");
-          document.getElementById("botcrono").classList.add("ativa");
-        }
-
-        if (q == 1) {
-          document.getElementById("intro").classList.remove("apaga");
-          document.getElementById("projetos").classList.remove("apaga");
-          document.getElementById("bottipo").classList.add("ativa");
-        }
-      };
-
       // FUNÇÃO URL GET
       // urlGet('xpto'); www.site.com/?xpto=teste
       // let data = $_GET['xpto']; www.site.com/?xpto=teste
