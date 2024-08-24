@@ -219,7 +219,7 @@ h3 {
 
 #midsection b {
   color: var(--cor-leve, #89a1a8);
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 .obra {
