@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>VISSE</title>
+    <meta property="og:title" content="VISSE" />
+    <meta name="generator" content="artesanal" />
+    <meta name="description" content="Laboratório de Visualização e Sentidos" />
+    <meta
+      property="og:description"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta property="og:url" content="https://visse.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta
+      property="og:site_name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta
+      name="application-name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://visse.vercel.app/assets/icon.png"
+    />
+    <link rel="stylesheet" type="text/css" href="../formv2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div
+        id="interage"
+        style="
+          position: fixed;
+          top: 0;
+          height: 0;
+          width: 100%;
+          height: 100dvh;
+          overflow: hidden;
+        "
+      ></div>
+      <script src="../assets/vissebg.js"></script>
+    </div>
+
+    <script>
+      // FUNÇÃO URL GET
+      // urlGet('xpto'); www.site.com/?xpto=teste
+      // let data = $_GET['xpto']; www.site.com/?xpto=teste
+
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      if (typeof $_GET["theme"] != "undefined") {
+        localStorage.setItem("tema", $_GET["theme"]);
+      } else {
+        if (
+          localStorage.getItem("tema") == "" ||
+          typeof localStorage.getItem("tema") == "undefined" ||
+          localStorage.getItem("tema") == null
+        ) {
+          localStorage.setItem("tema", "default");
+        }
+      }
+
+      if (
+        localStorage.getItem("tema") != "" &&
+        typeof localStorage.getItem("tema") != "undefined"
+      ) {
+        let tag = document.createElement("link");
+        tag.setAttribute("rel", "stylesheet");
+        tag.setAttribute("type", "text/css");
+        tag.setAttribute(
+          "href",
+          "../" + localStorage.getItem("tema") + "color.css"
+        );
+        document.getElementsByTagName("head")[0].appendChild(tag);
+      }
+
+      let corbodybg = getComputedStyle(
+        document.documentElement
+      ).getPropertyValue("--cor-hvg");
+
+      let colortagAll = document.createElement("meta");
+      colortagAll.setAttribute("name", "theme-color");
+      colortagAll.setAttribute("content", corbodybg);
+
+      let colortagWin = document.createElement("meta");
+      colortagWin.setAttribute("name", "msapplication-navbutton-color");
+      colortagWin.setAttribute("content", corbodybg);
+
+      let colortagios = document.createElement("meta");
+      colortagios.setAttribute("name", "msapplication-navbutton-color");
+      colortagios.setAttribute("content", corbodybg);
+
+      document.getElementsByTagName("head")[0].appendChild(colortagAll);
+      document.getElementsByTagName("head")[0].appendChild(colortagWin);
+      document.getElementsByTagName("head")[0].appendChild(colortagios);
+
+      if (
+        window.navigator.platform.toString().indexOf("Win") >= 0 ||
+        window.navigator.platform.toString().indexOf("Linux") >= 0
+      ) {
+        let scrl = document.createElement("style");
+        let scrlcontent = document.createTextNode(`
+        ::-webkit-scrollbar {
+        width: 10px;
+          background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-track {
+          background: var(--cor-hvg, #6eacbd);
+        }
+
+        ::-webkit-scrollbar:hover {
+          background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: var(--cor-shadow, #176b82);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: var(--cor-hv0, cyan);
+        }
+        `);
+
+        scrl.appendChild(scrlcontent);
+        document.getElementsByTagName("head")[0].appendChild(scrl);
+      }
+
+      let lovovisse = logovisse_border();
+      document.getElementById("logovisse").innerHTML = lovovisse.svg;
+
+      let signo = sintesevisse_border();
+      document.getElementById("logovissesintese").innerHTML = signo.svg;
+
+      document.getElementById("wrap").style.width = "calc(100% - 2px)";
+      document.getElementById("wrap").style.border =
+        "0 solid var(--cor-hvg, grey)";
+    </script>
+  </body>
+</html>
