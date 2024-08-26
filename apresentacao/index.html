@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>VISSE</title>
+    <meta property="og:title" content="VISSE" />
+    <meta name="generator" content="artesanal" />
+    <meta name="description" content="Equipe do laboratório" />
+    <meta property="og:description" content="Equipe do laboratório" />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta property="og:url" content="https://visse.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta
+      property="og:site_name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta
+      name="application-name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://visse.vercel.app/assets/icon.png"
+    />
+
+    <link rel="stylesheet" type="text/css" href="./unifiedstyle.css" />
+
+    <script src="https://omnidocs.vercel.app/materiais/webdesign/audiolead.js"></script>
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#FFFFFF" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#FFFFFF" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF" />
+
+    <style>
+      audio::-webkit-media-controls-time-remaining-display {
+        display: none;
+      }
+
+      audio::-webkit-media-controls-current-time-display {
+        display: none;
+      }
+
+      #placehold {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 34px) !important;
+        overflow-y: hidden;
+      }
+
+      #myVideo {
+        position: fixed;
+        bottom: 30px;
+        left: calc(50% - 135px);
+        width: 270px;
+        height: 30px;
+        z-index: 500;
+        outline: none;
+        transition: all 0.6s ease-in-out;
+      }
+
+      @media screen and (max-width: 480px) {
+        audio::-webkit-media-controls-time-remaining-display {
+          display: none;
+        }
+        audio::-webkit-media-controls-current-time-display {
+          display: none;
+        }
+        audio::-webkit-media-controls-panel {
+          padding-left: 50px;
+          padding-right: 200px;
+          background-color: #dfc700;
+        }
+
+        #myVideo {
+          left: -15px;
+          width: 130vw;
+          height: 40px;
+          bottom: 0;
+          background-color: #dfc700;
+          padding-bottom: 40px;
+        }
+
+        #placehold {
+          height: calc(100% - 45px) !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    style="
+      padding: 0 0 0 0;
+      margin: 0 0 0 0;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    "
+  >
+    <div id="placehold" frameborder="0" scrolling="no"></div>
+
+    <audio
+      id="myVideo"
+      controls
+      controlslist="nofullscreen noplaybackrate nodownload"
+      controls
+    >
+      <source src="./locucao.mp3" type="audio/mp3" />
+      Your browser does not support HTML5 video.
+    </audio>
+
+    <script>
+      $_GET = [];
+      (function () {
+        let corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          let argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      /*
+       *
+       * TABELA DE MINUTAGEM DA APRESENTAÇÃO
+       *
+       */
+
+      var minutagem = [
+        {
+          time: 0,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/capa",
+        },
+        {
+          time: 11.5,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/base",
+        },
+        {
+          time: 44,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/di",
+        },
+        {
+          time: 72,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/just2",
+        },
+        {
+          time: 86.4,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/just3",
+        },
+        {
+          time: 99,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/just4",
+        },
+        {
+          time: 133,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/just5",
+        },
+        {
+          time: 161,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/qexpectativa",
+        },
+        {
+          time: 183,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/qexpectativa",
+          pause: true,
+        },
+        {
+          time: 184,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/parte1",
+        },
+        {
+          time: 202.5,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/naturezadocodigo",
+        },
+        {
+          time: 235,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/naturezadocodigo2",
+        },
+        {
+          time: 264.5,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/naturezadocodigo3",
+        },
+        {
+          time: 314,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/clienteservidor",
+        },
+        {
+          time: 404,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/clienteservidor2",
+        },
+        {
+          time: 449,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/arede",
+        },
+        {
+          time: 496,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/arede2",
+        },
+        {
+          time: 551.5,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/arede3",
+        },
+        {
+          time: 597,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/arede4",
+        },
+        {
+          time: 692,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/arede1n",
+        },
+        {
+          time: 762.5,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/aredefinal",
+        },
+        {
+          time: 801,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/processo1",
+        },
+        {
+          time: 810,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/processo2",
+        },
+        {
+          time: 823,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/processo3",
+        },
+        {
+          time: 832,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/processo4",
+        },
+        {
+          time: 862,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/processo5",
+        },
+        {
+          time: 922,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/limites1",
+        },
+        {
+          time: 968,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/limites2",
+        },
+        {
+          time: 999.5,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/limites3",
+        },
+        {
+          time: 1038,
+          href: "https://slides.com/ranoya/visse-welcome/embed#/limites4",
+        },
+      ];
+
+      function contrai() {
+        if (window.innerWidth > 480) {
+          document.getElementById("myVideo").style.width = "112px";
+          document.getElementById("myVideo").style.left = "calc(50% - 56px)";
+        }
+      }
+
+      function saidafrente() {
+        if (window.innerWidth > 480) {
+          document.getElementById("myVideo").style.width = "111px";
+          document.getElementById("myVideo").style.left = "30px";
+        }
+      }
+
+      function voltaaonormal() {
+        if (window.innerWidth > 480) {
+          document.getElementById("myVideo").style.width = "270px";
+          document.getElementById("myVideo").style.left = "calc(50% - 135px)";
+        }
+      }
+
+      function gototime(tempo) {
+        document.getElementById("myVideo").currentTime = tempo;
+        document.getElementById("myVideo").play();
+        document.getElementById("myVideo").pause();
+      }
+
+      if (typeof $_GET["pos"] != "undefined" && $_GET["pos"] != "") {
+        if (parseFloat($_GET["pos"]) >= 0) {
+          let mytmo = setTimeout(function () {
+            voltaaonormal();
+            gototime(parseFloat($_GET["pos"]));
+            document.getElementById("myVideo").play();
+            document.getElementById("myVideo").pause();
+          }, 1000);
+        }
+      }
+
+      /*
+       *
+       * CARREGAMENTO DO SAM E DO AUDIOLEAD
+       *
+       */
+
+      document.addEventListener("DOMContentLoaded", function () {
+        addAudioLead("placehold", "myVideo", minutagem);
+
+        if (
+          localStorage.getItem("pontodomaterial") != null &&
+          localStorage.getItem("pontodomaterial") != undefined
+        ) {
+          console.log(
+            "AudioLead capturou o ponto e mandou o video para " +
+              eval(localStorage.getItem("pontodomaterial"))
+          );
+
+          document.getElementById("myVideo").currentTime = eval(
+            localStorage.getItem("pontodomaterial")
+          );
+        } else {
+          console.log("AudioLead zerou o ponto do video");
+          localStorage.setItem("pontodomaterial", 0);
+        }
+
+        audiolead_interface = function (slidenumber, assetsObject) {
+          if (assetsObject[slidenumber].contrai == true) {
+            contrai();
+          }
+
+          if (assetsObject[slidenumber].normal == true) {
+            voltaaonormal();
+          }
+
+          localStorage.setItem(
+            "pontodomaterial",
+            document.getElementById("myVideo").currentTime
+          );
+        };
+      });
+    </script>
+  </body>
+</html>
