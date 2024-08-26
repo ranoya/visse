@@ -339,7 +339,7 @@ function draw() {
     );
 
     // 2
-    rotateText(400 + mx / 2, 450, 390, 55, "LINGUAGEM GRÁFICA", 3, act[2]);
+    rotateText(400 + mx / 2, 450, 390, 55, "LINGUAGENS GRÁFICAS", 3, act[2]);
 
     // 3
     rotateText(700 + mx / 8, 1200, 670, 325, "ESTUDOS DE GÊNERO", 1.4, act[3]);
@@ -443,7 +443,7 @@ function draw() {
     );
 
     // 2
-    rotateText(400 + mx / 2, 450, 390, 338, "LINGUAGEM GRÁFICA", 3, act[2]);
+    rotateText(400 + mx / 2, 450, 390, 338, "LINGUAGENS GRÁFICAS", 3, act[2]);
 
     // 3
     rotateText(700 + mx / 8, 1200, 670, 325, "ESTUDOS DE GÊNERO", 1.4, act[3]);
