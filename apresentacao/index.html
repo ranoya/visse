@@ -373,7 +373,15 @@
           localStorage.setItem("pontodomaterial", 0);
         }
 
-        let debug = true;
+        let debug = false;
+
+        if (
+          typeof $_GET["debug"] != "undefined" &&
+          $_GET["debug"] != null &&
+          $_GET["debug"] != ""
+        ) {
+          debug = true;
+        }
 
         audiolead_interface = function (slidenumber, assetsObject) {
           if (debug) {
