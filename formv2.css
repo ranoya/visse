@@ -1005,7 +1005,8 @@ th {
 }
 
 @media screen and (max-width: 421px) {
-  .invertcoluna {
+  .invertcoluna,
+  .colunainvert {
     display: block !important;
   }
 
