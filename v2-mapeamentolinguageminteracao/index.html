@@ -134,7 +134,7 @@
                 <div id="expintera"></div>
               </div>
 
-              <div id="epx-1">
+              <div id="epx-2">
                 <div id="explinguagem"></div>
               </div>
             </div>
@@ -793,8 +793,10 @@
             .classList.remove("abaaberta");
         }
         document.getElementById("botslide-" + n).classList.add("abaaberta");
+        setTimeout(function() {
         document.getElementById("slide-" + n).style.overflowY = "visible";
         document.getElementById("slide-" + n).style.height = "auto";
+        }, 500);
       };
 
       let expaberto = false;
@@ -804,12 +806,13 @@
         document.getElementById("paineisexp").style.marginLeft = n * -100 + "%";
         for (let i = 0; i < botexpexistem.length; i++) {
           document.getElementById("botexp-" + i).classList.remove("abaaberta");
-          document.getElementById("epx-" + i).style.overflowY = "hidden";
-          document.getElementById("epx-" + i).style.height = "1px";
-
+            document.getElementById("epx-" + i).style.overflowY = "hidden";
+            document.getElementById("epx-" + i).style.height = "1px";
         }
+        setTimeout(function() {
         document.getElementById("epx-" + n).style.overflowY = "visible";
         document.getElementById("epx-" + n).style.height = "auto";
+        }, 500);
         document.getElementById("botexp-" + n).classList.add("abaaberta");
         if (!expaberto) {
           expaberto = true;
