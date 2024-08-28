@@ -1,46 +1,67 @@
 <!DOCTYPE html>
-<html style="overflow: hidden;">
-
-<head>
-    <meta charset='utf-8' />
-    <meta name='pinterest' content='nopin' />
-    <meta name='pinterest' content='nohover' />
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
-    <meta name='keywords' content='' />
+<html style="overflow: hidden">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
     <title>VISSE</title>
-    <meta property='og:title' content='VISSE' />
-    <meta name='generator' content='artesanal' />
-    <meta name='description' content='Site do Laboratório de Visualização e Sentidos do Nordeste' />
-    <meta property='og:description' content='Site do Laboratório de Visualização e Sentidos do Nordeste' />
-    <meta name='author' content='Guilherme Ranoya'>
-    <meta property='og:url' content='https://visse.cin.ufpe.br' />
-    <meta property='og:type' content='website' />
-    <meta property='og:locale' content='pt_BR' />
-    <meta property='og:image:width' content='600' />
-    <meta property='og:image:height' content='600' />
-    <meta property='og:site_name' content='Laboratório de Visualização e Sentidos' />
-    <meta name='application-name' content='Laboratório de Visualização e Sentidos' />
-    <meta property='og:image:type' content='image/jpeg' />
-    <meta property='og:image' content='visse600.jpg' />
-    <meta property='og:image:secure_url' content='visse600.jpg' />
-    <link rel='image_src' type='image/jpg' href='visse600.jpg' />
-    <link rel='icon' type='image/png'
-        href='https://drive.google.com/uc?export=view&id=11Gf-Q3wqLBVlrYQ3h1sBqNJkA33URY4L' />
-    <link rel='stylesheet' type='text/css' href='./form.css'>
-    <link rel='stylesheet' type='text/css' href='./ppgcolor.css'>
-    <script src='https://www.ranoya.com/Assets/JSLibs/visse/logovisse2.js'></script>
+    <meta property="og:title" content="VISSE" />
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="description"
+      content="Site do Laboratório de Visualização e Sentidos do Nordeste"
+    />
+    <meta
+      property="og:description"
+      content="Site do Laboratório de Visualização e Sentidos do Nordeste"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta property="og:url" content="https://visse.cin.ufpe.br" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta
+      property="og:site_name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta
+      name="application-name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image" content="visse600.jpg" />
+    <meta property="og:image:secure_url" content="visse600.jpg" />
+    <link rel="image_src" type="image/jpg" href="visse600.jpg" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://drive.google.com/uc?export=view&id=11Gf-Q3wqLBVlrYQ3h1sBqNJkA33URY4L"
+    />
+    <link rel="stylesheet" type="text/css" href="./form.css" />
+    <link rel="stylesheet" type="text/css" href="./ppgcolor.css" />
+    <script src="https://visse.vercel.app/logovisse2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div id="wrap">
+      <div
+        id="grafismo"
+        style="
+          width: 100vw;
+          height: 110vh;
+          background-color: var(--splash-fundo, #12a3cb);
+        "
+      ></div>
 
-        <div id="grafismo" style="width: 100vw; height: 110vh; background-color: var(--splash-fundo, #12a3cb);">
-        </div>
-
-        <!-- 
+      <!-- 
         <nav id="navbar" style="top: 40%; width: 100%; position: fixed;">
             <div class="secao">
                 <div id="logovisse"></div>
@@ -51,81 +72,90 @@
             </div>
         </nav>
         -->
-
     </div>
 
     <script type="module">
-        import pathw from "./assets/pathwaves.js";
+      import pathw from "./assets/pathwaves.js";
 
-          let waves = pathw({
-          p5,
-          'bgcolor': getComputedStyle(document.documentElement)
-          .getPropertyValue('--splash-secondcolor'),
-          'fcolor': getComputedStyle(document.documentElement)
-          .getPropertyValue('--splash-fore'),
-          'el': 'grafismo'
-          });
-
+      let waves = pathw({
+        p5,
+        bgcolor: getComputedStyle(document.documentElement).getPropertyValue(
+          "--splash-secondcolor"
+        ),
+        fcolor: getComputedStyle(document.documentElement).getPropertyValue(
+          "--splash-fore"
+        ),
+        el: "grafismo",
+      });
     </script>
 
-
-
     <script>
-        // FUNÇÃO URL GET
-        // urlGet('xpto'); www.site.com/?xpto=teste
-        // let data = $_GET['xpto']; www.site.com/?xpto=teste
+      // FUNÇÃO URL GET
+      // urlGet('xpto'); www.site.com/?xpto=teste
+      // let data = $_GET['xpto']; www.site.com/?xpto=teste
 
-        $_GET = [];
-        (function () {
-            corte = window.location.href.toString().indexOf('?');
-            if (corte > 0) {
-                argumento = window.location.href.toString().substring(corte + 1);
-                argumentos = argumento.split('&');
-                for (arg in argumentos) {
-                    let argCorte = argumentos[arg].indexOf('=');
-                    $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[arg].substring(argCorte + 1);
-                }
-            }
-        })();
-
-        if (typeof $_GET['theme'] != "undefined") {
-            localStorage.setItem('tema', $_GET['theme']);
-        } else {
-            if (localStorage.getItem('tema') == "" || typeof localStorage.getItem('tema') == "undefined" ||
-                localStorage.getItem('tema') == null) {
-                localStorage.setItem('tema', 'default');
-            }
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
         }
+      })();
 
-        if (localStorage.getItem('tema') != "" && typeof localStorage.getItem('tema') != "undefined") {
-            let tag = document.createElement("link");
-            tag.setAttribute("rel", "stylesheet");
-            tag.setAttribute("type", "text/css");
-            tag.setAttribute("href", "./" + localStorage.getItem('tema') + "color.css");
-            document.getElementsByTagName("head")[0].appendChild(tag);
+      if (typeof $_GET["theme"] != "undefined") {
+        localStorage.setItem("tema", $_GET["theme"]);
+      } else {
+        if (
+          localStorage.getItem("tema") == "" ||
+          typeof localStorage.getItem("tema") == "undefined" ||
+          localStorage.getItem("tema") == null
+        ) {
+          localStorage.setItem("tema", "default");
         }
+      }
 
-        let corbodybg = getComputedStyle(document.documentElement)
-            .getPropertyValue('--cor-hvg')
+      if (
+        localStorage.getItem("tema") != "" &&
+        typeof localStorage.getItem("tema") != "undefined"
+      ) {
+        let tag = document.createElement("link");
+        tag.setAttribute("rel", "stylesheet");
+        tag.setAttribute("type", "text/css");
+        tag.setAttribute(
+          "href",
+          "./" + localStorage.getItem("tema") + "color.css"
+        );
+        document.getElementsByTagName("head")[0].appendChild(tag);
+      }
 
-        let colortagAll = document.createElement("meta");
-        colortagAll.setAttribute("name", "theme-color");
-        colortagAll.setAttribute("content", corbodybg);
+      let corbodybg = getComputedStyle(
+        document.documentElement
+      ).getPropertyValue("--cor-hvg");
 
-        let colortagWin = document.createElement("meta");
-        colortagWin.setAttribute("name", "msapplication-navbutton-color");
-        colortagWin.setAttribute("content", corbodybg);
+      let colortagAll = document.createElement("meta");
+      colortagAll.setAttribute("name", "theme-color");
+      colortagAll.setAttribute("content", corbodybg);
 
-        let colortagios = document.createElement("meta");
-        colortagios.setAttribute("name", "msapplication-navbutton-color");
-        colortagios.setAttribute("content", corbodybg);
+      let colortagWin = document.createElement("meta");
+      colortagWin.setAttribute("name", "msapplication-navbutton-color");
+      colortagWin.setAttribute("content", corbodybg);
 
-        document.getElementsByTagName("head")[0].appendChild(colortagAll);
-        document.getElementsByTagName("head")[0].appendChild(colortagWin);
-        document.getElementsByTagName("head")[0].appendChild(colortagios);
+      let colortagios = document.createElement("meta");
+      colortagios.setAttribute("name", "msapplication-navbutton-color");
+      colortagios.setAttribute("content", corbodybg);
 
+      document.getElementsByTagName("head")[0].appendChild(colortagAll);
+      document.getElementsByTagName("head")[0].appendChild(colortagWin);
+      document.getElementsByTagName("head")[0].appendChild(colortagios);
 
-        /*
+      /*
         let lovovisse = logovisse_border();
         document.getElementById('logovisse').innerHTML = lovovisse.svg;
 
@@ -133,11 +163,5 @@
         document.getElementById('logovissesintese').innerHTML = signo.svg;
         */
     </script>
-
-
-
-
-
-</body>
-
+  </body>
 </html>
