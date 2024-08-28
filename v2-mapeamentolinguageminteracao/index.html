@@ -785,8 +785,10 @@
 
         for (let i = 0; i < botexistem.length; i++) {
 
+          setTimeout(function() {
           document.getElementById("slide-" + i).style.overflowY = "hidden";
           document.getElementById("slide-" + i).style.height = "1px";
+          }, 490);
 
           document
             .getElementById("botslide-" + i)
@@ -806,8 +808,10 @@
         document.getElementById("paineisexp").style.marginLeft = n * -100 + "%";
         for (let i = 0; i < botexpexistem.length; i++) {
           document.getElementById("botexp-" + i).classList.remove("abaaberta");
+            setTimeout(function() {
             document.getElementById("epx-" + i).style.overflowY = "hidden";
             document.getElementById("epx-" + i).style.height = "1px";
+            }, 490);
         }
         setTimeout(function() {
         document.getElementById("epx-" + n).style.overflowY = "visible";
