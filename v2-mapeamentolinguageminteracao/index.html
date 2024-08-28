@@ -783,7 +783,7 @@
         trocaslide(0);
       };
 
-      let botexistem = [];
+      let botexistem = [true,true,true,true];
       const trocaslide = function (n) {
         botexistem[n] = true;
         document.getElementById("paineis").style.marginLeft = n * -100 + "%";
@@ -807,7 +807,7 @@
       };
 
       let expaberto = false;
-      let botexpexistem = [];
+      let botexpexistem = [true, true, true];
       const trocaexp = function (n) {
         botexpexistem[n] = true;
         document.getElementById("paineisexp").style.marginLeft = n * -100 + "%";
