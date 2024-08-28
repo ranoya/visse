@@ -451,7 +451,7 @@ h3 {
   padding: 12px 12px 12px 12px;
   margin: -12px -12px -12px -12px;
   color: var(--cor-hv1, #12a3cb);
-  box-shadow: 0px 5px 20px #bbbbbb;
+  box-shadow: 8px 5px 20px #bbbbbb;
 }
 
 .singlepost:hover {

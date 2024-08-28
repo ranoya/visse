@@ -475,6 +475,7 @@
 
       .abaaberta {
         background-color: var(--cor-leve, #89a1a8);
+        
       }
 
       #grandeblocoseletores {
@@ -631,8 +632,9 @@
       }
 
       .singlepostlink {
-        padding: 42px 12px 12px 12px;
-        margin: -42px -12px -12px -12px;
+        padding: 12px 12px 12px 12px;
+        display: block;
+        margin: -20px -12px -27px -12px;
         color: var(--cor-hv1, #12a3cb);
       }
 
@@ -780,12 +782,19 @@
       const trocaslide = function (n) {
         botexistem[n] = true;
         document.getElementById("paineis").style.marginLeft = n * -100 + "%";
+
         for (let i = 0; i < botexistem.length; i++) {
+
+          document.getElementById("slide-" + i).style.overflowY = "hidden";
+          document.getElementById("slide-" + i).style.height = "1px";
+
           document
             .getElementById("botslide-" + i)
             .classList.remove("abaaberta");
         }
         document.getElementById("botslide-" + n).classList.add("abaaberta");
+        document.getElementById("slide-" + n).style.overflowY = "visible";
+        document.getElementById("slide-" + n).style.height = "auto";
       };
 
       let expaberto = false;
@@ -795,7 +804,12 @@
         document.getElementById("paineisexp").style.marginLeft = n * -100 + "%";
         for (let i = 0; i < botexpexistem.length; i++) {
           document.getElementById("botexp-" + i).classList.remove("abaaberta");
+          document.getElementById("epx-" + i).style.overflowY = "hidden";
+          document.getElementById("epx-" + i).style.height = "1px";
+
         }
+        document.getElementById("epx-" + n).style.overflowY = "visible";
+        document.getElementById("epx-" + n).style.height = "auto";
         document.getElementById("botexp-" + n).classList.add("abaaberta");
         if (!expaberto) {
           expaberto = true;
