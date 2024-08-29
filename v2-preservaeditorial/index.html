@@ -13,8 +13,8 @@
     <title>VISSE</title>
     <meta property="og:title" content="VISSE" />
     <meta name="generator" content="artesanal" />
-    <meta name="description" content="Produção do laboratório" />
-    <meta property="og:description" content="Produção do laboratório" />
+    <meta name="description" content="Preservação de Software" />
+    <meta property="og:description" content="Preservação de Software" />
     <meta name="author" content="Guilherme Ranoya" />
     <meta property="og:url" content="https://visse.vercel.app" />
     <meta property="og:type" content="website" />
@@ -82,14 +82,22 @@
       <a name="contentmark"></a>
       <div id="midsection">
         <div class="secao">
-          <div class="fixatitulo">
+          <div
+            style="
+              background-color: white;
+              width: calc(100% + 30px);
+              position: sticky;
+              top: 0;
+              z-index: 100;
+              margin: -20px;
+              padding-left: 20px;
+            "
+          >
             <h1 id="titulo"></h1>
           </div>
           <br />
 
-          <div id="intro" class="apaga"></div>
-
-          <div id="descricao">><span class="loader"></span></div>
+          <div id="descricao"><span class="loader"></span></div>
 
           <br />
           <svg
@@ -107,29 +115,13 @@
 
           <div id="filtros"></div>
 
+          <div id="botoesfiltra"></div>
+
+          <br /><br />
+
+          <div id="emulacao" style="width: 100%"></div>
+
           <div id="botoes"></div>
-
-          <br />
-          <div style="text-align: right">
-            <a id="bottipo" href="javascript:trocaformato(1)">Tipologia</a
-            >&nbsp; &nbsp; | &nbsp; &nbsp;<a
-              id="botcrono"
-              href="javascript:trocaformato(0)"
-              class="ativa"
-              >Cronoglógico</a
-            >
-          </div>
-          <br />
-
-          <div id="projetos" class="apaga"></div>
-
-          <div id="filtro"></div>
-
-          <!-- <h2 id="tituloprodutos" style="border-bottom: 1px solid #bbbbbb"></h2>
-          <br />
-           -->
-
-          <div id="producao"></div>
 
           <div id="estilos"></div>
         </div>
@@ -158,35 +150,6 @@
         margin-top: 10px;
         margin-bottom: 10px;
       }
-
-      #bottipo,
-      #botcrono {
-        display: inline-block;
-        padding-left: 10px;
-        margin-left: -10px;
-        padding-right: 10px;
-        margin-right: -10px;
-        padding-top: 10px;
-        margin-top: -10px;
-        padding-bottom: 10px;
-        margin-bottom: -10px;
-        color: var(--cor-hv1, #12a3cb);
-        border: 3px solid transparent;
-      }
-
-      #bottipo:hover,
-      #botcrono:hover {
-        background-color: var(--cor-hv1, #12a3cb);
-        color: var(--cor-invert, #ffffff);
-      }
-
-      .apaga {
-        display: none;
-      }
-
-      .ativa {
-        border: 3px solid var(--cor-hv1, #12a3cb) !important;
-      }
     </style>
 
     <link
@@ -198,49 +161,26 @@
         Runtime,
         Inspector,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/vissev2-producaocompleta.js?v=4";
-
-      const fromObservable = new Runtime().module(define, (name) => {
+      import define from "https://api.observablehq.com/@ranoya/v2-preserva-editorial.js?v=4";
+      new Runtime().module(define, (name) => {
         if (name === "titulo")
           return new Inspector(document.querySelector("#titulo"));
-
-        if (name === "intro")
-          return new Inspector(document.querySelector("#intro"));
-
+        if (name === "descricao")
+          return new Inspector(document.querySelector("#descricao"));
         if (name === "viewof filtros")
           return new Inspector(document.querySelector("#filtros"));
 
-        if (name === "botoes")
+        if (name === "botoesfiltra")
+          return new Inspector(document.querySelector("#botoesfiltra"));
+
+        if (name === "emulacao")
+          return new Inspector(document.querySelector("#emulacao"));
+
+        if (name === "opcoes")
           return new Inspector(document.querySelector("#botoes"));
-
-        if (name === "projetos")
-          return new Inspector(document.querySelector("#projetos"));
-
-        if (name === "descricao")
-          return new Inspector(document.querySelector("#descricao"));
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
-
-        if (name === "timelineproducao");
-        return new Inspector(document.querySelector("#producao"));
-
-        /* 
-        if (name === "viewof filtra")
-          return new Inspector(document.querySelector("#filtro"));
-          */
-
-        /*
-        if (name === "titulopessoas")
-          return new Inspector(document.querySelector("#titulopessoas"));
-
-        if (name === "pessoas")
-          return new Inspector(document.querySelector("#pessoas"));
-
-          if (name === "tituloprodutos")
-          return new Inspector(document.querySelector("#tituloprodutos"));
-
-        */
       });
     </script>
 
@@ -260,28 +200,6 @@
     </script>
 
     <script>
-      let trocaformato = function (q) {
-        document.getElementById("intro").classList.add("apaga");
-        document.getElementById("descricao").classList.add("apaga");
-        document.getElementById("projetos").classList.add("apaga");
-        document.getElementById("producao").classList.add("apaga");
-
-        document.getElementById("bottipo").classList.remove("ativa");
-        document.getElementById("botcrono").classList.remove("ativa");
-
-        if (q == 0) {
-          document.getElementById("descricao").classList.remove("apaga");
-          document.getElementById("producao").classList.remove("apaga");
-          document.getElementById("botcrono").classList.add("ativa");
-        }
-
-        if (q == 1) {
-          document.getElementById("intro").classList.remove("apaga");
-          document.getElementById("projetos").classList.remove("apaga");
-          document.getElementById("bottipo").classList.add("ativa");
-        }
-      };
-
       // FUNÇÃO URL GET
       // urlGet('xpto'); www.site.com/?xpto=teste
       // let data = $_GET['xpto']; www.site.com/?xpto=teste
