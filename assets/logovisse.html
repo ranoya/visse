@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="https://visse.vercel.app/logovisse2.js"></script>
+    <style>
+      html,
+      body {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="logo" style="width: 100%; height: 100%"></div>
+
+    <script>
+      // FUNÇÃO URL GET
+      // urlGet('xpto'); www.site.com/?xpto=teste
+      // let data = $_GET['xpto']; www.site.com/?xpto=teste
+
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let bg = "#debe34";
+
+      if (
+        typeof $_GET["bgcolor"] != "undefined" &&
+        $_GET["bgcolor"] != null &&
+        $_GET["bgcolor"] != ""
+      ) {
+        bg = "#" + $_GET["bgcolor"];
+      }
+
+      document.getElementsByTagName("body")[0].style.backgroundColor = bg;
+
+      document.getElementById("logo").innerHTML = logovisse_border({
+        corBackground: bg,
+        corPredominante: "#FFFFFF",
+      }).svg;
+    </script>
+  </body>
+</html>
