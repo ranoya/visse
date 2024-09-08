@@ -9,7 +9,7 @@
   --color-shadow: #000cd044;
 }
 
-::-webkit-scrollbar-thumb:hover {
+#poeinst::-webkit-scrollbar-thumb:hover {
   background: #2de6ef;
 }
 
@@ -17,7 +17,7 @@
   background: #2de6ef;
 }
 
-a:hover {
+#poeinst a:hover {
   cursor: pointer;
   color: var(--cor-hv3);
   background-color: var(--cor-hv0);
