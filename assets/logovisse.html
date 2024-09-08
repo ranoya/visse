@@ -53,14 +53,14 @@
         $_GET["fgcolor"] != null &&
         $_GET["fgcolor"] != ""
       ) {
-        bg = "#" + $_GET["fgcolor"];
+        fg = "#" + $_GET["fgcolor"];
       }
 
       document.getElementsByTagName("body")[0].style.backgroundColor = bg;
 
       document.getElementById("logo").innerHTML = logovisse_border({
         corBackground: bg,
-        corPredominante: "#FFFFFF",
+        corPredominante: fg,
       }).svg;
     </script>
   </body>
