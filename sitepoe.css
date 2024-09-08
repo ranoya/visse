@@ -1,0 +1,39 @@
+:root {
+  --bg-color: var(--cor-invert, #ffffff);
+  --line-separator: #00000022;
+  --text-color: #2de6ef;
+  --color-link: var(--cor-base);
+  --color-hover: var(--cor-hv3);
+  --input-text: var(--cor-base);
+  --scroll-track: #00078a00;
+  --color-shadow: #000cd044;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2de6ef;
+}
+
+#outputs::-webkit-scrollbar-thumb:hover {
+  background: #2de6ef;
+}
+
+a:hover {
+  cursor: pointer;
+  color: var(--cor-hv3);
+  background-color: var(--cor-hv0);
+}
+
+#poeinst {
+  width: calc(60vw - 40px) !important;
+  height: calc(70vh - 40px) !important;
+  left: calc(22vw - 20px) !important;
+  top: calc(15vh - 20px) !important;
+  background-color: var(--cor-invert, #ffffff);
+  color: var(--text-color, #a7caca);
+  border-radius: 3px !important;
+  box-shadow: 0px 0px 6px 0px var(--cor-shadow) !important;
+}
+
+#outputs {
+  height: calc(70vh - 126px) !important;
+}
