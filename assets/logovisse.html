@@ -38,6 +38,7 @@
       })();
 
       let bg = "#debe34";
+      let fg = "#FFFFFF";
 
       if (
         typeof $_GET["bgcolor"] != "undefined" &&
@@ -45,6 +46,14 @@
         $_GET["bgcolor"] != ""
       ) {
         bg = "#" + $_GET["bgcolor"];
+      }
+
+      if (
+        typeof $_GET["fgcolor"] != "undefined" &&
+        $_GET["fgcolor"] != null &&
+        $_GET["fgcolor"] != ""
+      ) {
+        bg = "#" + $_GET["fgcolor"];
       }
 
       document.getElementsByTagName("body")[0].style.backgroundColor = bg;
