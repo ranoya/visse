@@ -191,18 +191,19 @@
         document.getElementsByTagName("head")[0].appendChild(scrl);
       }
 
-      let lovovisse = logovisse_border({
-        corPredominante: getComputedStyle(
-          document.documentElement
-        ).getPropertyValue("--cor-shadow"),
-      });
+      let fg = "#000000";
+      if (
+        typeof $_GET["fg"] != "undefined" &&
+        $_GET["fg"] != null &&
+        $_GET["fg"] != ""
+      ) {
+        fg = "#" + $_GET["fg"];
+      }
+
+      let lovovisse = logovisse_border({ corPredominante: fg });
       document.getElementById("logovisse").innerHTML = lovovisse.svg;
 
-      let signo = sintesevisse_border({
-        corPredominante: getComputedStyle(
-          document.documentElement
-        ).getPropertyValue("--cor-shadow"),
-      });
+      let signo = sintesevisse_border({ corPredominante: fg });
       document.getElementById("logovissesintese").innerHTML = signo.svg;
 
       document.getElementById("wrap").style.width = "calc(100% - 2px)";
