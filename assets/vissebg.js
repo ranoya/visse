@@ -92,7 +92,9 @@ let lm_x = -10;
 let crescendo = 1;
 
 function draw() {
-  background(255);
+  background(
+    getComputedStyle(document.documentElement).getPropertyValue("--cor-invert")
+  );
 
   mx = (mouseX - windowWidth / 2) / 10;
   my = (mouseY - windowHeight / 2) / 10;
