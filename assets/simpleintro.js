@@ -168,7 +168,9 @@ function mouseClicked() {
 }
 
 function draw() {
-  background(255);
+  background(
+    getComputedStyle(document.documentElement).getPropertyValue("--cor-invert")
+  );
 
   if (window.innerWidth >= window.innerHeight) {
     stroke(

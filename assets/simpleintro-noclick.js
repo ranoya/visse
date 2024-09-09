@@ -146,7 +146,9 @@ let lm_x = -10;
 let crescendo = 1;
 
 function draw() {
-  background(255);
+  background(
+    getComputedStyle(document.documentElement).getPropertyValue("--cor-invert")
+  );
 
   if (window.innerWidth >= window.innerHeight) {
     stroke(
