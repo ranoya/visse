@@ -198,6 +198,8 @@
         $_GET["fg"] != ""
       ) {
         fg = "#" + $_GET["fg"];
+        document.getElementById("lettering").style.color = fg;
+        document.getElementById("letteringsintese").style.color = fg;
       }
 
       let lovovisse = logovisse_border({ corPredominante: fg });
