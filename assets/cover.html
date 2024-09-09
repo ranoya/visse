@@ -191,6 +191,9 @@
         document.getElementsByTagName("head")[0].appendChild(scrl);
       }
 
+      let lovovisse = "";
+      let signo = "";
+
       let fg = "#000000";
       if (
         typeof $_GET["fg"] != "undefined" &&
@@ -200,12 +203,14 @@
         fg = "#" + $_GET["fg"];
         document.getElementById("lettering").style.color = fg;
         document.getElementById("letteringsintese").style.color = fg;
+        lovovisse = logovisse_border({ corPredominante: fg });
+        signo = sintesevisse_border({ corPredominante: fg });
+      } else {
+        lovovisse = logovisse_border();
+        signo = sintesevisse_border();
       }
 
-      let lovovisse = logovisse_border({ corPredominante: fg });
       document.getElementById("logovisse").innerHTML = lovovisse.svg;
-
-      let signo = sintesevisse_border({ corPredominante: fg });
       document.getElementById("logovissesintese").innerHTML = signo.svg;
 
       document.getElementById("wrap").style.width = "calc(100% - 2px)";
