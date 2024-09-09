@@ -22,21 +22,21 @@
   --sam-inter: #eeeeee;
   --other-color: #cccccc;
 
-  --icn-foregroundcolor: #dfc700;
-  --icn-hovercolor: #dfc700;
+  --icn-foregroundcolor: #f6ce56;
+  --icn-hovercolor: #f6ce56;
   --navtop-backgroundcolor: rgba(255, 255, 255, 0.95);
   --cont-backgroundcolor: white;
-  --cont-foregroundcolor: #dfc700;
+  --cont-foregroundcolor: #f6ce56;
   --cont-altcolor: #cccccc;
   --cont-althover: white;
-  --page-backgroundcolor: #dfc700;
+  --page-backgroundcolor: #f6ce56;
   --menu-backgroundcolor: white;
   --menuitem-neutrocolor: #cccccc;
-  --menuitem-hovercolor: #dfc700;
-  --rodape-foregroundcolor: #dfc700;
-  --block-pale: #dfc700cc;
+  --menuitem-hovercolor: #f6ce56;
+  --rodape-foregroundcolor: #f6ce56;
+  --block-pale: #f6ce56cc;
   --neutral-grey: #9b9b9b;
-  --overscroll: #dfc700;
+  --overscroll: #f6ce56;
 }
 
 html {

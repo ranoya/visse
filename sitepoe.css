@@ -1,7 +1,7 @@
 :root {
   --bg-color: var(--cor-invert, #ffffff);
   --line-separator: #00000022;
-  --text-color: #2de6ef;
+  --text-color: var(--cor-hv2);
   --color-link: var(--cor-base);
   --color-hover: var(--cor-hv3);
   --input-text: var(--cor-base);
@@ -10,11 +10,11 @@
 }
 
 #poeinst::-webkit-scrollbar-thumb:hover {
-  background: #2de6ef;
+  background: var(--cor-shadow, #176b82);
 }
 
 #outputs::-webkit-scrollbar-thumb:hover {
-  background: #2de6ef;
+  background: var(--cor-shadow, #176b82);
 }
 
 #poeinst a:hover {
