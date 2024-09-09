@@ -191,10 +191,18 @@
         document.getElementsByTagName("head")[0].appendChild(scrl);
       }
 
-      let lovovisse = logovisse_border();
+      let lovovisse = logovisse_border({
+        corPredominante: getComputedStyle(
+          document.documentElement
+        ).getPropertyValue("--cor-shadow"),
+      });
       document.getElementById("logovisse").innerHTML = lovovisse.svg;
 
-      let signo = sintesevisse_border();
+      let signo = sintesevisse_border({
+        corPredominante: getComputedStyle(
+          document.documentElement
+        ).getPropertyValue("--cor-shadow"),
+      });
       document.getElementById("logovissesintese").innerHTML = signo.svg;
 
       document.getElementById("wrap").style.width = "calc(100% - 2px)";
