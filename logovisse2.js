@@ -198,6 +198,43 @@ let sintesevisse_border = function (obj) {
   };
 };
 
+sintesevisse_pluri = function (obj) {
+  let mysvg = `<svg class="logovisse" id="symbolvisse" viewBox="0 0 704 704">`;
+
+  let corfrente = "#444444";
+
+  let myobj = {};
+
+  if (typeof obj != "undefined") {
+    if (typeof obj.corBackground != "undefined") {
+      mysvg += `<rect x='0' y='0' width='1500' height='704' style='fill: ${obj.corBackground}' />`;
+      myobj.corBackground = obj.corBackground;
+    }
+
+    if (typeof obj.corPredominante != "undefined") {
+      myobj.corPredominante = obj.corPredominante;
+      corfrente = obj.corPredominante;
+    }
+  }
+
+  mysvg += seqblock(
+    704,
+    101,
+    "transform: matrix(1.00,0.00,0.00,20.00,0,0);",
+    myobj
+  );
+
+  mysvg += `
+
+<rect x="84" y="79" width="545" height="545" stroke="${corfrente}" stroke-width="30" fill="none" />
+
+<path fill-rule="evenodd" clip-rule="evenodd" d="M520.689 193.377L500.312 173L479.935 193.377H520.689ZM521.689 194.377H478.935L459.935 213.377H540.689L521.689 194.377ZM541.689 214.377H458.935L439.935 233.377H534.963L547.826 220.514L541.689 214.377ZM533.963 234.377H438.935L419.935 253.377H514.963L533.963 234.377ZM513.963 254.377H418.935L399.935 273.377H494.963L513.963 254.377ZM493.963 274.377H398.935L379.935 293.377H474.963L493.963 274.377ZM473.963 294.377H378.935L378.553 294.759L378.172 294.377H283.143L302.143 313.377H454.963L473.963 294.377ZM453.963 314.377H303.143L322.143 333.377H434.963L453.963 314.377ZM433.963 334.377H323.143L342.143 353.377H414.963L433.963 334.377ZM413.963 354.377H343.143L362.143 373.377H394.963L413.963 354.377ZM393.963 374.377H363.143L378.504 389.737L378.553 389.688L378.603 389.737L393.963 374.377ZM211.592 313.377L230.592 294.377H178.436L197.436 313.377H211.592ZM198.436 314.377H210.592L204.514 320.455L198.436 314.377ZM177.436 293.377H231.592L250.592 274.377H158.436L177.436 293.377ZM157.436 273.377H251.592L256.868 268.101L262.143 273.377H357.172L338.172 254.377H175.564L157 272.941L157.436 273.377ZM176.564 253.377H337.172L318.172 234.377H195.564L176.564 253.377ZM196.564 233.377H317.172L298.172 214.377H215.418L209.281 220.514L209.354 220.587L196.564 233.377ZM216.418 213.377H297.172L278.172 194.377H235.418L216.418 213.377ZM236.418 193.377H277.172L256.795 173L236.418 193.377ZM358.172 274.377H263.143L282.143 293.377H377.172L358.172 274.377Z" fill="${corfrente}"/>
+
+<rect x='270' y='458' width='280' height='62' style='fill: ${corfrente}' />`;
+
+  return { svg: mysvg };
+};
+
 let seqblock = function (s, st, stl, dados) {
   let cores;
 
