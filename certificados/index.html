@@ -68,7 +68,7 @@
 
       .tudo {
         padding: 5vw;
-        width: 90vw;
+        width: 70vw;
         display: inline-block;
         height: 40vw;
         margin-bottom: 30px;
@@ -84,8 +84,7 @@
         padding-top: 16.7vw;
       }
 
-      .numerocpf,
-      .periodo {
+      .numerocpf {
         font-size: 2vw;
       }
 
@@ -234,7 +233,7 @@
         for (let k = 0; k < lista.length; k++) {
           timestamp = new Date().getTime();
           docs += `<div class='tudo'><div class='certificadowrap' style='background-image: url("https://visse.vercel.app/certificados/${lista[k].Modelo}.svg");'>`;
-          docs += `<p class='textonormal'>Certificamos que <span class='nome'>${lista[k].Nome}</span>, portador(a) do CPF número <span class='numerocpf'>${lista[k].CPF}</span> <span class='numerocpf'>${lista[k].Tipo}</span> <span class='tipodeatividade'>${lista[k]["Título"]}</span>, <span class='periodo'>${lista[k]["Período"]}</span>, com duração de <span class='duracao'>${lista[k]["Duração"]}</span> <span class='projeto'>${lista[k].NomeEvento}</span>.</p>`;
+          docs += `<p class='textonormal'>Certificamos que <span class='nome'>${lista[k].Nome}</span>, portador(a) do CPF número <span class='numerocpf'>${lista[k].CPF}</span> <span class='numerocpf'>${lista[k].Tipo}</span> <span class='tipodeatividade'>${lista[k]["Título"]}</span> <span class='projeto'>${lista[k].NomeEvento}</span>, <span class='periodo'>${lista[k]["Período"]}</span>, com duração de <span class='duracao'>${lista[k]["Duração"]}</span>.</p>`;
 
           docs += `<p class='comprova'>Este documento foi gerado digitalmente direto do website do Laboratório de Visualização e Sentidos (VISSE), no timestamp ${timestamp}, e pode ser verificado/validado em qualquer momento na url: <a href='https://visse.vercel.app/certificados/?reg=${lista[k].CPF}'>https://visse.vercel.app/certificados/?reg=${lista[k].CPF}</a></p>`;
 
