@@ -14,6 +14,10 @@
         print-color-adjust: exact !important;
       }
 
+      #full {
+        padding-bottom: 50px;
+      }
+
       .formulariowrap {
         color: #ff666c;
         width: 100vw;
@@ -189,6 +193,33 @@
         fill: white;
         fill-opacity: 0.5;
       }
+
+      .centra {
+        width: 100%;
+        text-align: center;
+        margin-top: 30vh;
+      }
+
+      .centra input {
+        border: 1px solid black;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        line-height: 24px;
+        height: 24px;
+      }
+
+      .centra a {
+        background-color: #dddddd;
+        color: black;
+        font-size: 18px;
+        line-height: 24px;
+        height: 24px;
+      }
+
+      .centra a:hover {
+        background-color: black;
+        color: #dddddd;
+      }
     </style>
 
     <script src="https://www.ranoya.com/Assets/JSLibs/QRCodeSVG/qrcode.min.js"></script>
@@ -250,7 +281,20 @@
         ),
         geracertificados
       );
+
+      let reenvia = function () {
+        let url =
+          "https://visse.vercel.app/certificados/?reg=" +
+          document.getElementById("registro").value;
+        window.location = url;
+      };
     </script>
   </body>
-  <div id="full"><span class="loader"></span></div>
+  <div id="full">
+    <div class="centra">
+      CERTIFICADOS<br /><br />
+      CPF: <input type="text" id="registro" />
+      <a class="botao" href="javascript:reenvia()">ACESSAR</a>
+    </div>
+  </div>
 </html>
