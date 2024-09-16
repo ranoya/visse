@@ -16,6 +16,7 @@
 
       #full {
         padding-bottom: 50px;
+        color: black;
       }
 
       .formulariowrap {
@@ -206,14 +207,18 @@
         font-size: 18px;
         line-height: 24px;
         height: 24px;
+        padding: 6px;
       }
 
       .centra a {
         background-color: #dddddd;
         color: black;
+        font-family: Helvetica, Arial, sans-serif;
         font-size: 18px;
         line-height: 24px;
         height: 24px;
+        padding: 6px;
+        text-decoration: none;
       }
 
       .centra a:hover {
@@ -248,31 +253,40 @@
       let lista = [];
       let contalista = 0;
       const geracertificados = function (dados) {
-        for (let i = 0; i < dados.length; i++) {
-          if ($_GET["cpf"] == dados[i].CPF || $_GET["reg"] == dados[i].CPF) {
-            lista[contalista] = dados[i];
-            if (typeof lista[contalista].tipodeatividade == "undefined") {
-              lista[contalista].tipodeatividade = "";
+        if (
+          (typeof $_GET["cpf"] != "undefined" &&
+            $_GET["cpf"] != null &&
+            $_GET["cpf"] != "") ||
+          (typeof $_GET["reg"] != "undefined" &&
+            $_GET["reg"] != null &&
+            $_GET["reg"] != "")
+        ) {
+          for (let i = 0; i < dados.length; i++) {
+            if ($_GET["cpf"] == dados[i].CPF || $_GET["reg"] == dados[i].CPF) {
+              lista[contalista] = dados[i];
+              if (typeof lista[contalista].tipodeatividade == "undefined") {
+                lista[contalista].tipodeatividade = "";
+              }
+              if (typeof lista[contalista].NomeEvento == "undefined") {
+                lista[contalista].NomeEvento = "";
+              }
+              contalista++;
             }
-            if (typeof lista[contalista].NomeEvento == "undefined") {
-              lista[contalista].NomeEvento = "";
-            }
-            contalista++;
           }
+
+          for (let k = 0; k < lista.length; k++) {
+            timestamp = new Date().getTime();
+            docs += `<div class='tudo'><div class='certificadowrap' style='background-image: url("https://visse.vercel.app/certificados/${lista[k].Modelo}.svg");'>`;
+            docs += `<p class='textonormal'>Certificamos que <span class='nome'>${lista[k].Nome}</span>, portador(a) do CPF número <span class='numerocpf'>${lista[k].CPF}</span> <span class='numerocpf'>${lista[k].Tipo}</span> <span class='tipodeatividade'>${lista[k]["Título"]}</span> <span class='projeto'>${lista[k].NomeEvento}</span>, <span class='periodo'>${lista[k]["Período"]}</span>, com duração de <span class='duracao'>${lista[k]["Duração"]}</span>.</p>`;
+
+            docs += `<p class='comprova'>Este documento foi gerado digitalmente direto do website do Laboratório de Visualização e Sentidos (VISSE), no timestamp ${timestamp}, e pode ser verificado/validado em qualquer momento na url: <a href='https://visse.vercel.app/certificados/?reg=${lista[k].CPF}'>https://visse.vercel.app/certificados/?reg=${lista[k].CPF}</a></p>`;
+
+            docs += `</div></div>`;
+          }
+
+          console.table(lista);
+          document.getElementById("full").innerHTML = docs;
         }
-
-        for (let k = 0; k < lista.length; k++) {
-          timestamp = new Date().getTime();
-          docs += `<div class='tudo'><div class='certificadowrap' style='background-image: url("https://visse.vercel.app/certificados/${lista[k].Modelo}.svg");'>`;
-          docs += `<p class='textonormal'>Certificamos que <span class='nome'>${lista[k].Nome}</span>, portador(a) do CPF número <span class='numerocpf'>${lista[k].CPF}</span> <span class='numerocpf'>${lista[k].Tipo}</span> <span class='tipodeatividade'>${lista[k]["Título"]}</span> <span class='projeto'>${lista[k].NomeEvento}</span>, <span class='periodo'>${lista[k]["Período"]}</span>, com duração de <span class='duracao'>${lista[k]["Duração"]}</span>.</p>`;
-
-          docs += `<p class='comprova'>Este documento foi gerado digitalmente direto do website do Laboratório de Visualização e Sentidos (VISSE), no timestamp ${timestamp}, e pode ser verificado/validado em qualquer momento na url: <a href='https://visse.vercel.app/certificados/?reg=${lista[k].CPF}'>https://visse.vercel.app/certificados/?reg=${lista[k].CPF}</a></p>`;
-
-          docs += `</div></div>`;
-        }
-
-        console.table(lista);
-        document.getElementById("full").innerHTML = docs;
       };
 
       getcsvdata(
