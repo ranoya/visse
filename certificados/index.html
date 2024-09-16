@@ -16,7 +16,6 @@
 
       #full {
         padding-bottom: 50px;
-        color: black;
       }
 
       .formulariowrap {
@@ -199,6 +198,8 @@
         width: 100%;
         text-align: center;
         margin-top: 30vh;
+        color: black;
+        font-family: Helvetica, Arial, sans-serif;
       }
 
       .centra input {
@@ -208,6 +209,7 @@
         line-height: 24px;
         height: 24px;
         padding: 6px;
+        color: black;
       }
 
       .centra a {
@@ -224,6 +226,13 @@
       .centra a:hover {
         background-color: black;
         color: #dddddd;
+      }
+
+      .pequeno {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        color: black;
       }
     </style>
 
@@ -308,7 +317,10 @@
     <div class="centra">
       CERTIFICADOS<br /><br />
       CPF: <input type="text" id="registro" />
-      <a class="botao" href="javascript:reenvia()">ACESSAR</a>
+      <a class="botao" href="javascript:reenvia()">ACESSAR</a><br />
+      <span class="pequeno"
+        >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DIGITAR APENAS OS NÚMEROS</span
+      >
     </div>
   </div>
 </html>
