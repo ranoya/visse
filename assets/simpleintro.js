@@ -1,13 +1,13 @@
 let praonde = [];
-praonde[1] = "";
+praonde[1] = "../v2-politica";
 praonde[2] = "../v2-linguagemgrafica";
 praonde[3] = "../v2-genero";
 praonde[4] = "../v2-memoriagrafica";
 praonde[5] = "../v2-critica";
 praonde[6] = "../v2-retorica";
-praonde[7] = "../v2-arqueologia";
-praonde[8] = "../v2-humanismodedados";
-praonde[9] = "";
+praonde[8] = "../v2-arqueologia";
+praonde[7] = "../v2-humanismodedados";
+praonde[9] = "../v2-divulgacao";
 praonde[10] = "../v2-observatorio";
 praonde[11] = "../v2-educacao";
 praonde[12] = "../v2-inovacao";
