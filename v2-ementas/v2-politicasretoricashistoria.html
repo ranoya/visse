@@ -431,30 +431,6 @@
       let signo = sintesevisse_border();
       document.getElementById("logovissesintese").innerHTML = signo.svg;
 
-      if (
-        typeof $_GET["p"] != "undefined" &&
-        $_GET["p"] != "" &&
-        $_GET["p"] != null
-      ) {
-        document.getElementById("bibliografiap").style.display = "block";
-        document.getElementById("bibliografia").style.display = "none";
-        document.getElementById(
-          "observablehq-listaaulas_publico-2c7e88ef"
-        ).style.display = "none";
-        document.getElementById(
-          "observablehq-listaaulas_naopublico"
-        ).style.display = "block";
-      } else {
-        document.getElementById("bibliografia").style.display = "block";
-        document.getElementById("bibliografiap").style.display = "none";
-        document.getElementById(
-          "observablehq-listaaulas_publico-2c7e88ef"
-        ).style.display = "block";
-        document.getElementById(
-          "observablehq-listaaulas_naopublico"
-        ).style.display = "none";
-      }
-
       document.onscroll = function () {
         if (window.innerWidth > 900) {
           if (document.documentElement.scrollTop > 20) {
