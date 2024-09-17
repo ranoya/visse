@@ -132,6 +132,8 @@
 
           <div id="observablehq-listaaulas_publico-2c7e88ef"></div>
 
+          <div id="inscricao"></div>
+
           <div id="producao"></div>
 
           <div id="estilos"></div>
@@ -291,6 +293,9 @@
           return new Inspector(
             document.querySelector("#observablehq-listaaulas_publico-2c7e88ef")
           );
+
+        if (name === "inscricao")
+          return new Inspector(document.querySelector("#inscricao"));
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
