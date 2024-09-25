@@ -125,6 +125,8 @@
 
           <div id="descricao"><span class="loader"></span></div>
 
+          <div id="tituloperiodicos"></div>
+
           <svg
             class="lupa"
             viewBox="0 0 609 561"
@@ -192,6 +194,9 @@
           return new Inspector(document.querySelector("#titulo"));
         if (name === "descricao")
           return new Inspector(document.querySelector("#descricao"));
+
+        if (name === "tituloperiodicos")
+          return new Inspector(document.querySelector("#tituloperiodicos"));
 
         if (name === "viewof filtros")
           return new Inspector(document.querySelector("#filtros"));
