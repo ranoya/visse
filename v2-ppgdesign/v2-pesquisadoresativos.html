@@ -129,7 +129,7 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M609 248C609 384.967 497.967 496 361 496C304.807 496 252.978 477.311 211.392 445.809L70.6797 560.279L0 473.397L139.59 359.84C122.582 326.236 113 288.237 113 248C113 111.033 224.033 0 361 0C497.967 0 609 111.033 609 248ZM521 248C521 336.366 449.365 408 361 408C272.635 408 201 336.366 201 248C201 159.634 272.635 88 361 88C449.365 88 521 159.634 521 248Z"></path>
           </svg>
 
-          <div id="filtro" style="width: 100%"></div>
+          <div id="filtros" style="width: 100%"></div>
 
           <div id="botoes" style="width: 100%"></div>
 
@@ -185,7 +185,7 @@
           return new Inspector(document.querySelector("#descricao"));
 
         if (name === "viewof filtros")
-          return new Inspector(document.querySelector("#filtro"));
+          return new Inspector(document.querySelector("#filtros"));
 
         if (name === "areas")
           return new Inspector(document.querySelector("#botoes"));
