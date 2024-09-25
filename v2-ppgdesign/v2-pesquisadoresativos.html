@@ -125,6 +125,12 @@
 
           <div id="descricao"><span class="loader"></span></div>
 
+          <div id="filtro" style="width: 100%"></div>
+
+          <div id="botoes" style="width: 100%"></div>
+
+          <div id="periodicos" style="width: 100%"></div>
+
           <div id="chamadas" style="width: 100%"></div>
 
           <div id="inscricao" style="width: 100%"></div>
@@ -173,6 +179,15 @@
           return new Inspector(document.querySelector("#titulo"));
         if (name === "descricao")
           return new Inspector(document.querySelector("#descricao"));
+
+        if (name === "viewof filtros")
+          return new Inspector(document.querySelector("#filtro"));
+
+        if (name === "botoes")
+          return new Inspector(document.querySelector("#botoes"));
+
+        if (name === "relacaoperiodicos")
+          return new Inspector(document.querySelector("#periodicos"));
 
         if (name === "programa")
           return new Inspector(document.querySelector("#chamadas"));
