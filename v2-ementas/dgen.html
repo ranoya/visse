@@ -130,6 +130,10 @@
           <div id="bibliografiap"></div>
           <div id="bibliografia"></div>
 
+          <div id="introfuturo"></div>
+          <div id="filtros"></div>
+          <div id="futuro"></div>
+
           <div id="estilos"></div>
         </div>
       </div>
@@ -199,6 +203,15 @@
           return new Inspector(document.querySelector("#bibliografia"));
         if (name === "bibliografiaopen")
           return new Inspector(document.querySelector("#bibliografiap"));
+
+        if (name === "introfuturo")
+          return new Inspector(document.querySelector("#introfuturo"));
+
+        if (name === "filtros")
+          return new Inspector(document.querySelector("#filtros"));
+
+        if (name === "futuro")
+          return new Inspector(document.querySelector("#futuro"));
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
