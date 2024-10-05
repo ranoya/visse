@@ -111,7 +111,7 @@
       <a name="contentmark"></a>
       <div id="midsection">
         <div class="secao">
-          <div id="entrada" style="display: none"></div>
+          <div id="entradav2" style="display: none"></div>
 
           <div id="projetos"><span class="loader"></span></div>
 
@@ -164,7 +164,7 @@
 
       const fromObservable = new Runtime().module(define, (name) => {
         if (name === "viewof filtros")
-          return new Inspector(document.querySelector("#entrada"));
+          return new Inspector(document.querySelector("#entradav2"));
 
         if (name === "projetos")
           return new Inspector(document.querySelector("#projetos"));
