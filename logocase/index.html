@@ -1,5 +1,7 @@
-<div id="observablehq-viewof-corA-6e87cd09"></div>
-<div id="observablehq-viewof-corB-6e87cd09"></div>
+<div id="topo">
+  <div id="observablehq-viewof-corA-6e87cd09"></div>
+  <div id="observablehq-viewof-corB-6e87cd09"></div>
+</div>
 <div id="observablehq-apresentalogo-6e87cd09"></div>
 
 <style>
@@ -13,6 +15,18 @@
     display: inline-block;
     margin-bottom: 30px;
   }
+
+  #topo {
+    display: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: #ffffff;
+    height: 35px;
+  }
+
+  #observablehq-apresentalogo-6e87cd09 {
+    margin-top: 35px;
+  }
 </style>
 
 <link
@@ -24,7 +38,7 @@
     Runtime,
     Inspector,
   } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-  import define from "https://api.observablehq.com/@ranoya/logovisse-v2@1137.js?v=4";
+  import define from "https://api.observablehq.com/@ranoya/logovisse-v2.js?v=4";
   new Runtime().module(define, (name) => {
     if (name === "viewof corA")
       return new Inspector(
