@@ -125,8 +125,6 @@
 
           <div id="descricao"><span class="loader"></span></div>
 
-          <div id="tituloperiodicos"></div>
-
           <svg
             class="lupa"
             viewBox="0 0 609 561"
@@ -144,7 +142,13 @@
 
           <div id="botoes" style="width: 100%"></div>
 
+          <div id="tituloperiodicos"></div>
+
           <div id="periodicos" style="width: 100%"></div>
+
+          <div id="titulocongressos"></div>
+
+          <div id="congressos" style="width: 100%"></div>
 
           <div id="chamadas" style="width: 100%"></div>
 
@@ -206,6 +210,12 @@
 
         if (name === "relacaoperiodicos")
           return new Inspector(document.querySelector("#periodicos"));
+
+        if (name === "titulocongressos")
+          return new Inspector(document.querySelector("#titulocongressos"));
+
+        if (name === "relacaocongressos")
+          return new Inspector(document.querySelector("#congressos"));
 
         if (name === "programa")
           return new Inspector(document.querySelector("#chamadas"));
