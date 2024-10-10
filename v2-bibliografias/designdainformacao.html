@@ -380,7 +380,11 @@
         ""
       );
 
-      if (typeof $_GET['p'] != "undefined" && $_GET['p'] != "" $_GET['p'] != null) {
+      if (
+        typeof $_GET["p"] != "undefined" &&
+        $_GET["p"] != "" &&
+        $_GET["p"] != null
+      ) {
         document.getElementById("producao").style.display = "none";
         document.getElementById("producaottg").style.display = "block";
       }
