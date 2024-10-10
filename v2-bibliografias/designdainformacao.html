@@ -137,6 +137,7 @@
           <div id="botoes"></div>
 
           <div id="producao"></div>
+          <div id="producaottg"></div>
 
           <div id="estilos"></div>
         </div>
@@ -164,6 +165,10 @@
         height: 70vh;
         margin-top: 10px;
         margin-bottom: 10px;
+      }
+
+      #producaottg {
+        display: none;
       }
     </style>
 
@@ -196,6 +201,9 @@
 
         if (name === "tl_fundamentosdi");
         return new Inspector(document.querySelector("#producao"));
+
+        if (name === "ttg_fundamentosdi");
+        return new Inspector(document.querySelector("#producaottg"));
       });
     </script>
 
@@ -371,6 +379,11 @@
         "https://visse.vercel.app/sitepoe.css",
         ""
       );
+
+      if (typeof $_GET['p'] != "undefined" && $_GET['p'] != "" $_GET['p'] != null) {
+        document.getElementById("producao").style.display = "none";
+        document.getElementById("producaottg").style.display = "block";
+      }
     </script>
   </body>
 </html>
