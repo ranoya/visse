@@ -184,10 +184,10 @@
       import define from "https://api.observablehq.com/@ranoya/v2-listasbibliograficas.js?v=4";
 
       const fromObservable = new Runtime().module(define, (name) => {
-        if (name === "t_fundamentosdi")
+        if (name === "titulo")
           return new Inspector(document.querySelector("#titulo"));
 
-        if (name === "d_fundamentosdi")
+        if (name === "descricao")
           return new Inspector(document.querySelector("#descricao"));
 
         if (name === "viewof filtros")
@@ -199,11 +199,8 @@
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
 
-        if (name === "tl_fundamentosdi");
+        if (name === "producao");
         return new Inspector(document.querySelector("#producao"));
-
-        /* if (name === "ttg_fundamentosdi");
-        return new Inspector(document.querySelector("#producaottg")); */
       });
     </script>
 

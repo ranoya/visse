@@ -181,13 +181,13 @@
         Runtime,
         Inspector,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/v2-listasbibliograficaspt.js?v=4";
+      import define from "https://api.observablehq.com/@ranoya/v2-listasbibliograficasfull.js?v=4";
 
       const fromObservable = new Runtime().module(define, (name) => {
-        if (name === "t_biblioteka")
+        if (name === "titulo")
           return new Inspector(document.querySelector("#titulo"));
 
-        if (name === "d_biblioteka")
+        if (name === "descricao")
           return new Inspector(document.querySelector("#descricao"));
 
         if (name === "viewof filtros")
@@ -199,7 +199,7 @@
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
 
-        if (name === "tl_biblioteka");
+        if (name === "producao");
         return new Inspector(document.querySelector("#producao"));
       });
     </script>
