@@ -181,7 +181,7 @@
         Runtime,
         Inspector,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/v2-listasbibliograficas.js?v=4";
+      import define from "https://api.observablehq.com/@ranoya/v2-listasbibliograficaspt.js?v=4";
 
       const fromObservable = new Runtime().module(define, (name) => {
         if (name === "t_fundamentosdi")
@@ -241,15 +241,6 @@
           }
         }
       })();
-
-      if (
-        typeof $_GET["p"] != "undefined" &&
-        $_GET["p"] != "" &&
-        $_GET["p"] != null
-      ) {
-        window.location =
-          "https://visse.vercel.app/v2-bibliografias/odesigndainformacao.html";
-      }
 
       if (typeof $_GET["theme"] != "undefined") {
         localStorage.setItem("tema", $_GET["theme"]);
