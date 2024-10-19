@@ -206,7 +206,7 @@
       import define from "https://api.observablehq.com/@ranoya/v2-ferramentas.js?v=4";
 
       const fromObservable = new Runtime().module(define, (name) => {
-        if (name === "tituloEnsPesqExt")
+        if (name === "titulo")
           return new Inspector(document.querySelector("#titulo"));
 
         if (name === "viewof filtros")
