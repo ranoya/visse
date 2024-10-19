@@ -239,12 +239,33 @@
         }
       })();
 
+      let complemento = "";
+
+      if (
+        typeof $_GET["filtra"] != "undefined" &&
+        $_GET["filtra"] != null &&
+        $_GET["filtra"] != ""
+      ) {
+        complemento = "?filtra=" + decodeURI($_GET["filtra"]);
+
+        setTimeout(function () {
+          document.getElementsByTagName("input")[0].value = decodeURI(
+            $_GET["filtra"]
+          );
+          document
+            .getElementsByTagName("input")[0]
+            .dispatchEvent(new Event("input", { bubbles: true }));
+        }, 1500);
+      }
+
       if (
         typeof $_GET["p"] != "undefined" &&
         $_GET["p"] != "" &&
         $_GET["p"] != null
       ) {
-        window.location = "https://visse.vercel.app/v2-bibliografias/ovis.html";
+        window.location =
+          "https://visse.vercel.app/v2-bibliografias/odatavis.html" +
+          complemento;
       }
 
       if (typeof $_GET["theme"] != "undefined") {
