@@ -245,7 +245,9 @@
         $_GET["filtra"] != ""
       ) {
         setTimeout(function () {
-          document.getElementsByTagName("input")[0].value = $_GET["filtra"];
+          document.getElementsByTagName("input")[0].value = decodeURI(
+            $_GET["filtra"]
+          );
           document
             .getElementsByTagName("input")[0]
             .dispatchEvent(new Event("input", { bubbles: true }));
