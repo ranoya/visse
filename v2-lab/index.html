@@ -141,11 +141,11 @@
           margin: 0;
           position: fixed;
           z-index: 10000;
-          width: calc(80% - 30px);
+          width: 85%;
           height: 80vh;
           top: 10vh;
-          left: 10%;
-          box-shadow: 0 0 10px 5px #00000044;
+          left: 7%;
+          box-shadow: 0 0 10px 5px #00000055;
         }
 
         #apresentacao iframe {
@@ -157,17 +157,19 @@
         }
 
         #apresentacao svg {
-          width: 28px;
-          height: 28px;
+          width: 25px;
+          height: 25px;
           background-color: white;
-          border: 1px solid black;
+          border: 5px solid white;
           position: fixed;
           top: calc(10vh + 40px);
-          left: 90%;
+          left: calc(92% + 3px);
+          outline: 1px solid var(--cor-hvg);
         }
 
         #apresentacao svg:hover {
           background-color: var(--cor-hv1, #12a3cb);
+          border: 5px solid var(--cor-hv1, #12a3cb);
         }
 
         #apresentacao svg:hover path {
