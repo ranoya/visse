@@ -111,6 +111,80 @@
         </div>
       </nav>
 
+      <div id="apresentacao">
+        <iframe
+          frameborder="0"
+          src="https://visse.vercel.app/apresentacao"
+        ></iframe>
+
+        <svg
+          id="fechaapresentacao"
+          onclick="closeslide()"
+          viewBox="0 0 2129 2128"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M363.402 0.158203L0.65625 362.904L701.754 1064L0.65625 1765.1L363.402 2127.84L1064.5 1426.75L1765.59 2127.84L2128.34 1765.1L1427.24 1064L2128.34 362.904L1765.59 0.158203L1064.5 701.254L363.402 0.158203Z"
+            fill="var(--cor-hv0, cyan)"
+          />
+        </svg>
+      </div>
+
+      <style>
+        #apresentacao {
+          display: none;
+          padding: 0;
+          border: 0;
+          margin: 0;
+          position: fixed;
+          z-index: 10000;
+          width: calc(80% - 30px);
+          height: 80vh;
+          top: 10vh;
+          left: 10%;
+          box-shadow: 0 0 10px 5px #00000044;
+        }
+
+        #apresentacao iframe {
+          width: 100%;
+          height: 80vh;
+          padding: 0;
+          border: 0;
+          margin: 0;
+        }
+
+        #apresentacao svg {
+          width: 28px;
+          height: 28px;
+          background-color: white;
+          border: 1px solid black;
+          position: fixed;
+          top: calc(10vh + 40px);
+          left: 90%;
+        }
+
+        #apresentacao svg:hover {
+          background-color: var(--cor-hv1, #12a3cb);
+        }
+
+        #apresentacao svg:hover path {
+          fill: var(--cor-invert, #ffffff);
+        }
+      </style>
+
+      <script>
+        let closeslide = function () {
+          document.getElementById("apresentacao").style.display = "none";
+        };
+
+        let abreslide = function () {
+          document.getElementById("apresentacao").style.display = "block";
+        };
+      </script>
+
       <a name="contentmark"></a>
       <div id="midsection">
         <div class="secao">
