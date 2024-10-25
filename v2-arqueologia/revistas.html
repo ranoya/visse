@@ -339,7 +339,7 @@
                         
                         <div class="textos">${data[i].titulo}<br>
                             
-                        <!-- <span class='autor'>${data[i].descrit}</span> -->
+                        <span class='autor'>${data[i].datalhes}</span>
                             
                         </div>
                         
@@ -347,17 +347,18 @@
                         </a>`;
 
                     /*
-                    bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].thumb)});'></div>`;
+                    bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].imagem)});'></div>`;
                     */
                 
                 
-                code += `<hr></hr>`;
-
                 if (c > 0) {
                 recode = recode + code;
                 }
                 code = "";
             }
+
+
+            recode += `<hr></hr>`;
 
 
             document.getElementById("conteudo").innerHTML = recode;
