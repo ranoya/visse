@@ -332,7 +332,7 @@
                 c = 0;
 
                 for (let i = 0; i < data.length; i++) {
-                if (data[i].Group.match(grupos[g])) {
+ 
                     c++;
                     code += `<hr></hr><a class="listas" target='_blank' href='${data[i].link}'>
                         
@@ -355,7 +355,7 @@
                     bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].thumb)});'></div>`;
                     */
                 
-                }
+                
                 code += `<hr></hr>`;
 
                 if (c > 0) {
