@@ -13,22 +13,19 @@
     <title>VISSE</title>
     <meta property="og:title" content="VISSE" />
     <meta name="generator" content="artesanal" />
-    <meta name="description" content="Observatório de Pesquisa em DI" />
-    <meta property="og:description" content="Observatório de Pesquisa em DI" />
+    <meta name="description" content="Suporte para Pós-Doutorandos de Design" />
+    <meta
+      property="og:description"
+      content="Suporte para Pós-Doutorandos de Design"
+    />
     <meta name="author" content="Guilherme Ranoya" />
     <meta property="og:url" content="https://visse.vercel.app" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="600" />
-    <meta
-      property="og:site_name"
-      content="Laboratório de Visualização e Sentidos"
-    />
-    <meta
-      name="application-name"
-      content="Laboratório de Visualização e Sentidos"
-    />
+    <meta property="og:site_name" content="Chamadas" />
+    <meta name="application-name" content="Chamadas" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta
       property="og:image"
@@ -111,40 +108,51 @@
       <a name="contentmark"></a>
       <div id="midsection">
         <div class="secao">
-          <div class="fixatitulo">
+          <div
+            style="
+              background-color: white;
+              width: calc(100% + 30px);
+              position: sticky;
+              top: 0;
+              z-index: 100;
+              margin: -20px;
+              padding-left: 20px;
+            "
+          >
             <h1 id="titulo"></h1>
           </div>
           <br />
 
           <div id="descricao"><span class="loader"></span></div>
 
-          <h2
-            id="titulopessoas"
-            style="
-              width: calc(100% - 20vw - 16px);
-              border-bottom: 1px solid #bbbbbb;
-            "
-          ></h2>
-          <br />
+          <svg
+            class="lupa"
+            viewBox="0 0 609 561"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M609 248C609 384.967 497.967 496 361 496C304.807 496 252.978 477.311 211.392 445.809L70.6797 560.279L0 473.397L139.59 359.84C122.582 326.236 113 288.237 113 248C113 111.033 224.033 0 361 0C497.967 0 609 111.033 609 248ZM521 248C521 336.366 449.365 408 361 408C272.635 408 201 336.366 201 248C201 159.634 272.635 88 361 88C449.365 88 521 159.634 521 248Z"
+            />
+          </svg>
 
-          <div id="pessoas" style="width: calc(100% - 20vw - 16px)"></div>
+          <div id="filtros" style="width: 100%"></div>
 
-          <h2 id="tituloensino" style="border-bottom: 1px solid #bbbbbb"></h2>
-          <br />
+          <div id="botoes" style="width: 100%"></div>
 
-          <div id="ensino"></div>
+          <div id="tituloperiodicos"></div>
 
-          <!--
-          <h2 id="titulomais" style="border-bottom: 1px solid #bbbbbb"></h2>
-          <br />
+          <div id="periodicos" style="width: 100%"></div>
 
-          <div id="mais"></div>
-          -->
+          <div id="titulocongressos"></div>
 
-          <h2 id="tituloprodutos" style="border-bottom: 1px solid #bbbbbb"></h2>
-          <br />
+          <div id="congressos" style="width: 100%"></div>
 
-          <div id="producao"></div>
+          <div id="chamadas" style="width: 100%"></div>
+
+          <div id="inscricao" style="width: 100%"></div>
 
           <div id="estilos"></div>
         </div>
@@ -180,163 +188,48 @@
       href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
     />
     <script type="module">
-      const timelinev = function (arr, ano, titulo, conteudo) {
-        let html = "";
-        let htmlfinal = "";
-
-        html = "<div class='timelinev'>";
-        htmlfinal = "";
-
-        let qualano = "";
-        let anoatual = "";
-        let quantosblocos = 1;
-
-        let qualtitulo = "";
-        let tituloatual = "";
-        let quantostitulos = 1;
-
-        html += `
-    <div class="timelinev_ano_head"><span class="timelinev_ano_head_cont">${ano}</span></div>
-    <div class="timelinev_topic_head"><span class="timelinev_topic_head_cont">${titulo}</span></div>
-    <div class="timelinev_cont_head"><span class="timelinev_cont_head_cont">${conteudo}</span></div>
-    `;
-
-        let ultimo = "";
-
-        for (let k = 0; k < arr.length; k++) {
-          ultimo = "";
-
-          if (k == arr.length - 1) {
-            ultimo = "ultimo";
-          }
-
-          anoatual = arr[k][ano];
-          quantosblocos = 1;
-
-          for (let s = k; s < arr.length; s++) {
-            if (s < arr.length - 1) {
-              if (arr[s + 1][ano] == anoatual) {
-                quantosblocos++;
-
-                if (s + 1 == arr.length) {
-                  ultimo = "ultimo";
-                }
-              } else {
-                break;
-              }
-            }
-          }
-
-          if (anoatual != qualano) {
-            html += `<div class="timelinev_ano ${ultimo}" style="grid-row: span ${quantosblocos}"><span class="timelinev_ano_cont">${arr[k][ano]}</span></div>`;
-          }
-
-          qualano = anoatual;
-
-          ultimo = "";
-
-          if (k == arr.length - 1) {
-            ultimo = "ultimo";
-          }
-
-          tituloatual = arr[k][titulo];
-          quantostitulos = 1;
-
-          for (let s = k; s < arr.length; s++) {
-            if (s < arr.length - 1) {
-              if (arr[s + 1][titulo] == tituloatual) {
-                quantostitulos++;
-
-                if (s + 1 == arr.length) {
-                  ultimo = "ultimo";
-                }
-              } else {
-                break;
-              }
-            }
-          }
-
-          if (tituloatual != qualtitulo) {
-            html += `<div class="timelinev_topic ${ultimo}" style="grid-row: span ${quantostitulos}"><span class="timelinev_topic_cont">${arr[k][titulo]}</span></div>`;
-          }
-
-          qualtitulo = tituloatual;
-          ultimo = "";
-
-          if (k == arr.length - 1) {
-            ultimo = "ultimo";
-          }
-
-          html += `<div class="timelinev_cont ${ultimo}"><span class="timelinev_cont_cont">${arr[k][conteudo]}</span></div>`;
-        }
-
-        html += `
-    
-    <div class="timelinev_ano timelinev_ano_end"></div>
-    <div class="timelinev_topic timelinev_topic_end"></div>
-    <div class="timelinev_cont timelinev_cont_end"></div>
-    
-  
-    </div>`;
-
-        htmlfinal = html;
-
-        return htmlfinal;
-      };
-
       import {
         Runtime,
         Inspector,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/v2-observatorio.js?v=4";
-
-      const fromObservable = new Runtime().module(define, (name) => {
+      import define from "https://api.observablehq.com/@ranoya/d2-posdoutorandos.js?v=4";
+      new Runtime().module(define, (name) => {
         if (name === "titulo")
           return new Inspector(document.querySelector("#titulo"));
-
-        if (name === "tituloprodutos")
-          return new Inspector(document.querySelector("#tituloprodutos"));
-
         if (name === "descricao")
           return new Inspector(document.querySelector("#descricao"));
 
-        if (name === "titulopessoas")
-          return new Inspector(document.querySelector("#titulopessoas"));
+        if (name === "tituloperiodicos")
+          return new Inspector(document.querySelector("#tituloperiodicos"));
 
-        if (name === "pessoas")
-          return new Inspector(document.querySelector("#pessoas"));
+        if (name === "viewof filtros")
+          return new Inspector(document.querySelector("#filtros"));
 
-        if (name === "tituloensino")
-          return new Inspector(document.querySelector("#tituloensino"));
+        if (name === "areas")
+          return new Inspector(document.querySelector("#botoes"));
 
-        if (name === "ensino")
-          return new Inspector(document.querySelector("#ensino"));
+        if (name === "relacaoperiodicos")
+          return new Inspector(document.querySelector("#periodicos"));
 
-        /*
-        if (name === "titulomais")
-          return new Inspector(document.querySelector("#titulomais"));
+        if (name === "titulocongressos")
+          return new Inspector(document.querySelector("#titulocongressos"));
 
-        if (name === "mais")
-          return new Inspector(document.querySelector("#mais"));
-        */
+        if (name === "relacaocongressos")
+          return new Inspector(document.querySelector("#congressos"));
+
+        if (name === "programa")
+          return new Inspector(document.querySelector("#chamadas"));
+
+        if (name === "inscricao")
+          return new Inspector(document.querySelector("#inscricao"));
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
       });
-
-      const dadosproducao = await fromObservable.value("producao");
-
-      let desenhatabelaproducao = timelinev(
-        dadosproducao,
-        "ano",
-        "topico",
-        "conteudo"
-      );
-      document.getElementById("producao").innerHTML = desenhatabelaproducao;
     </script>
 
     <script type="module">
-      import pathw from "../assets/meandros.js";
+      import pathw from "../assets/pathwaves.js";
 
       let waves = pathw({
         p5,
@@ -524,6 +417,7 @@
         "https://visse.vercel.app/v2-observatorio/v2-pesquisadores.html";
 
       let mostralabel = function (who) {
+        /*
         let todos = document.getElementsByClassName("bullet");
         let textos = document.getElementsByClassName("bullet-texto");
 
@@ -538,9 +432,11 @@
         document.getElementById("bullet1-fase-" + who).classList.add("mostra");
         document.getElementById("bullet2-fase-" + who).classList.add("mostra");
         document.getElementById("texto-fase-" + who).classList.add("mostra");
+        */
       };
 
       let apagatudo = function () {
+        /*
         let todos = document.getElementsByClassName("bullet");
         let textos = document.getElementsByClassName("bullet-texto");
 
@@ -551,6 +447,7 @@
         for (let i = 0; i < todos.length; i++) {
           todos[i].classList.remove("mostra");
         }
+        */
       };
 
       let mandapara = function (rl) {
