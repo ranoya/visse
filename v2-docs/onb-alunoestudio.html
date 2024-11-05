@@ -157,6 +157,8 @@
 
           <div id="planejamento"></div>
 
+          <div id="calendario"></div>
+
           <div id="conclusao"></div>
 
           <div id="estilos"></div>
@@ -206,6 +208,9 @@
 
         if (name === "planejamento")
           return new Inspector(document.querySelector("#planejamento"));
+
+        if (name === "calendario")
+          return new Inspector(document.querySelector("#calendario"));
 
         if (name === "conclusao")
           return new Inspector(document.querySelector("#conclusao"));
