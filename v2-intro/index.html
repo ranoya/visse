@@ -143,13 +143,16 @@
         };
 
         let okclick = function () {
-          clickauth = true;
+          if (document.getElementById("menublur").style.display == "none") {
+            clickauth = true;
+          }
         };
 
         let turnonoffmenu = function () {
           toggle("poeinst");
           if (document.getElementById("menublur").style.display == "block") {
             document.getElementById("menublur").style.display = "none";
+            clickauth = true;
           } else {
             document.getElementById("menublur").style.display = "block";
           }
