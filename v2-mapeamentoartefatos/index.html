@@ -85,7 +85,7 @@
 
             <div id="mpoe">
               <a
-                href="javascript:toggle('poeinst');"
+                href="javascript:turnonoffmenu();"
                 style="padding: 5px 9px !important"
               >
                 <svg
@@ -113,6 +113,33 @@
           </div>
         </div>
       </nav>
+
+      <div id="menublur" onclick="turnonoffmenu();"></div>
+
+      <style>
+        #menublur {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          z-index: 10000;
+          background-color: #ffffff88;
+          backdrop-filter: blur(3px);
+        }
+      </style>
+
+      <script>
+        let turnonoffmenu = function () {
+          toggle("poeinst");
+          if (document.getElementById("menublur").style.display == "block") {
+            document.getElementById("menublur").style.display = "none";
+          } else {
+            document.getElementById("menublur").style.display = "block";
+          }
+        };
+      </script>
 
       <a name="contentmark"></a>
       <div id="midsection">
