@@ -152,7 +152,9 @@
           toggle("poeinst");
           if (document.getElementById("menublur").style.display == "block") {
             document.getElementById("menublur").style.display = "none";
-            clickauth = true;
+            setTimeout(function () {
+              clickauth = true;
+            }, 400);
           } else {
             document.getElementById("menublur").style.display = "block";
           }
