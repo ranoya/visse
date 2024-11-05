@@ -83,7 +83,7 @@
             <div><a href="../v2-producao">PRODUTOS</a></div>
             <div><a href="../v2-contato">CONTATO</a></div>
 
-            <div id="mpoe">
+            <div id="mpoe" onmouseover="noclick()" onmouseout="okclick()">
               <a
                 href="javascript:turnonoffmenu();"
                 style="padding: 5px 9px !important"
@@ -131,6 +131,16 @@
       </style>
 
       <script>
+        let clickauth = true;
+
+        let noclick = function () {
+          clickauth = false;
+        };
+
+        let okclick = function () {
+          clickauth = true;
+        };
+
         let turnonoffmenu = function () {
           toggle("poeinst");
           if (document.getElementById("menublur").style.display == "block") {

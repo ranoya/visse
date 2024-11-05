@@ -161,7 +161,7 @@ let crescendo = 1;
 
 function mouseClicked() {
   for (let i = 0; i < act.length; i++) {
-    if (act[i] == true) {
+    if (act[i] == true && clickauth == true) {
       window.location = praonde[i];
     }
   }
