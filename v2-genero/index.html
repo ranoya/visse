@@ -444,16 +444,14 @@
         window.navigator.platform.toString().indexOf("Linux") >= 0
       ) {
         let scrl = document.createElement("style");
-        scrl.setAttribute(
-          "content",
-          `
+        let scrlcontent = document.createTextNode(`
         ::-webkit-scrollbar {
-        width: 20px;
+        width: 10px;
           background-color: transparent;
         }
 
         ::-webkit-scrollbar-track {
-          background: transparent;
+          background: var(--cor-hvg, #6eacbd);
         }
 
         ::-webkit-scrollbar:hover {
@@ -461,17 +459,15 @@
         }
 
         ::-webkit-scrollbar-thumb {
-          background: transparent;
-          border-right: 10px solid var(--cor-shadow, #176b82);
+          background: var(--cor-shadow, #176b82);
         }
 
         ::-webkit-scrollbar-thumb:hover {
-          background: transparent;
-          border-right: 10px solid var(--cor-hv0, cyan);
+          background: var(--cor-hv0, cyan);
         }
-        `
-        );
+        `);
 
+        scrl.appendChild(scrlcontent);
         document.getElementsByTagName("head")[0].appendChild(scrl);
       }
 
