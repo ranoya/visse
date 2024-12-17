@@ -1,0 +1,76 @@
+<div id="topo">
+  <div id="observablehq-viewof-corA-6e87cd09"></div>
+  <div id="observablehq-viewof-corB-6e87cd09"></div>
+</div>
+<div id="observablehq-apresentalogo-6e87cd09"></div>
+
+<style>
+  #observablehq-viewof-corA-6e87cd09 {
+    display: inline-block;
+    margin-right: 24px;
+    margin-bottom: 30px;
+    background-color: white;
+    color: grey;
+  }
+
+  #observablehq-viewof-corB-6e87cd09 {
+    display: inline-block;
+    margin-bottom: 75px;
+    background-color: white;
+    color: grey;
+  }
+
+  #topo {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: white;
+    height: 55px;
+    padding-top: 20px;
+  }
+
+  #observablehq-apresentalogo-6e87cd09 {
+    margin-top: 75px;
+    background-color: white;
+  }
+
+  .logovisse {
+    max-height: 250px;
+  }
+
+  html,
+  body {
+    background-color: white;
+  }
+
+  body {
+    margin: 30px;
+  }
+</style>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+/>
+<script type="module">
+  import {
+    Runtime,
+    Inspector,
+  } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+  import define from "https://api.observablehq.com/@ranoya/logovisse-v2.js?v=4";
+  new Runtime().module(define, (name) => {
+    if (name === "viewof corA")
+      return new Inspector(
+        document.querySelector("#observablehq-viewof-corA-6e87cd09")
+      );
+    if (name === "viewof corB")
+      return new Inspector(
+        document.querySelector("#observablehq-viewof-corB-6e87cd09")
+      );
+    if (name === "apresentalogo")
+      return new Inspector(
+        document.querySelector("#observablehq-apresentalogo-6e87cd09")
+      );
+  });
+</script>
