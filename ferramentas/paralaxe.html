@@ -107,6 +107,11 @@
             --ranoyav2-grupos: #12a3cb;
         }
 
+        h1 {
+            margin-bottom: 80px;
+            margin-top: 50px;
+        }
+
         #conteudo {
             max-width: 1200px;
             padding: 24px;
@@ -239,6 +244,10 @@
             let code = "";
             let c = 0;
             let recode = "";
+
+            if (typeof $_GET['titulo'] != 'undefined' && $_GET['titulo'] != null && $_GET['titulo'] != '') {
+               code += `<h1>${$_GET['titulo']}</h1>`;
+            }
 
             if ((typeof $_GET['filtra'] != "undefined" && $_GET['filtra'] != "" && $_GET['filtra'] != null)) {
                 data = select(dados, multipatterncheck_exclude,  decodeURI($_GET['filtra']));
