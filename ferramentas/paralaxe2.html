@@ -330,7 +330,7 @@
             let recode = "";
 
             if (typeof $_GET['titulo'] != 'undefined' && $_GET['titulo'] != null && $_GET['titulo'] != '') {
-               recode += `<h1>${$_GET['titulo']}</h1>`;
+               recode += `<h1>${decodeURI($_GET['titulo'])}</h1>`;
             }
 
             if ((typeof $_GET['filtra'] != "undefined" && $_GET['filtra'] != "" && $_GET['filtra'] != null)) {

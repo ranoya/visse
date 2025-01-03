@@ -297,7 +297,7 @@
             let bgcodes = "";
 
             if (typeof $_GET['titulo'] != 'undefined' && $_GET['titulo'] != null && $_GET['titulo'] != '') {
-               code += `<h1>${$_GET['titulo']}</h1>`;
+               code += `<h1>${decodeURI($_GET['titulo'])}</h1>`;
             }
             
 
