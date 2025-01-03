@@ -105,6 +105,11 @@
             --ranoyav2-cover: #FFFFFFe5;
             --ranoyav2-line: #888888;
         }
+        
+        h1 {
+            margin-bottom: 80px;
+            margin-top: 50px;
+        }
 
         #conteudo {
             max-width: 1200px;
@@ -195,6 +200,7 @@
         }
         processa = function(dados) {
 
+            
             let data = [];
 
             if (typeof $_GET['filtra'] != "undefined" && $_GET['filtra'] != "" && $_GET['filtra'] != null) {
@@ -205,6 +211,10 @@
 
             let code = "";
             let bgcodes = "";
+
+            if (typeof $_GET['titulo'] != 'undefined' && $_GET['titulo'] != null && $_GET['titulo'] != '') {
+               code += `<h1>${decodeURI($_GET['titulo'])}</h1>`;
+            }
 
             for (let i = 0; i < data.length; i++) {
 
