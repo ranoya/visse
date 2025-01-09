@@ -521,7 +521,7 @@
         $_GET["perfil"] != null
       ) {
         mandaproperfil = setTimeout(function () {
-          document.getElementById("navegafiltro").style.display = "block";
+          // document.getElementById("navegafiltro").style.display = "block";
           document.getElementsByTagName("input")[0].value = $_GET["perfil"];
           document.getElementsByTagName("input")[0].dispatchEvent(
             new Event("input", {
