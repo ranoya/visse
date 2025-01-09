@@ -160,6 +160,7 @@
           <div style="width: 100%; height: 1px; clear: both">&nbsp;</div>
           <br />
 
+          <a name="continua"></a>
           <div id="blocoindices">
             <svg
               class="lupa"
@@ -522,6 +523,12 @@
         mandaproperfil = setTimeout(function () {
           document.getElementById("navegafiltro").style.display = "block";
           document.getElementsByTagName("input")[0].value = $_GET["perfil"];
+          document.getElementsByTagName("input")[0].dispatchEvent(
+            new Event("input", {
+              bubbles: true,
+            })
+          );
+
           window.location.href = "#continua";
         }, 3000);
       }
