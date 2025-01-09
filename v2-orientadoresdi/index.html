@@ -181,6 +181,8 @@
             <br /><br />
           </div>
 
+          <div class="orientacoes"></div>
+
           <a name="pessoas"></a>
           <div class="mudainterface">
             <svg
@@ -285,6 +287,9 @@
           return new Inspector(
             document.querySelector("#observablehq-quantitativos")
           );
+
+        if (name === "orientacoes")
+          return new Inspector(document.querySelector("#orientacoes"));
 
         if (name === "viewof filtraorient")
           return new Inspector(
