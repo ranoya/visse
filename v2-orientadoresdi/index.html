@@ -146,6 +146,8 @@
           </div>
           <br />
 
+          <div id="abertura"></div>
+
           <div style="width: 100%; height: 1px; clear: both">&nbsp;</div>
           <br />
 
@@ -252,6 +254,9 @@
       const fromObservable = new Runtime().module(define, (name) => {
         if (name === "titulo")
           return new Inspector(document.querySelector("#titulo"));
+
+        if (name === "abertura")
+          return new Inspector(document.querySelector("#abertura"));
 
         if (name === "quantitativos")
           return new Inspector(
