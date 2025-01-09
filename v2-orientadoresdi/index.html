@@ -522,7 +522,7 @@
       ) {
         mandaproperfil = setTimeout(function () {
           // document.getElementById("navegafiltro").style.display = "block";
-          document.getElementsByTagName("input")[0].value = encodeURIComponent(
+          document.getElementsByTagName("input")[0].value = decodeURIComponent(
             $_GET["perfil"]
           );
           document.getElementsByTagName("input")[0].dispatchEvent(
