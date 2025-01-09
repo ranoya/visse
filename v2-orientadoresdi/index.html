@@ -148,6 +148,10 @@
 
           <div id="abertura"></div>
 
+          <br />
+
+          <div id="textoindotrucao"></div>
+
           <div style="width: 100%; height: 1px; clear: both">&nbsp;</div>
           <br />
 
@@ -257,6 +261,9 @@
 
         if (name === "abertura")
           return new Inspector(document.querySelector("#abertura"));
+
+        if (name === "textointroducao")
+          return new Inspector(document.querySelector("#textointroducao"));
 
         if (name === "quantitativos")
           return new Inspector(
