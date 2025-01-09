@@ -151,6 +151,9 @@
           <br />
 
           <div id="textointroducao"></div>
+          <div id="processoseletivo"></div>
+          <div id="alunoespec"></div>
+          <div id="projetodepesquisa"></div>
 
           <div style="width: 100%; height: 1px; clear: both">&nbsp;</div>
           <br />
@@ -265,17 +268,26 @@
         if (name === "textointroducao")
           return new Inspector(document.querySelector("#textointroducao"));
 
+        if (name === "processoseletivo")
+          return new Inspector(document.querySelector("#processoseletivo"));
+
+        if (name === "alunoespec")
+          return new Inspector(document.querySelector("#alunoespec"));
+
+        if (name === "projetodepesquisa")
+          return new Inspector(document.querySelector("#projetodepesquisa"));
+
         if (name === "quantitativos")
           return new Inspector(
             document.querySelector("#observablehq-quantitativos")
           );
 
-        if (name === "viewof filtros")
+        if (name === "viewof filtraorient")
           return new Inspector(
             document.querySelector("#observablehq-viewof-filtros")
           );
 
-        if (name === "navega")
+        if (name === "navegatopicos")
           return new Inspector(document.querySelector("#observablehq-navega"));
 
         if (name === "estatisticas")
