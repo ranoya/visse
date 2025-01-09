@@ -142,7 +142,9 @@
       <div id="midsection">
         <div class="secao">
           <div class="fixatitulo">
-            <h1 id="titulo"></h1>
+            <h1 id="titulo">
+              Orientadores em Design da Informação no PPGDesign/UFPE
+            </h1>
           </div>
           <br />
 
@@ -265,9 +267,6 @@
       import define from "https://api.observablehq.com/@ranoya/v2-pesquisadoresdi.js?v=4";
 
       const fromObservable = new Runtime().module(define, (name) => {
-        if (name === "titulo")
-          return new Inspector(document.querySelector("#titulo"));
-
         if (name === "abertura")
           return new Inspector(document.querySelector("#abertura"));
 
