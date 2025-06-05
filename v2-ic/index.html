@@ -169,6 +169,8 @@
 
           <div id="detalhes"></div>
 
+          <div id="cronus"></div>
+
           <div id="estilos"></div>
         </div>
       </div>
@@ -263,6 +265,18 @@
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
+      });
+    </script>
+
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/d2-realizandoic.js?v=4";
+      new Runtime().module(define, (name) => {
+        if (name === "cronus")
+          return new Inspector(document.querySelector("#cronus"));
       });
     </script>
 
