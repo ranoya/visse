@@ -171,6 +171,8 @@
 
           <div id="cronus"></div>
 
+          <div id="estiloscronus"></div>
+
           <div id="estilos"></div>
         </div>
       </div>
@@ -277,6 +279,9 @@
       new Runtime().module(define, (name) => {
         if (name === "cronus")
           return new Inspector(document.querySelector("#cronus"));
+
+        if (name === "estilos")
+          return new Inspector(document.querySelector("#estiloscronus"));
       });
     </script>
 
