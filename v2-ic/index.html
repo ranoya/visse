@@ -267,9 +267,6 @@
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
-
-        if (name === "socronus")
-          return new Inspector(document.querySelector("#estiloscronus"));
       });
     </script>
 
@@ -282,6 +279,9 @@
       new Runtime().module(define, (name) => {
         if (name === "cronus")
           return new Inspector(document.querySelector("#cronus"));
+
+        if (name === "socronus")
+          return new Inspector(document.querySelector("#estiloscronus"));
       });
     </script>
 
