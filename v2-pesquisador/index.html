@@ -375,23 +375,15 @@
       };
 
       let insistepesquisador = setInterval(function () {
-        console.log("Rodando");
         if (
           typeof document.getElementsByTagName("input")[0] != "undefined" &&
           document.getElementsByTagName("input")[0] != null &&
           document.getElementById("timelineproducao").innerHTML != ""
         ) {
-          console.log("detectou input");
           if (
             document.getElementsByTagName("input")[0].value ==
             decodeURI($_GET["nome"])
           ) {
-            console.log("foi");
-
-            console.log(decodeURI($_GET["nome"]));
-
-            console.log(document.getElementsByTagName("input")[0].value);
-
             document
               .getElementsByTagName("input")[0]
               .dispatchEvent(new Event("input", { bubbles: true }));
@@ -403,19 +395,9 @@
             document
               .getElementsByTagName("input")[0]
               .dispatchEvent(new Event("input", { bubbles: true }));
-
-            console.log("e ai??");
           }
         }
       }, 100);
-
-      /*
-      let preenche = setTimeout(function () {
-        let inpt = document.getElementsByTagName("input")[0];
-        inpt.value = decodeURI($_GET["nome"]);
-        inpt.dispatchEvent(new Event("input", { bubbles: true }));
-      }, 2000);
-      */
 
       startpoe(
         "https://docs.google.com/spreadsheets/d/1Wu1v5jb8chg1Fi9chuT1QAPknJmVHF8Kz2cKvA6s2qw/edit?gid=1979792953#gid=1979792953",
