@@ -375,10 +375,12 @@
       };
 
       let insistepesquisador = setInterval(function () {
+        console.log("Rodando");
         if (
           typeof document.getElementsByTagName("input")[0] != "undefined" &&
           document.getElementsByTagName("input")[0] != null
         ) {
+          console.log("detectou input");
           if (
             document.getElementsByTagName("input")[0].value ==
             decodeURI($_GET["nome"])
@@ -394,6 +396,8 @@
             document
               .getElementsByTagName("input")[0]
               .dispatchEvent(new Event("input", { bubbles: true }));
+
+            console.log("e ai??");
           }
         }
       }, 100);
