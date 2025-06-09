@@ -385,6 +385,12 @@
             document.getElementsByTagName("input")[0].value ==
             decodeURI($_GET["nome"])
           ) {
+            console.log("foi");
+
+            console.log(decodeURI($_GET["nome"]));
+
+            console.log(document.getElementsByTagName("input")[0].valeu);
+
             document
               .getElementsByTagName("input")[0]
               .dispatchEvent(new Event("input", { bubbles: true }));
