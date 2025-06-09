@@ -374,11 +374,37 @@
         }
       };
 
+      let insistepesquisador = setInterval(function () {
+        if (
+          typeof document.getElementsByTagName("input")[0] != "undefined" &&
+          document.getElementsByTagName("input")[0] != null
+        ) {
+          if (
+            document.getElementsByTagName("input")[0].value ==
+            decodeURI($_GET["nome"])
+          ) {
+            document
+              .getElementsByTagName("input")[0]
+              .dispatchEvent(new Event("input", { bubbles: true }));
+            clearInterval(insistepesquisador);
+          } else {
+            document.getElementsByTagName("input")[0].value = decodeURI(
+              $_GET["nome"]
+            );
+            document
+              .getElementsByTagName("input")[0]
+              .dispatchEvent(new Event("input", { bubbles: true }));
+          }
+        }
+      }, 100);
+
+      /*
       let preenche = setTimeout(function () {
         let inpt = document.getElementsByTagName("input")[0];
         inpt.value = decodeURI($_GET["nome"]);
         inpt.dispatchEvent(new Event("input", { bubbles: true }));
       }, 2000);
+      */
 
       startpoe(
         "https://docs.google.com/spreadsheets/d/1Wu1v5jb8chg1Fi9chuT1QAPknJmVHF8Kz2cKvA6s2qw/edit?gid=1979792953#gid=1979792953",
