@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>VISSE</title>
+    <meta property="og:title" content="VISSE" />
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="description"
+      content="Mapeamento de ferramentas de dados e visualização, organizado pelo Laboratório de Visualização e Sentidos do Nordeste"
+    />
+    <meta
+      property="og:description"
+      content="Mapeamento de ferramentas de dados de visualização, organizado pelo Laboratório de Visualização e Sentidos do Nordeste"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta property="og:url" content="https://visse.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta
+      property="og:site_name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta
+      name="application-name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://drive.google.com/uc?export=view&id=11Gf-Q3wqLBVlrYQ3h1sBqNJkA33URY4L"
+    />
+  
+    <script src="https://www.ranoya.com/Assets/JSLibs/DataT/basics.js"></script>
+
+    <script>
+        $_GET = [];
+        (function() {
+            corte = window.location.href.toString().indexOf('?');
+            if (corte > 0) {
+                argumento = window.location.href.toString().substring(corte + 1);
+                argumentos = argumento.split('&');
+                for (arg in argumentos) {
+                    let argCorte = argumentos[arg].indexOf('=');
+                    $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[arg].substring(argCorte + 1);
+                }
+            }
+        })();
+    </script>
+
+</head>
+
+
+<!-- 
+
+  fg=bbbbbb -> cor foreground
+  bg=000000 -> cor background
+  cv=00000022 -> cor da coverplate
+
+  ?filtro= -> filtra na planilha
+  ?noimage=true -> remove o paralaxe
+
+-->
+
+
+
+    
+
+    
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --ranoyav2-text: #888888;
+            --ranoyav2-bg: #FFFFFF;
+            --ranoyav2-cover: #FFFFFFf5;
+            --ranoyav2-line: #888888;
+            --ranoyav2-grupos: #12a3cb;
+        }
+
+        h1 {
+            margin-bottom: 80px;
+            margin-top: 50px;
+        }
+
+        #conteudo {
+            max-width: 1200px;
+            padding: 24px;
+            width: calc(100% - 48px);
+            margin-left: auto;
+            margin-right: auto;
+            font-family: Helvetica, Arial, sans-serif;
+            color: var(--ranoyav2-text, #888888);
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: lighter;
+            position: relative;
+            z-index: 100;
+        }
+
+        #conteudo a {
+            display: block;
+            padding: 8px 16px 8px 16px;
+            margin: -8px -16px -8px -16px;
+            background-color: transparent;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--ranoyav2-text, #888888);
+        }
+
+        #conteudo a:hover .textos{
+            background-color: var(--ranoyav2-text, #888888);
+            color: var(--ranoyav2-bg, #FFFFFF);
+            outline: 5px solid var(--ranoyav2-text, #FFFFFF);
+        }
+
+        #paralaxe {
+            position: fixed;
+            z-index: 5;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+        }
+
+        #coverplate {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            z-index: 9;
+            background-color: var(--ranoyav2-cover, #FFFFFFe5);
+        }
+
+        .bgs {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            width: 100%;
+            height: 40vh;
+            display: block;
+        }
+
+        .autor {
+            font-size: 11px;
+            line-height: 15px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--ranoyav2-line, #888888);
+            height: 10px;
+            margin-left: -16px;
+            width: calc(100% + 32px);
+
+        }
+
+        .blocoentrada {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 0 25px;
+        }
+
+        .listas {
+            margin-top: 5px !important;
+        }
+
+        .grupo {
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                font-weight: bolder;
+                margin-bottom: 30px;
+                margin-top: 60px;
+                text-transform: uppercase;
+                color: var(--ranoyav2-grupos, #12a3cb);
+        }
+
+        .textos {
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 1px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 100%;
+            border-radius: 1px;
+        }
+
+        ::-webkit-scrollbar:hover {
+            background-color: var(--ranoyav2-cover, #FFFFFF);
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: var(--ranoyav2-cover, #FFFFFF);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: transparent;
+            background-color: transparent;
+            opacity: 1;
+            background-size: 4px 4px;
+            background-image: repeating-linear-gradient(45deg, var(--ranoyav2-text, #888888) 0, var(--ranoyav2-text, #888888) 0.4px, transparent 0, transparent 50%);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: transparent;
+            border-right: 5px solid transparent;
+            background-color: transparent;
+            opacity: 1;
+            background-size: 4px 4px;
+            background-image: repeating-linear-gradient(45deg, var(--ranoyav2-text, #888888) 0, var(--ranoyav2-text, #888888) 0.4px, transparent 0, transparent 50%);
+        }
+        ::-webkit-scrollbar-track:hover {
+            background: var(--ranoyav2-cover, #FFFFFF);
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--ranoyav2-cover, #FFFFFF);
+        }
+
+        .custom_input {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 80%;
+            height: 40%;
+            left: 10%;
+            top: 30%;
+            z-index: 2000;
+            display: none;
+        }
+
+        .input {
+            font-size: 100px;
+            font-weight: bold;
+            padding: 25px 27px;
+            width: 100%;
+            padding-left: 100px;
+            outline: none;
+            background: var(--ranoyav2-bg, #FFFFFF);
+            color: var(--ranoyav2-text, #888888);
+            border: 0;
+            border-radius: 0;
+            box-shadow: 0px 0px 30px 6px #44444433;
+            transition: .3s ease;
+        }
+
+        .input:focus {
+            background: var(--ranoyav2-bg, #FFFFFF);
+            border: 0;
+            border-radius: 5px;
+        }
+
+        .input::placeholder {
+            color: #DDDDDD44;
+        }
+
+        .svg_icon {
+            position: absolute;
+            left: 4px;
+            fill: var(--ranoyav2-text, #888888);
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="inputwrap" class="custom_input">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg_icon bi-exclude" viewBox="-8 0 32 16">
+            <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm5 10v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2v5a2 2 0 0 1-2 2H5zm6-8V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2V6a2 2 0 0 1 2-2h5z"></path>
+        </svg>
+
+        <input id="filtrador" class="input" type="text" placeholder="Filtra">
+    </div>
+
+    <div id='conteudo'><span class="loader"></span></div>
+    <div id='coverplate'></div>
+    <div id='paralaxe'></div>
+
+
+
+    <script>
+        if (typeof $_GET['noimage'] != "undefined" && $_GET['noimage'] != "" && $_GET['noimage'] != null) {
+            document.getElementById("paralaxe").style.display = "none";
+            document.getElementById("coverplate").style.display = "none";
+
+        }
+        omnifilter = function(dados) {
+
+
+            
+
+            let data = [];
+            let bgcodes = "";
+            let rebgcodes = "";
+            let code = "";
+            let c = 0;
+            let recode = "";
+
+            if (typeof $_GET['titulo'] != 'undefined' && $_GET['titulo'] != null && $_GET['titulo'] != '') {
+               recode += `<h1>${decodeURI($_GET['titulo'])}</h1>`;
+            }
+
+            if ((typeof $_GET['filtra'] != "undefined" && $_GET['filtra'] != "" && $_GET['filtra'] != null)) {
+                data = select(dados, multipatterncheck_exclude,  decodeURI($_GET['filtra']));
+            } else {
+                data = select(dados, multipatterncheck_exclude, "");
+            }
+
+            let grupos = tags(data, "Group", ",");
+            
+            console.table(data);
+
+            for (let g in grupos) {
+                code += `<div class="grupo">${grupos[g]}</div>`;
+                c = 0;
+
+                for (let i = 0; i < data.length; i++) {
+                if (data[i].Group.match(grupos[g])) {
+                    c++;
+                    code += `<hr></hr><a class="listas" target='_blank' href='${data[i].Link}'><div class="blocoentrada">                   <div class='thumbnail' style='outline: 5px solid white; background-color: white; background-repeat: no-repeat; background-position: center center; background-size: contain;                       background-image: url(${imagefromallsources(data[i].thumb)});'></div><div class="textos">${data[i].Name}<br><span                  class='autor'>${data[i].descrit}</span></div></div></a>`;
+
+                    bgcodes += `<div class='bgs' style='background-image: url(${imagefromallsources(data[i].thumb)});'></div>`;
+                }
+                }
+                code += `<hr></hr>`;
+
+                if (c > 0) {
+                recode = recode + code;
+                }
+                code = "";
+            }
+
+
+            document.getElementById("conteudo").innerHTML = recode;
+            document.getElementById("paralaxe").innerHTML = bgcodes;
+            
+
+        }
+
+        omnifilterfetchcsvdata(GoogleSheetCsvURL("https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit?gid=1626432766#gid=1626432766"), "filtrador");
+
+        
+
+        document.addEventListener("scroll", function() {
+            document.getElementById("paralaxe").style.top = (document.getElementById("conteudo").getBoundingClientRect().top / 2) + "px";
+        });
+
+
+        if (typeof $_GET['fg'] != "undefined" && $_GET['fg'] != "" && $_GET['fg'] != null) {
+            document.documentElement.style.setProperty('--ranoyav2-text', "#" + $_GET['fg']);
+            document.documentElement.style.setProperty('--ranoyav2-line', "#" + $_GET['fg'] + "33");
+        } else {
+            document.documentElement.style.setProperty('--ranoyav2-line', "#88888833");
+        }
+        if (typeof $_GET['bg'] != "undefined" && $_GET['bg'] != "" && $_GET['bg'] != null) {
+            document.documentElement.style.setProperty('--ranoyav2-bg', "#" + $_GET['bg']);
+            document.documentElement.style.setProperty('--ranoyav2-grupos', "#" + $_GET['bg']);
+        }
+        if (typeof $_GET['cv'] != "undefined" && $_GET['cv'] != "" && $_GET['cv'] != null) {
+            document.documentElement.style.setProperty('--ranoyav2-cover', "#" + $_GET['cv']);
+        }
+
+        let abrefecha = "";
+
+        document.addEventListener("keydown", function (event) {
+
+            clearTimeout(abrefecha);
+
+            
+            
+            document.getElementById("inputwrap").style.display = "flex";
+            document.getElementById('filtrador').focus();
+
+            abrefecha = setTimeout(function () {
+
+                document.getElementById("inputwrap").style.display = "none";
+            },2500);
+
+          });
+    </script>
+
+</body>
