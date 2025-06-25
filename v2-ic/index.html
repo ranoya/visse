@@ -540,7 +540,6 @@
 
       let insistepacas = setInterval(function () {
         if (document.getElementById("intro").innerHTML.match(/svg/)) {
-          console.log("Carregou o SVG");
           clearInterval(insistepacas);
           let links = [
             "https://visse.vercel.app/v2-ic",
@@ -554,7 +553,6 @@
           ];
 
           for (let i = 1; i < 9; i++) {
-            console.log("-->" + document.getElementById("Balao" + i) + "<---");
             document.getElementById("Balao" + i).classList.toggle("desliga");
             document.getElementById("hover" + i).classList.add("linka");
             document.getElementById("hover" + i).onclick = function () {
@@ -571,5 +569,19 @@
         }
       }, 100);
     </script>
+
+    <style>
+      .desliga {
+        display: none;
+      }
+
+      .colore {
+        fill: var(--fg-color, #176b82) !important;
+      }
+
+      .linka {
+        cursor: pointer;
+      }
+    </style>
   </body>
 </html>
