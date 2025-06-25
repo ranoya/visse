@@ -385,6 +385,8 @@
         ""
       );
 
+      /*
+
       let links = [];
 
       links["A"] = "https://visse.vercel.app/v2-ic";
@@ -402,7 +404,7 @@
         "https://visse.vercel.app/v2-observatorio/v2-pesquisadores.html";
 
       let mostralabel = function (who) {
-        /*
+      
         let todos = document.getElementsByClassName("bullet");
         let textos = document.getElementsByClassName("bullet-texto");
 
@@ -417,11 +419,11 @@
         document.getElementById("bullet1-fase-" + who).classList.add("mostra");
         document.getElementById("bullet2-fase-" + who).classList.add("mostra");
         document.getElementById("texto-fase-" + who).classList.add("mostra");
-        */
+
       };
 
       let apagatudo = function () {
-        /*
+
         let todos = document.getElementsByClassName("bullet");
         let textos = document.getElementsByClassName("bullet-texto");
 
@@ -432,12 +434,58 @@
         for (let i = 0; i < todos.length; i++) {
           todos[i].classList.remove("mostra");
         }
-        */
+
       };
 
       let mandapara = function (rl) {
         window.location = links[rl];
       };
+      */
+
+      let insistepacas = setInterval(function () {
+        if (document.getElementById("descricao").innerHTML.match(/svg/)) {
+          clearInterval(insistepacas);
+          let links = [
+            "https://visse.vercel.app/v2-ic",
+            "https://visse.vercel.app/v2-ic/andamento.html",
+            "https://visse.vercel.app/v2-ppgdesign",
+            "https://visse.vercel.app/v2-ppgdesign/v2-novospesquisadores.html",
+            "https://visse.vercel.app/v2-ppgdesign/v2-pesquisadoresativos.html",
+            "https://visse.vercel.app/v2-observatorio/v2-interessadosposdoc.html",
+            "https://visse.vercel.app/v2-observatorio/v2-posdocs.html",
+            "https://visse.vercel.app/v2-observatorio/v2-pesquisadores.html",
+          ];
+
+          for (let i = 1; i < 9; i++) {
+            document.getElementById("Balao" + i).classList.toggle("desliga");
+            document.getElementById("hover" + i).classList.add("linka");
+            document.getElementById("hover" + i).onclick = function () {
+              window.location.assign(links[i - 1]);
+            };
+
+            document.getElementById("hover" + i).onmouseover = function () {
+              document.getElementById("Liga" + i).classList.add("colore");
+            };
+            document.getElementById("hover" + i).onmouseout = function () {
+              document.getElementById("Liga" + i).classList.remove("colore");
+            };
+          }
+        }
+      }, 100);
     </script>
+
+    <style>
+      .desliga {
+        display: none;
+      }
+
+      .colore {
+        fill: var(--fg-color, #176b82) !important;
+      }
+
+      .linka {
+        cursor: pointer;
+      }
+    </style>
   </body>
 </html>
