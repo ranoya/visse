@@ -554,6 +554,7 @@
           ];
 
           for (let i = 1; i < 9; i++) {
+            console.log("-->" + document.getElementById("Balao" + i) + "<---");
             document.getElementById("Balao" + i).classList.toggle("desliga");
             document.getElementById("hover" + i).classList.add("linka");
             document.getElementById("hover" + i).onclick = function () {
