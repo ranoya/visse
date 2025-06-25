@@ -540,6 +540,7 @@
 
       let insistepacas = setInterval(function () {
         if (document.getElementById("intro").innerHTML.match(/svg/)) {
+          console.log("Carregou o SVG");
           clearInterval(insistepacas);
           let links = [
             "https://visse.vercel.app/v2-ic",
