@@ -633,7 +633,7 @@
             document.getElementById("Balao" + i).classList.toggle("desliga");
             document.getElementById("hover" + i).classList.add("linka");
             document.getElementById("hover" + i).onclick = function () {
-              window.location.assign(links[i + 1]);
+              window.location.assign(links[i - 1]);
             };
 
             document.getElementById("hover" + i).onmouseover = function () {
