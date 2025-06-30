@@ -111,8 +111,8 @@
         --borrao-visivel: block;
         --sombra-componente: color-mix(
           in oklab,
-          var(--cor-fg, #ffffff) 80%,
-          transparent 20%
+          var(--cor-fg, #ffffff) 40%,
+          transparent 100%
         );
 
         --bg-componente: color-mix(
@@ -170,7 +170,6 @@
         border: 0;
         text-decoration: none;
         transition: all 0.2s ease-in;
-        color: #555555;
       }
 
       .custombutton {
@@ -240,7 +239,7 @@
 
     <script>
       let removeall = function () {
-        document.body.style.setProperty("--borrao-visivel", "none");
+        document.documentElement.style.setProperty("--borrao-visivel", "none");
       };
       // FUNÇÃO URL GET
       // urlGet('xpto'); www.site.com/?xpto=teste
@@ -302,6 +301,13 @@
           "#" + $_GET["fg"]
         );
       }
+
+      let showup = function (u) {
+        document.getElementsByClassName("stage")[0].innerHTML = `
+        <iframe frameborder=0 src="${u}" style='height: 100%;'></iframe>
+        `;
+        document.documentElement.style.setProperty("--borrao-visivel", "block");
+      };
     </script>
   </body>
 </html>
