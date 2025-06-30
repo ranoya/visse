@@ -286,7 +286,10 @@
         $_GET["bg"] != null &&
         $_GET["bg"] != ""
       ) {
-        document.body.style.setProperty("--cor-bg", "#" + $_GET["bg"]);
+        document.documentElement.style.setProperty(
+          "--cor-bg",
+          "#" + $_GET["bg"]
+        );
       }
 
       if (
@@ -294,7 +297,10 @@
         $_GET["fg"] != null &&
         $_GET["fg"] != ""
       ) {
-        document.body.style.setProperty("--cor-fg", "#" + $_GET["fg"]);
+        document.documentElement.style.setProperty(
+          "--cor-fg",
+          "#" + $_GET["fg"]
+        );
       }
     </script>
   </body>
