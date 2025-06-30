@@ -319,7 +319,7 @@
         let temporiza3 = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[1] != "undefined") {
             document.getElementsByTagName("input")[1].value = decodeURI(
-              $_GET["filtra"]
+              $_GET["shadow"]
             );
             document.getElementsByTagName("input")[1].dispatchEvent(
               new Event("input", {
