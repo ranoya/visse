@@ -97,6 +97,8 @@
           return new Inspector(document.querySelector("#titulo"));
         if (name === "viewof filtros")
           return new Inspector(document.querySelector("#filtros"));
+        if (name === "viewof shadow")
+          return new Inspector(document.querySelector("#shadowfiltro"));
         if (name === "style")
           return new Inspector(document.querySelector("#estaile"));
         if (name === "mostra")
@@ -169,6 +171,15 @@
         border: 0;
         text-decoration: none;
         transition: all 0.2s ease-in;
+        font-family: "Homenaje", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      #titulo {
+        font-family: 26px;
+        margin-bottom: 40px;
+        color: var(--var-fg);
       }
 
       .custombutton {
@@ -265,6 +276,46 @@
         $_GET["filtra"] != null
       ) {
         temporiza = setInterval(function () {
+          if (typeof document.getElementsByTagName("input")[0] != "undefined") {
+            document.getElementsByTagName("input")[0].value =
+              " " + decodeURI($_GET["filtra"]);
+            document.getElementsByTagName("input")[0].dispatchEvent(
+              new Event("input", {
+                bubbles: true,
+              })
+            );
+
+            clearInterval(temporiza);
+          }
+        }, 100);
+      }
+
+      if (
+        $_GET["filtra"] != "" &&
+        typeof $_GET["filtra"] != "undefined" &&
+        $_GET["filtra"] != null
+      ) {
+        temporiza = setInterval(function () {
+          if (typeof document.getElementsByTagName("input")[0] != "undefined") {
+            document.getElementsByTagName("input")[0].value =
+              " " + decodeURI($_GET["filtra"]);
+            document.getElementsByTagName("input")[0].dispatchEvent(
+              new Event("input", {
+                bubbles: true,
+              })
+            );
+
+            clearInterval(temporiza);
+          }
+        }, 100);
+      }
+
+      if (
+        $_GET["shadow"] != "" &&
+        typeof $_GET["shadow"] != "undefined" &&
+        $_GET["shadow"] != null
+      ) {
+        temporiza3 = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[1] != "undefined") {
             document.getElementsByTagName("input")[1].value =
               " " + decodeURI($_GET["filtra"]);
@@ -274,7 +325,27 @@
               })
             );
 
-            clearInterval(temporiza);
+            clearInterval(temporiza3);
+          }
+        }, 100);
+      }
+
+      if (
+        $_GET["titulo"] != "" &&
+        typeof $_GET["titulo"] != "undefined" &&
+        $_GET["titulo"] != null
+      ) {
+        temporiza2 = setInterval(function () {
+          if (
+            typeof document.getElementsById("titulo").innerHTML !=
+              "undefined" &&
+            document.getElementsById("titulo").innerHTML != null &&
+            document.getElementsById("titulo").innerHTML != ""
+          ) {
+            document.getElementsById("titulo").innerHTML = decodeURI(
+              $_GET["filtra"]
+            );
+            clearInterval(temporiza2);
           }
         }, 100);
       }
