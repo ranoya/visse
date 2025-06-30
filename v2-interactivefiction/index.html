@@ -179,7 +179,7 @@
       #titulo {
         font-family: 26px;
         margin-bottom: 40px;
-        color: var(--var-fg);
+        color: var(--cor-fg);
       }
 
       .custombutton {
@@ -297,7 +297,6 @@
       ) {
         temporiza = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[0] != "undefined") {
-            console.log(document.getElementsByTagName("input")[0]);
             document.getElementsByTagName("input")[0].value = decodeURI(
               $_GET["filtra"]
             );
@@ -306,7 +305,7 @@
                 bubbles: true,
               })
             );
-            document.getElementsByTagName("input")[0].value;
+
             clearInterval(temporiza);
           }
         }, 100);
