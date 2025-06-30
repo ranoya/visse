@@ -95,6 +95,8 @@
       new Runtime().module(define, (name) => {
         if (name === "titulo")
           return new Inspector(document.querySelector("#titulo"));
+        if (name === "viewof filtros")
+          return new Inspector(document.querySelector("#filtros"));
         if (name === "style")
           return new Inspector(document.querySelector("#estaile"));
         if (name === "mostra")
@@ -124,6 +126,12 @@
         left: 0 !important;
         width: 60% !important;
         height: calc(100vh - 140px) !important;
+      }
+
+      .stage {
+        width: calc(100% - 40px);
+        width: 100%;
+        height: calc(100% - 70px);
       }
 
       #filtros input {
