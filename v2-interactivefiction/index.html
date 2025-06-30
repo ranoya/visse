@@ -152,7 +152,7 @@
       #filtros input {
         border-bottom: 1px dashed #ffffffff;
         width: 500px;
-        font-size: 16px;
+        font-size: 22px;
         margin-bottom: 10px;
         line-height: 32px;
         padding: 4px;
@@ -177,7 +177,7 @@
       }
 
       #titulo {
-        font-family: 26px;
+        font-size: 36px;
         margin-bottom: 40px;
         color: var(--cor-fg);
       }
@@ -295,7 +295,7 @@
         typeof $_GET["filtra"] != "undefined" &&
         $_GET["filtra"] != null
       ) {
-        temporiza = setInterval(function () {
+        let temporiza = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[0] != "undefined") {
             document.getElementsByTagName("input")[0].value = decodeURI(
               $_GET["filtra"]
@@ -316,7 +316,7 @@
         typeof $_GET["shadow"] != "undefined" &&
         $_GET["shadow"] != null
       ) {
-        temporiza3 = setInterval(function () {
+        let temporiza3 = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[1] != "undefined") {
             document.getElementsByTagName("input")[1].value = decodeURI(
               $_GET["filtra"]
@@ -337,7 +337,7 @@
         typeof $_GET["titulo"] != "undefined" &&
         $_GET["titulo"] != null
       ) {
-        temporiza2 = setInterval(function () {
+        let temporiza2 = setInterval(function () {
           if (
             typeof document.getElementsById("titulo").innerHTML !=
               "undefined" &&
