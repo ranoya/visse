@@ -108,6 +108,19 @@
       :root {
         --cor-bg: transparent;
         --borrao-visivel: block;
+        --sombra-componente: color-mix(
+          in oklab,
+          var(--cor-fg, #ffffff) 30%,
+          transparent 70%
+        );
+
+        --bg-componente: color-mix(
+          in oklab,
+          var(--cor-fg, #ffffff) 80%,
+          transparent 20%
+        );
+
+        --bg-highlight: var(--cor-fg, #ffffff);
       }
 
       html {
@@ -273,6 +286,14 @@
         $_GET["bg"] != ""
       ) {
         document.body.style.setProperty("--cor-bg", "#" + $_GET["bg"]);
+      }
+
+      if (
+        typeof $_GET["fg"] != "undefined" &&
+        $_GET["fg"] != null &&
+        $_GET["fg"] != ""
+      ) {
+        document.body.style.setProperty("--cor-fg", "#" + $_GET["fg"]);
       }
     </script>
   </body>
