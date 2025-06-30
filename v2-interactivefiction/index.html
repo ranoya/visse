@@ -339,12 +339,11 @@
       ) {
         let temporiza2 = setInterval(function () {
           if (
-            typeof document.getElementsById("titulo").innerHTML !=
-              "undefined" &&
-            document.getElementsById("titulo").innerHTML != null &&
-            document.getElementsById("titulo").innerHTML != ""
+            typeof document.getElementById("titulo").innerHTML != "undefined" &&
+            document.getElementById("titulo").innerHTML != null &&
+            document.getElementById("titulo").innerHTML != ""
           ) {
-            document.getElementsById("titulo").innerHTML = decodeURI(
+            document.getElementById("titulo").innerHTML = decodeURI(
               $_GET["filtra"]
             );
             clearInterval(temporiza2);
