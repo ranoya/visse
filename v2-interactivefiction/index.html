@@ -110,7 +110,7 @@
       :root {
         --cor-bg: transparent;
         --cor-fg: #ffffff;
-        --borrao-visivel: block;
+        --borrao-visivel: none;
         --sombra-componente: color-mix(
           in oklab,
           var(--cor-fg, #ffffff) 40%,
@@ -297,14 +297,16 @@
       ) {
         temporiza = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[0] != "undefined") {
-            document.getElementsByTagName("input")[0].value =
-              " " + decodeURI($_GET["filtra"]);
+            console.log(document.getElementsByTagName("input")[0]);
+            document.getElementsByTagName("input")[0].value = decodeURI(
+              $_GET["filtra"]
+            );
             document.getElementsByTagName("input")[0].dispatchEvent(
               new Event("input", {
                 bubbles: true,
               })
             );
-
+            document.getElementsByTagName("input")[0].value;
             clearInterval(temporiza);
           }
         }, 100);
@@ -317,8 +319,9 @@
       ) {
         temporiza3 = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[1] != "undefined") {
-            document.getElementsByTagName("input")[1].value =
-              " " + decodeURI($_GET["filtra"]);
+            document.getElementsByTagName("input")[1].value = decodeURI(
+              $_GET["filtra"]
+            );
             document.getElementsByTagName("input")[1].dispatchEvent(
               new Event("input", {
                 bubbles: true,
