@@ -124,6 +124,11 @@
         --bg-highlight: var(--cor-fg, #ffffff);
       }
 
+      .fit {
+        margin-bottom: 0 !important;
+        marging-top: 0 !important;
+      }
+
       html {
         background-color: var(--cor-bg, transparent);
         scrollbar-gutter: stable;
@@ -398,6 +403,14 @@
           "--cor-fg",
           "#" + $_GET["fg"]
         );
+      }
+
+      if (
+        typeof $_GET["contentonly"] != "undefined" &&
+        $_GET["contentonly"] != null &&
+        $_GET["contentonly"] != ""
+      ) {
+        document.getElementsByTagName("body")[0].classList.add("fit");
       }
 
       let showup = function (u) {
