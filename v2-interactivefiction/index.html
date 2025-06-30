@@ -144,7 +144,6 @@
 
       .stage {
         width: calc(100% - 40px);
-        width: 100%;
         height: calc(100% - 70px);
       }
 
@@ -304,7 +303,7 @@
 
       let showup = function (u) {
         document.getElementsByClassName("stage")[0].innerHTML = `
-        <iframe frameborder=0 src="${u}" style='height: 100%;'></iframe>
+        <iframe frameborder=0 src="${u}" style='height: 100%; width: 100%;'></iframe>
         `;
         document.documentElement.style.setProperty("--borrao-visivel", "block");
       };
