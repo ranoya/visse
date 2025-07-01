@@ -579,12 +579,10 @@
       let lidacomtecla = function (event) {
         clearTimeout(abrefecha);
 
-        let inpt = document.getElementsByTagName("input")[0];
-        inpt.value = "";
-        inpt.dispatchEvent(new Event("input", { bubbles: true }));
-
         document.getElementsByTagName("input")[0].focus();
-        togglezoom();
+        if (!zmo) {
+          togglezoom();
+        }
         abrefecha = setTimeout(fechazoom, 2500);
       };
 
@@ -595,16 +593,12 @@
           document
             .getElementsByClassName("borrao")[0]
             .classList.add("borraozoomout");
-
-          document.removeEventListener("keydown", lidacomtecla);
         } else {
           zmo = false;
           document.getElementById("wrap").classList.remove("zoomout");
           document
             .getElementsByClassName("borrao")[0]
             .classList.remove("borraozoomout");
-
-          document.addEventListener("keydown", lidacomtecla);
         }
       };
 
