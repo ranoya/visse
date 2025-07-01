@@ -106,6 +106,7 @@
 
     <style>
       :root {
+        --cor-text: #000000;
         --cor-bg: transparent;
         --cor-fg: #000000;
         --borrao-visivel: none;
@@ -390,6 +391,10 @@
       ) {
         document.documentElement.style.setProperty(
           "--cor-bg",
+          "#" + $_GET["bg"]
+        );
+        document.documentElement.style.setProperty(
+          "--cor-text",
           "#" + $_GET["bg"]
         );
       }
