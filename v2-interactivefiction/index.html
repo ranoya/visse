@@ -569,11 +569,9 @@
       let zmo = false;
 
       let fechazoom = function () {
-        zmo = false;
-        document.getElementById("wrap").classList.remove("zoomout");
-        document
-          .getElementsByClassName("borrao")[0]
-          .classList.remove("borraozoomout");
+        if (zmo) {
+          togglezoom();
+        }
       };
 
       let lidacomtecla = function (event) {
