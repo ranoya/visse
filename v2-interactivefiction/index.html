@@ -58,8 +58,8 @@
 
   <body>
     <div id="wrap">
-      <div id="filtros"><span class="loader"></span></div>
       <div id="titulo"></div>
+      <div id="filtros"><span class="loader"></span></div>
 
       <div id="criterios"></div>
 
@@ -108,7 +108,7 @@
       :root {
         --base-color: #8f998a;
         --cor-text: #ffffff;
-        --cor-bg: transparent;
+        --cor-bg: #ffffff;
         --cor-fg: #000000;
         --borrao-visivel: none;
         --sombra-componente: color-mix(
@@ -170,7 +170,7 @@
       #filtros {
         float: right;
         width: 300px;
-        text-align: right;
+        text-align: left;
       }
 
       #filtros input {
@@ -205,7 +205,7 @@
         margin-bottom: 40px;
         color: var(--cor-fg, #ffffff);
         width: calc(100% - 380px);
-        float: left;
+        float: right;
       }
 
       .custombutton {
