@@ -566,6 +566,14 @@
 
       let zmo = false;
 
+      let fechazoom = function () {
+        zmo = false;
+        document.getElementById("wrap").classList.remove("zoomout");
+        document
+          .getElementsByClassName("borrao")[0]
+          .classList.remove("borraozoomout");
+      };
+
       let togglezoom = function () {
         if (!zmo) {
           zmo = true;
@@ -581,6 +589,22 @@
             .classList.remove("borraozoomout");
         }
       };
+
+      let abrefecha = "";
+
+      document.addEventListener("keydown", function (event) {
+        console.log(event.keyCode);
+
+        clearTimeout(abrefecha);
+
+        let inpt = document.getElementsByTagName("input")[0];
+        inpt.value = "";
+        inpt.dispatchEvent(new Event("input", { bubbles: true }));
+
+        document.getElementsByTagName("input")[0].focus();
+        togglezoom();
+        abrefecha = setTimeout(fechazoom, 2500);
+      });
     </script>
   </body>
 </html>
