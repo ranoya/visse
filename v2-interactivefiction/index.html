@@ -162,6 +162,7 @@
         left: 0 !important;
         width: 60% !important;
         height: calc(100vh - 140px) !important;
+        transition: all 0.6s ease-in-out;
       }
 
       .stage {
@@ -301,6 +302,12 @@
         left: 320px !important;
         top: 40px !important;
         height: calc(100dvh - 180px) !important;
+        transition: all 0.6s ease-in-out;
+      }
+
+      .borraozoomout {
+        width: calc(100vw - 960px) !important;
+        height: calc(100dvh - 240px) !important;
         transition: all 0.6s ease-in-out;
       }
     </style>
@@ -516,9 +523,15 @@
         if (!zmo) {
           zmo = true;
           document.getElementById("wrap").classList.add("zoomout");
+          document
+            .getElementsByClassName(".borrao")[0]
+            .classList.add("borraozoomout");
         } else {
           zmo = false;
           document.getElementById("wrap").classList.remove("zoomout");
+          document
+            .getElementsByClassName(".borrao")[0]
+            .classList.remove("borraozoomout");
         }
       };
     </script>
