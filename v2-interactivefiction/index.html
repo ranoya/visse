@@ -513,8 +513,8 @@
       let zmo = false;
 
       let togglezoom = function () {
-        if (zmo) {
-          zmo = false;
+        if (!zmo) {
+          zmo = true;
           document.getElementById("wrap").classList.add("zoomout");
         } else {
           zmo = false;
