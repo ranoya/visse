@@ -57,9 +57,11 @@
   </head>
 
   <body>
+    <div id="recursos">
+      <div id="filtros"></div>
+    </div>
     <div id="wrap">
       <div id="titulo"></div>
-      <div id="filtros"><span class="loader"></span></div>
 
       <div id="criterios"></div>
 
@@ -70,7 +72,8 @@
       <br />
 
       <div id="catalogo">
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <span class="loader"></span>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
       </div>
 
       <br /><br />
@@ -126,6 +129,41 @@
         --bg-highlight: var(--cor-fg, #000000);
       }
 
+      #recursos {
+        color: #6b6b6b;
+        font-family: "Homenaje", sans-serif;
+        font-size: 22px;
+        line-height: 32px;
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        border: 0;
+        /* border: 1px solid white; */
+        width: 320px;
+        height: calc(100vh - 120px);
+        text-align: right;
+        z-index: 1;
+      }
+
+      #recursos input {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 8px;
+        border: 0;
+        border-bottom: 1px solid transparent;
+        border-bottom: 1px dashed #00000033;
+        background-color: transparent;
+        outline: 0;
+        color: #00000033;
+        font-family: "Homenaje", sans-serif;
+        margin-right: 12px;
+      }
+
+      #recursos input:focus {
+        border: 1px dotted #6b6b6b !important;
+        color: #6b6b6b;
+      }
+
       .fit {
         margin-bottom: 0 !important;
         margin-top: 0 !important;
@@ -151,7 +189,7 @@
         top: 0;
         left: 0;
         padding: 40px;
-        z-index: 1;
+        z-index: 2;
         box-shadow: 3px 3px 12px 1px #444444bf;
         transition: all 0.6s ease-in-out;
       }
@@ -170,6 +208,7 @@
         height: calc(100% - 70px);
       }
 
+      /*
       #filtros {
         float: left;
         width: 300px;
@@ -191,6 +230,8 @@
         border-bottom: 1px dotted #ffffffff;
         outline: transparent;
       }
+      
+      */
 
       * {
         padding: 0;
