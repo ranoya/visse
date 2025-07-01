@@ -294,6 +294,13 @@
       #wrap::-webkit-scrollbar-corner {
         background-color: var(--cor-bg);
       }
+
+      .zoomout {
+        width: calc(100% - 460px);
+        left: 320px;
+        top: 40px;
+        height: calc(100dvh - 180px);
+      }
     </style>
 
     <script>
@@ -500,6 +507,18 @@
         }
         */
       }, 10);
+
+      let zmo = false;
+
+      let togglezoom = function () {
+        if (zmo) {
+          zmo = false;
+          document.getElementById("wrap").classList.add("zoomout");
+        } else {
+          zmo = false;
+          document.getElementById("wrap").classList.remove("zoomout");
+        }
+      };
     </script>
   </body>
 </html>
