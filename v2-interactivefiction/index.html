@@ -132,7 +132,6 @@
 
       html {
         background-color: var(--cor-bg, transparent);
-        scrollbar-gutter: stable;
       }
       body {
         margin: 40px;
@@ -142,10 +141,14 @@
       }
 
       #wrap {
-        display: absolute;
-        width: 100vw;
+        position: fixed;
+        width: calc(100vw - 80px);
         overflow-y: auto;
-        height: 100dvh;
+        height: calc(100dvh - 80px);
+        scrollbar-gutter: stable;
+        top: 0;
+        left: 0;
+        padding: 40px;
       }
 
       .borrao {
