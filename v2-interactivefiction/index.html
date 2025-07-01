@@ -564,6 +564,8 @@
         */
       }, 10);
 
+      let abrefecha = "";
+
       let zmo = false;
 
       let fechazoom = function () {
@@ -574,27 +576,7 @@
           .classList.remove("borraozoomout");
       };
 
-      let togglezoom = function () {
-        if (!zmo) {
-          zmo = true;
-          document.getElementById("wrap").classList.add("zoomout");
-          document
-            .getElementsByClassName("borrao")[0]
-            .classList.add("borraozoomout");
-        } else {
-          zmo = false;
-          document.getElementById("wrap").classList.remove("zoomout");
-          document
-            .getElementsByClassName("borrao")[0]
-            .classList.remove("borraozoomout");
-        }
-      };
-
-      let abrefecha = "";
-
-      document.addEventListener("keydown", function (event) {
-        console.log(event.keyCode);
-
+      let lidacomtecla = function (event) {
         clearTimeout(abrefecha);
 
         let inpt = document.getElementsByTagName("input")[0];
@@ -604,7 +586,29 @@
         document.getElementsByTagName("input")[0].focus();
         togglezoom();
         abrefecha = setTimeout(fechazoom, 2500);
-      });
+      };
+
+      let togglezoom = function () {
+        if (!zmo) {
+          zmo = true;
+          document.getElementById("wrap").classList.add("zoomout");
+          document
+            .getElementsByClassName("borrao")[0]
+            .classList.add("borraozoomout");
+
+          document.removeEventListener("keydown", lidacomtecla);
+        } else {
+          zmo = false;
+          document.getElementById("wrap").classList.remove("zoomout");
+          document
+            .getElementsByClassName("borrao")[0]
+            .classList.remove("borraozoomout");
+
+          document.addEventListener("keydown", lidacomtecla);
+        }
+      };
+
+      document.addEventListener("keydown", lidacomtecla);
     </script>
   </body>
 </html>
