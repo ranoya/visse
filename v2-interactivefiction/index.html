@@ -57,24 +57,24 @@
   </head>
 
   <body>
-    <div id="filtros"><span class="loader"></span></div>
-    <div id="titulo"></div>
+    <div id="wrap">
+      <div id="filtros"><span class="loader"></span></div>
+      <div id="titulo"></div>
 
-    <div id="criterios"></div>
+      <div id="criterios"></div>
 
-    <br />
+      <br />
 
-    <div id="estatisticas" style="clear: both"></div>
+      <div id="estatisticas" style="clear: both"></div>
 
-    <br />
+      <br />
 
-    <div id="catalogo">
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <div id="catalogo">
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </div>
+
+      <br /><br />
     </div>
-
-    <br />
-
-    <br /><br />
 
     <div id="shadowfiltro" style="overflow: hidden; width: 0; height: 0"></div>
 
@@ -139,6 +139,13 @@
         margin-right: 60px;
         margin-bottom: 80px;
         background-color: var(--cor-bg, transparent);
+      }
+
+      #wrap {
+        display: absolute;
+        width: 100vw;
+        overflow-y: auto;
+        height: 100dvh;
       }
 
       .borrao {
@@ -259,12 +266,12 @@
         border: 3px solid #ffffffff;
       }
 
-      ::-webkit-scrollbar {
+      #wrap::-webkit-scrollbar {
         background-color: var(--cor-bg, #000000);
         width: 30px;
       }
 
-      ::-webkit-scrollbar-thumb {
+      #wrap::-webkit-scrollbar-thumb {
         background-color: var(--cor-bg, #000000);
         border-right: 8px solid
           color-mix(
@@ -274,7 +281,7 @@
           );
       }
 
-      ::-webkit-scrollbar-thumb:hover {
+      #wrap::-webkit-scrollbar-thumb:hover {
         border-right: 8px solid var(--cor-fg, #ffffff);
       }
     </style>
