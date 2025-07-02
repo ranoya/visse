@@ -347,6 +347,10 @@
         top: 40px !important;
         transition: all 0.6s ease-in-out;
       }
+
+      .botaoemulador:hover svg rect {
+        fill: var(--base-color) !important;
+      }
     </style>
 
     <script>
@@ -492,7 +496,7 @@
         if (r != "") {
           document.getElementsByClassName("stage")[0].innerHTML = `
             <iframe frameborder=0 src="${u}" style='height: 100%; width: 100%;'></iframe>
-            <a class="botaoemulador" style="width: 60px; height: 60px;" target="_blank" href="${r}">
+            <a class="botaoemulador" style="width: 60px; height: 60px; margin-left: 20px;" target="_blank" href="${r}">
                 <svg style="width: 60px; aspect-ratio: 1/1;" viewBox="0 0 1566 1566" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="1566" height="1566" fill="var(--cor-bg, #000000)"/>
                 <path d="M456 968V718H506V668H556V618H706V668H756V718H806V968H706V868H556V968H456ZM556 818H706V718H656V668H606V718H556V818Z"                  fill="var(--cor-fg, #ffffff)"/>
