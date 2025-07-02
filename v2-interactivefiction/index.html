@@ -283,7 +283,7 @@
       }
 
       #botoes {
-        width: 320px;
+        width: 315px;
         text-align: right;
       }
 
@@ -600,6 +600,14 @@
         if (zmo) {
           togglezoom();
         }
+      };
+
+      let stall = function (event) {
+        clearTimeout(abrefecha);
+      };
+
+      let retoma = function (event) {
+        abrefecha = setTimeout(fechazoom, 2500);
       };
 
       let lidacomtecla = function (event) {
