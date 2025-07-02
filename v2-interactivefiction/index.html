@@ -604,12 +604,10 @@
 
       let stall = function (event) {
         clearTimeout(abrefecha);
-        console.log("para para parou");
       };
 
       let retoma = function (event) {
-        abrefecha = setTimeout(fechazoom, 2500);
-        console.log("segue");
+        abrefecha = setTimeout(fechazoom, 1200);
       };
 
       let lidacomtecla = function (event) {
