@@ -59,6 +59,11 @@
   <body>
     <div id="recursos">
       <div id="filtros"></div>
+      <br />
+
+      <div id="botoes"></div>
+
+      <br />
     </div>
     <div id="wrap">
       <div id="titulo"></div>
@@ -86,6 +91,8 @@
       new Runtime().module(define, (name) => {
         if (name === "titulo")
           return new Inspector(document.querySelector("#titulo"));
+        if (name === "botoes")
+          return new Inspector(document.querySelector("#botoes"));
         if (name === "viewof filtros")
           return new Inspector(document.querySelector("#filtros"));
         if (name === "viewof shadow")
