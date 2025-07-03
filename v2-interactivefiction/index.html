@@ -76,6 +76,8 @@
 
     <div id="shadowfiltro" style="overflow: hidden; width: 0; height: 0"></div>
 
+    <div id="agrupamento" style="overflow: hidden; width: 0; height: 0"></div>
+
     <div id="estaile"></div>
 
     <link
@@ -101,6 +103,8 @@
           return new Inspector(document.querySelector("#estaile"));
         if (name === "mostra")
           return new Inspector(document.querySelector("#catalogo"));
+        if (name === "viewof poegrupos")
+          return new Inspector(document.querySelector("#agrupamento"));
       });
     </script>
 
@@ -468,6 +472,31 @@
               $_GET["titulo"]
             );
             clearInterval(temporiza2);
+          }
+        }, 100);
+      }
+
+      if (
+        $_GET["agrupa"] != "" &&
+        typeof $_GET["agrupa"] != "undefined" &&
+        $_GET["agrupa"] != null
+      ) {
+        let temporiza6 = setInterval(function () {
+          if (
+            typeof document.getElementById("agrupamento").innerHTML !=
+              "undefined" &&
+            document.getElementById("agrupamento").innerHTML != null &&
+            document.getElementById("agrupamento").innerHTML != ""
+          ) {
+            document.getElementsByTagName("input")[2].value = decodeURI(
+              $_GET["agrupa"]
+            );
+            document.getElementsByTagName("input")[2].dispatchEvent(
+              new Event("input", {
+                bubbles: true,
+              })
+            );
+            clearInterval(temporiza6);
           }
         }, 100);
       }
