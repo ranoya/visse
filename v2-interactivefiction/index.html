@@ -483,10 +483,9 @@
       ) {
         let temporiza6 = setInterval(function () {
           if (
-            typeof document.getElementById("agrupamento").innerHTML !=
-              "undefined" &&
-            document.getElementById("agrupamento").innerHTML != null &&
-            document.getElementById("agrupamento").innerHTML != ""
+            typeof document.getElementsByTagName("input")[2] != "undefined" &&
+            document.getElementsByTagName("input")[2] != null &&
+            document.getElementsByTagName("input")[2] != ""
           ) {
             document.getElementsByTagName("input")[2].value = decodeURI(
               $_GET["agrupa"]
