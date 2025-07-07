@@ -172,7 +172,7 @@
           <!-- 
           <div id="estatisticas"></div>
           -->
-          <br />
+          <br /><br />
 
           <div id="artefatos"></div>
 
@@ -254,7 +254,7 @@
       .catalogo {
         display: grid;
         grid-template-columns: [init] 1fr 1fr 1fr 1fr [fim];
-        gap: 20px 20px;
+        gap: 30px 40px;
       }
 
       .blocomaster_item {
@@ -294,7 +294,7 @@
           return new Inspector(document.querySelector("#filtros"));
         if (name === "botoes")
           return new Inspector(document.querySelector("#criterios"));
-        if (name === "mostra")
+        if (name === "obsmostra")
           return new Inspector(document.querySelector("#artefatos"));
 
         /*
