@@ -149,8 +149,6 @@
 
           <div id="descricao"><span class="loader"></span></div>
 
-          <div id="chamadas" style="width: 100%"></div>
-
           <div id="inscricao" style="width: 100%"></div>
 
           <div id="estilos"></div>
@@ -197,9 +195,6 @@
           return new Inspector(document.querySelector("#titulo"));
         if (name === "descricao")
           return new Inspector(document.querySelector("#descricao"));
-
-        if (name === "titulopessoas")
-          return new Inspector(document.querySelector("#chamadas"));
 
         if (name === "pessoas")
           return new Inspector(document.querySelector("#inscricao"));
