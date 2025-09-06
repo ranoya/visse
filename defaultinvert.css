@@ -1,0 +1,20 @@
+:root {
+  --cor-base: #ffffff;
+  --cor-invert: #12a3cb;
+
+  --splash-fundo: #cb1253;
+  --splash-fore: #ffffff;
+  --splash-secondcolor: #12a3cb;
+
+  --cor-menu-off: #ffffff;
+  --cor-menu-off-bg: #12a3cb;
+  --cor-hv0: cyan;
+  --cor-hv1: #ffffff;
+  --cor-hv2: #1f8dac;
+  --cor-hv3: #176b82;
+  --fg-color: #176b82;
+  --cor-shadow: #fdfaf1;
+  --cor-leve: #eeece3;
+  --cor-hvg: #7fd9f1;
+  --cor-texto: #d5eef5;
+}
