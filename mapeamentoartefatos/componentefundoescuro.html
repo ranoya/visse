@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -107,6 +107,20 @@
 
       :root {
         --cor-bg: transparent;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--cor-bg, transparent);
+        background-color: var(--cor-bg, transparent);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #ffffff;
+        background-color: #ffffff;
       }
 
       html {
@@ -332,7 +346,7 @@
             document.getElementsByTagName("input")[1].dispatchEvent(
               new Event("input", {
                 bubbles: true,
-              })
+              }),
             );
 
             clearInterval(temporiza);
