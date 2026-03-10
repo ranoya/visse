@@ -295,6 +295,17 @@
         document.body.style.setProperty("--cor-bg", "#" + $_GET["bg"]);
       }
 
+      if (
+        typeof $_GET["fg"] != "undefined" &&
+        $_GET["fg"] != null &&
+        $_GET["fg"] != ""
+      ) {
+        document.documentElement.style.setProperty(
+          "--cor-fcolor",
+          "#" + $_GET["fg"],
+        );
+      }
+
       const goto = function (el) {
         setTimeout(function () {
           window.scrollTo({
