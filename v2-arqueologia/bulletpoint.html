@@ -343,10 +343,16 @@
       let show = function (file) {
         document.getElementById("coverplate").style.display = "block";
         document.getElementById("objeto").style.display = "flex";
-        document.getElementById("objeto").innerHTML =
-          '<img src="' +
-          file +
-          '" style="max-width: 90vw; max-height: 90dvh; object-fit: contain" />';
+
+        if (file.match(/yout/) != null) {
+          document.getElementById("objeto").innerHTML =
+            `<iframe src="${file}" frameborder= "0" style="width: 90vw; height: 90dvh; border: none" allowfullscreen></iframe>`;
+        } else {
+          document.getElementById("objeto").innerHTML =
+            '<img src="' +
+            file +
+            '" style="max-width: 90vw; max-height: 90dvh; object-fit: contain" />';
+        }
       };
     </script>
   </body>
