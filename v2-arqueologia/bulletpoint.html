@@ -340,6 +340,7 @@
       let unshow = function () {
         document.getElementById("coverplate").style.display = "none";
         document.getElementById("objeto").style.display = "none";
+        document.getElementById("objeto").innerHTML = "";
       };
 
       let show = function (file) {
@@ -348,12 +349,12 @@
 
         if (file.match(/yout/) != null) {
           document.getElementById("objeto").innerHTML =
-            `<iframe src="${file}" frameborder= "0" style="width: 90vw; height: 90dvh; border: none" allowfullscreen></iframe>`;
+            `<iframe src="${file}" frameborder= "0" style="width: 90vw; height: 90dvh; border: none; box-shadow: 0px 0px 15px 5px #00000055;" allowfullscreen></iframe>`;
         } else {
           document.getElementById("objeto").innerHTML =
             '<img src="' +
             imagefromallsources(file) +
-            '" style="max-width: 90vw; max-height: 90dvh; object-fit: contain" />';
+            '" style="max-width: 90vw; max-height: 90dvh; object-fit: contain; box-shadow: 0px 0px 15px 5px #00000055;" />';
         }
       };
     </script>
