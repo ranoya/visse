@@ -113,6 +113,17 @@
 
       :root {
         --cor-bg: transparent;
+        --cor-fcolor: #aaaaaa;
+      }
+
+      ::-webkit-scrollbar-track {
+        width: 12px;
+        background-color: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        width: 12px;
+        background: var(--cor-fcolor, #aaaaaa);
       }
 
       html {
