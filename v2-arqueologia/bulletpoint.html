@@ -61,13 +61,12 @@
   <body>
     <div id="objeto" onclick="unshow()"></div>
     <div id="coverplate" onclick="unshow()"></div>
+    <div id="estatisticas"></div>
     <div id="filtros"><span class="loader"></span></div>
 
     <div id="criterios"></div>
 
     <br />
-
-    <div id="estatisticas"></div>
 
     <br />
     <br />
@@ -166,6 +165,22 @@
       #objeto div {
         position: relative;
         z-index: 15;
+      }
+
+      #filtros {
+        max-width: 420px;
+        float: left;
+      }
+
+      #estatisticas {
+        width: calc(100% - 480px);
+        float: right;
+        height: 51px;
+        display: flex;
+        align-items: center;
+        color: var(--cor-fcolor, #aaaaaa);
+        justify-content: flex-end;
+        text-align: right;
       }
 
       #filtros input {
