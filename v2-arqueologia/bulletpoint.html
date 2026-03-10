@@ -58,7 +58,7 @@
 
   <body>
     <div id="objeto"></div>
-    <div id="coverplate"></div>
+    <div id="coverplate" onclick="unshow()"></div>
     <div id="filtros"><span class="loader"></span></div>
 
     <div id="criterios"></div>
@@ -132,6 +132,9 @@
         width: 100%;
         height: 100dvh;
         z-index: 10;
+
+        background-color: var(--cor-bg, #ffffff);
+        opacity: 0.8;
       }
 
       #objeto {
@@ -322,6 +325,20 @@
       ) {
         goto($_GET["goto"]);
       }
+
+      let unshow = function () {
+        document.getElementById("coverplate").style.display = "none";
+        document.getElementById("objeto").style.display = "none";
+      };
+
+      let show = function (file) {
+        document.getElementById("coverplate").style.display = "block";
+        document.getElementById("objeto").style.display = "flex";
+        document.getElementById("objeto").innerHTML =
+          '<img src="' +
+          file +
+          '" style="max-width: 90vw; max-height: 90dvh; object-fit: contain" />';
+      };
     </script>
   </body>
 </html>
