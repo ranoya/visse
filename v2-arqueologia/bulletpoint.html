@@ -94,14 +94,14 @@
       new Runtime().module(define, (name) => {
         if (name === "viewof filtros")
           return new Inspector(document.querySelector("#filtros"));
-        /* if (name === "navindustriasprincipal")
-          return new Inspector(document.querySelector("#criterios")); */
+        if (name === "botoes")
+          return new Inspector(document.querySelector("#criterios"));
 
         if (name === "apresenta")
           return new Inspector(document.querySelector("#artefatos"));
 
-        /*  if (name === "stats")
-          return new Inspector(document.querySelector("#estatisticas")); */
+        if (name === "stats")
+          return new Inspector(document.querySelector("#estatisticas"));
 
         if (name === "viewof shadowfiltro")
           return new Inspector(document.querySelector("#filtroescondido"));
