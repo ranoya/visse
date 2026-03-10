@@ -57,7 +57,7 @@
   </head>
 
   <body>
-    <div id="objeto"></div>
+    <div id="objeto" onclick="unshow()"></div>
     <div id="coverplate" onclick="unshow()"></div>
     <div id="filtros"><span class="loader"></span></div>
 
@@ -134,7 +134,7 @@
         z-index: 10;
 
         background-color: var(--cor-bg, #ffffff);
-        opacity: 0.8;
+        opacity: 0.9;
       }
 
       #objeto {
@@ -145,6 +145,15 @@
         width: 100%;
         height: 100dvh;
         z-index: 11;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #objeto div {
+        position: relative;
+        z-index: 15;
       }
 
       #filtros input {
