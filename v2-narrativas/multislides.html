@@ -59,9 +59,10 @@
   </head>
 
   <body>
-    <div id="filtros"><span class="loader"></span></div>
-
-    <div id="criterios"></div>
+    <div id="blocosuperior">
+      <div id="filtros"><span class="loader"></span></div>
+      <div id="criterios"></div>
+    </div>
 
     <div id="artefatos">
       <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -125,6 +126,12 @@
         background-color: var(--cor-bg, #000000);
       }
 
+      #blocosuperior {
+        display: grid;
+        grid-template-columns: 420px auto;
+        gap: 0 10px;
+      }
+
       #filtros {
         max-width: 420px;
         float: left;
@@ -148,7 +155,7 @@
       }
 
       #criterios {
-        clear: both;
+        width: 100%;
       }
 
       #estatisticas {
@@ -189,7 +196,7 @@
 
       .custombutton {
         display: inline-block;
-        font-size: 16px;
+        font-size: 12px;
         line-height: 26px;
         height: 26px;
         border: 3px solid #ffffff00;
@@ -198,7 +205,7 @@
         background-color: #ffffff44;
         cursor: pointer;
         margin-right: 6px;
-        color: #555555;
+        color: #ffffff;
         font-weight: lighter;
         margin-top: 4px;
         padding-top: 3px;
@@ -209,6 +216,7 @@
       .custombutton:hover {
         background-color: #ffffffff;
         border: 3px solid #ffffffff;
+        color: #000000;
       }
 
       .singlepost {
