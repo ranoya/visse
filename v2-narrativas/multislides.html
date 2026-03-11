@@ -1,0 +1,366 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>Interactive Storytelling</title>
+    <meta property="og:title" content="Interactive Storytelling" />
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="description"
+      content="Multislides sobre narrativas interativas"
+    />
+    <meta
+      property="og:description"
+      content="Multislides sobre narrativas interativas"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta property="og:url" content="https://visse.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta
+      property="og:site_name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta
+      name="application-name"
+      content="Laboratório de Visualização e Sentidos"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://drive.google.com/uc?export=view&id=11IeV3PaxJtJz2hmLxI-LN3zeIVPzwNHt"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://drive.google.com/uc?export=view&id=11Gf-Q3wqLBVlrYQ3h1sBqNJkA33URY4L"
+    />
+
+    <script src="https://datat.vercel.app/basicsmin.js"></script>
+  </head>
+
+  <body>
+    <div id="filtros"><span class="loader"></span></div>
+
+    <div id="criterios"></div>
+
+    <div id="artefatos">
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+
+    <br />
+
+    <br /><br />
+
+    <div
+      id="filtroescondido"
+      style="overflow: hidden; width: 0; height: 0"
+    ></div>
+
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/multislides-interactive-storytelling.js?v=3";
+      new Runtime().module(define, (name) => {
+        if (name === "viewof filtros")
+          return new Inspector(document.querySelector("#filtros"));
+        if (name === "botoes")
+          return new Inspector(document.querySelector("#criterios"));
+
+        if (name === "artefato")
+          return new Inspector(document.querySelector("#artefatos"));
+
+        if (name === "viewof shadowfiltro")
+          return new Inspector(document.querySelector("#filtroescondido"));
+      });
+    </script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Open+Sans:wght@300;400;700&family=Prompt:wght@100;300;600&display=swap");
+
+      :root {
+        --cor-bg: #000000;
+        --cor-fcolor: #ffffff;
+      }
+
+      ::-webkit-scrollbar {
+        width: 12px;
+        background-color: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        width: 12px;
+        background: var(--cor-fcolor, #ffffff);
+      }
+
+      html {
+        background-color: var(--cor-bg, #000000);
+      }
+      body {
+        margin: 40px;
+        margin-right: 60px;
+        margin-bottom: 80px;
+        font-family: "Open Sans", sans-serif;
+        background-color: var(--cor-bg, #000000);
+      }
+
+      #filtros {
+        max-width: 420px;
+        float: left;
+      }
+
+      #artefatos {
+        width: 100%;
+        height: calc(100dvh - 200px);
+        overflow: hidden;
+        border: 0;
+        padding: 0;
+        margin: 0;
+      }
+
+      #artefatos iframe {
+        width: 100%;
+        height: calc(100dvh - 200px);
+        border: 0;
+        padding: 0;
+        margin: 0;
+      }
+
+      #criterios {
+        clear: both;
+      }
+
+      #estatisticas {
+        width: calc(100% - 480px);
+        float: right;
+        height: 51px;
+        display: flex;
+        align-items: center;
+        color: var(--cor-fcolor, #aaaaaa);
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      #filtros input {
+        border-bottom: 1px dashed #ffffffff;
+        width: 500px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 32px;
+        padding: 4px;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      #filtros input:focus {
+        border-bottom: 1px dotted #ffffffff;
+        outline: transparent;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        text-decoration: none;
+        transition: all 0.2s ease-in;
+        color: #555555;
+      }
+
+      .custombutton {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 26px;
+        height: 26px;
+        border: 3px solid #ffffff00;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #ffffff44;
+        cursor: pointer;
+        margin-right: 6px;
+        color: #555555;
+        font-weight: lighter;
+        margin-top: 4px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-family: "Open Sans";
+      }
+
+      .custombutton:hover {
+        background-color: #ffffffff;
+        border: 3px solid #ffffffff;
+      }
+
+      .singlepost {
+        padding: 12px 12px 12px 12px;
+        margin: -12px -12px -12px -12px;
+        color: #555555;
+        box-shadow: 0px 5px 20px #00000033;
+        background-color: #ffffffaa;
+      }
+
+      .singlepost:hover {
+        background-color: #ffffffff;
+        color: #555555;
+      }
+
+      #botoes {
+        display: grid;
+        grid-template-columns: 1fr 40%;
+        gap: 0 8px;
+      }
+
+      .buttonspecial {
+        background-color: #ffffff88;
+        border: 3px solid #ffffff00;
+      }
+
+      .buttonspecial:hover {
+        background-color: #ffffffff;
+        border: 3px solid #ffffffff;
+      }
+
+      .subcustombutton {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 26px;
+        height: 26px;
+        border: 3px solid #ffffff00;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #ffffff44;
+        cursor: pointer;
+        margin-right: 6px;
+        color: #555555;
+        font-weight: lighter;
+        margin-top: 4px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-family: "Open Sans";
+      }
+
+      .subcustombutton:hover {
+        background-color: #ffffffff;
+        border: 3px solid #ffffffff;
+      }
+    </style>
+
+    <script>
+      // FUNÇÃO URL GET
+      // urlGet('xpto'); www.site.com/?xpto=teste
+      // let data = $_GET['xpto']; www.site.com/?xpto=teste
+
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      if (
+        $_GET["filtra"] != "" &&
+        typeof $_GET["filtra"] != "undefined" &&
+        $_GET["filtra"] != null
+      ) {
+        temporiza = setInterval(function () {
+          if (typeof document.getElementsByTagName("input")[1] != "undefined") {
+            document.getElementsByTagName("input")[1].value =
+              " " + decodeURI($_GET["filtra"]);
+            document.getElementsByTagName("input")[1].dispatchEvent(
+              new Event("input", {
+                bubbles: true,
+              }),
+            );
+
+            clearInterval(temporiza);
+          }
+        }, 100);
+      }
+
+      if (
+        typeof $_GET["bg"] != "undefined" &&
+        $_GET["bg"] != null &&
+        $_GET["bg"] != ""
+      ) {
+        document.body.style.setProperty("--cor-bg", "#" + $_GET["bg"]);
+      }
+
+      if (
+        typeof $_GET["fg"] != "undefined" &&
+        $_GET["fg"] != null &&
+        $_GET["fg"] != ""
+      ) {
+        document.documentElement.style.setProperty(
+          "--cor-fcolor",
+          "#" + $_GET["fg"],
+        );
+      }
+
+      const goto = function (el) {
+        setTimeout(function () {
+          window.scrollTo({
+            top: document.getElementById(el).offsetTop - 25,
+            behavior: "smooth",
+          });
+        }, 400);
+      };
+
+      if (
+        typeof $_GET["goto"] != "undefined" &&
+        $_GET["goto"] != null &&
+        $_GET["goto"] != ""
+      ) {
+        goto($_GET["goto"]);
+      }
+
+      let unshow = function () {
+        document.getElementById("coverplate").style.display = "none";
+        document.getElementById("objeto").style.display = "none";
+        document.getElementById("objeto").innerHTML = "";
+      };
+
+      let show = function (file) {
+        document.getElementById("coverplate").style.display = "block";
+        document.getElementById("objeto").style.display = "flex";
+
+        if (file.match(/yout/) != null) {
+          document.getElementById("objeto").innerHTML =
+            `<iframe src="${file}" frameborder= "0" style="width: 90vw; height: 90dvh; border: none; box-shadow: 0px 0px 15px 5px #00000055;" allowfullscreen></iframe>`;
+        } else {
+          document.getElementById("objeto").innerHTML =
+            '<img src="' +
+            imagefromallsources(file) +
+            '" style="max-width: 90vw; max-height: 90dvh; object-fit: contain; box-shadow: 0px 0px 15px 5px #00000055;" />';
+        }
+      };
+    </script>
+  </body>
+</html>
