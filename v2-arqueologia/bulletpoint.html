@@ -285,8 +285,8 @@
       }
 
       .stage {
-        width: calc(100% - 40px);
-        height: calc(100% - 70px);
+        width: calc(80% - 40px);
+        height: calc(65% - 70px);
         background-color: var(--cor-fcolor, white);
         padding: 20px;
         box-shadow: 5px 5px 8px #000000;
@@ -398,12 +398,12 @@
 
         if (file.match(/yout/) != null) {
           document.getElementById("objeto").innerHTML =
-            `<div class="stage"><iframe src="${file}" frameborder= "0" style="width: 90vw; height: 90dvh; border: none; box-shadow: 0px 0px 15px 5px #00000055;" allowfullscreen></iframe>${blocoemu}</div>`;
+            `<div class="stage"><iframe src="${file}" frameborder= "0" style="width: 100%; height: 90dvh; border: none;" allowfullscreen></iframe>${blocoemu}</div>`;
         } else {
           document.getElementById("objeto").innerHTML =
             '<div class="stage"><img src="' +
             imagefromallsources(file) +
-            '" style="max-width: 90vw; max-height: 90dvh; object-fit: contain; box-shadow: 0px 0px 15px 5px #00000055;" />' +
+            '" style="max-width: 100%; max-height: 90dvh; object-fit: contain;" />' +
             blocoemu +
             "</div>";
         }
