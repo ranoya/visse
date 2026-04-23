@@ -283,6 +283,15 @@
         background-color: #ffffffff;
         border: 3px solid #ffffffff;
       }
+
+      .stage {
+        width: calc(100% - 40px);
+        height: calc(100% - 70px);
+        background-color: var(--cor-fcolor, white);
+        padding: 20px;
+        box-shadow: 5px 5px 8px #000000;
+        display: flex;
+      }
     </style>
 
     <script>
@@ -367,18 +376,36 @@
         document.getElementById("objeto").innerHTML = "";
       };
 
-      let show = function (file) {
+      let show = function (file, emu) {
         document.getElementById("coverplate").style.display = "block";
         document.getElementById("objeto").style.display = "flex";
 
+        let blocoemu = "";
+        if (typeof emu != "undefined" && emu != null && emu != "") {
+          blocoemu = `
+          
+          <a class="botaoemulador" style="width: 60px; height: 60px; margin-left: 20px;" target="_blank" href="${emu}">
+                <svg style="width: 60px; aspect-ratio: 1/1;" viewBox="0 0 1566 1566" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1566" height="1566" fill="var(--cor-bg, #000000)"></rect>
+                <path d="M456 968V718H506V668H556V618H706V668H756V718H806V968H706V868H556V968H456ZM556 818H706V718H656V668H606V718H556V818Z" fill="var(--cor-fcolor, #aaaaaa)"></path>
+                <path d="M906 968V918H956V868H1006V818H1056V768H1006V718H956V668H906V618H1006V668H1056V718H1106V768H1156V818H1106V868H1056V918H1006V968H906Z" fill="var(--cor-fcolor, #aaaaaa)"></path>
+                </svg>
+            </a>
+          
+          
+          `;
+        }
+
         if (file.match(/yout/) != null) {
           document.getElementById("objeto").innerHTML =
-            `<iframe src="${file}" frameborder= "0" style="width: 90vw; height: 90dvh; border: none; box-shadow: 0px 0px 15px 5px #00000055;" allowfullscreen></iframe>`;
+            `<div class="stage"><iframe src="${file}" frameborder= "0" style="width: 90vw; height: 90dvh; border: none; box-shadow: 0px 0px 15px 5px #00000055;" allowfullscreen></iframe>${blocoemu}</div>`;
         } else {
           document.getElementById("objeto").innerHTML =
-            '<img src="' +
+            '<div class="stage"><img src="' +
             imagefromallsources(file) +
-            '" style="max-width: 90vw; max-height: 90dvh; object-fit: contain; box-shadow: 0px 0px 15px 5px #00000055;" />';
+            '" style="max-width: 90vw; max-height: 90dvh; object-fit: contain; box-shadow: 0px 0px 15px 5px #00000055;" />' +
+            blocoemu +
+            "</div>";
         }
       };
     </script>
