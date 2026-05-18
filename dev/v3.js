@@ -118,14 +118,16 @@ let omnifilter = function (arr) {
   let grupos = tags(arr, "Group", ",");
   let grupoatual = "";
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].Group != grupoatual) {
-      code += `<div class="menu_linha"></div>`;
-      code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
-      code += `<a href="#" class="menu_grupo">${arr[i].Group}</a>`;
-      grupoatual = arr[i].Group;
-    } else {
-      code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
+  for (let g = 0; g < grupos.length; g++) {
+    for (let i = 0; i < arr.length; i++) {
+      if (!arr[i].Group.match(grupoatual)) {
+        code += `<div class="menu_linha"></div>`;
+        code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
+        code += `<a href="#" class="menu_grupo">${arr[i].Group}</a>`;
+        grupoatual = arr[i].Group;
+      } else {
+        code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
+      }
     }
   }
 
