@@ -124,8 +124,8 @@ let omnifilter = function (arr) {
         if (grupoatual != grupos[g]) {
           code += `<div class="menu_linha"></div>`;
           code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
-          code += `<a href="#" class="menu_grupo">${arr[i].Group}</a>`;
-          grupoatual = arr[i].Group;
+          code += `<a href="#" class="menu_grupo">${grupos[g]}</a>`;
+          grupoatual = grupos[g];
         } else {
           code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
         }
