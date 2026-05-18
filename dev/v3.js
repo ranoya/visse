@@ -109,3 +109,31 @@ const show = function (src) {
   document.getElementById("showoff").innerHTML = `<img src="${src}" />`;
   document.getElementById("showoff").style.display = "block";
 };
+
+// Menu
+
+let omnifilter = function (arr) {
+  let code = ``;
+
+  let grupos = tags(arr, "Group", ",");
+  let grupoatual = "";
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].Group != grupoatual) {
+      code += `<div class="menu_linha"></div>`;
+      code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Link}</a>`;
+      grupoatual = arr[i].Group;
+    } else {
+      code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Link}</a>`;
+    }
+  }
+
+  document.getElementById("respostas").innerHTML = code;
+};
+
+omnifilterfetchcsvdata(
+  GoogleSheetCsvURL(
+    "https://docs.google.com/spreadsheets/d/1-cUA3cbTKa3plHwDe0KMJrcFgZsQOPwl7tp_uJ_T_FM/edit?gid=1979792953#gid=1979792953",
+  ),
+  "menufiltro",
+);
