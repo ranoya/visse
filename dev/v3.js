@@ -121,10 +121,11 @@ let omnifilter = function (arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].Group != grupoatual) {
       code += `<div class="menu_linha"></div>`;
-      code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Link}</a>`;
+      code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
+      code += `<a href="#" class="menu_grupo">${arr[i].Group}</a>`;
       grupoatual = arr[i].Group;
     } else {
-      code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Link}</a>`;
+      code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
     }
   }
 
