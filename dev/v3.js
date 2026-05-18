@@ -112,6 +112,12 @@ const show = function (src) {
 
 // Menu
 
+const atualizafiltro = function (valor) {
+  let inpt = document.getElementById("menufiltro");
+  inpt.value = valor;
+  inpt.dispatchEvent(new Event("input", { bubbles: true }));
+};
+
 let omnifilter = function (arr) {
   let code = ``;
 
@@ -124,7 +130,7 @@ let omnifilter = function (arr) {
         if (grupoatual != grupos[g]) {
           code += `<div class="menu_linha"></div>`;
           code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
-          code += `<a href="#" class="menu_grupo">${grupos[g]}</a>`;
+          code += `<a href="javascript:atualizafiltro('${grupos[g]}');" class="menu_grupo">${grupos[g]}</a>`;
           grupoatual = grupos[g];
         } else {
           code += `<a href="${arr[i].Link}" class="menu_item">${arr[i].Name}</a>`;
