@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <meta charset="UTF-8" />
 
@@ -289,7 +289,18 @@
           for (let k = 0; k < lista.length; k++) {
             timestamp = new Date().getTime();
             docs += `<div class='tudo'><div class='certificadowrap' style='background-image: url("https://visse.vercel.app/certificados/${lista[k].Modelo}.svg");'>`;
-            docs += `<p class='textonormal'>Certificamos que <span class='nome'>${lista[k].Nome}</span>, portador(a) do CPF número <span class='numerocpf'>${lista[k].CPF}</span> <span class='numerocpf'>${lista[k].Tipo}</span> <span class='tipodeatividade'>${lista[k]["Título"]}</span> <span class='projeto'>${lista[k].NomeEvento}</span>, <span class='periodo'>${lista[k]["Período"]}</span>, com duração de <span class='duracao'>${lista[k]["Duração"]}</span>.</p>`;
+            docs += `<p class='textonormal'>Certificamos que <span class='nome'>${lista[k].Nome}</span>, portador(a) do CPF número <span class='numerocpf'>${lista[k].CPF}</span> <span class='numerocpf'>${lista[k].Tipo}</span> <span class='tipodeatividade'>${lista[k]["Título"]}</span> <span class='projeto'>${lista[k].NomeEvento}</span>, <span class='periodo'>${lista[k]["Período"]}</span>`;
+
+            if (
+              typeof lista[k]["Duração"] !== "undefined" &&
+              lista[k]["Duração"] !== "" &&
+              lista[k]["Duração"] !== null
+            ) {
+              docs += `, com duração de <span class='duracao'>${lista[k]["Duração"]}</span>.`;
+            } else {
+              docs += `.`;
+            }
+            docs += `</p>`;
 
             docs += `<p class='comprova'>Este documento foi gerado digitalmente direto do website do Laboratório de Visualização e Sentidos (VISSE), no timestamp ${timestamp}, e pode ser verificado/validado em qualquer momento na url: <a href='https://visse.vercel.app/certificados/?reg=${lista[k].CPF}'>https://visse.vercel.app/certificados/?reg=${lista[k].CPF}</a></p>`;
 
@@ -303,9 +314,9 @@
 
       getcsvdata(
         GoogleSheetCsvURL(
-          "https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1919038367"
+          "https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1919038367",
         ),
-        geracertificados
+        geracertificados,
       );
 
       let reenvia = function () {
