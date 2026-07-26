@@ -289,7 +289,7 @@
           for (let k = 0; k < lista.length; k++) {
             timestamp = new Date().getTime();
             docs += `<div class='tudo'><div class='certificadowrap' style='background-image: url("https://visse.vercel.app/certificados/${lista[k].Modelo}.svg");'>`;
-            docs += `<p class='textonormal'>Certificamos que <span class='nome'>${lista[k].Nome}</span>, portador(a) do CPF número <span class='numerocpf'>${lista[k].CPF}</span> <span class='numerocpf'>${lista[k].Tipo}</span> <span class='tipodeatividade'>${lista[k]["Título"]}</span> <span class='projeto'>${lista[k].NomeEvento}</span>, <span class='periodo'>${lista[k]["Período"]}</span>`;
+            docs += `<p class='textonormal'>Certificamos que <span class='nome'>${lista[k].Nome}</span>, portador(a) do CPF número <span class='numerocpf'>${lista[k].CPF.replace(/(\d\d\d)(\d\d\d)(\d\d\d)(\d\d)/, "$1.$2.$3-$4")}</span> <span class='numerocpf'>${lista[k].Tipo}</span> <span class='tipodeatividade'>${lista[k]["Título"]}</span> <span class='projeto'>${lista[k].NomeEvento}</span>, <span class='periodo'>${lista[k]["Período"]}</span>`;
 
             if (
               typeof lista[k]["Duração"] !== "undefined" &&
