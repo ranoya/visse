@@ -148,8 +148,14 @@
       <div id="topo">
         <div id="grafismo">
 
-          <div style="background-color: var(--cor-logo, #4272cf); position: relative; z-index: 2; top: 0; width: 100%; height: 15px; left: 0; background-repeat: no-repeat; background-position: top center; overflow: hidden; background-size: 3000px 15px; background-image: url(../assets/graphismus.png);"></div>
+          <!-- <div style="background-color: var(--cor-logo, #4272cf); position: relative; z-index: 2; top: 0; width: 100%; height: 15px; left: 0; background-repeat: no-repeat; background-position: top center; overflow: hidden; background-size: 3000px 15px; background-image: url(../assets/graphismus.png);"></div> -->
 
+          <div id="barrapathwavescolor" style="background-color: #FFFFFF; position: relative; z-index: 2; top: 0; width: 100%; height: 15px; left: 0; background-repeat: no-repeat; background-position: top center; overflow: hidden; background-size: 3000px 15px; background-image: url(../assets/bar0.png);"></div>
+
+          <script>
+            let qual = parseInt(Math.random() * 7);
+            document.getElementById("barrapathwavescolor").style.backgroundImage = "url(../assets/bar" + qual + ".png)";
+          </script>
 
         </div>
         <div id="identificacao">
