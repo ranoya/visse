@@ -499,21 +499,26 @@
           document.getElementsByTagName("input")[1] != null &&
           document.getElementById("producao").innerHTML != ""
         ) {
-          if (
-            document.getElementsByTagName("input")[1].value ==
-            decodeURI($_GET["filtra"])
-          ) {
-            document
-              .getElementsByTagName("input")[1]
-              .dispatchEvent(new Event("input", { bubbles: true }));
-            clearInterval(insistepesquisador);
-          } else {
-            document.getElementsByTagName("input")[1].value = decodeURI(
-              $_GET["filtra"]
-            );
-            document
-              .getElementsByTagName("input")[1]
-              .dispatchEvent(new Event("input", { bubbles: true }));
+
+          if (typeof $_GET["filtra"] == "undefined" && $_GET["filtra"] == null && $_GET["filtra"] == "") {
+            
+          
+            if (
+              document.getElementsByTagName("input")[1].value ==
+              decodeURI($_GET["filtra"])
+            ) {
+              document
+                .getElementsByTagName("input")[1]
+                .dispatchEvent(new Event("input", { bubbles: true }));
+              clearInterval(insistepesquisador);
+            } else {
+              document.getElementsByTagName("input")[1].value = decodeURI(
+                $_GET["filtra"]
+              );
+              document
+                .getElementsByTagName("input")[1]
+                .dispatchEvent(new Event("input", { bubbles: true }));
+            }
           }
         }
       }, 100);
