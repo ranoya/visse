@@ -228,13 +228,17 @@
 
             <div id="producao"></div>
 
+            <div id="timelineproducao"></div>
+
             <div id="estilos"></div>
           </div>
 
             <div class="ref">
               <div style="height: 45px"></div>
 
-              <div id="timelineproducao"></div>
+              <div id="alunos"></div>
+
+              
 
             </div>
 
@@ -406,6 +410,9 @@
 
         if (name === "projetos")
           return new Inspector(document.querySelector("#projetos"));
+
+        if (name === "alunos")
+          return new Inspector(document.querySelector("#alunos"));
 
         if (name === "tituloprodutos")
           return new Inspector(document.querySelector("#tituloprodutos"));
