@@ -99,7 +99,7 @@ body {
   background-color: var(--cor-bg, #ffffff);
   padding: var(--doc-margin, 20px);
   height: 95px;
-  z-index: 10;
+  z-index: 1;
 }
 
 #conteudotopo {
