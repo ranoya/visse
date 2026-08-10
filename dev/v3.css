@@ -868,6 +868,7 @@ a.linkbloco {
   padding-bottom: 10px;
   margin-bottom: -10px;
   color: var(--cor-logo, #4272cf) !important;
+  width: 100%;
 }
 
 a.linkbloco:hover {
@@ -880,6 +881,7 @@ a.linkbloco:hover {
   color: var(--cor-logo, #4272cf) !important;
   padding: 10px 10px 10px 10px !important;
   margin: -6px -10px -6px -10px !important;
+  width: calc(100% - 12px);
 }
 
 .linktextual:hover {
