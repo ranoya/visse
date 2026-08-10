@@ -399,9 +399,8 @@
         Inspector,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
       import define from "https://api.observablehq.com/@ranoya/v3-pesquisador.js?v=4";
-      new Runtime().module(define, (name) => {
 
-        const fromObservable = new Runtime().module(define, (name) => {
+      const fromObservable = new Runtime().module(define, (name) => {
         if (name === "viewof filtros")
           return new Inspector(document.querySelector("#entradav2"));
 
@@ -416,65 +415,36 @@
 
         if (name === "estilos")
           return new Inspector(document.querySelector("#estilos"));
-
-
-
       });
     </script>
 
     <script>
-      let trocaformato = function (q) {
-        document.getElementById("intro").classList.add("apaga");
-        document.getElementById("descricao").classList.add("apaga");
-        document.getElementById("projetos").classList.add("apaga");
-        document.getElementById("producao").classList.add("apaga");
-
-        document.getElementById("bottipo").classList.remove("ativa");
-        document.getElementById("botcrono").classList.remove("ativa");
-
-        if (q == 0) {
-          document.getElementById("descricao").classList.remove("apaga");
-          document.getElementById("producao").classList.remove("apaga");
-          document.getElementById("botcrono").classList.add("ativa");
+      let insistepesquisador = setInterval(function () {
+        if (
+          typeof document.getElementsByTagName("input")[0] != "undefined" &&
+          document.getElementsByTagName("input")[0] != null &&
+          document.getElementById("timelineproducao").innerHTML != ""
+        ) {
+          if (
+            document.getElementsByTagName("input")[0].value ==
+            decodeURI($_GET["nome"])
+          ) {
+            document
+              .getElementsByTagName("input")[0]
+              .dispatchEvent(new Event("input", { bubbles: true }));
+            clearInterval(insistepesquisador);
+          } else {
+            document.getElementsByTagName("input")[0].value = decodeURI(
+              $_GET["nome"]
+            );
+            document
+              .getElementsByTagName("input")[0]
+              .dispatchEvent(new Event("input", { bubbles: true }));
+          }
         }
-
-        if (q == 1) {
-          document.getElementById("intro").classList.remove("apaga");
-          document.getElementById("projetos").classList.remove("apaga");
-          document.getElementById("bottipo").classList.add("ativa");
-        }
-      }
+      }, 100);
     </script>
 
-    <style>
-      #bottipo,
-      #botcrono {
-        display: inline-block;
-        padding-left: 10px;
-        margin-left: -10px;
-        padding-right: 10px;
-        margin-right: -10px;
-        padding-top: 10px;
-        margin-top: -10px;
-        padding-bottom: 10px;
-        margin-bottom: -10px;
-        color: var(--cor-hv1, #12a3cb);
-        border: 3px solid transparent;
-      }
-
-      #bottipo:hover,
-      #botcrono:hover {
-        background-color: var(--cor-hv1, #12a3cb);
-        color: var(--cor-invert, #ffffff);
-      }
-
-      .apaga {
-        display: none;
-      }
-
-      .ativa {
-        border: 3px solid var(--cor-hv1, #12a3cb) !important;
-      }
-    </style>
+    
   </html>
 </DOCTYPE>
