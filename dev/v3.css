@@ -717,6 +717,12 @@ body {
   background-color: var(--color-bg, #ffffff);
 }
 
+.fixa {
+  position: sticky;
+  top: 135px;
+  background-color: var(--color-bg, #ffffff);
+}
+
 .outline {
   grid-column: init / par;
   width: 100%;
