@@ -816,6 +816,10 @@ body {
   margin-top: 12px;
 }
 
+.lupa path {
+  fill: var(--cor-hg, #e99928);
+}
+
 #filtros input {
   width: 500px;
   font-size: 16px;
