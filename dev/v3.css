@@ -99,6 +99,7 @@ body {
   background-color: var(--cor-bg, #ffffff);
   padding: var(--doc-margin, 20px);
   height: 95px;
+  z-index: 10;
 }
 
 #conteudotopo {
@@ -772,6 +773,7 @@ body {
   color: #5f5f5f;
   font-family: "Cantorias", "Open Sans", sans-serif;
   text-transform: uppercase;
+  z-index: 9;
 }
 
 .main h1,
