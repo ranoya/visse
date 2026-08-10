@@ -808,3 +808,37 @@ body {
   max-width: 100%;
   box-shadow: 0 0 12px 4px #00000044;
 }
+
+.lupa {
+  width: 18px;
+  float: left;
+  margin-right: 8px;
+  margin-top: 12px;
+}
+
+#filtros input {
+  width: 500px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 32px;
+  border-bottom: 1px dashed var(--cor-hg, #e99928);
+}
+
+.custombutton {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 26px;
+  height: 26px;
+  border: 3px solid white;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #5f5f5f;
+  cursor: pointer;
+  margin-right: 6px;
+  color: white;
+}
+
+.custombutton:hover {
+  background-color: var(--cor-hg, #e99928);
+  border: 3px solid var(--cor-hg, #e99928);
+}
