@@ -773,7 +773,7 @@ body {
   color: #5f5f5f;
   font-family: "Cantorias", "Open Sans", sans-serif;
   text-transform: uppercase;
-  z-index: 1;
+  z-index: 0;
   /* subir */
 }
 
