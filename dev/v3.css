@@ -719,7 +719,7 @@ body {
 
 .fixa {
   position: sticky;
-  top: 135px;
+  top: 160px;
   background-color: var(--color-bg, #ffffff);
 }
 
