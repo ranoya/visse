@@ -680,7 +680,7 @@ body {
 }
 
 .main a {
-  color: var(--cor-hg);
+  color: var(--cor-logo);
   font-weight: 700;
   text-decoration: none;
   padding: 10px 10px 6px 10px;
