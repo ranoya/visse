@@ -1,6 +1,5 @@
-let menuaberto = false;
 let togglemenu = function () {
-  if (!menuaberto) {
+  if (window.scrollY > 200) {
     menuaberto = true;
     window.scrollTo({ top: 0, behavior: "smooth" });
   } else {
