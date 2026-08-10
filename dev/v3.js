@@ -1,3 +1,17 @@
+let menuaberto = false;
+let togglemenu = function () {
+  if (!menuaberto) {
+    menuaberto = true;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    menuaberto = false;
+    document.getElementById("topo").scrollIntoView({
+      behavior: "smooth", // "auto" for instant jump
+      block: "start", // Aligns element to top of the viewport
+    });
+  }
+};
+
 if (!document.referrer.match("visse")) {
   console.log("acesso externo");
   window.location.hash = "conteudo";
