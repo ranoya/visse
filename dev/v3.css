@@ -874,3 +874,13 @@ a.linkbloco:hover {
   background-color: var(--cor-logo, #4272cf) !important;
   color: var(--cor-invert, #ffffff) !important;
 }
+
+.linktextual {
+  display: block;
+  color: var(--cor-logo, #4272cf) !important;
+}
+
+.linktextual:hover {
+  background-color: var(--cor-logo, #4272cf) !important;
+  color: var(--cor-invert, #ffffff) !important;
+}
