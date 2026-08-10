@@ -869,11 +869,14 @@ a.linkbloco {
   margin-bottom: -10px;
   color: var(--cor-logo, #4272cf) !important;
   width: 100%;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 a.linkbloco:hover {
   background-color: var(--cor-logo, #4272cf) !important;
   color: var(--cor-invert, #ffffff) !important;
+  text-decoration: none;
 }
 
 .linktextual {
