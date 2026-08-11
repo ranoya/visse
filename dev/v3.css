@@ -817,7 +817,7 @@ body {
 }
 
 #setaup path {
-  fill: var(--cor-delicada);
+  fill: var(--cor-base);
 }
 
 @media screen and (min-width: 855px) {
@@ -830,7 +830,7 @@ body {
 }
 
 #setaup:hover path {
-  fill: var(--cor-hg);
+  fill: var(--cor-delicada);
 }
 
 #showoff {
