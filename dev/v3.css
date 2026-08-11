@@ -800,7 +800,7 @@ body {
   left: 60px;
   width: 50px;
   height: 50px;
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
   z-index: 5;
   opacity: 0;
@@ -812,21 +812,20 @@ body {
 }
 
 #setaup path {
-  fill: var(--cor-logo, #4272cf);
+  fill: var(--cor-base);
 }
 
 @media screen and (min-width: 855px) {
   .mostraup {
-    opacity: 1;
+    opacity: 1 !important;
   }
 }
 
 #setaup:hover rect {
-  fill: var(--cor-logo, #4272cf);
 }
 
 #setaup:hover path {
-  fill: white;
+  fill: var(--cor-hg);
 }
 
 #showoff {

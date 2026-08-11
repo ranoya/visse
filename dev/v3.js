@@ -13,12 +13,17 @@ $_GET = [];
   }
 })();
 
+let gotocontent = function () {
+  document.getElementById("topo").scrollIntoView({
+    behavior: "smooth", // "auto" for instant jump
+    block: "start", // Aligns element to top of the viewport
+  });
+};
+
 let togglemenu = function () {
   if (window.scrollY > 200) {
-    menuaberto = true;
     window.scrollTo({ top: 0, behavior: "smooth" });
   } else {
-    menuaberto = false;
     document.getElementById("topo").scrollIntoView({
       behavior: "smooth", // "auto" for instant jump
       block: "start", // Aligns element to top of the viewport
