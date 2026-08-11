@@ -183,3 +183,11 @@ omnifilterfetchcsvdata(
   ),
   "menufiltro",
 );
+
+if (
+  typeof $_GET["run"] != "undefined" &&
+  $_GET["run"] != "" &&
+  $_GET["run"] != null
+) {
+  runner($_GET["run"]);
+}
