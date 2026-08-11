@@ -1,3 +1,18 @@
+$_GET = [];
+(function () {
+  corte = window.location.href.toString().indexOf("?");
+  if (corte > 0) {
+    argumento = window.location.href.toString().substring(corte + 1);
+    argumentos = argumento.split("&");
+    for (arg in argumentos) {
+      let argCorte = argumentos[arg].indexOf("=");
+      $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[arg].substring(
+        argCorte + 1,
+      );
+    }
+  }
+})();
+
 let togglemenu = function () {
   if (window.scrollY > 200) {
     menuaberto = true;
@@ -120,6 +135,13 @@ const closeshowoff = function () {
 const show = function (src) {
   document.getElementById("coverplate").style.display = "block";
   document.getElementById("showoff").innerHTML = `<img src="${src}" />`;
+  document.getElementById("showoff").style.display = "block";
+};
+
+const runner = function (src) {
+  document.getElementById("coverplate").style.display = "block";
+  document.getElementById("showoff").innerHTML =
+    `<iframe frameboerder="0" style="width: 100%; height: 100%;" src="${src}" /></iframe>`;
   document.getElementById("showoff").style.display = "block";
 };
 
