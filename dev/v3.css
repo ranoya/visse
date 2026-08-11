@@ -847,6 +847,8 @@ body {
   align-items: center;
   display: none;
   box-shadow: #00000044 0px 0px 20px 0px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 #showoff img {
