@@ -14,6 +14,8 @@
   --cor-base: #e99928;
   --cor-base: #c1babd;
 
+  --cor-delicada: #f2b8b4;
+
   --cor-hg: #e99928;
   --cor-hg: #955700;
 
@@ -815,7 +817,7 @@ body {
 }
 
 #setaup path {
-  fill: var(--cor-base);
+  fill: var(--cor-delicada);
 }
 
 @media screen and (min-width: 855px) {
