@@ -14,7 +14,7 @@ $_GET = [];
 })();
 
 let gotocontent = function () {
-  document.getElementById("topo").scrollIntoView({
+  document.getElementById("conteudo").scrollIntoView({
     behavior: "smooth", // "auto" for instant jump
     block: "start", // Aligns element to top of the viewport
   });
