@@ -77,7 +77,11 @@
         <br /><br />
       </div>
 
-      <iframe id="pagetwo" frameborder="0"></iframe>
+      <iframe
+        id="pagetwo"
+        style="height: calc(100dvh - 80px)"
+        frameborder="0"
+      ></iframe>
 
       <div id="backbutton" onclick="unshow()"></div>
     </div>
@@ -145,7 +149,7 @@
         width: 200%;
         display: grid;
         grid-template-columns: 1fr 0.9fr 0.1fr;
-        gap: 0 0;
+        gap: 0 60px;
       }
 
       #coverplate {
@@ -391,7 +395,7 @@
 
       let run = function (url) {
         document.getElementById("fullpage").style.transform =
-          "translateX(-100%)";
+          "translateX(calc(-50% - 40px))";
         document.getElementById("coverplate").style.display = "none";
         document.getElementById("objeto").style.display = "none";
         document.getElementById("objeto").innerHTML = "";
