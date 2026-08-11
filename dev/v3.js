@@ -118,11 +118,13 @@ window.addEventListener("scroll", function () {
     if (cor == "amarelo") {
       cor = "branco";
       amareloparabranco();
+      document.getElementById("setaup").classList.add("mostraup");
     }
   } else {
     if (cor == "branco") {
       cor = "amarelo";
       brancoparaamarelo();
+      document.getElementById("setaup").classList.remove("mostraup");
     }
   }
 });

@@ -794,6 +794,24 @@ body {
   display: none;
 }
 
+#setaup {
+  position: sticky;
+  bottom: 250px;
+  left: 50px;
+  display: none;
+  width: 80px;
+  height: 80px;
+  background-color: black;
+  cursor: pointer;
+  z-index: 5;
+}
+
+@media screen and (min-width: 800px) {
+  .mostraup {
+    display: block !important;
+  }
+}
+
 #showoff {
   position: fixed;
   top: 5%;
