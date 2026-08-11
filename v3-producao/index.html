@@ -256,7 +256,7 @@
             <div id="botoes"></div>
 
             <br />
-            <div style="text-align: right">
+            <div class="chavecrono">
                 <a id="bottipo" href="javascript:trocaformato(1)">Tipologia</a
                 >&nbsp; &nbsp; | &nbsp; &nbsp;<a
                 id="botcrono"
@@ -265,6 +265,8 @@
                 >Cronoglógico</a
                 >
             </div>
+
+            
 
             </div>
 
@@ -522,18 +524,20 @@
         margin-left: -10px;
         padding-right: 10px;
         margin-right: -10px;
-        padding-top: 10px;
-        margin-top: -10px;
-        padding-bottom: 10px;
-        margin-bottom: -10px;
-        color: var(--cor-hv1, #12a3cb);
-        border: 3px solid transparent;
+        
+        padding-top: 3;
+        margin-top: -3px;
+        padding-bottom: 3px;
+        margin-bottom: -3px;
+
+        color: white;
+        text-decoration: none;
       }
 
       #bottipo:hover,
       #botcrono:hover {
-        background-color: var(--cor-hv1, #12a3cb);
-        color: var(--cor-invert, #ffffff);
+        background-color: var(--cor-hg);
+
       }
 
       .apaga {
@@ -541,8 +545,16 @@
       }
 
       .ativa {
-        border: 3px solid var(--cor-hv1, #12a3cb) !important;
+        background-color: var(--cor-logo) !important;
+
       }
+
+      .chavecrono {
+        text-align: left;
+        margin-left: 13px;
+      }
+
+
     </style>
   </html>
 </DOCTYPE>
