@@ -61,18 +61,26 @@
   <body>
     <div id="objeto" onclick="unshow()"></div>
     <div id="coverplate" onclick="unshow()"></div>
-    <div id="estatisticas"></div>
-    <div id="filtros"><span class="loader"></span></div>
+    <div id="fullpage">
+      <div id="pageone">
+        <div id="estatisticas"></div>
+        <div id="filtros"><span class="loader"></span></div>
 
-    <div id="criterios"></div>
+        <div id="criterios"></div>
 
-    <div id="artefatos">
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <div id="artefatos">
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </div>
+
+        <br />
+
+        <br /><br />
+      </div>
+
+      <iframe id="pagetwo" frameborder="0"></iframe>
+
+      <div id="backbutton" onclick="unshow()"></div>
     </div>
-
-    <br />
-
-    <br /><br />
 
     <div
       id="filtroescondido"
@@ -122,6 +130,8 @@
 
       html {
         background-color: var(--cor-bg, transparent);
+        overflow-x: hidden;
+        overflow-y: auto;
       }
       body {
         margin: 40px;
@@ -129,6 +139,13 @@
         margin-bottom: 80px;
         font-family: "Open Sans", sans-serif;
         background-color: var(--cor-bg, transparent);
+      }
+
+      #fullpage {
+        width: 200%;
+        display: grid;
+        grid-template-columns: 1fr 0.9fr 0.1fr;
+        gap: 0 0;
       }
 
       #coverplate {
@@ -369,6 +386,17 @@
         document.getElementById("coverplate").style.display = "none";
         document.getElementById("objeto").style.display = "none";
         document.getElementById("objeto").innerHTML = "";
+        document.getElementById("fullpage").style.transform = "translateX(0%)";
+      };
+
+      let run = function (url) {
+        document.getElementById("fullpage").style.transform =
+          "translateX(-100%)";
+        document.getElementById("coverplate").style.display = "none";
+        document.getElementById("objeto").style.display = "none";
+        document.getElementById("objeto").innerHTML = "";
+
+        document.getElementById("pagetwo").src = url;
       };
 
       let show = function (file, emu) {
