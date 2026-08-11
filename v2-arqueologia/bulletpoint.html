@@ -62,7 +62,16 @@
     <div id="objeto" onclick="unshow()"></div>
     <div id="coverplate" onclick="unshow()"></div>
     <div id="fullpage">
-      <div id="pageone">
+      <div
+        id="pageone"
+        style="
+          overflow-y: scroll;
+          height: 100dvh;
+          overflow-x: hidden;
+          padding-right: 40px;
+          padding-top: 40px;
+        "
+      >
         <div id="estatisticas"></div>
         <div id="filtros"><span class="loader"></span></div>
 
@@ -79,11 +88,7 @@
 
       <iframe
         id="pagetwo"
-        style="
-          height: calc(100dvh - 80px);
-          width: calc(90.5%);
-          margin-left: 12%;
-        "
+        style="height: 100dvh; width: calc(90.5%); margin-left: 12%"
         frameborder="0"
       ></iframe>
 
@@ -143,8 +148,9 @@
       }
       body {
         margin: 40px;
+        margin-top: 0px;
         margin-right: 60px;
-        margin-bottom: 80px;
+        margin-bottom: 0px;
         font-family: "Open Sans", sans-serif;
         background-color: var(--cor-bg, transparent);
       }
@@ -152,8 +158,9 @@
       #fullpage {
         width: 230%;
         display: grid;
-        grid-template-columns: 0.8345fr 0.9fr 0.1fr;
+        grid-template-columns: calc(100vw - 40px) 0.9fr 0.1fr;
         gap: 0 60px;
+        height: 100dvh;
       }
 
       #coverplate {
