@@ -435,6 +435,8 @@
     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
     import define from "https://api.observablehq.com/@ranoya/v3-producaocompleta.js?v=4";
     new Runtime().module(define, name => {
+      
+      if (name === "estilos") return new Inspector(document.querySelector("#estilos"));
       if (name === "intro") return new Inspector(document.querySelector("#intro"));
       if (name === "viewof filtros") return new Inspector(document.querySelector("#filtros"));
       if (name === "botoes") return new Inspector(document.querySelector("#botoes"));
@@ -443,9 +445,9 @@
       if (name === "descricao") return new Inspector(document.querySelector("#descricao"));
       if (name === "timelineproducao");
         return new Inspector(document.querySelector("#producao"));
-      if (name === "estilos") return new Inspector(document.querySelector("#estilos"));
+      
 
-      return ["publicacoes","viewof producao_filtrada","viewof producao_projetosPibi","acionasearch","cvcompletovisse","cvcompletotypovisse","cvpub","sodisciplinas","soextensao","sopainel","sopesquisa","soorganiza","soinit","custombuttonsduo","timelineproducao","timelinetipoproducao","pubs","EnsPesqExtCont","IniciacaoCieTec"].includes(name);
+      return ["publicacoes","viewof producao_filtrada","viewof producao_projetosPibi","acionasearch","cvcompletovisse","cvcompletotypovisse","cvpub","sodisciplinas","soextensao","sopainel","sopesquisa","soorganiza","soinit","custombuttonsduo","timelineproducao","timelinetipoproducao","pubs","EnsPesqExtCont","estilos"].includes(name);
     });
 
     </script>
