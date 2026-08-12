@@ -214,6 +214,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     block: "start", // Aligns element to top of the viewport
   });
 
+  /*
   let indices = document.querySelectorAll("h1, h2");
   let code = "";
 
@@ -222,4 +223,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 
   document.getElementById("scrollnav").innerHTML = code;
+  */
 });
