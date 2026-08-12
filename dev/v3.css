@@ -978,8 +978,8 @@ timelinevinv div:hover a {
 
 .timelinev {
   display: grid;
-  grid-template-columns: 60px 110px 1fr;
-  gap: 25px 25px;
+  grid-template-columns: 40px 110px 1fr;
+  gap: 25px 8px;
   width: calc(100% - 25px);
 }
 
@@ -994,10 +994,12 @@ timelinevinv div:hover a {
   padding-left: 0 !important;
   min-height: 80px;
   width: 100%;
+  text-align: left !important;
 }
 
 .timelinev_topic_cont.inv {
   font-size: 14px !important;
+  transform: rotate(-90deg) translateX(-2px) translateY(0px) !important;
 }
 
 .timelinev_ano_end.inv {
@@ -1023,7 +1025,7 @@ timelinevinv div:hover a {
 
   .timelinevinv {
     grid-template-columns: 110px 1fr;
-    gap: 20px 12px;
+    gap: 15px 6px;
   }
 
   .timelinev_topic_head {
@@ -1063,7 +1065,7 @@ timelinevinv div:hover a {
 }
 
 .timelinev_ano_cont {
-  padding: 15px;
+  padding-top: 15px;
   background-color: var(--cor-invert, #ffffff);
   display: inline-block;
   color: var(--cor-hv2);
@@ -1090,8 +1092,8 @@ timelinevinv div:hover a {
 }
 
 .timelinev_topic_cont {
-  padding-left: 15px;
-  padding-top: 15px;
+  /* padding-left: 15px;
+  padding-top: 15px; */
   display: inline-block;
   color: var(--cor-hv2);
   font-size: 16px;
@@ -1101,6 +1103,11 @@ timelinevinv div:hover a {
   background-color: white;
   min-height: 80px;
   width: 100%;
+  text-align: right;
+  transform: rotate(-90deg) translateX(-23px) translateY(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .timelinev_cont_head {
