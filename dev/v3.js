@@ -201,9 +201,25 @@ if (
   runner($_GET["run"]);
 }
 
+let goto = function (who) {
+  who.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("topo").scrollIntoView({
     behavior: "auto", // "auto" for instant jump
     block: "start", // Aligns element to top of the viewport
   });
+
+  let indices = document.querySelectorAll("h1, h2");
+  let code = "";
+
+  for (let i = indices.length - 1; i >= 0; i--) {
+    code += `<div onclick="goto(${indices[i]})">${indices[i].innerHTML}</div>`;
+  }
+
+  document.getElementById("scrollnav").innerHTML = code;
 });
