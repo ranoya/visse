@@ -198,3 +198,10 @@ if (
 ) {
   runner($_GET["run"]);
 }
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  document.getElementById("topo").scrollIntoView({
+    behavior: "auto", // "auto" for instant jump
+    block: "start", // Aligns element to top of the viewport
+  });
+});
