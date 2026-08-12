@@ -148,7 +148,7 @@ const show = function (src) {
 const runner = function (src) {
   document.getElementById("coverplate").style.display = "block";
   document.getElementById("showoff").innerHTML =
-    `<iframe frameboerder="0" style="width: 100%; height: 100%;" src="${src}" /></iframe>`;
+    `<iframe frameboerder="0" allow="fullscreen" allowfullscreen allowfullscreen="true" style="width: 100%; height: 100%;" src="${src}" /></iframe>`;
   document.getElementById("showoff").style.display = "block";
 };
 
