@@ -941,6 +941,15 @@ a.linkbloco:hover {
   font-weight: lighter !important;
 }
 
+.screen_producaoQ {
+  width: 100%;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 /* --- Timeline Producao --- */
 
 .timelinev a,
@@ -999,7 +1008,7 @@ timelinevinv div:hover a {
 
 .timelinev_topic_cont.inv {
   font-size: 14px !important;
-  transform: rotate(-90deg) translateX(-2px) translateY(0px) !important;
+  transform: rotate(-90deg) translateX(-10px) translateY(0px) !important;
 }
 
 .timelinev_ano_end.inv {
@@ -1104,7 +1113,7 @@ timelinevinv div:hover a {
   min-height: 80px;
   width: 100%;
   text-align: right;
-  transform: rotate(-90deg) translateX(-23px) translateY(10px);
+  transform: rotate(-90deg) translateX(-35px) translateY(10px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
