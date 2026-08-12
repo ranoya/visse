@@ -307,8 +307,8 @@ body {
 }
 
 #menufiltro {
-  font-size: 16px;
-  line-height: 20px;
+  /* font-size: 16px;
+  line-height: 20px; */
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 10px;
@@ -319,6 +319,9 @@ body {
   border-bottom: 1px dotted #ffffff77;
   width: 70%;
   /* margin-left: 25px; */
+  font-size: 54px;
+  line-height: 60px;
+  height: 80px;
 }
 
 #menufiltro:focus {
@@ -332,7 +335,7 @@ body {
   overflow-y: auto;
   min-height: calc(100dvh - 800px);
   margin-top: 20px;
-  max-height: calc(100dvh - 290px);
+  max-height: calc(100dvh - 350px);
   display: grid;
   grid-template-columns: [item] 7fr [grupo] 3fr [fim];
   gap: 8px 12px;
