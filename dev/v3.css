@@ -832,7 +832,7 @@ body {
     transform: translateX(0vw);
     transition:
       opacity 0.4s ease-in,
-      transform 0 ease-in 0.6s;
+      transform 0 ease-in 0.6s !important;
   }
 }
 
