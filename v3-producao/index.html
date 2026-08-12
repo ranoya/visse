@@ -427,37 +427,27 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
     />
+   
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
     <script type="module">
-      import {
-        Runtime,
-        Inspector,
-      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/v3-producaocompleta.js?v=4";
-      new Runtime().module(define, (name) => {
-        if (name === "titulo")
-          return new Inspector(document.querySelector("#titulo"));
-        
-          if (name === "intro")
-          return new Inspector(document.querySelector("#intro"));
 
-        if (name === "viewof filtros")
-          return new Inspector(document.querySelector("#filtros"));
-
-        if (name === "botoes")
-          return new Inspector(document.querySelector("#botoes"));
-
-        if (name === "projetos")
-          return new Inspector(document.querySelector("#projetos"));
-
-        if (name === "descricao")
-          return new Inspector(document.querySelector("#descricao"));
-
-        if (name === "estilos")
-          return new Inspector(document.querySelector("#estilos"));
-
-        if (name === "timelineproducao");
+    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/@ranoya/v3-producaocompleta.js?v=4";
+    new Runtime().module(define, name => {
+      if (name === "intro") return new Inspector(document.querySelector("#intro"));
+      if (name === "viewof filtros") return new Inspector(document.querySelector("#filtros"));
+      if (name === "botoes") return new Inspector(document.querySelector("#botoes"));
+      if (name === "projetos") return new Inspector(document.querySelector("#projetos"));
+      if (name === "titulo") return new Inspector(document.querySelector("#titulo"));
+      if (name === "descricao") return new Inspector(document.querySelector("#descricao"));
+      if (name === "timelineproducao");
         return new Inspector(document.querySelector("#producao"));
-      });
+      if (name === "estilos") return new Inspector(document.querySelector("#estilos"));
+
+      return ["publicacoes","viewof producao_filtrada","viewof producao_projetosPibi","acionasearch","cvcompletovisse","cvcompletotypovisse","cvpub","sodisciplinas","soextensao","sopainel","sopesquisa","soorganiza","soinit","custombuttonsduo","timelineproducao","timelinetipoproducao","pubs","EnsPesqExtCont","IniciacaoCieTec"].includes(name);
+    });
+
     </script>
 
     <script>
