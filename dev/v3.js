@@ -124,12 +124,14 @@ window.addEventListener("scroll", function () {
       cor = "branco";
       amareloparabranco();
       document.getElementById("setaup").classList.add("mostraup");
+      document.getElementById("scrollnav").classList.add("liganav");
     }
   } else {
     if (cor == "branco") {
       cor = "amarelo";
       brancoparaamarelo();
       document.getElementById("setaup").classList.remove("mostraup");
+      document.getElementById("scrollnav").classList.remove("liganav");
     }
   }
 });

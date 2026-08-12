@@ -950,6 +950,41 @@ a.linkbloco:hover {
   background-position: center center;
 }
 
+#scrollnav {
+  display: none;
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  width: 160px;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+#scrollnav div {
+  width: 100%;
+  font-size: 12px;
+  line-height: 15px;
+  text-decoration: none;
+  color: var(--cor-delicada);
+}
+
+#scrollnav div:hover {
+  background-color: var(--cor-delicada);
+  color: white;
+}
+
+.liganav {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .liganav {
+    opacity: 1 !important;
+    display: block !important;
+  }
+}
+
 /* --- Timeline Producao --- */
 
 .timelinev a,
