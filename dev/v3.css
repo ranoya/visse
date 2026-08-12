@@ -813,6 +813,7 @@ body {
   z-index: 5;
   opacity: 0;
   transition: opacity 0.4s ease-in;
+  transform: translateX(-100vw);
 }
 
 #setaup rect {
@@ -826,7 +827,7 @@ body {
 @media screen and (min-width: 855px) {
   .mostraup {
     opacity: 1 !important;
-    transform: translateX(-100vw);
+    transform: translateX(0vw);
   }
 }
 
