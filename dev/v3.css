@@ -981,7 +981,7 @@ a.linkbloco:hover {
 @media screen and (min-width: 1200px) {
   .liganav {
     opacity: 1 !important;
-    transform: translateX(100vw);
+    transform: translateX(0) !important;
   }
 }
 
