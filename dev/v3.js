@@ -118,7 +118,7 @@ window.addEventListener("scroll", function () {
   // Get the current height of the viewport in pixels (100vh equivalent)
   const viewportHeight = window.innerHeight;
 
-  if (document.getElementById("topo").xpto.getBoundingClientRect().top >= 0) {
+  if (document.getElementById("topo").getBoundingClientRect().top >= 0) {
     document.getElementById("barrapathwavescolor").style.opacity = 1;
   } else {
     document.getElementById("barrapathwavescolor").style.opacity = 0;
