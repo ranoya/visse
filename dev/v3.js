@@ -120,8 +120,10 @@ window.addEventListener("scroll", function () {
 
   if (document.getElementById("topo").getBoundingClientRect().top <= 0) {
     document.getElementById("barrapathwavescolor").style.opacity = 1;
+    document.getElementById("topo").style.backgroundColor = "white";
   } else {
     document.getElementById("barrapathwavescolor").style.opacity = 0;
+    document.getElementById("topo").style.backgroundColor = "transparent";
   }
 
   if (scrolledHeight > viewportHeight + 1) {

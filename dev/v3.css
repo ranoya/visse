@@ -499,11 +499,10 @@ body {
 #grafismo {
   height: 15px;
   width: 100%;
-  background-color: black;
   margin-top: -20px;
   margin-bottom: 15px;
   overflow: hidden;
-  background-color: var(--cor-logo);
+  background-color: transparent;
 }
 
 #abremenu {
