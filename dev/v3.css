@@ -955,6 +955,21 @@ a.linkbloco:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  box-shadow: #00000055 4px 3px 10px 0px;
+  border-radius: 5px;
+  margin-left: -1px;
+}
+
+.screen_producao {
+  width: 100%;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: #00000055 4px 3px 10px 0px;
+  border-radius: 5px;
+  margin-left: -1px;
 }
 
 #scrollnav {
