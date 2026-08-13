@@ -931,6 +931,7 @@ a.linkbloco:hover {
   color: var(--cor-invert, #ffffff) !important;
   text-decoration: none;
 
+  /*
   background-size: 4px 4px;
   background-image: repeating-linear-gradient(
     45deg,
@@ -940,6 +941,7 @@ a.linkbloco:hover {
     #fffef5 25%
   ) !important;
   color: var(--cor-logo) !important;
+  */
   border-radius: 10px !important;
 }
 
