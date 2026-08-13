@@ -930,6 +930,17 @@ a.linkbloco:hover {
   background-color: var(--cor-logo, #4272cf) !important;
   color: var(--cor-invert, #ffffff) !important;
   text-decoration: none;
+
+  background-size: 4px 4px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--cor-logo) 0,
+    var(--cor-logo) 0.4px,
+    #fffef5 0,
+    #fffef5 25%
+  ) !important;
+  color: var(--cor-logo) !important;
+  border-radius: 10px !important;
 }
 
 .linktextual {
