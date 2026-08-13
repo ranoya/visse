@@ -690,6 +690,7 @@ body {
   text-decoration: none;
   padding: 10px 10px 6px 10px;
   margin: -6px -10px -6px -10px;
+  border-radius: 5px;
 }
 
 .main a:hover {
@@ -951,6 +952,7 @@ a.linkbloco:hover {
   padding: 10px 10px 10px 10px !important;
   margin: -6px -10px -6px -10px !important;
   width: calc(100% - 12px);
+  border-radius: 5px;
 }
 
 .linktextual:hover {
