@@ -233,3 +233,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("scrollnav").innerHTML = code;
   */
 });
+
+let abrepagina = function (url) {
+  window.location.href = url;
+};
