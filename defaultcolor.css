@@ -1,21 +1,41 @@
 :root {
-    --cor-base: #12a3cb;
-    --cor-invert: #FFFFFF;
+  --cor-base: #12a3cb;
+  --cor-invert: #ffffff;
 
-    --splash-fundo: #cb1253;
-    --splash-fore: #FFFFFF;
-    --splash-secondcolor: #12a3cb;
+  --splash-fundo: #cb1253;
+  --splash-fore: #ffffff;
+  --splash-secondcolor: #12a3cb;
 
-    --cor-menu-off: #FFFFFF;
-    --cor-menu-off-bg: #12a3cb;
-    --cor-hv0: cyan;
-    --cor-hv1: #12a3cb;
-    --cor-hv2: #1f8dac;
-    --cor-hv3: #176b82;
-    --fg-color: #176b82;
-    --cor-shadow: #176b82;
-    --cor-leve: #89a1a8;
-    --cor-hvg: #6eacbd;
-    --cor-texto: #444444;
+  --cor-menu-off: #ffffff;
+  --cor-menu-off-bg: #12a3cb;
+  --cor-hv0: cyan;
+  --cor-hv1: #12a3cb;
+  --cor-hv2: #1f8dac;
+  --cor-hv3: #176b82;
+  --fg-color: #176b82;
+  --cor-shadow: #176b82;
+  --cor-leve: #89a1a8;
+  --cor-hvg: #6eacbd;
+  --cor-texto: #444444;
+}
 
+:root {
+  --cor-base: #7f6548;
+  --cor-invert: #ffffff;
+
+  --splash-fundo: #780ac1;
+  --splash-fore: #ffffff;
+  --splash-secondcolor: #7f6548;
+
+  --cor-menu-off: #ffffff;
+  --cor-menu-off-bg: #7f6548;
+  --cor-hv0: #ebbb1c;
+  --cor-hv1: #cb8e12;
+  --cor-hv2: #bc67a8;
+  --cor-hv3: #875d07;
+  --fg-color: #979797;
+  --cor-shadow: #695564;
+  --cor-leve: #d6cfb2;
+  --cor-hvg: #7f6548;
+  --cor-texto: #6f6a67;
 }
