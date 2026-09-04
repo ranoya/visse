@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -57,6 +57,21 @@
   </head>
 
   <body>
+    <div id="menu" onclick="lidacomtecla()">
+      <svg
+        style="width: 100%"
+        viewBox="0 0 340 340"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M170 340C263.887 340 340 263.889 340 170C340 76.1113 263.887 0 170 0C76.1133 0 0 76.1113 0 170C0 263.889 76.1133 340 170 340ZM170 266C223.02 266 266 223.02 266 170C266 116.98 223.02 74 170 74C116.98 74 74 116.98 74 170C74 223.02 116.98 266 170 266Z"
+        ></path>
+      </svg>
+    </div>
+
     <div id="recursos" onmouseover="stall()" onmouseout="retoma()">
       <div id="filtros"></div>
       <br />
@@ -128,6 +143,25 @@
         );
 
         --bg-highlight: var(--cor-fg, #000000);
+      }
+
+      #menu {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        z-index: 50000;
+        transition: all 0.2s ease-in;
+      }
+
+      #menu svg path {
+        fill: var(--cor-fg, #000000);
+      }
+
+      #menu:hover svg {
+        transform: scale(0.6);
+        transition: all 0.2s ease-in;
       }
 
       #recursos {
@@ -407,7 +441,7 @@
             document.getElementsByTagName("input")[0].dispatchEvent(
               new Event("input", {
                 bubbles: true,
-              })
+              }),
             );
 
             clearInterval(temporiza);
@@ -423,12 +457,12 @@
         let temporiza = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[0] != "undefined") {
             document.getElementsByTagName("input")[0].value = decodeURI(
-              $_GET["filtra"]
+              $_GET["filtra"],
             );
             document.getElementsByTagName("input")[0].dispatchEvent(
               new Event("input", {
                 bubbles: true,
-              })
+              }),
             );
 
             clearInterval(temporiza);
@@ -444,12 +478,12 @@
         let temporiza3 = setInterval(function () {
           if (typeof document.getElementsByTagName("input")[1] != "undefined") {
             document.getElementsByTagName("input")[1].value = decodeURI(
-              $_GET["shadow"]
+              $_GET["shadow"],
             );
             document.getElementsByTagName("input")[1].dispatchEvent(
               new Event("input", {
                 bubbles: true,
-              })
+              }),
             );
 
             clearInterval(temporiza3);
@@ -469,7 +503,7 @@
             document.getElementById("titulo").innerHTML != ""
           ) {
             document.getElementById("titulo").innerHTML = decodeURI(
-              $_GET["titulo"]
+              $_GET["titulo"],
             );
             clearInterval(temporiza2);
           }
@@ -488,12 +522,12 @@
             document.getElementsByTagName("input")[2] != ""
           ) {
             document.getElementsByTagName("input")[2].value = decodeURI(
-              $_GET["agrupa"]
+              $_GET["agrupa"],
             );
             document.getElementsByTagName("input")[2].dispatchEvent(
               new Event("input", {
                 bubbles: true,
-              })
+              }),
             );
             clearInterval(temporiza6);
           }
@@ -507,11 +541,11 @@
       ) {
         document.documentElement.style.setProperty(
           "--cor-bg",
-          "#" + $_GET["bg"]
+          "#" + $_GET["bg"],
         );
         document.documentElement.style.setProperty(
           "--cor-text",
-          "#" + $_GET["bg"]
+          "#" + $_GET["bg"],
         );
       }
 
@@ -522,7 +556,7 @@
       ) {
         document.documentElement.style.setProperty(
           "--cor-fg",
-          "#" + $_GET["fg"]
+          "#" + $_GET["fg"],
         );
       }
 
@@ -548,7 +582,7 @@
           `;
           document.documentElement.style.setProperty(
             "--borrao-visivel",
-            "flex"
+            "flex",
           );
         } else {
           document.getElementsByClassName("stage")[0].innerHTML = `
@@ -556,7 +590,7 @@
           `;
           document.documentElement.style.setProperty(
             "--borrao-visivel",
-            "flex"
+            "flex",
           );
         }
       };
