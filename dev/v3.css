@@ -564,7 +564,14 @@ body {
   margin: -6px -10px -6px -10px;
 }
 
-.rodapelink:hover {
+.rodapelinksimple {
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px 6px 10px;
+  margin: -6px -10px -6px -10px;
+}
+
+.rodapelink:hover, .rodapelinksimple:hover, .rodapelinktexto:hover {
   background-color: #ffffff;
   color: #7c1f1f;
 }
@@ -574,11 +581,6 @@ body {
   text-decoration: none;
   padding: 6px 10px 6px 10px;
   margin: -6px -10px -6px -10px;
-}
-
-.rodapelinktexto:hover {
-  background-color: #ffffff;
-  color: #7c1f1f;
 }
 
 .conteudorodape {
