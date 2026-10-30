@@ -403,11 +403,11 @@
       import define from "https://api.observablehq.com/@ranoya/v3-projetos.js?v=4";
 
       const fromObservable = new Runtime().module(define, (name) => {
-        if (name === "titulonews")
-          return new Inspector(document.querySelector("#titulo"));
+        /* if (name === "titulonews")
+          return new Inspector(document.querySelector("#titulo")); */
 
-        if (name === "intronews")
-          return new Inspector(document.querySelector("#descricao"));
+        /* if (name === "intronews")
+          return new Inspector(document.querySelector("#descricao")); */
 
         if (name === "destaques")
           return new Inspector(document.querySelector("#producao"));
