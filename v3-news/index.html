@@ -44,7 +44,11 @@
       type="image/png"
       href="https://visse.vercel.app/assets/covers/og-projetos.png"
     />
-
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://drive.google.com/uc?export=view&id=11Gf-Q3wqLBVlrYQ3h1sBqNJkA33URY4L"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -231,11 +235,11 @@
           <div class="ref">
               <div style="height: 45px"></div>
 
-              <div id="pessoas"></div>
+              
 
           </div>
 
-          <div style="height: 60px" class="main"></div>
+          <div style="height: 45px;" class="main"></div>
 
 
         </div>
@@ -387,12 +391,6 @@
 
     <script src="../dev/v3.js"></script>
 
-    <style>
-        #doc {
-            grid-template-columns: [init] 60px [par] 1fr [end] 30px [respiro] !important;
-        }
-    </style>
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
@@ -402,19 +400,16 @@
         Runtime,
         Inspector,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/v3-storytelling.js?v=4";
+      import define from "https://api.observablehq.com/@ranoya/v3-projetos.js?v=4";
 
       const fromObservable = new Runtime().module(define, (name) => {
-        if (name === "titulo")
+        if (name === "titulonews")
           return new Inspector(document.querySelector("#titulo"));
 
-        if (name === "descricao")
+        if (name === "intronews")
           return new Inspector(document.querySelector("#descricao"));
 
-        if (name === "pessoas")
-          return new Inspector(document.querySelector("#pessoas"));
-
-        if (name === "projetos")
+        if (name === "destaques")
           return new Inspector(document.querySelector("#producao"));
 
         if (name === "estilos")
